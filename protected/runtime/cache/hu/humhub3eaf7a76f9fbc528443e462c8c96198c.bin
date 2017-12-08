@@ -1,0 +1,23 @@
+a:2:{i:0;s:1564:"
+<a href="/index.php?r=activity%2Flink&id=7">
+    <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="9">
+        <div class="media">
+                            <!-- Show user image -->
+                <img class="media-object img-rounded pull-left" data-src="holder.js/32x32" alt="32x32"
+                     style="width: 32px; height: 32px;"
+                     src="/uploads/profile_image/f842f790-45eb-4ff0-89ac-e82b485db789.jpg?m=1512664302">
+            
+            <!-- Show space image, if you are outside from a space -->
+                                                <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;">ДП</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/static/img/default_space.jpg" alt="Добро пожаловать в пространство" style=" width: 20px; height: 20px">                
+            
+            <div class="media-body text-break">
+
+                <!-- Show content -->
+                <strong>Sara Schuster</strong> прокомментировал "Calvin Klein - Между любовью и безумием лежит одержимость."<br/>
+
+                <!-- show time -->
+                <span class="time" title="2017-12-07T18:31:43+02:00">7 дек. 2017 г. - 18:31</span>            </div>
+        </div>
+    </li>
+</a>
+";i:1;N;}
