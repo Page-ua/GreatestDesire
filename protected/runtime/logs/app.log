@@ -1,4 +1,4 @@
-2017-12-07 18:17:38 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+2017-12-11 14:05:37 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
 Stack trace:
 #0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
 #1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
@@ -69,16 +69,16 @@ Stack trace:
 #30 {main}
 Additional Information:
 
-2017-12-07 18:17:38 [::1][-][-][info][application] $_GET = [
+2017-12-11 14:05:37 [::1][-][-][info][application] $_GET = [
     'r' => 'installer/index/go'
     '_pjax' => '#layout-content'
-    '_' => '1512663457273'
+    '_' => '1512993901941'
 ]
 
 $_SERVER = [
     'HTTP_HOST' => 'localhost'
     'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_X_CSRF_TOKEN' => '30cF8RgWCnMMfoZAva-vPthGB_3iNTMypMH9h7bTfhvO9KnX1srFWMJTzsRNz22W_-c_JT1BUvv2Nxp2CLmhKA=='
+    'HTTP_X_CSRF_TOKEN' => '6au_HMTqq3pqbbmsXLpJTK1nJLeZyPh3BogmA8E93t-Ollu5F0taAKeuS5FJY6pVvEsgQN_3hNjJigtPAzDTNg=='
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
     'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
     'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
@@ -88,7 +88,7 @@ $_SERVER = [
     'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
-    'HTTP_COOKIE' => '_csrf=495c179c7a559e59938925bcfce2b8e0c211101468c63ea662193966bf013fbaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%11%B3%AC%26%CE%DC%CF%2B%CE-H%84%F0%60%C2%A8%27%A18%D8%DFta%C9R%F6%E7%F1%BEj%DF3%22%3B%7D; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
     'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
     'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
 '
@@ -103,18 +103,18 @@ $_SERVER = [
     'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
     'SERVER_ADMIN' => 'webmaster@localhost'
     'SCRIPT_FILENAME' => '/var/www/html/index.php'
-    'REMOTE_PORT' => '52512'
+    'REMOTE_PORT' => '60432'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512663457273'
-    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512663457273'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512993901941'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512993901941'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
-    'REQUEST_TIME_FLOAT' => 1512663458.564
-    'REQUEST_TIME' => 1512663458
+    'REQUEST_TIME_FLOAT' => 1512993937.039
+    'REQUEST_TIME' => 1512993937
 ]
-2017-12-07 18:17:38 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+2017-12-11 14:05:37 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
 
 in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
 
@@ -133,16 +133,16 @@ Stack trace:
 #11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
 #12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
 #13 {main}
-2017-12-07 18:17:38 [::1][-][-][info][application] $_GET = [
+2017-12-11 14:05:37 [::1][-][-][info][application] $_GET = [
     'r' => 'installer/index/go'
     '_pjax' => '#layout-content'
-    '_' => '1512663457273'
+    '_' => '1512993901941'
 ]
 
 $_SERVER = [
     'HTTP_HOST' => 'localhost'
     'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_X_CSRF_TOKEN' => '30cF8RgWCnMMfoZAva-vPthGB_3iNTMypMH9h7bTfhvO9KnX1srFWMJTzsRNz22W_-c_JT1BUvv2Nxp2CLmhKA=='
+    'HTTP_X_CSRF_TOKEN' => '6au_HMTqq3pqbbmsXLpJTK1nJLeZyPh3BogmA8E93t-Ollu5F0taAKeuS5FJY6pVvEsgQN_3hNjJigtPAzDTNg=='
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
     'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
     'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
@@ -152,7 +152,7 @@ $_SERVER = [
     'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
-    'HTTP_COOKIE' => '_csrf=495c179c7a559e59938925bcfce2b8e0c211101468c63ea662193966bf013fbaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%11%B3%AC%26%CE%DC%CF%2B%CE-H%84%F0%60%C2%A8%27%A18%D8%DFta%C9R%F6%E7%F1%BEj%DF3%22%3B%7D; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
     'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
     'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
 '
@@ -167,18 +167,18 @@ $_SERVER = [
     'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
     'SERVER_ADMIN' => 'webmaster@localhost'
     'SCRIPT_FILENAME' => '/var/www/html/index.php'
-    'REMOTE_PORT' => '52512'
+    'REMOTE_PORT' => '60432'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512663457273'
-    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512663457273'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512993901941'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512993901941'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
-    'REQUEST_TIME_FLOAT' => 1512663458.564
-    'REQUEST_TIME' => 1512663458
+    'REQUEST_TIME_FLOAT' => 1512993937.039
+    'REQUEST_TIME' => 1512993937
 ]
-2017-12-07 18:24:24 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+2017-12-11 14:05:39 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
 Stack trace:
 #0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
 #1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
@@ -249,16 +249,16 @@ Stack trace:
 #30 {main}
 Additional Information:
 
-2017-12-07 18:24:24 [::1][-][-][info][application] $_GET = [
+2017-12-11 14:05:39 [::1][-][-][info][application] $_GET = [
     'r' => 'installer/setup/database'
     '_pjax' => '#layout-content'
-    '_' => '1512663860262'
+    '_' => '1512993937588'
 ]
 
 $_SERVER = [
     'HTTP_HOST' => 'localhost'
     'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_X_CSRF_TOKEN' => 'FFpbmcuRfXC1tXdmL-44rgQQ8AZ5MwboOBpPXx5WM_oF6fe_BU2yW3uYP-LfjvoGI7HI3qZHZyFq7KiuoDzsyQ=='
+    'HTTP_X_CSRF_TOKEN' => 'WpGiitSE4iJccCl1J2VVdJkd9htIHhA_FaKvZL4y5Ro9rEYvByUTWJGz20gyvLZtiDHy7A4hbJDaoIIofD_o8w=='
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
     'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
     'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
@@ -268,7 +268,7 @@ $_SERVER = [
     'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
-    'HTTP_COOKIE' => '_csrf=495c179c7a559e59938925bcfce2b8e0c211101468c63ea662193966bf013fbaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%11%B3%AC%26%CE%DC%CF%2B%CE-H%84%F0%60%C2%A8%27%A18%D8%DFta%C9R%F6%E7%F1%BEj%DF3%22%3B%7D; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
     'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
     'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
 '
@@ -283,18 +283,18 @@ $_SERVER = [
     'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
     'SERVER_ADMIN' => 'webmaster@localhost'
     'SCRIPT_FILENAME' => '/var/www/html/index.php'
-    'REMOTE_PORT' => '52698'
+    'REMOTE_PORT' => '60438'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512663860262'
-    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512663860262'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512993937588'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512993937588'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
-    'REQUEST_TIME_FLOAT' => 1512663864.02
-    'REQUEST_TIME' => 1512663864
+    'REQUEST_TIME_FLOAT' => 1512993939.678
+    'REQUEST_TIME' => 1512993939
 ]
-2017-12-07 18:24:24 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+2017-12-11 14:05:39 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
 
 in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
 
@@ -313,16 +313,16 @@ Stack trace:
 #11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
 #12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
 #13 {main}
-2017-12-07 18:24:24 [::1][-][-][info][application] $_GET = [
+2017-12-11 14:05:39 [::1][-][-][info][application] $_GET = [
     'r' => 'installer/setup/database'
     '_pjax' => '#layout-content'
-    '_' => '1512663860262'
+    '_' => '1512993937588'
 ]
 
 $_SERVER = [
     'HTTP_HOST' => 'localhost'
     'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_X_CSRF_TOKEN' => 'FFpbmcuRfXC1tXdmL-44rgQQ8AZ5MwboOBpPXx5WM_oF6fe_BU2yW3uYP-LfjvoGI7HI3qZHZyFq7KiuoDzsyQ=='
+    'HTTP_X_CSRF_TOKEN' => 'WpGiitSE4iJccCl1J2VVdJkd9htIHhA_FaKvZL4y5Ro9rEYvByUTWJGz20gyvLZtiDHy7A4hbJDaoIIofD_o8w=='
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
     'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
     'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
@@ -332,7 +332,7 @@ $_SERVER = [
     'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
-    'HTTP_COOKIE' => '_csrf=495c179c7a559e59938925bcfce2b8e0c211101468c63ea662193966bf013fbaa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%11%B3%AC%26%CE%DC%CF%2B%CE-H%84%F0%60%C2%A8%27%A18%D8%DFta%C9R%F6%E7%F1%BEj%DF3%22%3B%7D; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
     'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
     'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
 '
@@ -347,14 +347,1094 @@ $_SERVER = [
     'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
     'SERVER_ADMIN' => 'webmaster@localhost'
     'SCRIPT_FILENAME' => '/var/www/html/index.php'
-    'REMOTE_PORT' => '52698'
+    'REMOTE_PORT' => '60438'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512663860262'
-    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512663860262'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512993937588'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512993937588'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
-    'REQUEST_TIME_FLOAT' => 1512663864.02
-    'REQUEST_TIME' => 1512663864
+    'REQUEST_TIME_FLOAT' => 1512993939.678
+    'REQUEST_TIME' => 1512993939
+]
+2017-12-11 14:12:38 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#12 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#13 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#15 [internal function]: yii\base\Object->__construct(Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#21 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#22 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#24 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#25 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#26 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#27 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('go', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/index...', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#31 /var/www/html/index.php(25): yii\base\Application->run()
+#32 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#10 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#11 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#13 [internal function]: yii\base\Object->__construct(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#19 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#20 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#22 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#23 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#24 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('go', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/index...', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#29 /var/www/html/index.php(25): yii\base\Application->run()
+#30 {main}
+Additional Information:
+
+2017-12-11 14:12:38 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/index/go'
+    '_pjax' => '#layout-content'
+    '_' => '1512994356375'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'OXNm1OjawaDY8QjlbBwtX2BUwwu_BWcwW-sZsAeWsuBeToJxO3sw2hUy-th5xc5GcXjH_Pk6G5-U6TT8xZu_CQ=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60610'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512994356375'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512994356375'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512994358.027
+    'REQUEST_TIME' => 1512994358
+]
+2017-12-11 14:12:38 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-11 14:12:38 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/index/go'
+    '_pjax' => '#layout-content'
+    '_' => '1512994356375'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'OXNm1OjawaDY8QjlbBwtX2BUwwu_BWcwW-sZsAeWsuBeToJxO3sw2hUy-th5xc5GcXjH_Pk6G5-U6TT8xZu_CQ=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60610'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512994356375'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512994356375'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512994358.027
+    'REQUEST_TIME' => 1512994358
+]
+2017-12-11 14:12:39 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#12 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#13 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#15 [internal function]: yii\base\Object->__construct(Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#21 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#22 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#24 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#25 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#26 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#27 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('database', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/setup...', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#31 /var/www/html/index.php(25): yii\base\Application->run()
+#32 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#10 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#11 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#13 [internal function]: yii\base\Object->__construct(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#19 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#20 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#22 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#23 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#24 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('database', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/setup...', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#29 /var/www/html/index.php(25): yii\base\Application->run()
+#30 {main}
+Additional Information:
+
+2017-12-11 14:12:39 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/database'
+    '_pjax' => '#layout-content'
+    '_' => '1512994358328'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'IeuHDR2cmnOO0W9rRpMAtfbA9neht_31xjniDU3oN7xG1mOozj1rCUMSnVZTSuOs5-zygOeIgVoJO89Bj-U6VQ=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60616'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512994358328'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512994358328'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512994359.837
+    'REQUEST_TIME' => 1512994359
+]
+2017-12-11 14:12:39 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-11 14:12:39 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/database'
+    '_pjax' => '#layout-content'
+    '_' => '1512994358328'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'IeuHDR2cmnOO0W9rRpMAtfbA9neht_31xjniDU3oN7xG1mOozj1rCUMSnVZTSuOs5-zygOeIgVoJO89Bj-U6VQ=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60616'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512994358328'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512994358328'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512994359.837
+    'REQUEST_TIME' => 1512994359
+]
+2017-12-11 14:26:38 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#12 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#13 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#15 [internal function]: yii\base\Object->__construct(Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#21 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#22 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#24 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#25 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#26 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#27 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('go', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/index...', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#31 /var/www/html/index.php(25): yii\base\Application->run()
+#32 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#10 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#11 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#13 [internal function]: yii\base\Object->__construct(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#19 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#20 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#22 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#23 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#24 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('go', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/index...', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#29 /var/www/html/index.php(25): yii\base\Application->run()
+#30 {main}
+Additional Information:
+
+2017-12-11 14:26:38 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/index/go'
+    '_pjax' => '#layout-content'
+    '_' => '1512995196816'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'jA1uPt3VnTwTr6YNVna-W3Ybtp72k_NmhdDvrH4HVLHrMIqbDnRsRt5sVDBDr11CZzeyabCsj8lK0sLgvApZWA=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60944'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512995196816'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512995196816'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512995198.25
+    'REQUEST_TIME' => 1512995198
+]
+2017-12-11 14:26:38 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-11 14:26:38 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/index/go'
+    '_pjax' => '#layout-content'
+    '_' => '1512995196816'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'jA1uPt3VnTwTr6YNVna-W3Ybtp72k_NmhdDvrH4HVLHrMIqbDnRsRt5sVDBDr11CZzeyabCsj8lK0sLgvApZWA=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60944'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512995196816'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512995196816'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512995198.25
+    'REQUEST_TIME' => 1512995198
+]
+2017-12-11 14:26:39 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#12 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#13 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#15 [internal function]: yii\base\Object->__construct(Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#21 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#22 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#24 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#25 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#26 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#27 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('database', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/setup...', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#31 /var/www/html/index.php(25): yii\base\Application->run()
+#32 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#10 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#11 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#13 [internal function]: yii\base\Object->__construct(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#19 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#20 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#22 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#23 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#24 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('database', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/setup...', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#29 /var/www/html/index.php(25): yii\base\Application->run()
+#30 {main}
+Additional Information:
+
+2017-12-11 14:26:39 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/database'
+    '_pjax' => '#layout-content'
+    '_' => '1512995198569'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'T8jlx65DQtKeBm7Cu6Cj2YCz8-oCRjn1qzTWHIbFnnEo9QFifeKzqFPFnP-ueUDAkZ_3HUR5RVpkNvtQRMiTmA=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60946'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512995198569'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512995198569'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512995199.81
+    'REQUEST_TIME' => 1512995199
+]
+2017-12-11 14:26:39 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-11 14:26:39 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/database'
+    '_pjax' => '#layout-content'
+    '_' => '1512995198569'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'T8jlx65DQtKeBm7Cu6Cj2YCz8-oCRjn1qzTWHIbFnnEo9QFifeKzqFPFnP-ueUDAkZ_3HUR5RVpkNvtQRMiTmA=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '60946'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512995198569'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512995198569'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512995199.81
+    'REQUEST_TIME' => 1512995199
+]
+2017-12-11 14:47:47 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#12 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#13 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#15 [internal function]: yii\base\Object->__construct(Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#21 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#22 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#24 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#25 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#26 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#27 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('go', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/index...', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#31 /var/www/html/index.php(25): yii\base\Application->run()
+#32 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#10 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#11 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#13 [internal function]: yii\base\Object->__construct(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#19 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#20 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#22 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#23 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#24 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('go', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/index...', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#29 /var/www/html/index.php(25): yii\base\Application->run()
+#30 {main}
+Additional Information:
+
+2017-12-11 14:47:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/index/go'
+    '_pjax' => '#layout-content'
+    '_' => '1512996464952'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'dP7mlvg9aKl6nQ69_LN87BAlHqr4BYdfXTnLs1S-PJ4TwwIzK5yZ07de_IDpap_1AQkaXb46-_CSO-b_lrMxdw=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '33062'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512996464952'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512996464952'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512996467.441
+    'REQUEST_TIME' => 1512996467
+]
+2017-12-11 14:47:47 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-11 14:47:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/index/go'
+    '_pjax' => '#layout-content'
+    '_' => '1512996464952'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'dP7mlvg9aKl6nQ69_LN87BAlHqr4BYdfXTnLs1S-PJ4TwwIzK5yZ07de_IDpap_1AQkaXb46-_CSO-b_lrMxdw=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '33062'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512996464952'
+    'REQUEST_URI' => '/index.php?r=installer%2Findex%2Fgo&_pjax=%23layout-content&_=1512996464952'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512996467.441
+    'REQUEST_TIME' => 1512996467
+]
+2017-12-11 14:47:49 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=loca...', '', '', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#12 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#13 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#15 [internal function]: yii\base\Object->__construct(Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#19 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#20 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#21 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#22 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#24 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#25 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#26 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#27 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('database', Array)
+#29 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/setup...', Array)
+#30 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#31 /var/www/html/index.php(25): yii\base\Application->run()
+#32 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO) in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('user')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('user')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(213): yii\db\Command->queryAll()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/ActiveQuery.php(135): yii\db\Query->all(NULL)
+#10 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(167): yii\db\ActiveQuery->all()
+#11 /var/www/html/protected/humhub/libs/BaseSettingsManager.php(47): humhub\libs\BaseSettingsManager->loadValues()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\libs\BaseSettingsManager->init()
+#13 [internal function]: yii\base\Object->__construct(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('humhub\\componen...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('humhub\\componen...', Array, Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#18 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('settings')
+#19 /var/www/html/protected/humhub/modules/user/components/User.php(182): yii\di\ServiceLocator->__get('settings')
+#20 /var/www/html/protected/humhub/widgets/TopMenu.php(41): humhub\modules\user\components\User::isGuestAccessEnabled()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\widgets\TopMenu->init()
+#22 /var/www/html/protected/humhub/widgets/BaseMenu.php(316): yii\base\Object->__construct()
+#23 /var/www/html/protected/humhub/components/Controller.php(284): humhub\widgets\BaseMenu::setViewState()
+#24 /var/www/html/protected/humhub/components/Controller.php(204): humhub\components\Controller->setJsViewStatus()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): humhub\components\Controller->beforeAction(Object(yii\base\InlineAction))
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('database', Array)
+#27 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('installer/setup...', Array)
+#28 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(humhub\components\Request))
+#29 /var/www/html/index.php(25): yii\base\Application->run()
+#30 {main}
+Additional Information:
+
+2017-12-11 14:47:49 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/database'
+    '_pjax' => '#layout-content'
+    '_' => '1512996467694'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'JRXMeVPeI9-uHl6C_ApOkt7xXZOH98VHbrgltITG7cJCKCjcgH_SpWPdrL_p062Lz91ZZMHIueihugj4RsvgKw=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '33070'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512996467694'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512996467694'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512996469.737
+    'REQUEST_TIME' => 1512996469
+]
+2017-12-11 14:47:49 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-11 14:47:49 [::1][-][-][info][application] $_GET = [
+    'r' => 'installer/setup/database'
+    '_pjax' => '#layout-content'
+    '_' => '1512996467694'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_CSRF_TOKEN' => 'JRXMeVPeI9-uHl6C_ApOkt7xXZOH98VHbrgltITG7cJCKCjcgH_SpWPdrL_p062Lz91ZZMHIueihugj4RsvgKw=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_PJAX_CONTAINER' => '#layout-content'
+    'HTTP_REFERER' => 'http://localhost/index.php?r=installer%2Fsetup%2Fprerequisites'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=ecd2faf64b19f86af26a92124e8a13b172f24261a32db67dccb92edfc50f16e1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%2236104a0c-ab2d-46d6-a54f-550d3c7264a6%22%2C2592000%5D%22%3B%7D; _csrf=455d5bf2f33fca1ee6c3206e16860a3094cb58ccfa4c81e07ff9301f43d6bd17a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22g%3D%E4%A5%D3%A1%F1z%CD%C3%F2%3D%15%D9%E3%19%11%2C%04%F7F%3F%7C%AF%CF%02-L%C2%0D%0D%E9%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '33070'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512996467694'
+    'REQUEST_URI' => '/index.php?r=installer%2Fsetup%2Fdatabase&_pjax=%23layout-content&_=1512996467694'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512996469.737
+    'REQUEST_TIME' => 1512996469
 ]

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="HostGreatesDesire" deleteMissingItems="true" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="ForumDaily">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Greatest Desire">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="HostGreatesDesire">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$USER_HOME$/PhpstormProjects/start" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

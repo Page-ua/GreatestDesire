@@ -1,11 +1,11 @@
-a:2:{i:0;s:1543:"
+a:2:{i:0;s:1509:"
 <a href="/index.php?r=activity%2Flink&id=3">
     <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="4">
         <div class="media">
                             <!-- Show user image -->
                 <img class="media-object img-rounded pull-left" data-src="holder.js/32x32" alt="32x32"
                      style="width: 32px; height: 32px;"
-                     src="/uploads/profile_image/8560daec-bc37-4a64-946b-ad880f460142.jpg?m=1512664301">
+                     src="/static/img/default_user.jpg">
             
             <!-- Show space image, if you are outside from a space -->
                                                 <div class="img-space pull-left space-profile-acronym-1 space-acronym" style=" background-color: #6fdbe8; width: 20px; height: 20px; font-size: 8.8px; padding: 3.6px 0; border-radius: 2px;">ДП</div><img class="img-space pull-left space-profile-image-1 img-rounded profile-user-photo hidden" src="/static/img/default_space.jpg" alt="Добро пожаловать в пространство" style=" width: 20px; height: 20px">                
@@ -16,7 +16,7 @@ a:2:{i:0;s:1543:"
                 <strong>David Roberts</strong> присоединился к пространству <strong>Добро пожаловать в...</strong><br/>
 
                 <!-- show time -->
-                <span class="time" title="2017-12-07T18:31:41+02:00">7 дек. 2017 г. - 18:31</span>            </div>
+                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г. - 10:56</span></span>            </div>
         </div>
     </li>
 </a>
