@@ -1,5 +1,5 @@
-a:2:{i:0;s:1509:"
-<a href="/index.php?r=activity%2Flink&id=3">
+a:2:{i:0;s:1505:"
+<a href="/index.php/activity/link?id=3">
     <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="4">
         <div class="media">
                             <!-- Show user image -->
