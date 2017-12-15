@@ -61,6 +61,8 @@ class AuthController extends Controller
     /**
      * Displays the login page
      */
+
+
     public function actionLogin()
     {
         // If user is already logged in, redirect him to the dashboard

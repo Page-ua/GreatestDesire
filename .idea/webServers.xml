@@ -10,6 +10,30 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="0724166d-1fa0-4340-9a52-7846507d81dd" name="ForumDailyTest" url="http://178.62.80.127">
+        <fileTransfer host="178.62.80.127" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="a40de753-29f5-439e-a4c1-032d27857e42" name="Merkuriy" url="http://212.26.146.185">
+        <fileTransfer host="212.26.146.185" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="3eed486e-ed21-4755-bc39-eb8cc604b30a" name="DecemberProject" url="http://212.26.146.185">
+        <fileTransfer host="212.26.146.185" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

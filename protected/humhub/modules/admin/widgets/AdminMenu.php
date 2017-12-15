@@ -87,6 +87,16 @@ class AdminMenu extends \humhub\widgets\BaseMenu
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'information'),
             'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\SeeAdminInformation())
         ]);
+        $this->addItem([
+            'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Success stories'),
+            'url' => Url::toRoute('/admin/blog'),
+            'icon' => '<i class="fa fa-rss" aria-hidden="true"></i>',
+            'sortOrder' => 12000,
+            'newItemCount' => 0,
+            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'blog'),
+            'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+        ]);
+
 
         parent::init();
     }

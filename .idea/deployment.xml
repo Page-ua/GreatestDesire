@@ -2,7 +2,23 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="HostGreatesDesire" deleteMissingItems="true" autoUploadExternalChanges="true">
     <serverData>
+      <paths name="DecemberProject">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="ForumDaily">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="ForumDailyTest">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
@@ -23,6 +39,14 @@
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
             <mapping deploy="/" local="$USER_HOME$/PhpstormProjects/start" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Merkuriy">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

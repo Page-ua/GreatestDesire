@@ -36,6 +36,7 @@ class InstallController extends Controller
         Yii::$app->settings->set('mailer.systemEmailName', "humhub@example.com");
         Yii::$app->settings->set('secret', \humhub\libs\UUID::v4());
 
+
         $user = new User();
         //$user->group_id = 1;
         $user->username = "Admin";

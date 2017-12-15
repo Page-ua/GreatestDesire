@@ -371,4 +371,23 @@ class SettingController extends Controller
         ]);
     }
 
+    public function actionWelcome()
+    {
+        $form = new \humhub\modules\admin\models\forms\WelcomeSettingsForm();
+
+        if ($form->load(Yii::$app->request->post()) && $form->validate() && $form->save()) {
+            $this->view->saved();
+            return $this->redirect(['/admin/setting/welcome']);
+        }
+
+        return $this->render('welcome', [
+            'model' => $form,
+        ]);
+    }
+
+    public function actionPages()
+    {
+        return $this->render('pages');
+    }
+
 }

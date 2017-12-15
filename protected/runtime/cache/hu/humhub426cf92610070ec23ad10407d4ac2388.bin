@@ -1,4 +1,4 @@
-a:2:{i:0;s:1492:"
+a:2:{i:0;s:1484:"
 <a href="/index.php/activity/link?id=9">
     <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="11">
         <div class="media">
@@ -16,7 +16,7 @@ a:2:{i:0;s:1492:"
                 <strong>Sara Schuster</strong> нравится сообщение "Мы ищем слоганы для известных..."<br/>
 
                 <!-- show time -->
-                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г. - 10:56</span></span>            </div>
+                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г.</span></span>            </div>
         </div>
     </li>
 </a>

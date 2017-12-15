@@ -64,6 +64,21 @@ class SettingsMenu extends \humhub\widgets\BaseMenu
             'sortOrder' => 1000,
             'isVisible' => $canEditSettings
         ]);
+        $this->addItem([
+            'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Start Page'),
+            'url' => Url::toRoute('/admin/setting/welcome'),
+            'sortOrder' => 1100,
+            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'setting' && Yii::$app->controller->action->id == 'welcome'),
+            'isVisible' => $canEditSettings
+        ]);
+
+        $this->addItem([
+            'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Technical pages'),
+            'url' => Url::toRoute('/admin/setting/pages'),
+            'sortOrder' => 1200,
+            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'setting' && Yii::$app->controller->action->id == 'pages'),
+            'isVisible' => $canEditSettings
+        ]);
 
         parent::init();
     }
