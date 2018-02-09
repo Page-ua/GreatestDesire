@@ -8,6 +8,9 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\admin\models\AdminDesires;
+use humhub\modules\admin\models\AdminDesiresSearch;
+use humhub\modules\user\models\DesiresAdmin;
 use Yii;
 use humhub\components\Controller;
 use humhub\modules\user\models\User;
@@ -72,6 +75,8 @@ class AuthController extends Controller
 
         // Login Form Handling
         $login = new Login;
+	    $info = new \humhub\modules\admin\models\forms\WelcomeSettingsForm();
+	    $stories = AdminDesires::find()->limit(3)->orderBy('date DESC')->all();
         if ($login->load(Yii::$app->request->post()) && $login->validate()) {
             return $this->onAuthSuccess($login->authClient);
         }
@@ -90,7 +95,7 @@ class AuthController extends Controller
         if (Yii::$app->request->isAjax) {
             return $this->renderAjax('login_modal', array('model' => $login, 'invite' => $invite, 'canRegister' => $invite->allowSelfInvite()));
         }
-        return $this->render('login', array('model' => $login, 'invite' => $invite, 'canRegister' => $invite->allowSelfInvite()));
+        return $this->render('login', array('model' => $login, 'info' => $info, 'invite' => $invite, 'stories' => $stories, 'canRegister' => $invite->allowSelfInvite()));
     }
 
     /**

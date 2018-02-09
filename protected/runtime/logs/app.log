@@ -1781,3 +1781,1525 @@ Stack trace:
     'REQUEST_TIME_FLOAT' => 1513007661.017
     'REQUEST_TIME' => 1513007661
 ]
+2017-12-20 05:35:18 [::1][-][0u17e4107a20m3n6ilbu8c0oq3][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] Network is unreachable in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('0u17e4107a20m3n...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('0u17e4107a20m3n...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('0u17e4107a20m3n...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] Network is unreachable in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('0u17e4107a20m3n...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('0u17e4107a20m3n...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('0u17e4107a20m3n...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2017-12-20 05:35:18 [::1][-][0u17e4107a20m3n6ilbu8c0oq3][info][application] $_GET = [
+    'last' => '1513787672'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'uxO3kt4xfPLNrYzPMp2Ccu0iBHW26egB5FRH-7mpovNZstQrOU2QsftrIwLktaA756OutcTSGDS1r6GX6DWwtQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/dashboard'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; PHPSESSID=0u17e4107a20m3n6ilbu8c0oq3; _csrf=c7c8f6c52c34f9f4b42f27f2e6559b3550a1906ee9060c2f3e609efff3d66800a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%E2%A1c%B9%E7%7C%ECC6%C6%AF%CD%D6%28%22I%0A%81%AA%C0r%3B%F05Q%FB%E6lQ%9C%12F%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '57098'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1513787672'
+    'REQUEST_URI' => '/index.php/live/poll?last=1513787672'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1513787718.08
+    'REQUEST_TIME' => 1513787718
+]
+2017-12-20 05:35:18 [::1][-][0u17e4107a20m3n6ilbu8c0oq3][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] Network is unreachable' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2017-12-20 05:35:18 [::1][-][0u17e4107a20m3n6ilbu8c0oq3][info][application] $_GET = [
+    'last' => '1513787672'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'uxO3kt4xfPLNrYzPMp2Ccu0iBHW26egB5FRH-7mpovNZstQrOU2QsftrIwLktaA756OutcTSGDS1r6GX6DWwtQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/dashboard'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; PHPSESSID=0u17e4107a20m3n6ilbu8c0oq3; _csrf=c7c8f6c52c34f9f4b42f27f2e6559b3550a1906ee9060c2f3e609efff3d66800a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%E2%A1c%B9%E7%7C%ECC6%C6%AF%CD%D6%28%22I%0A%81%AA%C0r%3B%F05Q%FB%E6lQ%9C%12F%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '57098'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1513787672'
+    'REQUEST_URI' => '/index.php/live/poll?last=1513787672'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1513787718.08
+    'REQUEST_TIME' => 1513787718
+]
+2017-12-21 02:34:47 [::1][-][scc51hkj9uvbdm44gqfls6tp40][error][yii\db\Exception] PDOException: PDO::__construct(): MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('scc51hkj9uvbdm4...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('scc51hkj9uvbdm4...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('scc51hkj9uvbdm4...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('scc51hkj9uvbdm4...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('scc51hkj9uvbdm4...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('scc51hkj9uvbdm4...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('scc51hkj9uvbdm4...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('scc51hkj9uvbdm4...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('scc51hkj9uvbdm4...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2017-12-21 02:34:35 [::1][-][scc51hkj9uvbdm44gqfls6tp40][info][application] $_GET = [
+    'last' => '1513863257'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'eIUD95RI090-0zzxjTlqqbsbvWi09Mr61-B_nUPJh6gHQACEtqiZM96cPQZ_eSko5RoYj8Xqp9x--MBjRPSiIg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/u/admin/user/profile/home'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; PHPSESSID=scc51hkj9uvbdm44gqfls6tp40; _csrf=aa086e9658782b2a760cb81576b5f4521c1517930d5bf7029662d34b0a630af9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%7F%C5%03s%22%E0J%EE%E0O%01%F7%F2%40C%81%5E%01%A5%E7q%1Em%26%A9%18%BF%FE%07%3D%25%8A%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '54972'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1513863257'
+    'REQUEST_URI' => '/index.php/live/poll?last=1513863257'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1513863275.262
+    'REQUEST_TIME' => 1513863275
+]
+2017-12-21 02:38:44 [::1][-][0an98gaaq1lp60540qamqafsb4][error][yii\db\Exception] PDOException: PDO::__construct(): MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('0an98gaaq1lp605...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('0an98gaaq1lp605...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('0an98gaaq1lp605...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('0an98gaaq1lp605...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('0an98gaaq1lp605...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('0an98gaaq1lp605...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('0an98gaaq1lp605...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('0an98gaaq1lp605...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('0an98gaaq1lp605...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2017-12-21 02:38:33 [::1][-][0an98gaaq1lp60540qamqafsb4][info][application] $_GET = [
+    'last' => '1513863469'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'eIUD95RI090-0zzxjTlqqbsbvWi09Mr61-B_nUPJh6gHQACEtqiZM96cPQZ_eSko5RoYj8Xqp9x--MBjRPSiIg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/u/admin/user/profile/home'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; _csrf=aa086e9658782b2a760cb81576b5f4521c1517930d5bf7029662d34b0a630af9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%7F%C5%03s%22%E0J%EE%E0O%01%F7%F2%40C%81%5E%01%A5%E7q%1Em%26%A9%18%BF%FE%07%3D%25%8A%22%3B%7D; PHPSESSID=0an98gaaq1lp60540qamqafsb4'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '56944'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1513863469'
+    'REQUEST_URI' => '/index.php/live/poll?last=1513863469'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1513863513.261
+    'REQUEST_TIME' => 1513863513
+]
+2017-12-21 03:09:17 [::1][-][qkv0fnmdo7f5as8uftikfh46l7][error][yii\db\Exception] PDOException: PDO::__construct(): MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('qkv0fnmdo7f5as8...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('qkv0fnmdo7f5as8...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('qkv0fnmdo7f5as8...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('qkv0fnmdo7f5as8...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('qkv0fnmdo7f5as8...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('qkv0fnmdo7f5as8...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('qkv0fnmdo7f5as8...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('qkv0fnmdo7f5as8...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('qkv0fnmdo7f5as8...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2017-12-21 03:09:06 [::1][-][qkv0fnmdo7f5as8uftikfh46l7][info][application] $_GET = [
+    'last' => '1513865302'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'eIUD95RI090-0zzxjTlqqbsbvWi09Mr61-B_nUPJh6gHQACEtqiZM96cPQZ_eSko5RoYj8Xqp9x--MBjRPSiIg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/u/admin/user/profile/home'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; _csrf=aa086e9658782b2a760cb81576b5f4521c1517930d5bf7029662d34b0a630af9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%7F%C5%03s%22%E0J%EE%E0O%01%F7%F2%40C%81%5E%01%A5%E7q%1Em%26%A9%18%BF%FE%07%3D%25%8A%22%3B%7D; PHPSESSID=qkv0fnmdo7f5as8uftikfh46l7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '43690'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1513865302'
+    'REQUEST_URI' => '/index.php/live/poll?last=1513865302'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1513865346.271
+    'REQUEST_TIME' => 1513865346
+]
+2018-01-17 02:56:07 [::1][-][6of0pd030vmqffk3r2smtj3r42][error][yii\db\Exception] PDOException: PDO::__construct(): MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('6of0pd030vmqffk...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('6of0pd030vmqffk...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('6of0pd030vmqffk...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('6of0pd030vmqffk...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('6of0pd030vmqffk...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('6of0pd030vmqffk...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('6of0pd030vmqffk...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('6of0pd030vmqffk...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('6of0pd030vmqffk...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2018-01-17 02:55:55 [::1][-][6of0pd030vmqffk3r2smtj3r42][info][application] $_GET = [
+    'last' => '1516197311'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'iDUr2Wx2bpfBXq6Plqb1NOdZfPuPIOEijXD7ZJDC_8dNM3QxkO4fc13lNT1iut5a7rIU0k6bVFA_8IaMW2xA5Q=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/dashboard'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; csrftoken=ApJTnHb0QBq1m0YAcqH21nVxnDa6R9gAtdXCc3RvSjhULPiBL5824gUy7EW4vNML; PHPSESSID=6of0pd030vmqffk3r2smtj3r42; _csrf=31296459d00376a18925d05270b863a702e8cabb885acca6f6e3b2ab040450caa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%C5%06_%E8%FC%98q%E4%9C%BB%9B%B2%F4%1C%2Bn%09%EBh%29%C1%BB%B5r%B2%80%7D%E8%CB%AE%BF%22%22%3B%7D; XDEBUG_SESSION=PHPSTORM'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '40472'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1516197311'
+    'REQUEST_URI' => '/index.php/live/poll?last=1516197311'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1516197355.675
+    'REQUEST_TIME' => 1516197355
+]
+2018-01-17 02:56:10 [::1][-][6of0pd030vmqffk3r2smtj3r42][error][yii\db\Exception] PDOException: PDO::__construct(): MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('6of0pd030vmqffk...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('6of0pd030vmqffk...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('6of0pd030vmqffk...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('6of0pd030vmqffk...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('6of0pd030vmqffk...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('6of0pd030vmqffk...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('6of0pd030vmqffk...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('6of0pd030vmqffk...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('6of0pd030vmqffk...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2018-01-17 02:55:59 [::1][-][6of0pd030vmqffk3r2smtj3r42][info][application] $_GET = [
+    'last' => '1516197314'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'Uz7iQO4Yd5lSVImtmEdcHqrlCSoRRHW5_idz4q3zswyWOL2oEoAGfc7vEh9sW3dwow5hA9D_wMtMpw4KZl0MLg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/dashboard'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; csrftoken=ApJTnHb0QBq1m0YAcqH21nVxnDa6R9gAtdXCc3RvSjhULPiBL5824gUy7EW4vNML; PHPSESSID=6of0pd030vmqffk3r2smtj3r42; _csrf=31296459d00376a18925d05270b863a702e8cabb885acca6f6e3b2ab040450caa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%C5%06_%E8%FC%98q%E4%9C%BB%9B%B2%F4%1C%2Bn%09%EBh%29%C1%BB%B5r%B2%80%7D%E8%CB%AE%BF%22%22%3B%7D; XDEBUG_SESSION=PHPSTORM'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '40476'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1516197314'
+    'REQUEST_URI' => '/index.php/live/poll?last=1516197314'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1516197359.673
+    'REQUEST_TIME' => 1516197359
+]
+2018-01-18 02:43:21 [::1][-][28ni3amekufgur95k9p5viii04][error][yii\db\Exception] PDOException: PDO::__construct(): MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('28ni3amekufgur9...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('28ni3amekufgur9...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('28ni3amekufgur9...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('28ni3amekufgur9...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('28ni3amekufgur9...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#12 [internal function]: yii\web\DbSession->readSession('28ni3amekufgur9...')
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#16 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#17 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#19 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#20 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#22 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#23 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#25 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#26 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#27 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2006] MySQL server has gone away in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('28ni3amekufgur9...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('28ni3amekufgur9...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(887): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Query.php(269): yii\db\Command->queryScalar()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/web/DbSession.php(152): yii\db\Query->scalar(Object(yii\db\Connection))
+#10 [internal function]: yii\web\DbSession->readSession('28ni3amekufgur9...')
+#11 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(132): session_start()
+#12 /var/www/html/protected/vendor/yiisoft/yii2/web/Session.php(596): yii\web\Session->open()
+#13 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(650): yii\web\Session->get('__id')
+#14 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(188): yii\web\User->renewAuthStatus()
+#15 /var/www/html/protected/vendor/yiisoft/yii2/web/User.php(333): yii\web\User->getIdentity()
+#16 /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php(132): yii\web\User->getIsGuest()
+#17 /var/www/html/protected/humhub/components/i18n/I18N.php(33): yii\base\Component->__get('isGuest')
+#18 /var/www/html/protected/humhub/components/bootstrap/LanguageSelector.php(29): humhub\components\i18n\I18N->autosetLocale()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\LanguageSelector->bootstrap(Object(humhub\components\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/humhub/components/Application.php(46): yii\web\Application->bootstrap()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): humhub\components\Application->bootstrap()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): yii\base\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/index.php(25): yii\base\Application->__construct(Array)
+#26 {main}
+Additional Information:
+
+2018-01-18 02:42:59 [::1][-][28ni3amekufgur95k9p5viii04][info][application] $_GET = [
+    'last' => '1516282934'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'WSKMbmOBfMntc6Mi2zV2r1OE2ntC5orwBE738gNyW-SRNSBYVdxL2xa598_bke-W7hZkgHFK5v6qFmVxYe24GQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/index.php/dashboard'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'pm_getting-started-panel=expanded; language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _identity=4abbacff28ec3c9626dedeee07c1d2d99f3b6f1d7ea43624826698881b096571a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A50%3A%22%5B1%2C%225465af51-56a3-4116-b5f4-763af7162bff%22%2C2592000%5D%22%3B%7D; csrftoken=ApJTnHb0QBq1m0YAcqH21nVxnDa6R9gAtdXCc3RvSjhULPiBL5824gUy7EW4vNML; _csrf=d012e281316324dd2683622474d7c7c37b58c03a80b16bb5dabcea64665785b9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22%C8%17%AC66%5D7%12%FB%CAT%ED%00%A4%999%BD%92%BE%FB3%ACl%0E%AEX%92%83b%9F%E3%FD%22%3B%7D; XDEBUG_SESSION=PHPSTORM; PHPSESSID=28ni3amekufgur95k9p5viii04'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '59178'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'last=1516282934'
+    'REQUEST_URI' => '/index.php/live/poll?last=1516282934'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/live/poll'
+    'PATH_TRANSLATED' => '/var/www/html/live/poll'
+    'PHP_SELF' => '/index.php/live/poll'
+    'REQUEST_TIME_FLOAT' => 1516282979.572
+    'REQUEST_TIME' => 1516282979
+]
+2018-02-04 23:22:48 [-][-][-][error][yii\base\InvalidParamException] yii\base\InvalidParamException: Invalid path alias: @protected/humhub/modules/admin/migrations in /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php:154
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(120): yii\BaseYii::getAlias('@protected/humh...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-04 23:22:47 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2412'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2635'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/2220,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/2220'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '9'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-ib9B8Wocty,guid=796ccc09d06d5212360e3b4a5a781394'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1517826167.6231
+    'REQUEST_TIME' => 1517826167
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => '--migrationPath=@protected/humhub/modules/admin/migrations'
+        3 => 'create_admin_desiere_table'
+    ]
+    'argc' => 4
+]
+2018-02-05 03:13:22 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "migration". in /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php:532
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migration', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migration', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 /var/www/html/protected/yii(29): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "migration". in /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migration', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /var/www/html/protected/yii(29): yii\base\Application->run()
+#3 {main}
+2018-02-05 03:13:21 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2412'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2635'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/2220,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/2220'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '1'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-ib9B8Wocty,guid=796ccc09d06d5212360e3b4a5a781394'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1517840000.9507
+    'REQUEST_TIME' => 1517840000
+    'argv' => [
+        0 => 'yii'
+        1 => 'migration'
+        2 => 'migrationPath=humhub/modules/admin/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-05 03:18:01 [-][-][-][error][yii\console\Exception] yii\console\Exception: The migration name should contain letters, digits, underscore and/or backslash characters only. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:578
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionCreate('migrationPath=h...', 'create_admin_de...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-05 03:18:00 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2412'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2635'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/2220,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/2220'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '1'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-ib9B8Wocty,guid=796ccc09d06d5212360e3b4a5a781394'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1517840280.7354
+    'REQUEST_TIME' => 1517840280
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => 'migrationPath=humhub/modules/admin/migrations'
+        3 => 'create_admin_desires_table'
+    ]
+    'argc' => 4
+]
+2018-02-05 03:19:06 [-][-][-][error][yii\console\Exception] yii\console\Exception: The migration name should contain letters, digits, underscore and/or backslash characters only. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:578
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionCreate('migrationPath=h...', 'create_admin-de...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-05 03:19:05 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2412'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2635'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/2220,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/2220'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '1'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-ib9B8Wocty,guid=796ccc09d06d5212360e3b4a5a781394'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1517840345.783
+    'REQUEST_TIME' => 1517840345
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => 'migrationPath=humhub/modules/admin/migrations'
+        3 => 'create_admin-desires_table'
+    ]
+    'argc' => 4
+]
+2018-02-05 03:19:26 [-][-][-][error][yii\console\Exception] yii\console\Exception: The migration name should contain letters, digits, underscore and/or backslash characters only. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:578
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionCreate('migrationPath=h...', 'create_desires_...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-05 03:19:25 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2412'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2635'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/2220,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/2220'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '1'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-ib9B8Wocty,guid=796ccc09d06d5212360e3b4a5a781394'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1517840365.6129
+    'REQUEST_TIME' => 1517840365
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => 'migrationPath=humhub/modules/admin/migrations'
+        3 => 'create_desires_table'
+    ]
+    'argc' => 4
+]
+2018-02-05 03:21:44 [-][-][-][error][yii\console\Exception] yii\console\Exception: The migration name should contain letters, digits, underscore and/or backslash characters only. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:578
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionCreate('humhub/modules/...')
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-05 03:21:43 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2412'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2635'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/2220,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/2220'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '1'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-ib9B8Wocty,guid=796ccc09d06d5212360e3b4a5a781394'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1517840503.4584
+    'REQUEST_TIME' => 1517840503
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => 'humhub/modules/admin/migrations/CreateDesiresAdminTable'
+    ]
+    'argc' => 3
+]

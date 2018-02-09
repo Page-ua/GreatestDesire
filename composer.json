@@ -1,0 +1,8 @@
+{
+    "require": {
+        "codeception/codeception": "2.1.*",
+        "codeception/specify": "*",
+        "codeception/verify": "*",
+        "2amigos/yii2-date-picker-widget" : "2.0.0"
+    }
+}

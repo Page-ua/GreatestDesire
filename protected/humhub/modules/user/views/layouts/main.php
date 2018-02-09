@@ -16,10 +16,13 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <?php $this->head() ?>
         <?= $this->render('@humhub/views/layouts/head'); ?>
+
+        <link href="<?= $this->theme->getBaseUrl(); ?>/css/main.css" rel="stylesheet">
+        <link href="<?= $this->theme->getBaseUrl(); ?>/css/media.css" rel="stylesheet">
         <meta charset="<?= Yii::$app->charset ?>">
     </head>
 
-    <body class="login-container">
+    <body>
         <?php $this->beginBody() ?>
         <?= $content; ?>
         <?php $this->endBody() ?>

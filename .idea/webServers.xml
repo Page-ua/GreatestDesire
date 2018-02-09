@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="852b4c62-8347-4f27-8cf1-9ecdd965de72" name="ForumDaily" url="http://69.16.221.30">
-        <fileTransfer host="69.16.221.30" port="22" rootFolder="/home/" accessType="SFTP">
+        <fileTransfer host="69.16.221.30" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
@@ -28,6 +28,22 @@
       </webServer>
       <webServer id="3eed486e-ed21-4755-bc39-eb8cc604b30a" name="DecemberProject" url="http://212.26.146.185">
         <fileTransfer host="212.26.146.185" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="e8c5d1d7-7612-4d5f-93d8-05c963b3e615" name="StudioDoors" url="http://studio67.ftp.ukraine.com.ua">
+        <fileTransfer host="studio67.ftp.ukraine.com.ua" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="325a7c7b-79d6-41ad-ad11-77fb5544b173" name="TeatrProduction" url="http://gvh7.mirohost.net">
+        <fileTransfer host="gvh7.mirohost.net" port="21" rootFolder="/teatrumikrofona.com.ua/">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>

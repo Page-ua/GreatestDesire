@@ -26,14 +26,6 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="Greatest Desire">
-        <serverdata>
-          <mappings>
-            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="HostGreatesDesire">
         <serverdata>
           <mappings>
@@ -43,6 +35,22 @@
         </serverdata>
       </paths>
       <paths name="Merkuriy">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="StudioDoors">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="TeatrProduction">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
