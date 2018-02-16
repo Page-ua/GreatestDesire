@@ -90,7 +90,7 @@ class AdminMenu extends \humhub\widgets\BaseMenu
         $this->addItem([
             'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Success stories'),
             'url' => Url::toRoute('/admin/admin-desires'),
-            'icon' => '<i class="fa fa-rss" aria-hidden="true"></i>',
+            'icon' => '<i class="fa fa-volume-up" aria-hidden="true"></i>',
             'sortOrder' => 12000,
             'newItemCount' => 0,
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'desires'),
@@ -99,12 +99,31 @@ class AdminMenu extends \humhub\widgets\BaseMenu
 	    $this->addItem([
 		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Pages'),
 		    'url' => Url::toRoute('/admin/pages'),
-		    'icon' => '<i class="fa fa-rss" aria-hidden="true"></i>',
-		    'sortOrder' => 12000,
+		    'icon' => '<i class="fa fa-pagelines" aria-hidden="true"></i>',
+		    'sortOrder' => 14000,
 		    'newItemCount' => 0,
-		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'pages'),
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'pages'),
 		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
 	    ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Guest Question'),
+		    'url' => Url::toRoute('/admin/guest-question'),
+		    'icon' => '<i class="fa fa-question-circle" aria-hidden="true"></i>',
+		    'sortOrder' => 16000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'guest-question'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'News'),
+		    'url' => Url::toRoute('/admin/news'),
+		    'icon' => '<i class="fa fa-newspaper-o" aria-hidden="true"></i>',
+		    'sortOrder' => 17000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'news'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
+
 
 
         parent::init();

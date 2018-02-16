@@ -107,8 +107,9 @@ class AccountController extends BaseAccountController
         if ($model->timeZone == "") {
             $model->timeZone = Yii::$app->settings->get('timeZone');
         }
-
+		$model->status_online = $user->status_online;
         $model->tags = $user->tags;
+        $model->info_status = $user->info_status;
         $model->show_introduction_tour = Yii::$app->getModule('tour')->settings->contentContainer($user)->get("hideTourPanel");
         $model->visibility = $user->visibility;
 
@@ -118,6 +119,8 @@ class AccountController extends BaseAccountController
             $user->tags = $model->tags;
             $user->time_zone = $model->timeZone;
             $user->visibility = $model->visibility;
+            $user->status_online = $model->status_online;
+            $user->info_status = $model->info_status;
             $user->save();
 
             $this->view->saved();

@@ -20,6 +20,13 @@ AppAsset::register($this);
         <link href="<?= $this->theme->getBaseUrl(); ?>/css/main.css" rel="stylesheet">
         <link href="<?= $this->theme->getBaseUrl(); ?>/css/media.css" rel="stylesheet">
         <meta charset="<?= Yii::$app->charset ?>">
+
+        <style>
+            body {
+                padding-top: 0px;
+            }
+        </style>
+
     </head>
 
     <body>
@@ -27,7 +34,6 @@ AppAsset::register($this);
         <?= $content; ?>
         <?php $this->endBody() ?>
 
-        <div class="text text-center powered">Powered by <a href="http://www.humhub.org" target="_blank">HumHub</a></div>
     </body>
 
 </html>

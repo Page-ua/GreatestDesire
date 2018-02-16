@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\user\components\Session;
 use Yii;
 use humhub\modules\content\components\ContentContainerController;
 use humhub\modules\stream\actions\ContentContainerStream;
@@ -70,7 +71,36 @@ class ProfileController extends ContentContainerController
 
     public function actionHome()
     {
-        return $this->render('home', ['user' => $this->contentContainer]);
+	    $settings = new \humhub\modules\user\models\forms\AccountSettings();
+	    $isProfileOwner = false;
+	    $user = $this->user;
+	    $settings->status_online = $user->status_online;
+	    $settings->info_status = $user->info_status;
+	    if(!Yii::$app->user->isGuest) {
+		    if ( Yii::$app->user->id == $this->user->id ) {
+			    $isProfileOwner = true;
+		    } elseif(!$user->status_online) {
+			    $online_user = Session::getOnlineUsers();
+			    if ( empty( $online_user->andWhere( [ 'user.id' => $this->user->id ] )->all() ) ){
+			    	$settings->status_online = 1;
+			    }
+	        }
+	    }
+
+	     if (Yii::$app->request->isAjax)
+	     {
+		     if ($settings->load(Yii::$app->request->post()) && $settings->validate())
+		     {
+			     $user->status_online = $settings->status_online;
+			     $user->info_status = $settings->info_status;
+			     $user->save();
+			     $this->view->saved();
+			     return $this->asJson('successful');
+		     }
+
+	     }
+
+        return $this->render('home', ['user' => $this->contentContainer, 'settings' => $settings, 'isProfileOwner' => $isProfileOwner]);
     }
 
     public function actionAbout()

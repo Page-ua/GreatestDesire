@@ -12,6 +12,8 @@ namespace humhub\modules\user\controllers;
 use humhub\components\Controller;
 use humhub\modules\admin\models\AdminDesires;
 use humhub\modules\admin\models\forms\PagesInfoForm;
+use humhub\modules\admin\models\GuestQuestion;
+use Yii;
 
 class InfoController  extends Controller{
 
@@ -51,5 +53,21 @@ class InfoController  extends Controller{
 	public function actionConditions()
 	{
 		return $this->render('info', ['form' => $this->form->conditions]);
+	}
+
+	public function actionFaq()
+	{
+		return $this->render('info', ['form' => $this->form->faq]);
+	}
+
+	public function actionContact()
+	{
+		$model = new GuestQuestion();
+
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			return $this->render('successful_question');
+		}
+
+		return $this->render('contact',['model' => $model]);
 	}
 }

@@ -247,7 +247,7 @@ header{
     background-position: center;
 }	
 .step1{
-	background-image: url(../../../app/img/step-1.svg);
+	background-image: url(/themes/HumHub/img/login/step-1.svg);
 	background-repeat: no-repeat;
 	display:inline-block;
 	margin-right: 22px;
@@ -263,7 +263,7 @@ header{
     margin-left: 30%;
 }
 .step2{
-	background-image: url(../../../app/img/step-2.svg);
+	background-image: url(/themes/HumHub/img/login/step-2.svg);
 	background-repeat: no-repeat;
 	margin-left: 300px;
 }
@@ -273,7 +273,7 @@ header{
     margin-left: 16%;	
 }
 .step3{
-	background-image: url(../../../app/img/step-3.svg);
+	background-image: url(/themes/HumHub/img/login/step-3.svg);
 	background-repeat: no-repeat;
 	margin-left: 60px;
 	margin-top: 80px;
@@ -583,7 +583,7 @@ input::placeholder{
 	font-size: 24px;
 	font-weight: 400;
 }
-.contacts-form_send input{
+.contacts-form_send button{
 	width: 90px;
 	height: 40px;
 	border-radius: 3px;

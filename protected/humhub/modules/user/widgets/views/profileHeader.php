@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use humhub\modules\user\controllers\ImageController;
+use yii\widgets\ActiveForm;
 
 if ($allowModifyProfileBanner || $allowModifyProfileImage) {
     $this->registerJsFile('@web-static/resources/user/profileHeaderImageUpload.js');
@@ -53,7 +54,9 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             <?php endif; ?>
 
             <!-- show user name and title -->
+
             <div class="img-profile-data">
+
                 <h1><?= Html::encode($user->displayName); ?></h1>
 
                 <h2><?= Html::encode($user->profile->title); ?></h2>

@@ -15,9 +15,9 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
             <div class="row">
                 <div class="col-lg-12 col-sm-12">
                     <nav class="main-nav">
-                        <a href="<?= Url::toRoute(['info/anetwork']); ?>">Discover more about network</a>
-                        <a href="<?= Url::toRoute(['info/policy']); ?>">Privacy policy</a>
-                        <a href="<?= Url::toRoute(['info/conditions']); ?>">Terms and Conditions</a>
+	                    <?= \yii\helpers\Html::a('Discover more about network', ['info/anetwork'], ['data-pjax'=>0]) ?>
+	                    <?= \yii\helpers\Html::a('Privacy policy', ['info/policy'], ['data-pjax'=>0]) ?>
+	                    <?= \yii\helpers\Html::a('Terms and Conditions', ['info/conditions'], ['data-pjax'=>0]) ?>
                     </nav>
                 </div>
             </div>
@@ -85,7 +85,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                     </div>
                     <div>
                         <nav class="auth_buttons">
-                            <a class="login-btn green_button" href="#">Login</a>
+                            <a class="login-btn green_button" data-action-click="ui.modal.load" data-action-url="/index.php/user/auth/login" href="#">Login</a>
                             <a class="caccount-btn orange_button" href="#">Create Account</a>
                         </nav>
                     </div>
@@ -356,7 +356,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                     <div class="sec4-item">
                         <p class="sec4-item_title"><?php echo $item->attributes['title']; ?></p>
                         <p class="sec4-item_desc"><?php echo $item->attributes['description']; ?></p>
-                        <a class="sec4-item_link" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">more</a>
+                        <a class="sec4-item_link" data-pjax="0" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">more</a>
                     </div>
                 </div>
             </div>
@@ -365,7 +365,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
         <div class="row">
             <div class="col-lg-12 col-sm-12">
                 <div class="sec4-button_holder">
-                    <a  class="orange_button" href="/index.php/user/info" >View All</a>
+                    <a  class="orange_button" data-pjax="0" href="/index.php/user/info" >View All</a>
                 </div>
             </div>
         </div>
@@ -437,15 +437,15 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
             <div class="col-lg-6 col-sm-8">
                 <div style="display: inline-block; float: left; margin-top: 10px;">
                     <ul class="bottom-nav">
-                        <a href="ppolicy.html"><li>Discover more about Greatest Desire</li></a>
-                        <a href="ppolicy.html"><li>Privacy policy</li></a>
-                        <a href="ppolicy.html"><li>Terms and Conditions</li></a>
+	                    <?= \yii\helpers\Html::a('<li>Discover more about network</li>', ['info/anetwork'], ['data-pjax'=>0]) ?>
+	                    <?= \yii\helpers\Html::a('<li>Privacy policy</li>', ['info/policy'], ['data-pjax'=>0]) ?>
+	                    <?= \yii\helpers\Html::a('<li>Terms and Conditions</li>', ['info/conditions'], ['data-pjax'=>0]) ?>
                     </ul>
                 </div>
                 <div style="display: inline-block; float: left; margin-top: 10px;">
                     <ul class="bottom-nav">
-                        <a href="faq.html"><li>FAQ</li></a>
-                        <a href="contactus.html"><li>Contact Us</li></a>
+	                    <?= \yii\helpers\Html::a('<li>FAQ</li>', ['info/faq'], ['data-pjax'=>0]) ?>
+	                    <?= \yii\helpers\Html::a('<li>Contact Us</li>', ['info/contact'], ['data-pjax'=>0]) ?>
                     </ul>
                 </div>
             </div>
@@ -469,114 +469,3 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
         </div>
     </div>
 </footer>
-
-
-
-
-
-
-
-
-
-<div class="container" style="text-align: center;">
-	<?= humhub\widgets\SiteLogo::widget(['place' => 'login']); ?>
-    <br>
-
-    <div class="panel panel-default animated bounceIn" id="login-form"
-         style="max-width: 300px; margin: 0 auto 20px; text-align: left;">
-
-        <div class="panel-heading"><?= Yii::t('UserModule.views_auth_login', '<strong>Please</strong> sign in'); ?></div>
-
-        <div class="panel-body">
-
-			<?php if (Yii::$app->session->hasFlash('error')): ?>
-                <div class="alert alert-danger" role="alert">
-					<?= Yii::$app->session->getFlash('error') ?>
-                </div>
-			<?php endif; ?>
-
-			<?php if (AuthChoice::hasClients()): ?>
-				<?= AuthChoice::widget([]) ?>
-			<?php else: ?>
-				<?php if ($canRegister) : ?>
-                    <p><?= Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password."); ?></p>
-				<?php else: ?>
-                    <p><?= Yii::t('UserModule.views_auth_login', "Please login with your username/email and password."); ?></p>
-				<?php endif; ?>
-			<?php endif; ?>
-
-			<?php $form = ActiveForm::begin(['id' => 'account-login-form', 'enableClientValidation' => false]); ?>
-			<?= $form->field($model, 'username')->textInput(['id' => 'login_username', 'placeholder' => $model->getAttributeLabel('username'), 'aria-label' => $model->getAttributeLabel('username')])->label(false); ?>
-			<?= $form->field($model, 'password')->passwordInput(['id' => 'login_password', 'placeholder' => $model->getAttributeLabel('password'), 'aria-label' => $model->getAttributeLabel('password')])->label(false); ?>
-			<?= $form->field($model, 'rememberMe')->checkbox(); ?>
-
-            <hr>
-            <div class="row">
-                <div class="col-md-4">
-					<?= CHtml::submitButton(Yii::t('UserModule.views_auth_login', 'Sign in'), array('id' => 'login-button', 'data-ui-loader' => "", 'class' => 'btn btn-large btn-primary')); ?>
-                </div>
-                <div class="col-md-8 text-right">
-                    <small>
-						<?= Yii::t('UserModule.views_auth_login', 'Forgot your password?'); ?>
-                        <a id="password-recovery-link" href="<?= Url::toRoute('/user/password-recovery'); ?>" data-pjax-prevent><br><?= Yii::t('UserModule.views_auth_login', 'Create a new one.') ?></a>
-                    </small>
-                </div>
-            </div>
-
-			<?php ActiveForm::end(); ?>
-        </div>
-
-    </div>
-
-    <br>
-
-	<?php if ($canRegister) : ?>
-        <div id="register-form"
-             class="panel panel-default animated bounceInLeft"
-             style="max-width: 300px; margin: 0 auto 20px; text-align: left;">
-
-            <div class="panel-heading"><?= Yii::t('UserModule.views_auth_login', '<strong>Sign</strong> up') ?></div>
-
-            <div class="panel-body">
-
-                <p><?= Yii::t('UserModule.views_auth_login', "Don't have an account? Join the network by entering your e-mail address."); ?></p>
-
-				<?php $form = ActiveForm::begin(['id' => 'invite-form']); ?>
-				<?= $form->field($invite, 'email')->input('email', ['id' => 'register-email', 'placeholder' => $invite->getAttributeLabel('email'), 'aria-label' => $invite->getAttributeLabel('email')])->label(false); ?>
-                <hr>
-				<?= CHtml::submitButton(Yii::t('UserModule.views_auth_login', 'Register'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']); ?>
-
-				<?php ActiveForm::end(); ?>
-            </div>
-        </div>
-
-	<?php endif; ?>
-
-	<?= humhub\widgets\LanguageChooser::widget(); ?>
-</div>
-
-<script type="text/javascript">
-    $(function () {
-        // set cursor to login field
-        $('#login_username').focus();
-    });
-
-    // Shake panel after wrong validation
-	<?php if ($model->hasErrors()) { ?>
-    $('#login-form').removeClass('bounceIn');
-    $('#login-form').addClass('shake');
-    $('#register-form').removeClass('bounceInLeft');
-    $('#app-title').removeClass('fadeIn');
-	<?php } ?>
-
-    // Shake panel after wrong validation
-	<?php if ($invite->hasErrors()) { ?>
-    $('#register-form').removeClass('bounceInLeft');
-    $('#register-form').addClass('shake');
-    $('#login-form').removeClass('bounceIn');
-    $('#app-title').removeClass('fadeIn');
-	<?php } ?>
-
-</script>
-
-

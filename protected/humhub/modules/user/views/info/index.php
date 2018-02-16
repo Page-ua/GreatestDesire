@@ -6,6 +6,8 @@
  * Time: 17:33
  */
 
+use yii\helpers\Url;
+
 ?>
 
 <section class="success-sec1">
@@ -16,7 +18,6 @@
 			</div>
 		</div>
 		<div class="row">
-            <?php var_dump($model); ?>
             <?php foreach($model as $item){ ?>
             <?php if(!empty($item->attributes['image'])){ ?>
 			<div class="col-lg-4">
@@ -25,7 +26,7 @@
 					<div class="sec4-item">
 						<p class="sec4-item_title"><?php echo $item->attributes['title']; ?></p>
 						<p class="sec4-item_desc"><?php echo $item->attributes['description']; ?></p>
-						<a class="sec4-item_link" href="singlestory.html">more</a>
+						<a class="sec4-item_link" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">more</a>
 					</div>
 				</div>
 			</div>

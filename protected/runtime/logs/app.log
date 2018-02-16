@@ -3303,3 +3303,1448 @@ Stack trace:
     ]
     'argc' => 3
 ]
+2018-02-09 02:34:09 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "migration". in /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php:532
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migration', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migration', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 /var/www/html/protected/yii(29): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "migration". in /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migration', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /var/www/html/protected/yii(29): yii\base\Application->run()
+#3 {main}
+2018-02-09 02:34:08 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '2283'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2616'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1839,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1839'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '1'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-HCg5kUSYYQ,guid=47f95d6a3e1f42952e9736d95a7d5dc3'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518183248.9853
+    'REQUEST_TIME' => 1518183248
+    'argv' => [
+        0 => 'yii'
+        1 => 'migration'
+        2 => '--migrationPath=@app/humhub/modules/admin/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-12 22:39:43 [-][-][-][error][yii\console\Exception] yii\console\Exception: The step argument must be greater than 0. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:282
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionRedo(0)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('redo', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('redo', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/redo', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/redo', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-12 22:39:42 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518514782.1239
+    'REQUEST_TIME' => 1518514782
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/redo'
+        2 => 'm131023_164513'
+    ]
+    'argc' => 3
+]
+2018-02-12 22:41:18 [-][-][-][error][yii\console\Exception] yii\console\Exception: The step argument must be greater than 0. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:282
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionRedo(0)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('redo', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('redo', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/redo', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/redo', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-12 22:41:18 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518514878.0145
+    'REQUEST_TIME' => 1518514878
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/redo'
+        2 => 'm131023_164513_initial'
+    ]
+    'argc' => 3
+]
+2018-02-12 22:42:32 [-][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: Migration failed. Directory specified in migrationPath doesn't exist: @app/humhub/modules/user/migration in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:123
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('redo', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('redo', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/redo', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/redo', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 /var/www/html/protected/yii(29): yii\base\Application->run()
+#8 {main}
+2018-02-12 22:42:32 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518514952.2103
+    'REQUEST_TIME' => 1518514952
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/redo'
+        2 => '--migrationPath=@app/humhub/modules/user/migration'
+        3 => 'm131023_164513_initial'
+    ]
+    'argc' => 4
+]
+2018-02-12 22:43:17 [-][-][-][error][yii\console\Exception] yii\console\Exception: The step argument must be greater than 0. in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:282
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionRedo(0)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('redo', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('redo', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/redo', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/redo', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 /var/www/html/protected/yii(29): yii\base\Application->run()
+#9 {main}
+2018-02-12 22:43:17 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518514997.1459
+    'REQUEST_TIME' => 1518514997
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/redo'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+        3 => 'm131023_164513_initial'
+    ]
+    'argc' => 4
+]
+2018-02-12 22:56:18 [-][-][-][error][yii\console\Exception] yii\console\Exception: Отсутствуют обязательные аргументы: name in /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php:166
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(51): yii\console\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 /var/www/html/protected/yii(29): yii\base\Application->run()
+#8 {main}
+2018-02-12 22:56:17 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518515777.3334
+    'REQUEST_TIME' => 1518515777
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-12 22:59:46 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] Network is unreachable in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:646
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(646): PDO->__construct('mysql:host=165....', 'root', '4854279e93a779a...', NULL)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(910): yii\db\Command->prepare(true)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('fetchAll', 7)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/db/mysql/Schema.php(352): yii\db\Command->queryColumn()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(234): yii\db\mysql\Schema->findTableNames('')
+#9 /var/www/html/protected/humhub/components/console/Application.php(87): yii\db\Schema->getTableNames()
+#10 /var/www/html/protected/humhub/components/ModuleManager.php(70): humhub\components\console\Application->isDatabaseInstalled()
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\components\ModuleManager->init()
+#12 [internal function]: yii\base\Object->__construct(Array)
+#13 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('\\humhub\\compone...', Array, Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('\\humhub\\compone...', Array, Array)
+#16 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#17 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('moduleManager')
+#18 /var/www/html/protected/humhub/components/bootstrap/ModuleAutoLoader.php(51): yii\di\ServiceLocator->__get('moduleManager')
+#19 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\ModuleAutoLoader->bootstrap(Object(humhub\components\console\Application))
+#20 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): yii\base\Application->bootstrap()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(124): yii\base\Application->init()
+#22 /var/www/html/protected/humhub/components/console/Application.php(35): yii\console\Application->init()
+#23 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\components\console\Application->init()
+#24 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#25 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(89): yii\base\Application->__construct(Array)
+#26 /var/www/html/protected/yii(28): yii\console\Application->__construct(Array)
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] Network is unreachable in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(910): yii\db\Command->prepare(true)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(405): yii\db\Command->queryInternal('fetchAll', 7)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/mysql/Schema.php(352): yii\db\Command->queryColumn()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(234): yii\db\mysql\Schema->findTableNames('')
+#7 /var/www/html/protected/humhub/components/console/Application.php(87): yii\db\Schema->getTableNames()
+#8 /var/www/html/protected/humhub/components/ModuleManager.php(70): humhub\components\console\Application->isDatabaseInstalled()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\components\ModuleManager->init()
+#10 [internal function]: yii\base\Object->__construct(Array)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#12 /var/www/html/protected/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('\\humhub\\compone...', Array, Array)
+#13 /var/www/html/protected/vendor/yiisoft/yii2/BaseYii.php(348): yii\di\Container->get('\\humhub\\compone...', Array, Array)
+#14 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#15 /var/www/html/protected/vendor/yiisoft/yii2/di/ServiceLocator.php(73): yii\di\ServiceLocator->get('moduleManager')
+#16 /var/www/html/protected/humhub/components/bootstrap/ModuleAutoLoader.php(51): yii\di\ServiceLocator->__get('moduleManager')
+#17 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(320): humhub\components\bootstrap\ModuleAutoLoader->bootstrap(Object(humhub\components\console\Application))
+#18 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(272): yii\base\Application->bootstrap()
+#19 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(124): yii\base\Application->init()
+#20 /var/www/html/protected/humhub/components/console/Application.php(35): yii\console\Application->init()
+#21 /var/www/html/protected/vendor/yiisoft/yii2/base/Object.php(107): humhub\components\console\Application->init()
+#22 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(205): yii\base\Object->__construct(Array)
+#23 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(89): yii\base\Application->__construct(Array)
+#24 /var/www/html/protected/yii(28): yii\console\Application->__construct(Array)
+#25 {main}
+Additional Information:
+
+2018-02-12 22:59:46 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518515986.7365
+    'REQUEST_TIME' => 1518515986
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-12 22:59:46 [-][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\log\DbTarget: Exception (Database Exception) 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] Network is unreachable' 
+
+in /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php:584
+
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(928): yii\db\Connection->open()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/db/Schema.php(483): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/protected/vendor/yiisoft/yii2/db/Connection.php(824): yii\db\Schema->quoteValue('yii\\db\\Exceptio...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('yii\\db\\Exceptio...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(866): yii\db\Command->getRawSql()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /var/www/html/protected/vendor/yiisoft/yii2/log/DbTarget.php(89): yii\db\Command->execute()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/log/Target.php(124): yii\log\DbTarget->export()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/log/Dispatcher.php(188): yii\log\Target->collect(Array, true)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/log/Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/ErrorHandler.php(113): yii\log\Logger->flush(true)
+#12 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#13 {main}
+2018-02-12 22:59:46 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518515986.7365
+    'REQUEST_TIME' => 1518515986
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-12 23:00:25 [-][-][-][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: m180213_095826_add_status_online_column_to_profile_table::ineger() in /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php:290
+Stack trace:
+#0 /var/www/html/protected/humhub/modules/user/migrations/m180213_095826_add_status_online_column_to_profile_table.php(15): yii\base\Component->__call('ineger', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(671): m180213_095826_add_status_online_column_to_profile_table->up()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m180213_095826_...')
+#3 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /var/www/html/protected/yii(29): yii\base\Application->run()
+#12 {main}
+2018-02-12 23:00:21 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518516021.3762
+    'REQUEST_TIME' => 1518516021
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-12 23:06:14 [-][-][-][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: m180213_095826_add_status_online_column_to_profile_table::ineger() in /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php:290
+Stack trace:
+#0 /var/www/html/protected/humhub/modules/user/migrations/m180213_095826_add_status_online_column_to_profile_table.php(15): yii\base\Component->__call('ineger', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(671): m180213_095826_add_status_online_column_to_profile_table->up()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m180213_095826_...')
+#3 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /var/www/html/protected/yii(29): yii\base\Application->run()
+#12 {main}
+2018-02-12 23:06:09 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518516369.7352
+    'REQUEST_TIME' => 1518516369
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-12 23:06:27 [-][-][-][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: m180213_095826_add_status_online_column_to_profile_table::ineger() in /var/www/html/protected/vendor/yiisoft/yii2/base/Component.php:290
+Stack trace:
+#0 /var/www/html/protected/humhub/modules/user/migrations/m180213_095826_add_status_online_column_to_profile_table.php(15): yii\base\Component->__call('ineger', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(671): m180213_095826_add_status_online_column_to_profile_table->up()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m180213_095826_...')
+#3 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /var/www/html/protected/yii(29): yii\base\Application->run()
+#12 {main}
+2018-02-12 23:06:24 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/var/www/html'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '0'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518516384.2401
+    'REQUEST_TIME' => 1518516384
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@app/humhub/modules/user/migrations'
+    ]
+    'argc' => 3
+]
+2018-02-13 01:06:34 [-][-][-][error][yii\base\ErrorException:64] yii\base\ErrorException: yii\console\controllers\BaseMigrateController::includeMigrationFile(): Failed opening required '/var/www/html/protected/humhub/migrations/m180213_100848_add_text_status_column_to_profile_table.php' (include_path='.:/usr/share/php') in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:747
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-02-13 01:06:26 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/home/work/Downloads/Telegram Desktop'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '2'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518523586.6611
+    'REQUEST_TIME' => 1518523586
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+        2 => '2'
+    ]
+    'argc' => 3
+]
+2018-02-13 01:07:48 [-][-][-][error][yii\base\ErrorException:64] yii\base\ErrorException: yii\console\controllers\BaseMigrateController::includeMigrationFile(): Failed opening required '/var/www/html/protected/humhub/modules/user/migration/m180213_095826_add_status_online_column_to_profile_table.php' (include_path='.:/usr/share/php') in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:747
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-02-13 01:07:45 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/home/work/Downloads/Telegram Desktop'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '2'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518523665.3202
+    'REQUEST_TIME' => 1518523665
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+        2 => '2'
+        3 => '--migrationPath=@app/humhub/modules/user/migration'
+    ]
+    'argc' => 4
+]
+2018-02-13 01:08:09 [-][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: Migration failed. Directory specified in migrationPath doesn't exist: @app/humhub/modules/user/migrate in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:123
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('down', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('down', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/down', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/down', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 /var/www/html/protected/yii(29): yii\base\Application->run()
+#8 {main}
+2018-02-13 01:08:08 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/home/work/Downloads/Telegram Desktop'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '2'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518523688.4487
+    'REQUEST_TIME' => 1518523688
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+        2 => '2'
+        3 => '--migrationPath=@app/humhub/modules/user/migrate'
+    ]
+    'argc' => 4
+]
+2018-02-13 01:08:42 [-][-][-][error][yii\base\ErrorException:64] yii\base\ErrorException: yii\console\controllers\BaseMigrateController::includeMigrationFile(): Failed opening required '/var/www/html/protected/humhub/modules/user/migration/m180213_095826_add_status_online_column_to_profile_table.php' (include_path='.:/usr/share/php') in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:747
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-02-13 01:08:39 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/home/work/Downloads/Telegram Desktop'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '2'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518523719.9132
+    'REQUEST_TIME' => 1518523719
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+        2 => '2'
+        3 => '--migrationPath=@app/humhub/modules/user/migration'
+    ]
+    'argc' => 4
+]
+2018-02-13 01:09:04 [-][-][-][error][yii\base\ErrorException:64] yii\base\ErrorException: yii\console\controllers\BaseMigrateController::includeMigrationFile(): Failed opening required '/var/www/html/protected/humhub/modules/user/migration/m180213_095826_add_status_online_column_to_profile_table.php' (include_path='.:/usr/share/php') in /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php:747
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2018-02-13 01:09:01 [-][-][-][info][application] $_SERVER = [
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'XDG_VTNR' => '7'
+    'SSH_AGENT_PID' => '1720'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2313'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '4205'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'OLDPWD' => '/home/work/Downloads/Telegram Desktop'
+    'GTK_MODULES' => 'pantheon-filechooser-module:gail:atk-bridge'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1626,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1626'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/etc/xdg/autostart/gnome-settings-daemon-pantheon.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'PATH' => '/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin'
+    'DESKTOP_SESSION' => 'pantheon'
+    'QT_IM_MODULE' => 'ibus'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/work'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'PANTHEON_TERMINAL_ID' => '2'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-5AXRX4Q11x,guid=8f5f1ee24b8416a1341398f65a829e33'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'PROMPT_COMMAND' => '__bp_precmd_invoke_cmd; dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1;  __bp_interactive_mode;'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1518523741.1331
+    'REQUEST_TIME' => 1518523741
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/down'
+        2 => '--migrationPath=@app/humhub/modules/user/migration'
+    ]
+    'argc' => 3
+]

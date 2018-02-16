@@ -17,7 +17,11 @@ AppAsset::register($this);
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<?php $this->head() ?>
 	<?= $this->render('@humhub/views/layouts/head'); ?>
-
+    <style>
+        body {
+            padding-top: 0px;
+        }
+    </style>
 	<link href="<?= $this->theme->getBaseUrl(); ?>/css/main.css" rel="stylesheet">
 	<meta charset="<?= Yii::$app->charset ?>">
 </head>
@@ -28,7 +32,7 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-lg-5 col-sm-3">
                 <div class="header-logo_holder">
-                    <a href="http://gd.page.ua/index.php/user/auth/login" data-pajax>
+                    <a href="http://gd.page.ua/index.php/user/auth/login" data-pjax="0">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="0 0 314.3 169" style="enable-background:new 0 0 314.3 169; fill:#000;" xml:space="preserve">
 								<path d="M71.3,0c0.6,0.3,1.1,0.7,1.8,0.9c15.2,3,18.2,16.5,13.3,28.1c-2.8,6.6-5.9,7.6-12.9,4c1.7-3,3.5-5.9,5-9
@@ -104,6 +108,7 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-lg-3 col-sm-4">
                 <div class="bottom-logo">
+                    <a href="http://gd.page.ua/index.php/user/auth/login" data-pjax="0">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 314.3 169" style="enable-background:new 0 0 314.3 169; fill:#fff;" xml:space="preserve">
 							<path d="M71.3,0c0.6,0.3,1.1,0.7,1.8,0.9c15.2,3,18.2,16.5,13.3,28.1c-2.8,6.6-5.9,7.6-12.9,4c1.7-3,3.5-5.9,5-9
@@ -160,21 +165,22 @@ AppAsset::register($this);
                         <path d="M222.5,118.3c2.4-4.7,4.7-9.7,7.6-14.2c0.7-1.1,3.9-1,5.8-0.6c0.7,0.2,1.7,3.2,1.2,4.1c-2.6,4.7-5.6,9.3-8.7,13.7
 								c-0.5,0.7-2.8,0.6-4.1,0.3C223.6,121.5,223.3,119.9,222.5,118.3z"/>
 						</svg>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 col-sm-8">
                 <div style="display: inline-block; float: left; margin-top: 10px;">
                     <ul class="bottom-nav">
-                        <a href="ppolicy.html"><li>Discover more about Greatest Desire</li></a>
-                        <a href="ppolicy.html"><li>Privacy policy</li></a>
-                        <a href="ppolicy.html"><li>Terms and Conditions</li></a>
+	                    <?= \yii\helpers\Html::a('<li>Discover more about network</li>', ['info/anetwork'], ['data-pjax'=>1]) ?>
+	                    <?= \yii\helpers\Html::a('<li>Privacy policy</li>', ['info/policy'], ['data-pjax'=>1]) ?>
+	                    <?= \yii\helpers\Html::a('<li>Terms and Conditions</li>', ['info/conditions'], ['data-pjax'=>1]) ?>
 
                     </ul>
                 </div>
                 <div style="display: inline-block; float: left; margin-top: 10px;">
                     <ul class="bottom-nav">
-                        <a href="faq.html"><li>FAQ</li></a>
-                        <a href="contactus.html"><li>Contact Us</li></a>
+	                    <?= \yii\helpers\Html::a('<li>FAQ</li>', ['info/faq'], ['data-pjax'=>1]) ?>
+	                    <?= \yii\helpers\Html::a('<li>Contact Us</li>', ['info/contact'], ['data-pjax'=>1]) ?>
                     </ul>
                 </div>
             </div>
