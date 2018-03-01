@@ -205,6 +205,11 @@ abstract class Stream extends Action
                 $this->streamQuery->query()->andWhere('content.created_by != :userId', [':userId' => $this->streamQuery->user->id]);
             }
         }
+        if ($this->mode == self::MODE_NORMAL) {
+	        if ($this->streamQuery->user) {
+		        $this->streamQuery->query()->andWhere('content.created_by = :userId', [':userId' => $this->streamQuery->user->id]);
+	        }
+        }
     }
 
     public function setupCriteria()

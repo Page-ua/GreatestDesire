@@ -9,6 +9,14 @@
 namespace humhub\modules\admin\controllers;
 
 
-class NewsController {
+use humhub\modules\admin\components\Controller;
+
+class NewsController extends Controller {
+
+	public function init()
+	{
+		$this->subLayout = '@admin/views/layouts/guest-question';
+		return parent::init();
+	}
 
 }

@@ -5,7 +5,29 @@
  * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
  */
+
+use humhub\modules\comment\widgets\CommentLink;
+use humhub\modules\comment\widgets\Comments;
+use humhub\modules\like\widgets\LikeLink;
+
 ?>
+
+
+    <div class="panel panel-default wall_<?php echo $record->getUniqueId(); ?>">
+        <div class="panel-body">
+            <div class="media">
+                <ul class="nav nav-pills preferences">
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu pull-right">
+					
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+
 
 <?php if ($clickable): ?>
 <a href="<?= \yii\helpers\Url::to(['/activity/link', 'id' => $record->id])?>">
@@ -47,3 +69,23 @@
     </li>
 <?php if ($clickable): ?></a>
 <?php endif; ?>
+
+
+
+
+
+                </div>
+            <div class="row">
+                <div class="col-sm-12 social-activities-gallery colorFont5">
+			        <?= CommentLink::widget(['object' => $record]); ?>
+                    |
+			        <?= LikeLink::widget(['object' => $record]); ?>
+                </div>
+                <div class="col-sm-12 comments">
+			        <?= Comments::widget(['object' => $record]); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
