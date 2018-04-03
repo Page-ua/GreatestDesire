@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\desire\models\Desire;
 use Yii;
 use yii\web\HttpException;
 use yii\authclient\ClientInterface;
@@ -51,7 +52,7 @@ class RegistrationController extends Controller
     public function actionIndex()
     {
         $registration = new Registration();
-
+        $desire = new Desire();
         /**
          * @var \yii\authclient\BaseClient
          */
@@ -63,18 +64,25 @@ class RegistrationController extends Controller
         } elseif (Yii::$app->session->has('authClient')) {
             $authClient = Yii::$app->session->get('authClient');
             $this->handleAuthClientRegistration($authClient, $registration);
-        } else {
-            Yii::$app->session->setFlash('error', 'Registration failed.');
-            return $this->redirect(['/user/auth/login']);
         }
+//        else {
+//            Yii::$app->session->setFlash('error', 'Registration failed.');
+//            return $this->redirect(['/user/auth/login']);
+//        }
 
-        if ($registration->submitted('save') && $registration->validate() && $registration->register($authClient)) {
+        if ($registration->submitted('save') && $desire->load(Yii::$app->request->post()) && $desire->validate() && $registration->validate() && $registration->register($authClient)) {
             Yii::$app->session->remove('authClient');
 
             // Autologin when user is enabled (no approval required)
             if ($registration->getUser()->status === User::STATUS_ENABLED) {
                 Yii::$app->user->switchIdentity($registration->models['User']);
                 $registration->models['User']->updateAttributes(['last_login' => new \yii\db\Expression('NOW()')]);
+
+	            $desire->save();
+	            $this->view->saved();
+	            $tags = explode(',', Yii::$app->request->post('tags'));
+	            $desire->saveTags($tags);
+
                 return $this->redirect(['/dashboard/dashboard']);
             }
 
@@ -84,7 +92,7 @@ class RegistrationController extends Controller
             ]);
         }
 
-        return $this->render('index', ['hForm' => $registration]);
+        return $this->render('index', ['hForm' => $registration, 'desire' => $desire]);
     }
 
     protected function handleInviteRegistration($inviteToken, Registration $form)
@@ -113,7 +121,6 @@ class RegistrationController extends Controller
             throw new Exception("No user id given by authclient!");
         }
 
-        $registration->enablePasswordForm = false;
         if ($authClient instanceof ApprovalBypass) {
             $registration->enableUserApproval = false;
         }

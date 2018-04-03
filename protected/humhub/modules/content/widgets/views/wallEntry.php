@@ -1,6 +1,7 @@
 <?php
 
 use humhub\libs\Html;
+use humhub\modules\like\widgets\LikeLink;
 use humhub\widgets\TimeAgo;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\widgets\Image as UserImage;
@@ -94,6 +95,7 @@ use humhub\modules\content\widgets\WallEntryLabels;
             <?php if($renderAddons) : ?>
                 <div class="stream-entry-addons clearfix">
                     <?= WallEntryAddons::widget($addonOptions); ?>
+                    <?= \humhub\modules\sharebetween\widgets\ShareLink::widget(['content' => $object]); ?>
                 </div>
             <?php endif; ?>
 

@@ -205,11 +205,7 @@ abstract class Stream extends Action
                 $this->streamQuery->query()->andWhere('content.created_by != :userId', [':userId' => $this->streamQuery->user->id]);
             }
         }
-        if ($this->mode == self::MODE_NORMAL) {
-	        if ($this->streamQuery->user) {
-		        $this->streamQuery->query()->andWhere('content.created_by = :userId', [':userId' => $this->streamQuery->user->id]);
-	        }
-        }
+
     }
 
     public function setupCriteria()
@@ -298,7 +294,7 @@ abstract class Stream extends Action
      * @param boolean $partial whether or not to use renderPartial over renderAjax
      * @return string rendered wallentry
      */
-    public static function renderEntry(ContentActiveRecord $record, $options =  [], $partial = true)
+      public static function renderEntry(ContentActiveRecord $record, $options =  [], $partial = true)
     {
         // TODO should be removed in next major version
         // Compatibility with pre 1.2.2

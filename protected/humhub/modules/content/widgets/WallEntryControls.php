@@ -26,8 +26,11 @@ class WallEntryControls extends \humhub\widgets\BaseStack
      */
     public function run()
     {
+
+    	$options = $this->wallEntryWidget->controlsOptions;
+
         foreach ($this->wallEntryWidget->getContextMenu() as $menuItem) {
-            if (!is_array($menuItem) || empty($menuItem)) {
+            if (!is_array($menuItem) || empty($menuItem)  || isset($options['parent']) && $options['parent'] == 'share') {
                 continue;
             }
 

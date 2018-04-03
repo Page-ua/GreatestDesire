@@ -6,7 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
+    'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap/src'),
+    'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'xutl\\bootstrap\\tagsinput\\' => array($vendorDir . '/xutl/yii2-bootstrap-tagsinput-asset'),
+    'wbraganca\\tagsinput\\' => array($vendorDir . '/life2016/yii2-tagsinput/src'),
+    'pudinglabs\\tagsinput\\' => array($vendorDir . '/pudinglabs/yii2-bootstrap-tags-input'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+    'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),

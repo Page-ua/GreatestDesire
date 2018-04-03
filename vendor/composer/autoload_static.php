@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit6e58c5bbd8bb86136f00bb8778921747
 {
     public static $files = array (
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -16,9 +17,28 @@ class ComposerStaticInit6e58c5bbd8bb86136f00bb8778921747
     );
 
     public static $prefixLengthsPsr4 = array (
+        'y' => 
+        array (
+            'yii\\composer\\' => 13,
+            'yii\\bootstrap\\' => 14,
+            'yii\\' => 4,
+        ),
+        'x' => 
+        array (
+            'xutl\\bootstrap\\tagsinput\\' => 25,
+        ),
+        'w' => 
+        array (
+            'wbraganca\\tagsinput\\' => 20,
+        ),
         'p' => 
         array (
+            'pudinglabs\\tagsinput\\' => 21,
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'c' => 
+        array (
+            'cebe\\markdown\\' => 14,
         ),
         'W' => 
         array (
@@ -65,11 +85,39 @@ class ComposerStaticInit6e58c5bbd8bb86136f00bb8778921747
     );
 
     public static $prefixDirsPsr4 = array (
+        'yii\\composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
+        ),
+        'yii\\bootstrap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
+        ),
+        'yii\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'xutl\\bootstrap\\tagsinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/xutl/yii2-bootstrap-tagsinput-asset',
+        ),
+        'wbraganca\\tagsinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/life2016/yii2-tagsinput/src',
+        ),
+        'pudinglabs\\tagsinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pudinglabs/yii2-bootstrap-tags-input',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'cebe\\markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cebe/markdown',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -163,6 +211,13 @@ class ComposerStaticInit6e58c5bbd8bb86136f00bb8778921747
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+        ),
+        'H' => 
+        array (
+            'HTMLPurifier' => 
+            array (
+                0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
         ),
         'C' => 

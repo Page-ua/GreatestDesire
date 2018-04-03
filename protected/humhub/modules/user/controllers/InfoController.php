@@ -15,6 +15,7 @@ use humhub\modules\admin\models\forms\PagesInfoForm;
 use humhub\modules\admin\models\GuestQuestion;
 use Yii;
 
+
 class InfoController  extends Controller{
 
 	public $layout = "@humhub/modules/user/views/layouts/info";

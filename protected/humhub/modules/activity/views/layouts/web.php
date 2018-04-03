@@ -20,7 +20,6 @@ use humhub\modules\like\widgets\LikeLink;
                     <li class="dropdown ">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu pull-right">
-					
                         </ul>
                     </li>
                 </ul>
@@ -32,7 +31,7 @@ use humhub\modules\like\widgets\LikeLink;
 <?php if ($clickable): ?>
 <a href="<?= \yii\helpers\Url::to(['/activity/link', 'id' => $record->id])?>">
 <?php endif; ?>
-    <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="<?= $record->content->id ?>">
+    <div class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="<?= $record->content->id ?>">
         <div class="media">
             <?php if ($originator !== null) : ?>
                 <!-- Show user image -->
@@ -66,7 +65,7 @@ use humhub\modules\like\widgets\LikeLink;
                 <?= \humhub\widgets\TimeAgo::widget(['timestamp' => $record->content->created_at]); ?>
             </div>
         </div>
-    </li>
+    </div>
 <?php if ($clickable): ?></a>
 <?php endif; ?>
 

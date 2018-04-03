@@ -482,6 +482,8 @@ class StreamQuery extends \yii\base\Model
     public function channel($channel)
     {
         $this->_channel = $channel;
+
+	    $this->_query->andWhere(['content.stream_channel' => $channel]);
         return $this;
     }
 

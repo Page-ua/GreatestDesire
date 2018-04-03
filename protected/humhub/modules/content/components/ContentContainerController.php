@@ -9,6 +9,8 @@
 namespace humhub\modules\content\components;
 
 use humhub\components\Controller;
+use humhub\modules\desire\controllers\DesireController;
+use humhub\modules\desire\models\Desire;
 use humhub\modules\space\behaviors\SpaceController;
 use humhub\modules\space\models\Space;
 use humhub\modules\space\widgets\Image;
@@ -94,7 +96,7 @@ class ContentContainerController extends Controller
 
             $this->subLayout = "@humhub/modules/user/views/profile/_layout";
 
-        } else {
+        } elseif(!$this instanceof DesireController) {
             throw new HttpException(500, Yii::t('base', 'Could not determine content container!'));
         }
 

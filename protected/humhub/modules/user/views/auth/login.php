@@ -8,16 +8,20 @@ use humhub\modules\user\widgets\AuthChoice;
 
 $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
 ?>
-
+<?php if (Yii::$app->session->hasFlash('error')): ?>
+    <div class="alert alert-danger" role="alert">
+		<?= Yii::$app->session->getFlash('error') ?>
+    </div>
+<?php endif; ?>
 <section style="background-image: url('/uploads/admin_files/<?= $info->slides; ?>');" id="sec1">
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-sm-12">
                     <nav class="main-nav">
-	                    <?= \yii\helpers\Html::a('Discover more about network', ['info/anetwork'], ['data-pjax'=>0]) ?>
-	                    <?= \yii\helpers\Html::a('Privacy policy', ['info/policy'], ['data-pjax'=>0]) ?>
-	                    <?= \yii\helpers\Html::a('Terms and Conditions', ['info/conditions'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('Discover more about network', ['info/anetwork'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('Privacy policy', ['info/policy'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('Terms and Conditions', ['info/conditions'], ['data-pjax'=>0]) ?>
                     </nav>
                 </div>
             </div>
@@ -86,7 +90,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                     <div>
                         <nav class="auth_buttons">
                             <a class="login-btn green_button" data-action-click="ui.modal.load" data-action-url="/index.php/user/auth/login" href="#">Login</a>
-                            <a class="caccount-btn orange_button" href="#">Create Account</a>
+                            <a class="caccount-btn orange_button" data-pjax="0" href="<?php echo Url::to(['registration/']) ?>">Create Account</a>
                         </nav>
                     </div>
                 </div>
@@ -288,7 +292,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                 </svg>
                 <p class="etaps-holdr_text step3-desc">Search for friends by interests,<br>meet and communicate</p>
                 <div class="etaps-holdr_button" >
-                    <a href="#" class="orange_button">Create Account</a>
+                    <a data-pjax="0" href="<?php echo Url::to(['registration/']) ?>" class="orange_button">Create Account</a>
                 </div>
             </div>
             <div class="col-lg-5 col-sm-12">
@@ -349,18 +353,18 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
             </div>
         </div>
         <div class="row">
-            <?php foreach($stories as $item){ ?>
-            <div class="col-lg-4 col-sm-6">
-                <div class="sec4-item_wrap">
-                    <img class="sec4-img" src="/uploads/admin_files/<?php echo $item->attributes['image']; ?>">
-                    <div class="sec4-item">
-                        <p class="sec4-item_title"><?php echo $item->attributes['title']; ?></p>
-                        <p class="sec4-item_desc"><?php echo $item->attributes['description']; ?></p>
-                        <a class="sec4-item_link" data-pjax="0" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">more</a>
+			<?php foreach($stories as $item){ ?>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="sec4-item_wrap">
+                        <img class="sec4-img" src="/uploads/admin_files/<?php echo $item->attributes['image']; ?>">
+                        <div class="sec4-item">
+                            <p class="sec4-item_title"><?php echo $item->attributes['title']; ?></p>
+                            <p class="sec4-item_desc"><?php echo $item->attributes['description']; ?></p>
+                            <a class="sec4-item_link" data-pjax="0" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php } ?>
+			<?php } ?>
         </div>
         <div class="row">
             <div class="col-lg-12 col-sm-12">
@@ -437,15 +441,15 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
             <div class="col-lg-6 col-sm-8">
                 <div style="display: inline-block; float: left; margin-top: 10px;">
                     <ul class="bottom-nav">
-	                    <?= \yii\helpers\Html::a('<li>Discover more about network</li>', ['info/anetwork'], ['data-pjax'=>0]) ?>
-	                    <?= \yii\helpers\Html::a('<li>Privacy policy</li>', ['info/policy'], ['data-pjax'=>0]) ?>
-	                    <?= \yii\helpers\Html::a('<li>Terms and Conditions</li>', ['info/conditions'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('<li>Discover more about network</li>', ['info/anetwork'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('<li>Privacy policy</li>', ['info/policy'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('<li>Terms and Conditions</li>', ['info/conditions'], ['data-pjax'=>0]) ?>
                     </ul>
                 </div>
                 <div style="display: inline-block; float: left; margin-top: 10px;">
                     <ul class="bottom-nav">
-	                    <?= \yii\helpers\Html::a('<li>FAQ</li>', ['info/faq'], ['data-pjax'=>0]) ?>
-	                    <?= \yii\helpers\Html::a('<li>Contact Us</li>', ['info/contact'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('<li>FAQ</li>', ['info/faq'], ['data-pjax'=>0]) ?>
+						<?= \yii\helpers\Html::a('<li>Contact Us</li>', ['info/contact'], ['data-pjax'=>0]) ?>
                     </ul>
                 </div>
             </div>

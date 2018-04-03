@@ -37,7 +37,7 @@ class Registration extends HForm
     /**
      * @var boolean show e-mail field
      */
-    public $enableEmailField = false;
+    public $enableEmailField = true;
 
     /**
      * @var boolean|null require user approval by admin after registration.

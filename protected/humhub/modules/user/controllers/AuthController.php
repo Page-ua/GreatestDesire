@@ -106,6 +106,7 @@ class AuthController extends Controller
      */
     public function onAuthSuccess(\yii\authclient\BaseClient $authClient)
     {
+
         $attributes = $authClient->getUserAttributes();
 
         // User already logged in - Add new authclient to existing user
@@ -148,10 +149,10 @@ class AuthController extends Controller
         }
 
         // Try automatically create user & login user
-        $user = AuthClientHelpers::createUser($authClient);
-        if ($user !== null) {
-            return $this->login($user, $authClient);
-        }
+//        $user = AuthClientHelpers::createUser($authClient);
+//        if ($user !== null) {
+//            return $this->login($user, $authClient);
+//        }
 
         // Make sure we normalized user attributes before put it in session (anonymous functions)
         $authClient->setNormalizeUserAttributeMap([]);

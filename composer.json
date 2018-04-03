@@ -3,6 +3,8 @@
         "codeception/codeception": "2.1.*",
         "codeception/specify": "*",
         "codeception/verify": "*",
-        "2amigos/yii2-date-picker-widget" : "2.0.0"
+        "xutl/yii2-bootstrap-tagsinput-asset": "^1.0",
+        "life2016/yii2-tagsinput": "^1.1",
+        "pudinglabs/yii2-bootstrap-tags-input": "*"
     }
 }

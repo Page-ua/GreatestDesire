@@ -86,6 +86,8 @@ class AppAsset extends AssetBundle
         'humhub\modules\user\assets\UserPickerAsset',
         'humhub\modules\file\assets\FileAsset',
         'humhub\modules\post\assets\PostAsset',
+        'humhub\modules\desire\assets\DesireAsset',
+        'humhub\modules\blog\assets\BlogAsset',
         'humhub\modules\space\assets\SpaceAsset',
         'humhub\modules\comment\assets\CommentAsset',
         'humhub\assets\NProgressAsset',
