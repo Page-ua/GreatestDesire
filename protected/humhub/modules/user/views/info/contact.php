@@ -12,44 +12,50 @@ use yii\widgets\ActiveForm;
 ?>
 
 
-<section class="contacts-sec1">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="contacts-sec1_wrap">
-					<p class="contacts-sec1_title kaushan">Contact Us</p>
-					<p class="contacts-sec1_subtitle">If you have a quastions, please, contact us:</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="contacts-sec2">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="contacts-form_wrap">
-						<?php $form = ActiveForm::begin(); ?>
+<main>
+    <section class="contacts">
+        <div class="base-wrap">
+            <h1 class="base-lg-title">Contact Us</h1>
+            <div class="subtitle">If you have a quastions, please, contact us:</div>
+        </div>
+        <div class="contacts-form">
+            <div class="base-wrap">
+	            <?php $form = ActiveForm::begin(); ?>
+                    <label>Your Name*
+	                    <?= $form->field( $model, 'name', [
+		                    'template' => '{input}', // Leave only input (remove label, error and hint)
+		                    'options' => [
+			                    'tag' => false, // Don't wrap with "form-group" div
+		                    ]])->textInput( [ 'maxlength' => true ] )->label(false);
+	                    ?>
+                    </label>
+                    <label>Your Email*
+	                    <?= $form->field( $model, 'email', [
+		                    'template' => '{input}', // Leave only input (remove label, error and hint)
+		                    'options' => [
+			                    'tag' => false, // Don't wrap with "form-group" div
+		                    ]])->textInput( [ 'maxlength' => true ] )->label(false); ?>
+                    </label>
+                    <label>Message Subject*
+	                    <?= $form->field( $model, 'subject', [
+		                    'template' => '{input}', // Leave only input (remove label, error and hint)
+		                    'options' => [
+			                    'tag' => false, // Don't wrap with "form-group" div
+		                    ]])->textInput( [ 'maxlength' => true ] )->label(false); ?>
+                    </label>
+                    <label>Message Text*
+	                    <?= $form->field( $model, 'text', [
+		                    'template' => '{input}', // Leave only input (remove label, error and hint)
+		                    'options' => [
+			                    'tag' => false, // Don't wrap with "form-group" div
+		                    ]])->textarea( [ 'rows' => 6 ] )->label(false); ?>
+                    </label>
+                    <div class="base-sm-btn"><input type="submit" value="send"></div>
+	            <?php ActiveForm::end(); ?>
+            </div>
+        </div>
+    </section>
+</main>
 
-						<div class="contacts-form_item">
-							<?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-						</div>
-						<div class="contacts-form_item">
-							<?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-						</div>
-						<div class="contacts-form_item">
-							<?= $form->field($model, 'subject')->textInput(['maxlength' => true]) ?>
-						</div>
-						<div class="contacts-form_item">
-							<?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
-						</div>
-						<div class="contacts-form_send">
-							<?= Html::submitButton('Send', ['class' => 'btn']) ?>
 
-                        </div>
-						<?php ActiveForm::end(); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+

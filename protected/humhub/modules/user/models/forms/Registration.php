@@ -84,8 +84,52 @@ class Registration extends HForm
     public function render($form)
     {
         $this->setFormDefinition();
-        return parent::render($form);
+	    $this->form = $form;
+
+	    $out = $this->renderElements($this->definition['elements']);
+
+
+	    return $out;
     }
+
+	public function renderForm($element)
+	{
+
+		$output = "<div class='item'><div class='form-item'>";
+
+		return $output;
+	}
+
+	public function renderFormEnd($element)
+	{
+		$output = "</div>";
+			if (isset($element['title'])) {
+				$output .= "<p>".$element['title']."</p>";
+			}
+			$output .= "</div>";
+		return $output;
+	}
+
+
+
+	public function renderElements($elements, $forms = array())
+	{
+		$output = "";
+		foreach ($elements as $name => $element) {
+			if (isset($element['type']) && $element['type'] == 'form') {
+				$forms[] = $name;
+				if (isset($element['elements']) && count($element['elements']) > 0) {
+					$output .= $this->renderElements($element['elements'], $forms);
+				}
+			} else {
+				$output .= $this->renderForm($element);
+				$output .= $this->renderField($name, $element, $forms);
+				$output .= $this->renderFormEnd( $element );
+			}
+		}
+
+		return $output;
+	}
 
     /**
      * Builds HForm Definition to automatically build form output
@@ -95,7 +139,7 @@ class Registration extends HForm
         $this->definition = [];
         $this->definition['elements'] = [];
         $this->definition['elements']['User'] = $this->getUserFormDefinition();
-        $this->definition['elements']['GroupUser'] = $this->getGroupFormDefinition();
+//        $this->definition['elements']['GroupUser'] = $this->getGroupFormDefinition();
         if ($this->enablePasswordForm) {
             $this->definition['elements']['Password'] = $this->getPasswordFormDefinition();
         }
@@ -125,12 +169,14 @@ class Registration extends HForm
         $form['elements']['username'] = [
             'type' => 'text',
             'class' => 'form-control',
+            'title' => Yii::t('UserModule.controllers_AuthController', 'Choose a Username wich will be used for logging in to the site'),
             'maxlength' => 25,
         ];
         if ($this->enableEmailField) {
             $form['elements']['email'] = [
                 'type' => 'text',
                 'class' => 'form-control',
+                'title' => Yii::t('UserModule.controllers_AuthController', 'Enter your E-mail. Your password will be sent to this e-mail'),
             ];
         }
 
@@ -151,11 +197,13 @@ class Registration extends HForm
                     'type' => 'password',
                     'class' => 'form-control',
                     'maxlength' => 255,
+                    'title' => Yii::t('UserModule.controllers_AuthController', 'Choose a Password'),
                 ),
                 'newPasswordConfirm' => array(
                     'type' => 'password',
                     'class' => 'form-control',
                     'maxlength' => 255,
+                    'title' => Yii::t('UserModule.controllers_AuthController', 'Enter the same Password here'),
                 ),
             ),
         );

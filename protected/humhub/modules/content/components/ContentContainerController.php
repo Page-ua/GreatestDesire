@@ -9,6 +9,7 @@
 namespace humhub\modules\content\components;
 
 use humhub\components\Controller;
+use humhub\modules\blog\controllers\BlogController;
 use humhub\modules\desire\controllers\DesireController;
 use humhub\modules\desire\models\Desire;
 use humhub\modules\space\behaviors\SpaceController;
@@ -57,6 +58,8 @@ class ContentContainerController extends Controller
      * @return bool
      * @throws HttpException
      */
+
+    const VISIBILITY_PUBLIC = 1;
     public function init()
     {
         $request = Yii::$app->request;
@@ -96,7 +99,7 @@ class ContentContainerController extends Controller
 
             $this->subLayout = "@humhub/modules/user/views/profile/_layout";
 
-        } elseif(!$this instanceof DesireController) {
+        } elseif(!($this instanceof DesireController || $this instanceof BlogController)) {
             throw new HttpException(500, Yii::t('base', 'Could not determine content container!'));
         }
 
@@ -182,5 +185,21 @@ class ContentContainerController extends Controller
 
         return true;
     }
+
+
+	protected function generateSubmitUrl()
+	{
+		$submitUrl = $this->contentContainer->createUrl($this->submitUrl);
+
+		return preg_replace('!^/index.php!i', '', $submitUrl);
+	}
+
+	protected function setContentSettings($model)
+	{
+		$this->contentContainer = Yii::$app->user->getIdentity();
+
+		$model->content->container = $this->contentContainer;
+		$model->content->visibility = 1;
+	}
 
 }

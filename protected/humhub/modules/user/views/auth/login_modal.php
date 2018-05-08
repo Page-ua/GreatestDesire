@@ -4,34 +4,21 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use humhub\modules\user\widgets\AuthChoice;
 ?>
-<div class="modal-dialog modal-dialog-small animated fadeIn">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel"><?php echo Yii::t('UserModule.views_auth_login', '<strong>Join</strong> the network'); ?></h4>
-        </div>
-        <div class="modal-body">
-            <br/>
-
-            <?php if ($canRegister) : ?>
-                <div class="text-center">
-                    <ul id="tabs" class="nav nav-tabs tabs-center" data-tabs="tabs">
-                        <li class="<?php echo (!isset($_POST['Invite'])) ? "active" : ""; ?> tab-login"><a
-                                href="#login"
-                                data-toggle="tab"><?php echo Yii::t('SpaceModule.views_space_invite', 'Login'); ?></a>
-                        </li>
-                        <li class="<?php echo (isset($_POST['Invite'])) ? "active" : ""; ?> tab-register"><a
-                                href="#register"
-                                data-toggle="tab"><?php echo Yii::t('SpaceModule.views_space_invite', 'New user?'); ?></a>
-                        </li>
-                    </ul>
-                </div>
-                <br/>
-            <?php endif; ?>
 
 
-            <div class="tab-content">
-                <div class="tab-pane <?php echo (!isset($_POST['Invite'])) ? "active" : ""; ?>" id="login">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <?php if (AuthChoice::hasClients()): ?>
                         <?= AuthChoice::widget([]) ?>
@@ -42,10 +29,8 @@ use humhub\modules\user\widgets\AuthChoice;
                             <p><?php echo Yii::t('UserModule.views_auth_login', "Please login with your username/email and password."); ?></p>
                         <?php endif; ?>                    <?php endif; ?>
 
-                    <?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
-                    <?php echo $form->field($model, 'username')->textInput(['id' => 'login_username', 'placeholder' => Yii::t('UserModule.views_auth_login', 'username or email')]); ?>
-                    <?php echo $form->field($model, 'password')->passwordInput(['id' => 'login_password', 'placeholder' => Yii::t('UserModule.views_auth_login', 'password')]); ?>
-                    <?php echo $form->field($model, 'rememberMe')->checkbox(); ?>
+                    <?php $form = ActiveForm::begin(['enableClientValidation' => false, 'id' => 'login-form']); ?>
+
                     <hr>
                     <div class="row">
                         <div class="col-md-4">
@@ -64,34 +49,29 @@ use humhub\modules\user\widgets\AuthChoice;
                             </small>
                         </div>
                     </div>
-
-                    <?php ActiveForm::end(); ?>
-                </div>
-
-                <?php if ($canRegister) : ?>
-                    <div class="tab-pane <?= (isset($_POST['Invite'])) ? "active" : ""; ?>"
-                         id="register">
-
-                        <p><?= Yii::t('UserModule.views_auth_login', "Don't have an account? Join the network by entering your e-mail address."); ?></p>
-                        <?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
-
-                        <?= $form->field($invite, 'email')->input('email', ['id' => 'register-email', 'placeholder' => Yii::t('UserModule.views_auth_login', 'email')]); ?>
-                        <hr>
-
-                        <a href="#" class="btn btn-primary" data-ui-loader data-action-click="ui.modal.submit" data-action-url="<?= Url::to(['/user/auth/login']) ?>">
-                            <?= Yii::t('UserModule.views_auth_login', 'Register') ?>
-                        </a>
-
-                        <?php ActiveForm::end(); ?>
-
+                    <div class="top">
+                        <div class="title">LogIn</div>
+                        <div class="link fb-login"><a href="#"><svg class="icon icon-facebook"><use xlink:href="./svg/sprite/sprite.svg#facebook"></use></svg><span>Log In with Facebook</span></a></div>
+                        <div class="link google-login"><a class="google-login" href="#"><svg class="icon icon-google-plus-logo"><use xlink:href="./svg/sprite/sprite.svg#google-plus-logo"></use></svg><span>Log In with Google</span></a></div>
                     </div>
-                <?php endif; ?>
-            </div>
-        </div>
+                    <div class="center-block"><span>or</span>
+                        <div class="form-item"><label for="name"><?= Yii::t('UserModule.views_auth_login', 'username or email'); ?></label><?php echo $form->field($model, 'username')->textInput(['id' => 'name']); ?></div>
+                        <div class="form-item"><label for="pass"><?= Yii::t('UserModule.views_auth_login', 'password') ?></label><?php echo $form->field($model, 'password')->passwordInput(['id' => 'pass']); ?></div>
+                        <div class="form-checkbox"><?php echo $form->field($model, 'rememberMe', [
+		                        'template' => '{input}', // Leave only input (remove label, error and hint)
+		                        'options' => [
+			                        'tag' => false, // Don't wrap with "form-group" div
+		                        ]])->checkbox(['id' => 'remember', 'label' => false]); ?><label for="remember">Remember me</label></div>
+                    </div>
+                    <div class="bottom">
+                        <div class="base-btn"><input type="submit" value="Login"></div><a class="newPass" href="#"><?= Yii::t('UserModule.views_auth_login', 'Forgot your password?'); ?></a>
+                        <div class="signUp">
+                            <p>Don't have an account?</p><a href="#">Sign Up</a></div>
+                    </div>
+                    <?php ActiveForm::end(); ?>
 
-    </div>
 
-</div>
+
 
 <script type="text/javascript">
     $(document).on('ready pjax:success', function () {

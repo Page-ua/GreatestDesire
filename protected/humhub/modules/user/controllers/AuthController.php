@@ -11,6 +11,7 @@ namespace humhub\modules\user\controllers;
 use humhub\modules\admin\models\AdminDesires;
 use humhub\modules\admin\models\AdminDesiresSearch;
 use humhub\modules\user\models\DesiresAdmin;
+use humhub\modules\user\widgets\AuthChoice;
 use Yii;
 use humhub\components\Controller;
 use humhub\modules\user\models\User;
@@ -19,6 +20,7 @@ use humhub\modules\user\models\Invite;
 use humhub\modules\user\models\forms\Login;
 use humhub\modules\user\authclient\AuthClientHelpers;
 use humhub\modules\user\authclient\interfaces\ApprovalBypass;
+use yii\helpers\Url;
 
 /**
  * AuthController handles login and logout
@@ -95,7 +97,13 @@ class AuthController extends Controller
         if (Yii::$app->request->isAjax) {
             return $this->renderAjax('login_modal', array('model' => $login, 'invite' => $invite, 'canRegister' => $invite->allowSelfInvite()));
         }
-        return $this->render('login', array('model' => $login, 'info' => $info, 'invite' => $invite, 'stories' => $stories, 'canRegister' => $invite->allowSelfInvite()));
+
+        Yii::$app->params['class_body'] = 'front-header';
+
+        $authChoice = new AuthChoice();
+        $authUrl = '/index.php'.Url::to($authChoice->getBaseAuthUrl()[0]);
+
+        return $this->render('login', array('model' => $login, 'info' => $info, 'invite' => $invite, 'stories' => $stories, 'authUrl' => $authUrl, 'canRegister' => $invite->allowSelfInvite()));
     }
 
     /**

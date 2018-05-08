@@ -45,9 +45,11 @@ use yii\widgets\Pjax;
         |
 		<?= LikeLink::widget(['object' => $article]); ?>
 
+	    <?= ShareLink::widget(['content' => $article]); ?>
+
 		<?= Comments::widget(['object' => $article]); ?>
 
-	    <?= ShareLink::widget(['content' => $article]); ?>
+
     </div>
 </div>
 <?php } ?>

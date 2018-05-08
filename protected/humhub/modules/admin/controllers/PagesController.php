@@ -13,7 +13,7 @@ use humhub\modules\admin\components\Controller;
 use humhub\modules\admin\models\forms\PagesInfoForm;
 use Yii;
 use yii\web\UploadedFile;
-
+//todo redo and add multi language version
 class PagesController extends Controller
 {
 	public $form;
@@ -82,13 +82,12 @@ class PagesController extends Controller
 			$image->upload($form, 'imageTestimonials1');
 			$image->upload($form, 'imageTestimonials2');
 			$image->upload($form, 'imageTestimonials3');
-			$image->upload($form, 'imageTestimonials3');
 			$image->upload($form, 'imageHowWork');
 			$image->upload($form, 'successStoriesBackground');
 			$image->upload($form, 'slides');
 
-//			$images->slides = UploadedFile::getInstances($form, 'slides');
-//			$form->slides = serialize($images->upload());
+			$images->slides = UploadedFile::getInstances($form, 'slides');
+			$form->slides = serialize($images->upload());
 			$form->save();
 			$this->view->saved();
 		}

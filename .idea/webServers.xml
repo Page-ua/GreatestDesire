@@ -34,8 +34,8 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
-      <webServer id="e8c5d1d7-7612-4d5f-93d8-05c963b3e615" name="StudioDoors" url="http://studio67.ftp.ukraine.com.ua">
-        <fileTransfer host="studio67.ftp.ukraine.com.ua" port="21">
+      <webServer id="e8c5d1d7-7612-4d5f-93d8-05c963b3e615" name="StudioDoors" url="http://studio67.ftp.tools">
+        <fileTransfer host="studio67.ftp.tools" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
@@ -43,7 +43,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="325a7c7b-79d6-41ad-ad11-77fb5544b173" name="TeatrProduction" url="http://gvh7.mirohost.net">
-        <fileTransfer host="gvh7.mirohost.net" port="21" rootFolder="/teatrumikrofona.com.ua/">
+        <fileTransfer host="gvh7.mirohost.net" port="21" rootFolder="/teatrumikrofona.com.ua/wp-content/themes/theater">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
@@ -68,6 +68,38 @@
       </webServer>
       <webServer id="75cc3177-e2f7-49f0-b94c-25abe9699b06" name="MyVPS" url="http://185.25.116.29">
         <fileTransfer host="185.25.116.29" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="f91c561e-05c1-467f-909c-e90513ae8fb3" name="SityChildren" url="http://212.26.146.185">
+        <fileTransfer host="212.26.146.185" port="21" rootFolder="/wp-content/themes/misto">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="f88129e3-de89-422c-9d0e-2f199a49089f" name="Верстка" url="http://212.26.146.185">
+        <fileTransfer host="212.26.146.185" port="21" rootFolder="/greatest">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="f2c76769-a5d2-4e82-87bc-411bc87f3f03" name="Page.ua" url="http://212.26.146.185">
+        <fileTransfer host="212.26.146.185" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="6abe2a9a-7f14-47a3-ba28-faf8bb72ceeb" name="Hats" url="http://138.197.180.146">
+        <fileTransfer host="138.197.180.146" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

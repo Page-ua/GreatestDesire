@@ -6,8 +6,11 @@
  * Time: 18:11
  */
 ?>
-<section class="faq-sec1">
-	<div class="container">
-		<?php echo $form; ?>
-	</div>
-</section>
+
+<main>
+    <section class="<?= $class; ?>">
+        <div class="base-wrap">
+	        <?php echo $form; ?>
+        </div>
+    </section>
+</main>

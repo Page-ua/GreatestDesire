@@ -18,12 +18,13 @@ use Yii;
 
 class InfoController  extends Controller{
 
-	public $layout = "@humhub/modules/user/views/layouts/info";
+	public $layout = "@humhub/modules/user/views/layouts/main";
 	public $form;
 
 	public function init()
 	{
 		$this->form = new PagesInfoForm();
+		YII::$app->params['class_body'] = 'publicHeader';
 		return parent::init();
 	}
 
@@ -42,23 +43,22 @@ class InfoController  extends Controller{
 
 	public function actionPolicy()
 	{
-		$layout = "@humhub/modules/user/views/layouts/info";
-		return $this->render('info', ['form' => $this->form->policy]);
+		return $this->render('info', ['form' => $this->form->policy, 'class' => 'privacy-policy']);
 	}
 
 	public function actionAnetwork()
 	{
-		return $this->render('info', ['form' => $this->form->anetwork]);
+		return $this->render('info', ['form' => $this->form->anetwork, 'class' => 'privacy-policy']);
 	}
 
 	public function actionConditions()
 	{
-		return $this->render('info', ['form' => $this->form->conditions]);
+		return $this->render('info', ['form' => $this->form->conditions, 'class' => 'privacy-policy']);
 	}
 
 	public function actionFaq()
 	{
-		return $this->render('info', ['form' => $this->form->faq]);
+		return $this->render('info', ['form' => $this->form->faq, 'class' => 'faq']);
 	}
 
 	public function actionContact()

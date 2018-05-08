@@ -123,6 +123,15 @@ class AdminMenu extends \humhub\widgets\BaseMenu
 		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'news'),
 		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
 	    ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Category'),
+		    'url' => Url::toRoute('/admin/category'),
+		    'icon' => '<i class="fa fa-archive"></i>',
+		    'sortOrder' => 18000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'category'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
 
 
 

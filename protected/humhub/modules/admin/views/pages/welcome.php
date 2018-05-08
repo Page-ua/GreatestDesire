@@ -15,27 +15,12 @@ use humhub\compat\CHtml;
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 	<?=
-//    $form->field($model, 'slides[]')->widget(FileInput::classname(), [
-//		'options' => ['multiple' => true, 'accept' => 'image/*'],
-//		'pluginOptions' => ['previewFileType' => 'image', 'initialPreviewAsData'=>true, 'overwriteInitial'=>false,'initialPreview'=> unserialize($model->slides),]
-//	])
-     $form->field($model, 'slides')->widget(FileInput::classname(), [
-		'name' => 'attachment_53',
-		'pluginOptions' => [
-			'showCaption' => false,
-			'showRemove' => false,
-			'showUpload' => false,
-			'browseClass' => 'btn btn-primary btn-block',
-			'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
-			'browseLabel' =>  'Select Photo',
-			'showUpload' => false,
-			'initialPreviewAsData'=>true,
-			'allowedFileExtensions' => ['jpg','png','jpeg'],
-			'initialPreview'=> [
-				'/'.$pathImage.$model->slides,
-			],
-		],
-	]); ?>
+    $form->field($model, 'slides[]')->widget(FileInput::classname(), [
+		'options' => ['multiple' => true, 'accept' => 'image/*'],
+		'pluginOptions' => ['previewFileType' => 'image', 'initialPreviewAsData'=>true, 'overwriteInitial'=>false,'initialPreview'=> unserialize($model->slides),]
+	]);
+
+     ?>
     <div class="row">
         <div class="col-md-4 col-sm-4"><?= $form->field($model, 'totalRegisters'); ?></div>
         <div class="col-md-4 col-sm-4"><?= $form->field($model, 'conceivedDesires'); ?></div>

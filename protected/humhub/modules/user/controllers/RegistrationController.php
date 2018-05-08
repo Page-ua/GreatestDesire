@@ -9,7 +9,9 @@
 namespace humhub\modules\user\controllers;
 
 use humhub\modules\desire\models\Desire;
+use humhub\modules\user\widgets\AuthChoice;
 use Yii;
+use yii\helpers\Url;
 use yii\web\HttpException;
 use yii\authclient\ClientInterface;
 use humhub\components\Controller;
@@ -69,30 +71,30 @@ class RegistrationController extends Controller
 //            Yii::$app->session->setFlash('error', 'Registration failed.');
 //            return $this->redirect(['/user/auth/login']);
 //        }
+        Yii::$app->params['class_body'] = 'publicHeader';
 
-        if ($registration->submitted('save') && $desire->load(Yii::$app->request->post()) && $desire->validate() && $registration->validate() && $registration->register($authClient)) {
-            Yii::$app->session->remove('authClient');
+	    if ($registration->submitted('save') && $desire->load(Yii::$app->request->post()) && $desire->validate() && $registration->validate() && $registration->register($authClient)) {
+		    Yii::$app->session->remove('authClient');
+		    // Autologin when user is enabled (no approval required)
+		    if ($registration->getUser()->status === User::STATUS_ENABLED) {
+			    Yii::$app->user->switchIdentity($registration->models['User']);
+			    $registration->models['User']->updateAttributes(['last_login' => new \yii\db\Expression('NOW()')]);
+			    $desire->save();
+			    $this->view->saved();
+			    $tags = explode(',', Yii::$app->request->post('tags'));
+			    $desire->saveTags($tags);
+			    return $this->redirect(['/dashboard/dashboard']);
+		    }
+		    return $this->render('success', [
+			    'form' => $registration,
+			    'needApproval' => ($registration->getUser()->status === User::STATUS_NEED_APPROVAL)
+		    ]);
+	    }
 
-            // Autologin when user is enabled (no approval required)
-            if ($registration->getUser()->status === User::STATUS_ENABLED) {
-                Yii::$app->user->switchIdentity($registration->models['User']);
-                $registration->models['User']->updateAttributes(['last_login' => new \yii\db\Expression('NOW()')]);
+	    $authChoice = new AuthChoice();
+	    $authUrl = '/index.php'.Url::to($authChoice->getBaseAuthUrl()[0]);
 
-	            $desire->save();
-	            $this->view->saved();
-	            $tags = explode(',', Yii::$app->request->post('tags'));
-	            $desire->saveTags($tags);
-
-                return $this->redirect(['/dashboard/dashboard']);
-            }
-
-            return $this->render('success', [
-                        'form' => $registration,
-                        'needApproval' => ($registration->getUser()->status === User::STATUS_NEED_APPROVAL)
-            ]);
-        }
-
-        return $this->render('index', ['hForm' => $registration, 'desire' => $desire]);
+	    return $this->render('index', ['hForm' => $registration, 'desire' => $desire, 'authUrl' => $authUrl]);
     }
 
     protected function handleInviteRegistration($inviteToken, Registration $form)
