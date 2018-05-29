@@ -7,52 +7,36 @@ use humhub\compat\CActiveForm;
 $this->pageTitle = Yii::t('UserModule.views_auth_recoverPassword', 'Password recovery');
 ?>
 <div class="container" style="text-align: center;">
-    <?php echo humhub\widgets\SiteLogo::widget(array('place' => 'login')); ?>
-    <br>
+	<?php $form = CActiveForm::begin(['id' => 'recovery-pass-form','enableClientValidation' => true]); ?>
 
-    <div class="row">
-        <div id="password-recovery-form" class="panel panel-default animated bounceIn" style="max-width: 300px; margin: 0 auto 20px; text-align: left;">
-            <div class="panel-heading"><?php echo Yii::t('UserModule.views_auth_recoverPassword', '<strong>Password</strong> recovery'); ?></div>
-            <div class="panel-body">
+    <div class="top">
+        <div class="title">Password recovery</div>
+    </div>
+    <div class="center-block"><span><?php echo Yii::t('UserModule.views_auth_recoverPassword', 'Just enter your e-mail address. We´ll send you recovery instructions!'); ?></span>
+        <div class="form-item"><label for="email"><?= Yii::t('UserModule.views_auth_recoverPassword', 'your email'); ?></label>
+			<?php echo $form->textField($model, 'email', array('class' => 'form-control', 'id' => 'email_txt')); ?>
+			<?php echo $form->error($model, 'email'); ?>
+        </div><span>Enter code</span>
+        <div class="form-group">
+			<?php
+			echo \yii\captcha\Captcha::widget([
+				'model' => $model,
+				'attribute' => 'verifyCode',
+				'captchaAction' => '/user/auth/captcha',
+				'id' => 'captcha',
+				'options' => array('class' => 'form-control', 'placeholder' => Yii::t('UserModule.views_auth_recoverPassword', 'enter security code above'))
+			]);
+			?>
 
-                <?php $form = CActiveForm::begin(['enableClientValidation' => false]); ?>
-
-                <p><?= Yii::t('UserModule.views_auth_recoverPassword', 'Just enter your e-mail address. We´ll send you recovery instructions!'); ?></p>
-
-                <?= $form->field($model, 'email')->textInput(['class' => 'form-control', 'id' => 'email_txt', 'placeholder' => Yii::t('UserModule.views_auth_recoverPassword', 'your email')])->label(false) ?>
-               
-                <div class="form-group">
-                    <?=\yii\captcha\Captcha::widget([
-                        'model' => $model,
-                        'attribute' => 'verifyCode',
-                        'captchaAction' => '/user/auth/captcha',
-                        'options' => ['class' => 'form-control', 'placeholder' => Yii::t('UserModule.views_auth_recoverPassword', 'enter security code above')]
-                    ]);
-                    ?>
-                    <?= $form->error($model, 'verifyCode'); ?>
-                </div>
-
-                <hr>
-                <?= Html::submitButton(Yii::t('UserModule.views_auth_recoverPassword', 'Reset password'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?> <a class="btn btn-primary" data-ui-loader href="<?php echo Url::home(); ?>"><?php echo Yii::t('UserModule.views_auth_recoverPassword', 'Back') ?></a>
-
-                <?php CActiveForm::end(); ?>
-
-            </div>
+        </div>
+	    <?= $form->error($model, 'verifyCode'); ?>
+    </div>
+    <div class="bottom">
+        <div class="base-btn">
+	        <?= Html::submitButton(Yii::t('UserModule.views_auth_recoverPassword', 'Reset password'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
         </div>
     </div>
+
+
+	<?php CActiveForm::end() ?>
 </div>
-
-<script type="text/javascript">
-
-    $(function () {
-        // set cursor to email field
-        $('#email_txt').focus();
-    });
-
-    // Shake panel after wrong validation
-<?php if ($model->hasErrors()) : ?>
-        $('#password-recovery-form').removeClass('bounceIn');
-        $('#password-recovery-form').addClass('shake');
-        $('#app-title').removeClass('fadeIn');
-<?php endif; ?>
-</script>

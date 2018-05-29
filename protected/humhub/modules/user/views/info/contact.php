@@ -22,33 +22,17 @@ use yii\widgets\ActiveForm;
             <div class="base-wrap">
 	            <?php $form = ActiveForm::begin(); ?>
                     <label>Your Name*
-	                    <?= $form->field( $model, 'name', [
-		                    'template' => '{input}', // Leave only input (remove label, error and hint)
-		                    'options' => [
-			                    'tag' => false, // Don't wrap with "form-group" div
-		                    ]])->textInput( [ 'maxlength' => true ] )->label(false);
+	                    <?= $form->field( $model, 'name')->textInput( [ 'maxlength' => true ] )->label(false);
 	                    ?>
                     </label>
                     <label>Your Email*
-	                    <?= $form->field( $model, 'email', [
-		                    'template' => '{input}', // Leave only input (remove label, error and hint)
-		                    'options' => [
-			                    'tag' => false, // Don't wrap with "form-group" div
-		                    ]])->textInput( [ 'maxlength' => true ] )->label(false); ?>
+	                    <?= $form->field( $model, 'email')->textInput( [ 'maxlength' => true ] )->label(false); ?>
                     </label>
                     <label>Message Subject*
-	                    <?= $form->field( $model, 'subject', [
-		                    'template' => '{input}', // Leave only input (remove label, error and hint)
-		                    'options' => [
-			                    'tag' => false, // Don't wrap with "form-group" div
-		                    ]])->textInput( [ 'maxlength' => true ] )->label(false); ?>
+	                    <?= $form->field( $model, 'subject')->textInput( [ 'maxlength' => true ] )->label(false); ?>
                     </label>
                     <label>Message Text*
-	                    <?= $form->field( $model, 'text', [
-		                    'template' => '{input}', // Leave only input (remove label, error and hint)
-		                    'options' => [
-			                    'tag' => false, // Don't wrap with "form-group" div
-		                    ]])->textarea( [ 'rows' => 6 ] )->label(false); ?>
+	                    <?= $form->field( $model, 'text')->textarea( [ 'rows' => 6 ] )->label(false); ?>
                     </label>
                     <div class="base-sm-btn"><input type="submit" value="send"></div>
 	            <?php ActiveForm::end(); ?>

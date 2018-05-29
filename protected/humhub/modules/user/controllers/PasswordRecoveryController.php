@@ -61,6 +61,8 @@ class PasswordRecoveryController extends Controller
         }
 
         if (Yii::$app->request->isAjax) {
+//	        Yii::$app->response->format = Response::FORMAT_JSON;
+//	        return ActiveForm::validate($model);
             return $this->renderAjax('index_modal', array('model' => $model));
         }
         return $this->render('index', array('model' => $model));

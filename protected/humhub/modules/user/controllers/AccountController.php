@@ -9,6 +9,7 @@
 namespace humhub\modules\user\controllers;
 
 use Yii;
+use yii\helpers\Url;
 use yii\web\HttpException;
 use humhub\modules\user\components\BaseAccountController;
 use humhub\modules\user\models\User;
@@ -89,7 +90,37 @@ class AccountController extends BaseAccountController
         return $this->render('edit', ['hForm' => $form]);
     }
 
-    /**
+
+    public function actionChangeLanguage()
+    {
+	    $user = Yii::$app->user->getIdentity();
+	    $request = Yii::$app->request->post();
+	    $user->language = $request['ChooseLanguage']['language'];
+	    $user->save();
+	    return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionChangeStatus()
+    {
+	    $user = Yii::$app->user->getIdentity();
+	    $request = Yii::$app->request->post();
+	    $user->info_status = $request['User']['info_status'];
+	    $user->save();
+	    return $this->redirect(Yii::$app->request->referrer);
+    }
+
+	public function actionChangeStatusOnline()
+	{
+		$user = Yii::$app->user->getIdentity();
+		$request = Yii::$app->request->post();
+		$user->status_online = $request['User']['status_online'];
+		$user->save();
+		return $this->asJson('successful');
+	}
+
+
+
+	/**
      * Change Account
      *
      * @todo Add Group

@@ -297,6 +297,9 @@ class Registration extends HForm
             $this->models['User']->registrationGroupId = $this->models['GroupUser']->group_id;
         }
 
+
+		$this->models['User']->status_online = 0;
+
         if ($this->models['User']->save()) {
 
             // Save User Profile

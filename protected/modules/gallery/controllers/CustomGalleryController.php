@@ -8,6 +8,7 @@
 
 namespace humhub\modules\gallery\controllers;
 
+use humhub\modules\content\models\Category;
 use \humhub\modules\content\models\Content;
 use humhub\modules\file\libs\FileHelper;
 use humhub\modules\gallery\models\BaseGallery;
@@ -69,6 +70,9 @@ class CustomGalleryController extends ListController
 
         $gallery = new GalleryEditForm(['contentContainer' => $this->contentContainer, 'instance' => $instance]);
 
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'gallery');
+
         if ($gallery->load(Yii::$app->request->post()) && $gallery->save()) {
             $this->view->saved();
             return $this->htmlRedirect($this->contentContainer->createUrl('/gallery/custom-gallery/view', ['openGalleryId' => $gallery->instance->id]));
@@ -77,6 +81,7 @@ class CustomGalleryController extends ListController
         return $this->renderPartial('modal_gallery_edit', [
                     'galleryForm' => $gallery,
                     'contentContainer' => $this->contentContainer,
+	                'category' => $category,
         ]);
     }
 

@@ -39,6 +39,9 @@ class ShowPhotoPreview extends \yii\base\Widget
 	/**
 	 * Executes the widget.
 	 */
+	public $options = [];
+
+
 	public function run()
 	{
 		if(!$this->active) {
@@ -61,7 +64,8 @@ class ShowPhotoPreview extends \yii\base\Widget
 			'object' => $this->object,
 			'previewImage' => new PreviewImage(),
 			'showPreview' => $this->preview,
-			'hideImageFileInfo' => $hidePreviewFileInfo
+			'hideImageFileInfo' => $hidePreviewFileInfo,
+			'options' => $this->options,
 		]);
 	}
 

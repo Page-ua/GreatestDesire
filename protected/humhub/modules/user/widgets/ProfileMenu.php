@@ -35,40 +35,74 @@ class ProfileMenu extends \humhub\widgets\BaseMenu
     /**
      * @inheritdoc
      */
-    public $template = "@humhub/widgets/views/leftNavigation";
+    public $template = "@humhub/modules/user/widgets/views/topProfileNavigation";
 
     /**
      * @inheritdoc
      */
     public function init()
     {
-        $this->addItemGroup([
-            'id' => 'profile',
-            'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', '<strong>Profile</strong> menu'),
-            'sortOrder' => 100,
-        ]);
-
-        $this->addItem([
-            'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Stream'),
-            'group' => 'profile',
-            'icon' => '<i class="fa fa-bars"></i>',
-            'url' => $this->user->createUrl('//user/profile/home'),
-            'sortOrder' => 200,
-            'isActive' => (Yii::$app->controller->id == "profile" && (Yii::$app->controller->action->id == "index" || Yii::$app->controller->action->id == "home")),
-        ]);
 
         if ($this->user->permissionManager->can(new ViewAboutPage())) {
             $this->addItem([
-                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'About'),
-                'group' => 'profile',
-                'icon' => '<i class="fa fa-info-circle"></i>',
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Timeline'),
+                'url' => $this->user->createUrl('//user/profile/home'),
+                'sortOrder' => 200,
+                'isActive' => (Yii::$app->controller->id == "profile" && (Yii::$app->controller->action->id == "index" || Yii::$app->controller->action->id == "home")),
+            ]);
+
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Info'),
                 'url' => $this->user->createUrl('//user/profile/about'),
                 'sortOrder' => 300,
                 'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "about"),
             ]);
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Desires'),
+                'url' => $this->user->createUrl('//user/profile/desires'),
+                'sortOrder' => 400,
+                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "desires"),
+            ]);
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Friends'),
+                'url' => $this->user->createUrl('//user/profile/friends'),
+                'sortOrder' => 500,
+                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "friends"),
+            ]);
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Blog'),
+                'url' => $this->user->createUrl('//user/profile/blog'),
+                'sortOrder' => 600,
+                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "blog"),
+            ]);
+
+
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Groups'),
+                'url' => $this->user->createUrl('//user/profile/groups'),
+                'sortOrder' => 800,
+                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "groups"),
+            ]);
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Polls'),
+                'url' => $this->user->createUrl('//user/profile/polls'),
+                'sortOrder' => 900,
+                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "polls"),
+            ]);
+
+
+            parent::init();
+
         }
-        parent::init();
     }
+
+
 
     /**
      * @inheritdoc

@@ -5,6 +5,62 @@ use humhub\widgets\RichText;
 use humhub\modules\user\models\fieldtype\MarkdownEditor;
 use humhub\widgets\MarkdownView;
 ?>
+
+<?php var_dump($user->profile->getProfileField('firstname')); ?>
+<div class="page-content">
+    <div class="content-wrap">
+        <div class="personal-profile-info">
+            <div class="title">Information</div>
+            <div class="info-block">
+                <div class="item">
+                    <div class="label">Gender</div>
+                    <div class="text">Male</div>
+                </div>
+                <div class="item location">
+                    <div class="label">From</div>
+                    <div class="text">
+                        <svg class="icon icon-location">
+                            <use xlink:href="./svg/sprite/sprite.svg#location"></use>
+                        </svg>
+                        Sydney
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="label">Birth</div>
+                    <div class="text">1998-05-29</div>
+                </div>
+                <div class="item">
+                    <div class="label">Age</div>
+                    <div class="text">25</div>
+                </div>
+            </div>
+            <div class="creation-date">
+                <div class="label">Joined</div>
+                <div class="text">Aug 11, 2009</div>
+            </div>
+            <div class="description">
+                <div class="desc-title">Description</div>
+                <div class="text">I am a heavy-bodied tree-kangaroo found in rain forests of the Atherton
+                    Tableland Region of Queensland. My status is classified as least concern by the IUCN,
+                    although local authorities classify me as rare.  I am named after
+                    the Norwegian explorer Carl Sofus Lumholtz.
+                </div>
+            </div>
+            <div class="sub-context-menu">
+                <div class="context-menu-btn"><span></span><span></span><span></span></div>
+                <ul class="context-menu">
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Edit 2</a></li>
+                    <li><a href="#">Edit 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <div class="panel panel-default">
     <div
         class="panel-heading"><?php echo Yii::t('UserModule.views_profile_about', '<strong>About</strong> this user'); ?></div>

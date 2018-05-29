@@ -13,6 +13,20 @@ use yii\helpers\Html;
 ?>
 
 <?php if (count($files) > 0) : ?>
+<?php if(isset($options['index'])) {
+    if(isset($files[$options['index']])) {
+        if ($previewImage->applyFile($files[$options['index']])){
+	        $arr = array(
+		        'height' => isset($options['height'])?$options['height']:100,
+		        'width' => isset($options['width'])?$options['width']:100,
+		        'mode' => 'force');
+	        $previewImage->options = $arr;
+	        echo $previewImage->render();
+        }
+    }
+    ?>
+
+    <?php } else {  ?>
 	<!-- hideOnEdit mandatory since 1.2 -->
 	<div class="hideOnEdit">
 		<!-- Show Images as Thumbnails -->
@@ -65,5 +79,7 @@ use yii\helpers\Html;
 
 
 	</div>
+
+	<?php } ?>
 <?php endif; ?>
 

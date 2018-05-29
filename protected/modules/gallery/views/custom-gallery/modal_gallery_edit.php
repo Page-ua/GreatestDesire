@@ -24,6 +24,7 @@
             <?= $form->field($galleryForm->instance, 'title'); ?>
             <?= $form->field($galleryForm->instance, 'description')->textArea(); ?>
             <?= $form->field($galleryForm, 'visibility')->checkbox(['label' => Yii::t('GalleryModule.base', 'Make this gallery public')])?>
+            <?= $form->field($galleryForm->instance, 'category')->dropDownList($category); ?>
         </div>
 
         <div class="modal-footer">

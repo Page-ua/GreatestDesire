@@ -11,6 +11,7 @@ namespace humhub\modules\user\controllers;
 use humhub\modules\admin\models\AdminDesires;
 use humhub\modules\admin\models\AdminDesiresSearch;
 use humhub\modules\user\models\DesiresAdmin;
+use humhub\modules\user\models\forms\AccountRecoverPassword;
 use humhub\modules\user\widgets\AuthChoice;
 use Yii;
 use humhub\components\Controller;
@@ -83,7 +84,7 @@ class AuthController extends Controller
             return $this->onAuthSuccess($login->authClient);
         }
 
-        // Self Invite 
+        // Self Invite
         $invite = new Invite();
         $invite->scenario = 'invite';
         if ($invite->load(Yii::$app->request->post()) && $invite->selfInvite()) {
@@ -103,7 +104,9 @@ class AuthController extends Controller
         $authChoice = new AuthChoice();
         $authUrl = '/index.php'.Url::to($authChoice->getBaseAuthUrl()[0]);
 
-        return $this->render('login', array('model' => $login, 'info' => $info, 'invite' => $invite, 'stories' => $stories, 'authUrl' => $authUrl, 'canRegister' => $invite->allowSelfInvite()));
+	    $reсoverPassword = new AccountRecoverPassword();
+
+        return $this->render('login', array('model' => $login, 'info' => $info, 'invite' => $invite, 'stories' => $stories, 'authUrl' => $authUrl, 'recoverPassword' => $reсoverPassword, 'canRegister' => $invite->allowSelfInvite()));
     }
 
     /**

@@ -9,20 +9,35 @@ $this->registerjsVar('mail_viewMessageUrl', Url::to(['/mail/mail/index', 'id' =>
 
 Assets::register($this);
 ?>
-<div class="btn-group">
-    <a href="#" id="icon-messages" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i></a>
-    <span id="badge-messages" style="display:none;"
-          class="label label-danger label-notification">1</span>
-    <ul id="dropdown-messages" class="dropdown-menu">
-    </ul>
+
+<div class="item">
+    <div id="icon-messages" class="activity-icon"><svg class="icon icon-messages"><use xlink:href="svg/sprite/sprite.svg#messages"></use></svg>
+        <div class="activity-counter"><span id="badge-messages" ></span></div>
+    </div>
+
+    <div class="tooltip-base">Messages</div>
+    <div class="activity-sub-menu">
+        <div class="messages-sub-menu">
+            <div class="sub-menu-header">
+                <div class="title">Messages</div>
+            </div>
+            <div class="sub-menu-content">
+                <ul id="dropdown-messages" class="dialogList">
+
+                </ul>
+            </div>
+            <div class="sub-menu-footer"><a class="mailBox" href="<?= Url::toRoute(['/mail/mail']) ?>">View in the Mailbox</a></div>
+        </div>
+    </div>
 </div>
+
 
 <script type="text/javascript">
 
     /**
      * Refresh New Mail Message Count (Badge)
      */
-    reloadMessageCountInterval = 60000;
+    reloadMessageCountInterval = 7000;
     setInterval(function () {
         jQuery.getJSON("<?php echo Url::to(['/mail/mail/get-new-message-count-json']); ?>", function (json) {
             setMailMessageCount(parseInt(json.newMessages));
@@ -39,10 +54,12 @@ Assets::register($this);
         // show or hide the badge for new messages
         if (count == 0) {
             $('#badge-messages').css('display', 'none');
+            $('#badge-messages').parents('.item').removeClass('has-notification');
         } else {
             $('#badge-messages').empty();
             $('#badge-messages').append(count);
             $('#badge-messages').fadeIn('fast');
+            $('#badge-messages').parents('.item').addClass('has-notification');
         }
     }
 
@@ -63,7 +80,21 @@ Assets::register($this);
         $('#dropdown-messages').find('ul').remove();
 
         // append title and loader to dropdown
-        $('#dropdown-messages').append('<li class="dropdown-header"><div class="arrow"></div><?php echo Yii::t('MailModule.widgets_views_mailNotification', 'Messages'); ?> <?php echo Html::a(Yii::t('MailModule.widgets_views_mailNotification', 'New message'), Url::to(['/mail/mail/create', 'ajax' => 1]), array('class' => 'btn btn-info btn-xs', 'id' => 'create-message-button', 'data-target' => '#globalModal')); ?></li> <ul class="media-list"><li id="loader_messages"><div class="loader"><div class="sk-spinner sk-spinner-three-bounce"><div class="sk-bounce1"></div><div class="sk-bounce2"></div><div class="sk-bounce3"></div></div></div></li></ul><li><div class="dropdown-footer"><a class="btn btn-default col-md-12" href="<?php echo Url::to(['/mail/mail/index']); ?>"><?php echo Yii::t('MailModule.widgets_views_mailNotification', 'Show all messages'); ?></a></div></li>');
+        $('#dropdown-messages').append('' +
+                ' <ul class="media-list">' +
+                '<li id="loader_messages">' +
+                '<div class="loader">' +
+                '<div class="sk-spinner sk-spinner-three-bounce">' +
+                '<div class="sk-bounce1">' +
+                '</div>' +
+                '<div class="sk-bounce2">' +
+                '</div>' +
+                '<div class="sk-bounce3">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</li>' +
+                '</ul>');
 
         $.ajax({
             'type': 'GET',

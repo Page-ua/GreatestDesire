@@ -9,6 +9,7 @@
 namespace humhub\modules\user\controllers;
 
 use humhub\modules\user\components\Session;
+use humhub\modules\user\models\Profile;
 use Yii;
 use humhub\modules\content\components\ContentContainerController;
 use humhub\modules\stream\actions\ContentContainerStream;

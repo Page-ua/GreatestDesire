@@ -10,28 +10,29 @@ use yii\helpers\Url;
 
 ?>
 
-<section class="success-sec1">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-11 col-lg-offset-1">
-				<p class="kaushan success-sec1_title">Success stories</p>
-			</div>
-		</div>
-		<div class="row">
-            <?php foreach($model as $item){ ?>
-            <?php if(!empty($item->attributes['image'])){ ?>
-			<div class="col-lg-4">
-				<div class="success-sec1_wrap">
-					<img class="sec4-img" src="/uploads/admin_files/<?php echo $item->attributes['image']; ?>">
-					<div class="sec4-item">
-						<p class="sec4-item_title"><?php echo $item->attributes['title']; ?></p>
-						<p class="sec4-item_desc"><?php echo $item->attributes['description']; ?></p>
-						<a class="sec4-item_link" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">more</a>
-					</div>
-				</div>
-			</div>
-            <?php } ?>
-            <?php } ?>
 
-	</div>
-</section>
+
+
+
+<main>
+    <section class="all-success-stories">
+        <div class="base-wrap">
+            <h1 class="base-lg-title">Success stories</h1>
+            <div class="items-wrap success-stories">
+	            <?php foreach($model as $item){ ?>
+	            <?php if(!empty($item->attributes['image'])){ ?>
+                <a class="item" href="<?= Url::toRoute(['info/view', 'id'=>$item->attributes['id']]); ?>">
+                    <div class="item-img"><img src="/uploads/admin_files/<?php echo $item->attributes['image']; ?>"></div>
+                    <div class="wrap">
+                        <div class="title"><?php echo $item->attributes['title']; ?></div>
+                        <div class="desc"><?php echo $item->attributes['description']; ?></div>
+                        <div class="link">more</div>
+                    </div>
+                </a>
+		            <?php } ?>
+	            <?php } ?>
+            </div>
+            <div class="base-btn"><a href="#">Load more</a></div>
+        </div>
+    </section>
+</main>

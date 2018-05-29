@@ -73,22 +73,34 @@ class RegistrationController extends Controller
 //        }
         Yii::$app->params['class_body'] = 'publicHeader';
 
-	    if ($registration->submitted('save') && $desire->load(Yii::$app->request->post()) && $desire->validate() && $registration->validate() && $registration->register($authClient)) {
-		    Yii::$app->session->remove('authClient');
-		    // Autologin when user is enabled (no approval required)
-		    if ($registration->getUser()->status === User::STATUS_ENABLED) {
-			    Yii::$app->user->switchIdentity($registration->models['User']);
-			    $registration->models['User']->updateAttributes(['last_login' => new \yii\db\Expression('NOW()')]);
-			    $desire->save();
-			    $this->view->saved();
-			    $tags = explode(',', Yii::$app->request->post('tags'));
-			    $desire->saveTags($tags);
-			    return $this->redirect(['/dashboard/dashboard']);
+	    if ($registration->submitted('save')) {
+		    $desire->load(Yii::$app->request->post());
+		    $desireFlag = $desire->validate();
+		    $registrationFlag = $registration->validate();
+		    if($desireFlag && $registrationFlag) {
+			    $registration->register( $authClient );
+			    Yii::$app->session->remove( 'authClient' );
+			    // Autologin when user is enabled (no approval required)
+			    if ( $registration->getUser()->status === User::STATUS_ENABLED ) {
+				    Yii::$app->user->switchIdentity( $registration->models['User'] );
+				    $registration->models['User']->updateAttributes( [ 'last_login' => new \yii\db\Expression( 'NOW()' ), 'joined' ] );
+				    $registration->models['User']->profile->joined = new \yii\db\Expression( 'NOW()' );
+				    $registration->models['User']->profile->save();
+				    $desire->save();
+				    $this->view->saved();
+				    $tags = explode( ',', Yii::$app->request->post( 'tags' ) );
+				    $desire->saveTags( $tags );
+				    $desire->saveGreatestDesire( true );
+
+
+				    return $this->redirect( [ '/dashboard/dashboard' ] );
+			    }
+
+			    return $this->render( 'success', [
+				    'form'         => $registration,
+				    'needApproval' => ( $registration->getUser()->status === User::STATUS_NEED_APPROVAL )
+			    ] );
 		    }
-		    return $this->render('success', [
-			    'form' => $registration,
-			    'needApproval' => ($registration->getUser()->status === User::STATUS_NEED_APPROVAL)
-		    ]);
 	    }
 
 	    $authChoice = new AuthChoice();

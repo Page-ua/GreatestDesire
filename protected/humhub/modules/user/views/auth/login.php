@@ -1,5 +1,6 @@
 <?php
 
+use humhub\compat\CActiveForm;
 use humhub\modules\user\widgets\AuthMenuTop;
 use \yii\helpers\Url;
 use yii\widgets\ActiveForm;
@@ -42,23 +43,15 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
         </div>
     </section>
 
-	    <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'mfp-hide'], 'enableClientValidation' => false]); ?>
+	<?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'mfp-hide'], 'enableClientValidation' => false]); ?>
         <div class="top">
             <div class="title">LogIn</div>
-            <div class="link fb-login"><a data-pjax-prevent href="<?php echo $authUrl.'?authclient=facebook'; ?>"><svg class="icon icon-facebook"><use xlink:href="./svg/sprite/sprite.svg#facebook"></use></svg><span>Log In with Facebook</span></a></div>
-            <div class="link google-login"><a data-pjax-prevent class="google-login" href="<?php echo $authUrl.'?authclient=google'; ?>"><svg class="icon icon-google-plus-logo"><use xlink:href="./svg/sprite/sprite.svg#google-plus-logo"></use></svg><span>Log In with Google</span></a></div>
+            <div class="link fb-login"><a data-pjax-prevent href="<?php echo $authUrl.'?authclient=facebook'; ?>"><svg class="icon icon-facebook"><use xlink:href="<?= $this->theme->getBaseUrl(); ?>/svg/sprite/sprite.svg#facebook"></use></svg><span>Log In with Facebook</span></a></div>
+            <div class="link google-login"><a data-pjax-prevent class="google-login" href="<?php echo $authUrl.'?authclient=google'; ?>"><svg class="icon icon-google-plus-logo"><use xlink:href="<?= $this->theme->getBaseUrl(); ?>/svg/sprite/sprite.svg#google-plus-logo"></use></svg><span>Log In with Google</span></a></div>
         </div>
         <div class="center-block"><span>or</span>
-            <div class="form-item"><label for="name"><?= Yii::t('UserModule.views_auth_login', 'username or email'); ?></label><?php echo $form->field($model, 'username', [
-		            'template' => '{input}', // Leave only input (remove label, error and hint)
-		            'options' => [
-			            'tag' => false, // Don't wrap with "form-group" div
-		            ]])->textInput(['id' => 'name']); ?></div>
-            <div class="form-item"><label for="name"><?= Yii::t('UserModule.views_auth_login', 'password') ?></label><?php echo $form->field($model, 'password', [
-			        'template' => '{input}', // Leave only input (remove label, error and hint)
-			        'options' => [
-				        'tag' => false, // Don't wrap with "form-group" div
-			        ]])->passwordInput(['id' => 'pass']); ?></div>
+            <div class="form-item"><label for="name"><?= Yii::t('UserModule.views_auth_login', 'username or email'); ?></label><?php echo $form->field($model, 'username')->textInput(['id' => 'name']); ?></div>
+            <div class="form-item"><label for="name"><?= Yii::t('UserModule.views_auth_login', 'password') ?></label><?php echo $form->field($model, 'password')->passwordInput(['id' => 'pass']); ?></div>
             <div class="form-checkbox"><?php echo $form->field($model, 'rememberMe', [
 			        'template' => '{input}', // Leave only input (remove label, error and hint)
 			        'options' => [
@@ -66,13 +59,42 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
 			        ]])->checkbox(['id' => 'remember', 'label' => false]); ?><label for="remember">Remember me</label></div>
         </div>
         <div class="bottom">
-            <div class="base-btn"><?= CHtml::submitInput(Yii::t('UserModule.views_auth_login', 'Sign in')); ?></div>
-            <a class="newPass" href="#"><?= Yii::t('UserModule.views_auth_login', 'Forgot your password?'); ?></a>
+            <div class="base-btn"><input type="submit" value="Login"></div><a class="newPass" data-pjax-prevent href="<?= Url::toRoute('/user/password-recovery'); ?>"><?= Yii::t('UserModule.views_auth_login', 'Forgot your password?'); ?></a>
             <div class="signUp">
                 <p>Don't have an account?</p><a href="<?php echo Url::to(['registration/']) ?>">Sign Up</a></div>
+
         </div>
 	<?php ActiveForm::end(); ?>
 
+
+	<?php $form = CActiveForm::begin(['id' => 'recovery-pass-form', 'options' => ['class' => 'mfp-hide'], 'enableClientValidation' => true]); ?>
+
+        <div class="top">
+            <div class="title">Password recovery</div>
+        </div>
+        <div class="center-block"><span><?php echo Yii::t('UserModule.views_auth_recoverPassword', 'Just enter your e-mail address. We´ll send you recovery instructions!'); ?></span>
+            <div class="form-item"><label for="email"><?= Yii::t('UserModule.views_auth_recoverPassword', 'your email'); ?></label>
+	            <?php echo $form->textField($recoverPassword, 'email', array('class' => 'form-control', 'id' => 'email_txt')); ?>
+	            <?php echo $form->error($recoverPassword, 'email'); ?>
+            </div><span>Enter code</span>
+            <div class="form-group">
+	            <?php
+	            echo \yii\captcha\Captcha::widget([
+		            'model' => $recoverPassword,
+		            'attribute' => 'verifyCode',
+		            'captchaAction' => '/user/auth/captcha',
+		            'id' => 'captcha',
+		            'options' => array('class' => 'form-control', 'placeholder' => Yii::t('UserModule.views_auth_recoverPassword', 'enter security code above'))
+	            ]);
+	            ?>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="base-btn"><a data-action-click="ui.modal.submit" data-action-url="<?= Url::to(['/user/password-recovery']) ?>" data-ui-loader type="submit" value="<?= Yii::t('UserModule.views_auth_recoverPassword', 'Reset password') ?>"><?= Yii::t('UserModule.views_auth_recoverPassword', 'Reset password') ?></a></div>
+        </div>
+
+
+	<?php CActiveForm::end() ?>
     <section class="front-short-info">
         <div class="base-wrap">
             <h1 class="base-small-title">Welcome to Greatest Desire social network!</h1>

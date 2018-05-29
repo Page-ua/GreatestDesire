@@ -188,6 +188,7 @@ class Media extends ContentActiveRecord
 
         if ($valid) {
             $this->title = $mediaUpload->file_name;
+            $this->date_create = new \yii\db\Expression('NOW()');
 
             $valid = $this->validate();
 

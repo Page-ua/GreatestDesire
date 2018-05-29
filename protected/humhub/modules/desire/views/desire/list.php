@@ -9,6 +9,7 @@ use humhub\modules\admin\models\AdminDesires;
 use humhub\modules\comment\widgets\CommentLink;
 use humhub\modules\comment\widgets\Comments;
 use humhub\modules\like\widgets\LikeLink;
+use humhub\modules\rating\widgets\RatingLink;
 use humhub\modules\sharebetween\widgets\ShareLink;
 use humhub\widgets\LinkPager;
 use yii\helpers\Html;
@@ -48,6 +49,8 @@ use yii\widgets\Pjax;
 	    <?= ShareLink::widget(['content' => $article]); ?>
 
 		<?= Comments::widget(['object' => $article]); ?>
+
+		<?= RatingLink::widget(['object' => $article]); ?>
 
 
     </div>

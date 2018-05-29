@@ -11,6 +11,7 @@ use humhub\widgets\GridView;
 
 <div class="panel-body">
     <?php
+    var_dump($dataProvider->getModels());
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [

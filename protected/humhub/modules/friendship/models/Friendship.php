@@ -13,6 +13,7 @@ use humhub\modules\friendship\FriendshipEvent;
 use humhub\modules\friendship\notifications\RequestDeclined;
 use humhub\modules\friendship\notifications\Request;
 use humhub\modules\friendship\notifications\RequestApproved;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "user_friendship".
@@ -166,6 +167,16 @@ class Friendship extends \humhub\components\ActiveRecord
         $query->andWhere(['IS NOT', 'snd.id', new \yii\db\Expression('NULL')]);
 
         return $query;
+    }
+
+    public static function getOnlineFriends($user)
+    {
+    	$query = self::getFriendsQuery($user);
+	    $query->leftJoin('user_http_session', 'user_http_session.user_id=user.id');
+	    $query->andWhere(['IS NOT', 'user_http_session.user_id', new Expression('NULL')]);
+	    $query->andWhere(['>', 'user_http_session.expire', time()]);
+
+	    return $query;
     }
 
     /**

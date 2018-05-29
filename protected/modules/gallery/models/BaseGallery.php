@@ -18,6 +18,7 @@ use \Yii;
  * @property integer $thumb_file_id
  * @property integer $editable_by
  * @property integer $type
+ * @property integer $date_create
  *
  * @package humhub.modules.gallery.models
  * @since 1.0
@@ -27,7 +28,7 @@ class BaseGallery extends ContentActiveRecord
 {
 
     public $streamChannel = null;
-    
+
     /**
      * @inheritdoc
      */
@@ -45,7 +46,8 @@ class BaseGallery extends ContentActiveRecord
             ['title', 'required'],
             ['title', 'string', 'max' => 255],
             ['description', 'string', 'max' => 1000],
-            [['sort_order', 'thumb_file_id', 'editable_by', 'type',], 'safe']
+	        ['category', 'integer'],
+            [['sort_order', 'thumb_file_id', 'editable_by', 'type', 'date_create'], 'safe']
         ];
     }
 
@@ -132,7 +134,7 @@ class BaseGallery extends ContentActiveRecord
 
         return parent::findOne($condition);
     }
-    
+
     public static function findAll($condition)
     {
         if(static::class !== BaseGallery::class) {

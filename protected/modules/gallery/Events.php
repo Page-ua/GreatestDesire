@@ -31,17 +31,20 @@ class Events extends Object
                 'url' => $event->sender->space->createUrl('/gallery/list'),
                 'icon' => '<i class="fa fa-picture-o"></i>',
                 'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'gallery')
+
+
             ]);
         }
     }
+
 
     public static function onProfileMenuInit($event)
     {
         if ($event->sender->user !== null && $event->sender->user->isModuleEnabled('gallery')) {
             $event->sender->addItem([
-                'label' => Yii::t('GalleryModule.base', 'Gallery'),
+                'label' => Yii::t('GalleryModule.base', 'Photos'),
                 'url' => $event->sender->user->createUrl('/gallery/list'),
-                'icon' => '<i class="fa fa-picture-o"></i>',
+                'sortOrder' => 700,
                 'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'gallery')
             ]);
         }

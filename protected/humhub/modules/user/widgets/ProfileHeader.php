@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\widgets;
 
+use humhub\modules\desire\models\Desire;
 use Yii;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
@@ -70,6 +71,8 @@ class ProfileHeader extends \yii\base\Widget
         /* @var $imageController ImageController  */
         $imageController = new ImageController('image-controller', null, ['user' => $this->user]);
 
+        $greatestDesire = Desire::getGreatestDesire($this->user);
+
         return $this->render('profileHeader', array(
                     'user' => $this->user,
                     'isProfileOwner' => $this->isProfileOwner,
@@ -81,6 +84,7 @@ class ProfileHeader extends \yii\base\Widget
                     'countSpaces' => $this->getFollowingSpaceCount(),
                     'allowModifyProfileImage' => $imageController->allowModifyProfileImage,
                     'allowModifyProfileBanner' => $imageController->allowModifyProfileBanner,
+                    'greatestDesire'    => $greatestDesire,
         ));
     }
 
