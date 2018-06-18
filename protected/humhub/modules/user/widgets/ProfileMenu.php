@@ -11,6 +11,7 @@ namespace humhub\modules\user\widgets;
 use Yii;
 use humhub\modules\user\models\User;
 use humhub\modules\user\permissions\ViewAboutPage;
+use yii\helpers\Url;
 
 /**
  * ProfileMenuWidget shows the (usually left) navigation on user profiles.
@@ -63,21 +64,21 @@ class ProfileMenu extends \humhub\widgets\BaseMenu
                 'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Desires'),
                 'url' => $this->user->createUrl('//user/profile/desires'),
                 'sortOrder' => 400,
-                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "desires"),
+                'isActive' => (Yii::$app->controller->id == "profile" && ( Yii::$app->controller->action->id == "desires" || Yii::$app->controller->action->id == "desire-one")),
             ]);
 
             $this->addItem([
                 'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Friends'),
-                'url' => $this->user->createUrl('//user/profile/friends'),
+                'url' => Url::toRoute(['/friendship/manage/list', 'id' => $this->user->id]),
                 'sortOrder' => 500,
-                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "friends"),
+                'isActive' => (Yii::$app->controller->id == "manage" && Yii::$app->controller->action->id == "list"),
             ]);
 
             $this->addItem([
                 'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Blog'),
                 'url' => $this->user->createUrl('//user/profile/blog'),
                 'sortOrder' => 600,
-                'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "blog"),
+                'isActive' => (Yii::$app->controller->id == "profile" && ( Yii::$app->controller->action->id == "blog" || Yii::$app->controller->action->id == "blog-one")),
             ]);
 
 

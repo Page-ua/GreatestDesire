@@ -19,7 +19,7 @@ AppAsset::register($this);
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="theme-color" content="#000">
         <link rel="shortcut icon" href="/<?= $this->theme->getBaseUrl(); ?>/img/favicon/apple-touch-icon.png">
-        <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/style.min.css">
+        <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/main.min.css">
         <?php $this->head() ?>
         <?= $this->render('@humhub/views/layouts/head'); ?>
 

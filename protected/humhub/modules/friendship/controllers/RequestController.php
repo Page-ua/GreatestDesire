@@ -21,7 +21,8 @@ use humhub\modules\friendship\models\Friendship;
 class RequestController extends Controller
 {
 
-    /**
+
+	/**
      * Adds or Approves Friendship Request
      */
     public function actionAdd()
@@ -36,7 +37,13 @@ class RequestController extends Controller
 
         Friendship::add(Yii::$app->user->getIdentity(), $friend);
 
-        return $this->redirect($friend->getUrl());
+        if(!Yii::$app->request->isAjax) {
+	        return $this->redirect( $friend->getUrl() );
+        }
+
+	    Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+	    return ["currentUserFriended" => true];
     }
 
     /**
@@ -54,7 +61,13 @@ class RequestController extends Controller
 
         Friendship::cancel(Yii::$app->user->getIdentity(), $friend);
 
-        return $this->redirect($friend->getUrl());
+	    if(!Yii::$app->request->isAjax) {
+		    return $this->redirect( $friend->getUrl() );
+	    }
+
+	    Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+	    return ["currentUserFriended" => false];
     }
 
 }

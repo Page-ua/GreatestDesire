@@ -1,9 +1,13 @@
 <?php
 
-namespace modules\rating\controllers;
+namespace humhub\modules\rating\controllers;
 
 
-class RatingController extends \humhub\modules\content\components\ContentAddonController {
+use humhub\components\Controller;
+use humhub\modules\rating\models\Rating;
+use Yii;
+
+class RatingController extends Controller {
 
 	/**
 	 * @inheritdoc
@@ -15,5 +19,27 @@ class RatingController extends \humhub\modules\content\components\ContentAddonCo
 				'guestAllowedActions' => [ 'show-likes' ]
 			]
 		];
+	}
+
+	public function actionAdd()
+	{
+		Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+		$request = Yii::$app->request->post();
+
+		$objectId = $request['objectId'];
+
+		$voices = Rating::getCurrentUserVoice($objectId);
+
+		if(!$voices) {
+			$voices = new Rating();
+			$voices->desire_id = $objectId;
+		}
+			$voices->rating = $request['rating'];
+			if($voices->validate() &&  $voices->save()) {
+				return 'ok';
+			}
+
+		return 'error';
 	}
 }

@@ -42,6 +42,14 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="Hoden.top">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="HostGreatesDesire">
         <serverdata>
           <mappings>
@@ -107,6 +115,22 @@
         </serverdata>
       </paths>
       <paths name="Volia">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="hoden">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="myvps">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />

@@ -8,6 +8,7 @@
 
 namespace humhub\modules\comment\widgets;
 
+use Yii;
 use yii\helpers\Url;
 use humhub\components\Widget;
 

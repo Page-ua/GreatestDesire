@@ -5,27 +5,23 @@ use yii\helpers\Html;
 humhub\modules\like\assets\LikeAsset::register($this);
 ?>
 
-<span class="likeLinkContainer" id="likeLinkContainer_<?= $id ?>">
+<div class="like likeLinkContainer" id="likeLinkContainer_<?= $id ?>">
 
-    <?php if (Yii::$app->user->isGuest): ?>
 
-        <?php echo Html::a(Yii::t('LikeModule.widgets_views_likeLink', 'Like'), Yii::$app->user->loginUrl, ['data-target' => '#globalModal']); ?>
-    <?php else: ?>
-        <a href="#" data-action-click="like.toggleLike" data-action-url="<?= $likeUrl ?>" class="like likeAnchor" style="<?= (!$currentUserLiked) ? '' : 'display:none'?>">
+        <div href="#" data-action-click="like.toggleLike" data-action-url="<?= $likeUrl ?>" class="liked likeAnchor text" style="<?= (!$currentUserLiked) ? '' : 'display:none'?>">
             <?= Yii::t('LikeModule.widgets_views_likeLink', 'Like') ?>
-        </a>
-        <a href="#" data-action-click="like.toggleLike" data-action-url="<?= $unlikeUrl ?>" class="unlike likeAnchor" style="<?= ($currentUserLiked) ? '' : 'display:none'?>">
+        </div>
+        <div href="#" data-action-click="like.toggleLike" data-action-url="<?= $unlikeUrl ?>" class="unliked likeAnchor text" style="<?= ($currentUserLiked) ? '' : 'display:none'?>">
             <?= Yii::t('LikeModule.widgets_views_likeLink', 'Unlike') ?>
-        </a>
-    <?php endif; ?>
+        </div>
+
 
     <?php if (count($likes) > 0) { ?>
         <!-- Create link to show all users, who liked this -->
-        <a href="<?php echo $userListUrl; ?>" data-target="#globalModal">
-            <span class="likeCount tt" data-placement="top" data-toggle="tooltip" title="<?= $title ?>">(<?= count($likes) ?>)</span>
-        </a>
+        <div class="val likeCount">(<span><?= count($likes) ?></span>)</div>
     <?php } else { ?>
-        <span class="likeCount"></span>
+        <div class="val likeCount"></div>
     <?php } ?>
 
-</span>
+</div>
+

@@ -95,7 +95,7 @@ use humhub\modules\content\widgets\WallEntryLabels;
             <?php if($renderAddons) : ?>
                 <div class="stream-entry-addons clearfix">
                     <?= WallEntryAddons::widget($addonOptions); ?>
-                    <?= \humhub\modules\sharebetween\widgets\ShareLink::widget(['content' => $object]); ?>
+                    <?= \humhub\modules\sharebetween\widgets\ShareLink::widget(['object' => $object]); ?>
                 </div>
             <?php endif; ?>
 

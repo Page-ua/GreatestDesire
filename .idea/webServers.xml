@@ -67,7 +67,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="75cc3177-e2f7-49f0-b94c-25abe9699b06" name="MyVPS" url="http://185.25.116.29">
-        <fileTransfer host="185.25.116.29" port="22" accessType="SFTP">
+        <fileTransfer host="185.25.116.29" port="22" rootFolder="/var/www" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

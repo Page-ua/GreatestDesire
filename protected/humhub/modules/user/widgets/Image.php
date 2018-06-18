@@ -100,7 +100,7 @@ class Image extends Widget
             $html = Html::a($html, $this->user->getUrl(), $this->linkOptions);
         }
 
-        $html = Html::tag('span', $html, $this->htmlOptions);
+        $html = Html::tag('div', $html, $this->htmlOptions);
 
         return $html;
     }

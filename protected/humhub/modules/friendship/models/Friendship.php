@@ -13,6 +13,7 @@ use humhub\modules\friendship\FriendshipEvent;
 use humhub\modules\friendship\notifications\RequestDeclined;
 use humhub\modules\friendship\notifications\Request;
 use humhub\modules\friendship\notifications\RequestApproved;
+use yii\data\Pagination;
 use yii\db\Expression;
 
 /**
@@ -169,7 +170,37 @@ class Friendship extends \humhub\components\ActiveRecord
         return $query;
     }
 
-    public static function getOnlineFriends($user)
+	public static function getAllFriends($user, $pageSize = 12)
+	{
+		$query = self::getFriendsQuery($user);
+		$count = $query->count();
+		// create a pagination object with the total count
+		$pagination = new Pagination(['totalCount' => $count, 'pageSize'=>$pageSize]);
+
+		// limit the query using the pagination and retrieve the articles
+		$friends = $query->offset($pagination->offset)
+		                  ->limit($pagination->limit)
+		                  ->all();
+
+		$data['friends'] = $friends;
+		$data['pagination'] = $pagination;
+		$data['count'] = $count;
+
+		return $data;
+	}
+
+	public static function getPartFriends($user, $offset, $pageSize = 10)
+	{
+		$query = self::getFriendsQuery($user);
+		$friends = $query->offset($offset)
+						 ->limit($pageSize)
+						 ->all();
+
+		return $friends;
+	}
+
+
+	public static function getOnlineFriends($user)
     {
     	$query = self::getFriendsQuery($user);
 	    $query->leftJoin('user_http_session', 'user_http_session.user_id=user.id');

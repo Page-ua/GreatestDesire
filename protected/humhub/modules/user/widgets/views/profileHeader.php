@@ -1,5 +1,7 @@
 <?php
 
+use humhub\modules\friendship\models\Friendship;
+use humhub\modules\tags\widgets\DisplayTags;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use humhub\modules\user\controllers\ImageController;
@@ -26,12 +28,13 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
 <div class="profile-top-block">
     <div class="user-info-top-block">
 
-        <div class="desire-img"><?= \humhub\modules\file\widgets\ShowPhotoPreview::widget( [
+        <div class="desire-img">
+			<?= \humhub\modules\file\widgets\ShowPhotoPreview::widget( [
 				'object'  => $greatestDesire,
 				'options' => [
 					'index'  => 0,
 					'height' => 370,
-					'width'  => 370
+					'width'  => 370,
 				]
 			] ); ?>
 			<?php if ( $isProfileOwner ) { ?>
@@ -50,11 +53,8 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
             </div>
             <div class="bottom">
                 <div class="avatar-menu">
-                    <div class="status">
 
-                        <?= \humhub\modules\user\widgets\OnlineStatus::widget(['user' => $user]); ?>
-
-                    </div>
+					<?= \humhub\modules\user\widgets\OnlineStatus::widget(['user' => $user]); ?>
 
                     <div class="img-block"><img src="<?php echo $user->getProfileImage()->getUrl(); ?>">
                         <svg class="icon icon-Oval-2">
@@ -62,57 +62,10 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
                         </svg>
                     </div>
                     <ul class="menu">
-						<?php if ( $isProfileOwner ) { ?>
-                            <li class="edit"><a href="<?= Url::to( [ '/user/account/edit' ] ); ?>">
-                                    <svg class="icon icon-edit">
-                                        <use xlink:href="./svg/sprite/sprite.svg#edit"></use>
-                                    </svg>
-                                    <div class="tooltip-base">Edit</div>
-                                </a></li>
-						<?php } else { ?>
-                            <li class="add-friend">
-                                <div class="link">
-                                    <svg class="icon icon-friend">
-                                        <use xlink:href="./svg/sprite/sprite.svg#friend"></use>
-                                    </svg>
-                                    <svg class="icon icon-unfriend">
-                                        <use xlink:href="./svg/sprite/sprite.svg#unfriend"></use>
-                                    </svg>
-                                    <div class="tooltip-base">Add Friend</div>
-                                    <div class="tooltip-base active">Unfriend</div>
-                                </div>
-                            </li>
-                            <li class="share">
-                                <div class="link">
-                                    <svg class="icon icon-share">
-                                        <use xlink:href="./svg/sprite/sprite.svg#share"></use>
-                                    </svg>
-                                    <div class="tooltip-base">Share</div>
-                                </div>
-                            </li>
-                            <li class="follow">
-                                <div class="link">
-                                    <svg class="icon icon-follow">
-                                        <use xlink:href="./svg/sprite/sprite.svg#follow"></use>
-                                    </svg>
-                                    <svg class="icon icon-followed">
-                                        <use xlink:href="./svg/sprite/sprite.svg#followed"></use>
-                                    </svg>
-                                    <div class="tooltip-base">Follow</div>
-                                    <div class="tooltip-base active">Unfollow</div>
-                                </div>
-                            </li>
-                            <li class="msg">
-                                <div class="link">
-                                    <svg class="icon icon-message">
-                                        <use xlink:href="./svg/sprite/sprite.svg#message"></use>
-                                    </svg>
-                                    <div class="tooltip-base">Message</div>
-                                </div>
-                            </li>
-						<?php } ?>
+						<?= \humhub\modules\user\widgets\UserButtons::widget(['user' => $user]); ?>
                     </ul>
                 </div>
+
                 <div class="wrap">
                     <div class="desire-top">
                         <div class="title">
@@ -121,52 +74,25 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
                             </svg>
                             My Greatest Desire is…
                         </div>
-                        <div class="star-rating"><span class="starVal">3.5</span><span class="counterVal">122</span>
-                        </div>
+						<?= \humhub\modules\rating\widgets\RatingDisplay::widget(['object' => $greatestDesire]); ?>
                     </div>
                     <div class="desire-text">
-                        <div class="text"><?= $greatestDesire->title; ?>
-                        </div>
+                        <a href="<?= $user->createUrl('/user/profile/desire-one', ['id' => $greatestDesire->id]); ?>">
+                            <div class="text"><?= $greatestDesire->title; ?></div>
+                        </a>
                         <ul class="tags">
-							<?php foreach ( $greatestDesire->tags as $tag ) { ?>
-                                <li><a href="#">#<?= $tag->title; ?></a></li>
-							<?php } ?>
+							<?= DisplayTags::widget(['user' => $greatestDesire]); ?>
                         </ul>
                     </div>
-                    <div class="desire-bottom"><a class="comments" href="#">
-                            <svg class="icon icon-comment_border">
-                                <use xlink:href="./svg/sprite/sprite.svg#comment_border"></use>
-                            </svg>
-                            <svg class="icon icon-comments">
-                                <use xlink:href="./svg/sprite/sprite.svg#comments"></use>
-                            </svg>
-                            <div class="text">Comment</div>
-                            <div class="val">(<span>35</span>)</div>
-                            <div class="tooltip-base">Leave a comment</div>
-                        </a>
-                        <div
-                                class="rating">
-                            <div class="active-star-rating"></div>
-                            <div class="text">Rate</div>
-                        </div>
-                        <div class="share">
-                            <svg class="icon icon-share">
-                                <use xlink:href="./svg/sprite/sprite.svg#share"></use>
-                            </svg>
-                            <div class="text">Share</div>
-                            <div class="val">(12)</div>
-                        </div>
+                    <div class="desire-bottom">
+
+						<?= \humhub\modules\comment\widgets\CommentLinkPage::widget(['object' => $greatestDesire, 'options' => ['commentPageUrl' => '/user/profile/desire-one']]); ?>
+						<?= \humhub\modules\rating\widgets\RatingLink::widget(['object' => $greatestDesire]); ?>
+						<?= \humhub\modules\sharebetween\widgets\ShareLink::widget(['object' => $greatestDesire]); ?>
                         <div class="stars">
-                            <div class="follow-btn">
-                                <svg class="icon icon-star_fill">
-                                    <use xlink:href="./svg/sprite/sprite.svg#star_fill"></use>
-                                </svg>
-                                <svg class="icon icon-star_empty">
-                                    <use xlink:href="./svg/sprite/sprite.svg#star_empty"></use>
-                                </svg>
-                                <div class="tooltip-base">Add to Favorites</div>
-                            </div>
-                            <a class="text" href="#">View all desires</a></div>
+							<?= \humhub\modules\favorite\widgets\FavoriteLink::widget(['object' => $greatestDesire]); ?>
+                            <a class="text" href=" <?= $user->createUrl('/user/profile/desires'); ?>">View all desires</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,6 +103,5 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
 
     </div>
 </div>
-
 
 

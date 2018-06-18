@@ -8,10 +8,15 @@ use humhub\modules\file\widgets\ShowFiles;
 use humhub\modules\like\widgets\LikeLink;
 ?>
 
-<div class="media" id="comment_<?= $comment->id; ?>"
+
+
+
+
+<div class="comment" id="comment_<?= $comment->id; ?>"
      data-action-component="comment.Comment"
      data-content-delete-url="<?= $deleteUrl ?>">
-         <?php if ($canWrite || $canDelete) : ?>
+
+	<?php if ($canWrite || $canDelete) : ?>
         <div class="comment-entry-loader pull-right"></div>
         <ul class="nav nav-pills preferences">
             <li class="dropdown ">
@@ -20,7 +25,7 @@ use humhub\modules\like\widgets\LikeLink;
                 </a>
 
                 <ul class="dropdown-menu pull-right">
-                    <?php if ($canWrite): ?>
+					<?php if ($canWrite): ?>
                         <li>
                             <a href="#" class="comment-edit-link" data-action-click="edit" data-action-url="<?= $editUrl ?>">
                                 <i class="fa fa-pencil"></i> <?= Yii::t('CommentModule.widgets_views_showComment', 'Edit') ?>
@@ -29,41 +34,42 @@ use humhub\modules\like\widgets\LikeLink;
                                 <i class="fa fa-pencil"></i> <?= Yii::t('CommentModule.widgets_views_showComment', 'Cancel Edit') ?>
                             </a>
                         </li>
-                    <?php endif; ?>
+					<?php endif; ?>
 
-                    <?php if ($canDelete): ?>
+					<?php if ($canDelete): ?>
                         <li>
                             <a href="#" data-action-click="delete">
                                 <i class="fa fa-trash-o"></i>  <?= Yii::t('CommentModule.widgets_views_showComment', 'Delete') ?>
                             </a>
                         </li>
-                    <?php endif; ?>
+					<?php endif; ?>
                 </ul>
             </li>
         </ul>
-    <?php endif; ?>
-    <?= UserImage::widget(['user' => $user, 'width' => 40, 'htmlOptions' => ['class' => 'pull-left']]); ?>
-    <div>
-        <div class="media-body">
-            <h4 class="media-heading"><?= Html::containerLink($user); ?>
-                <small><?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
-                    <?php if ($updatedAt !== null): ?>
-                        &middot; <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
-                    <?php endif; ?>
-                </small>
-            </h4>
-        </div>
-        <!-- class comment_edit_content required since v1.2 -->
-        <div class="content comment_edit_content" id="comment_editarea_<?= $comment->id; ?>">
-            <div id="comment-message-<?= $comment->id; ?>" class="comment-message" data-ui-markdown data-ui-show-more data-read-more-text="<?= Yii::t('CommentModule.widgets_views_showComment', 'Read full comment...') ?>">
-                <?= RichText::widget(['text' => $comment->message, 'record' => $comment, 'markdown' => true]); ?>
-            </div>
-            <?= ShowFiles::widget(['object' => $comment]); ?>
-        </div>
+	<?php endif; ?>
 
-        <div class="wall-entry-controls">
-            <?= LikeLink::widget(['object' => $comment]); ?>
+
+	<?= UserImage::widget(['user' => $user, 'width' => 50, 'htmlOptions' => ['class' => 'author-img']]); ?>
+	<?= Html::containerLink($user, ['class' => 'author-name']); ?>
+    <div class="comment-text comment_edit_content" id="comment_editarea_<?= $comment->id; ?>">
+        <div id="comment-message-<?= $comment->id; ?>" class="comment-message" data-ui-markdown data-ui-show-more data-read-more-text="<?= Yii::t('CommentModule.widgets_views_showComment', 'Read full comment...') ?>">
+	        <?= RichText::widget(['text' => $comment->message, 'record' => $comment, 'markdown' => true]); ?>
+        </div>
+	    <?= ShowFiles::widget(['object' => $comment]); ?>
+    </div>
+    <div class="comment-footer">
+	    <?= LikeLink::widget(['object' => $comment]); ?>
+
+        <div class="replay hidden">
+            <div class="text">Replay</div>
+            <div class="val">(<span>102</span>)</div>
+        </div>
+        <div class="date">
+            <div class="val"><?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+	            <?php if ($updatedAt !== null): ?>
+                    &middot; <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
+	            <?php endif; ?>
+            </div>
         </div>
     </div>
-    <hr>
 </div>

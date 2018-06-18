@@ -8,8 +8,13 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\blog\models\Blog;
+use humhub\modules\content\models\Category;
+use humhub\modules\desire\models\Desire;
+use humhub\modules\favorite\models\Favorite;
 use humhub\modules\user\components\Session;
 use humhub\modules\user\models\Profile;
+use UserModel;
 use Yii;
 use humhub\modules\content\components\ContentContainerController;
 use humhub\modules\stream\actions\ContentContainerStream;
@@ -110,7 +115,115 @@ class ProfileController extends ContentContainerController
             throw new \yii\web\HttpException(403, 'Forbidden');
         }
 
-        return $this->render('about', ['user' => $this->contentContainer]);
+	    $birthDate = new \DateTime($this->contentContainer->profile->birthday);
+	    $lifeSpan = $birthDate->diff(new \DateTime());
+	    $age = $lifeSpan->format("%y");
+
+        return $this->render('about', ['user' => $this->contentContainer, 'age' => $age]);
+    }
+
+    public function actionBlog()
+    {
+		$blogListRequest = Blog::find();
+	    $blogListRequest->where(['created_by' => $this->contentContainer->id]);
+	    $blogListRequest->orderBy('created_at DESC');
+	    $blogList = $blogListRequest->all();
+
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+    	return $this->render('blog', [
+    		'blogList' => $blogList,
+		    'category' => $category,
+		    'contentContainer' => $this->contentContainer,
+		    ]);
+    }
+
+	public function actionFavoriteBlog()
+	{
+		$this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
+
+		$blogList = Blog::find();
+		$favorite = (new \yii\db\Query())->from('favorite');
+		$blogList->leftJoin(['f' => $favorite], 'f.object_id = blog.id');
+		$blogList->andWhere(['f.object_model' => Blog::className()]);
+		$blogList = $blogList->all();
+
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+		return $this->render('blog', [
+			'category' => $category,
+			'blogList' => $blogList,
+			'contentContainer' => $this->contentContainer,
+		]);
+	}
+
+    public function actionBlogOne($id)
+    {
+    	$model = Blog::findOne($id);
+
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+    	return $this->render('blogOne', [
+			'model' => $model,
+		    'category' => $category,
+	    ]);
+    }
+
+    public function actionDesires()
+    {
+    	$desireList = '';
+	    $this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
+
+	    $desireList = Desire::find();
+	    $desireList->where(['created_by' => $this->contentContainer->id]);
+	    $desireList->andWhere(['<>', 'id', $this->contentContainer->greatest_desire]);
+	    $desireList = $desireList->all();
+
+	    $greatestDesire = Desire::getGreatestDesire($this->user);
+
+    	return $this->render('desires', [
+    		'desireList' => $desireList,
+		    'greatestDesire'    => $greatestDesire,
+		    'contentContainer' => $this->contentContainer,
+		    ]);
+    }
+
+    public function actionFavoriteDesires()
+    {
+	    $this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
+
+	    $desireList = Desire::find();
+	    $favorite = (new \yii\db\Query())->from('favorite');
+	    $desireList->leftJoin(['f' => $favorite], 'f.object_id = desire.id');
+	    $desireList->andWhere(['<>', 'desire.id', $this->contentContainer->greatest_desire]);
+	    $desireList->andWhere(['f.object_model' => Desire::className()]);
+	    $desireList = $desireList->all();
+
+	    $greatestDesire = Desire::getGreatestDesire($this->user);
+
+	    return $this->render('desires', [
+		    'desireList' => $desireList,
+		    'greatestDesire'    => $greatestDesire,
+		    'contentContainer' => $this->contentContainer,
+	    ]);
+    }
+
+    public function actionDesireOne($id)
+    {
+	    $this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
+
+	    $model = Desire::findOne($id);
+
+	    $this->contentContainer = User::findOne(['id' => $model->created_by]);
+
+	    return $this->render( 'desireOne', [
+		    'model' => $model,
+		    'user' => $this->contentContainer,
+	    ] );
+
     }
 
     public function actionFollow()

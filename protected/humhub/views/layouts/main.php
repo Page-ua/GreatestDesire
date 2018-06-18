@@ -17,7 +17,7 @@ use yii\helpers\Url;
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="theme-color" content="#000">
         <link rel="shortcut icon" href="/<?= $this->theme->getBaseUrl(); ?>/img/favicon/apple-touch-icon.png">
-        <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/style.min.css">
+        <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/main.min.css">
         <base href="<?= $this->theme->getBaseUrl(); ?>/">
         <?php $this->head() ?>
         <?= $this->render('head'); ?>
@@ -412,6 +412,7 @@ use yii\helpers\Url;
        <?php } ?>
         <?php $this->endBody() ?>
         <script src="<?= $this->theme->getBaseUrl(); ?>/js/scripts.min.js"></script>
+        <script src="<?= $this->theme->getBaseUrl(); ?>/js/main.js"></script>
     </body>
 </html>
 <?php $this->endPage() ?>

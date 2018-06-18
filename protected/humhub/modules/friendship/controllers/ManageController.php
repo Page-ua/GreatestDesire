@@ -11,6 +11,7 @@ namespace humhub\modules\friendship\controllers;
 
 use humhub\modules\desire\models\Desire;
 use humhub\modules\user\components\Session;
+use humhub\modules\user\models\User;
 use Yii;
 use yii\data\ActiveDataProvider;
 
@@ -33,19 +34,62 @@ class ManageController extends BaseAccountController
 		return $this->redirect(['list']);
 	}
 
-	public function actionList()
+	public function actionList($id)
 	{
-		$dataProvider = new ActiveDataProvider([
-			'query' => Friendship::getFriendsQuery($this->getUser()),
-			'pagination' => [
-				'pageSize' => 20,
-			],
-		]);
+		$this->user = User::findOne($id);
+		$data = Friendship::getAllFriends($this->user, 15);
+
+
+		$this->subLayout = $this->subLayout = "@humhub/modules/user/views/profile/_layout";
+
+		$online_freinds = Friendship::getOnlineFriends($this->user)->all();
+		$friends = $data['friends'];
+		$count = $data['count'];
+		$countFriends = Friendship::getFriendsQuery($this->user)->count();
+		foreach($friends as $friend) {
+			if(!$friend->status_online) {
+				foreach ( $online_freinds as $online_freind ) {
+					if ( $friend->id === $online_freind->id ) {
+						$friend->status_online = 1;
+						break;
+					}
+				}
+			}
+		};
+		if(!$this->user->status_online) {
+			$this->user->status_online = 1;
+		}
 
 		return $this->render('list', [
-			'user' => $this->getUser(),
-			'dataProvider' => $dataProvider
+			'user' => $this->user,
+			'friends' => $friends,
+			'count' => $count,
 		]);
+	}
+
+	public function actionFriendListAjax($id, $offset)
+	{
+		$this->user = User::findOne($id);
+		$friends = Friendship::getPartFriends($this->user, $offset);
+
+		$online_freinds = Friendship::getOnlineFriends($this->user)->all();
+
+		foreach($friends as $friend) {
+			if(!$friend->status_online) {
+				foreach ( $online_freinds as $online_freind ) {
+					if ( $friend->id === $online_freind->id ) {
+						$friend->status_online = 1;
+						break;
+					}
+				}
+			}
+		};
+		Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		$result['html'] = $this->renderAjax('list-ajax', [
+			'friends' => $friends,
+			]);
+		$result['count'] = count($friends);
+		return $result;
 	}
 
 	public function actionRequests()

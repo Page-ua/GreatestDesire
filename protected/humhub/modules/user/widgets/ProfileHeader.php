@@ -9,12 +9,14 @@
 namespace humhub\modules\user\widgets;
 
 use humhub\modules\desire\models\Desire;
+use humhub\modules\mail\models\UserMessage;
 use Yii;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
 use humhub\modules\space\models\Membership;
 use humhub\modules\friendship\models\Friendship;
 use humhub\modules\user\controllers\ImageController;
+use yii\helpers\Url;
 
 /**
  * Displays the profile header of a user
@@ -73,6 +75,14 @@ class ProfileHeader extends \yii\base\Widget
 
         $greatestDesire = Desire::getGreatestDesire($this->user);
 
+        $messageId = UserMessage::getMessageTwoUsser(Yii::$app->user->id, $this->user->id);
+
+        if($messageId != null) {
+            $urlGoMessage = Url::to(['/mail/mail', 'id' => $messageId]);
+        } else {
+            $urlGoMessage = Url::to(['/mail/mail', 'user' => $this->user->id]);
+        }
+
         return $this->render('profileHeader', array(
                     'user' => $this->user,
                     'isProfileOwner' => $this->isProfileOwner,
@@ -85,6 +95,8 @@ class ProfileHeader extends \yii\base\Widget
                     'allowModifyProfileImage' => $imageController->allowModifyProfileImage,
                     'allowModifyProfileBanner' => $imageController->allowModifyProfileBanner,
                     'greatestDesire'    => $greatestDesire,
+                    'friendshipState' => Friendship::getStateForUser(Yii::$app->user->getIdentity(), $this->user),
+                    'urlGoMessage' => $urlGoMessage,
         ));
     }
 

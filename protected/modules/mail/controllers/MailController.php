@@ -40,6 +40,28 @@ class MailController extends Controller
     {
         // Initially displayed message
         $messageId = (int) Yii::$app->request->get('id');
+		$userId = (int) Yii::$app->request->get('user');
+
+		//create new message
+	    if($userId != 0) {
+
+		    $messageModel = new Message();
+		    $messageModel->title = 'new';
+		    $messageModel->save();
+
+		    $userMessage = new UserMessage();
+		    $userMessage->message_id = $messageModel->id;
+		    $userMessage->user_id = Yii::$app->user->id;
+		    $userMessage->is_originator = 1;
+		    $userMessage->last_viewed = new \yii\db\Expression('NOW()');
+		    $userMessage->save();
+
+		    $userMessage = new UserMessage();
+		    $userMessage->message_id = $messageModel->id;
+		    $userMessage->user_id = $userId;
+		    $userMessage->save();
+		    $messageId = $messageModel->id;
+	    }
 
         $query = UserMessage::find();
         $query->joinWith('message');

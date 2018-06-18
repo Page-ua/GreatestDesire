@@ -18,8 +18,8 @@ use Yii;
 class CommentLink extends \yii\base\Widget
 {
 
-    const MODE_INLINE = 'inline';
-    const MODE_POPUP = 'popup';
+	const MODE_INLINE = 'inline';
+	const MODE_POPUP = 'popup';
 
     /**
      * Content Object
@@ -55,6 +55,7 @@ class CommentLink extends \yii\base\Widget
             'mode' => $this->mode,
             'objectModel' => $this->object->content->object_model,
             'objectId' => $this->object->content->object_id,
+	        'count' => $this->getCommentsCount(),
         ]);
     }
 

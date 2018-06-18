@@ -4,8 +4,10 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 
-<div id="comment_create_form_<?= $id; ?>" class="comment_create" data-ui-widget="comment.Form">
-
+<div id="comment_create_form_<?= $id; ?>" class="comment-form" data-ui-widget="comment.Form">
+	<?php $userModel = Yii::$app->user->getIdentity(); ?>
+    <div class="author-img"><img src="<?= $userModel->getProfileImage()->getUrl(); ?>"></div>
+    <div class="textarea-block">
     <?= Html::beginForm('#'); ?>
     <?= Html::hiddenInput('contentModel', $modelName); ?>
     <?= Html::hiddenInput('contentId', $modelId); ?>
@@ -30,13 +32,14 @@ use yii\helpers\Url;
         ?>
 
         <a href="#" class="btn btn-sm btn-default btn-comment-submit pull-left"
-                data-action-click="submit"
-                data-action-url="<?= Url::to(['/comment/comment/post']) ?>"
-                data-ui-loader>
-            <?= Yii::t('CommentModule.widgets_views_form', 'Send') ?>
+               data-action-click="submit"
+               data-action-url="<?= Url::to(['/comment/comment/post']) ?>"
+               data-ui-loader>
+	        <?= Yii::t('CommentModule.widgets_views_form', 'Send') ?>
         </a>
-    </div>
 
+    </div>
+    </div>
     <?= Html::endForm(); ?>
 
     <div id="comment_create_upload_progress_<?= $id ?>" style="display:none;margin:10px 0px;"></div>
@@ -50,3 +53,4 @@ use yii\helpers\Url;
     ?>
 
 </div>
+

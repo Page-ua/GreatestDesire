@@ -11,74 +11,122 @@ use yii\helpers\Html;
 /* @var  $hideImageFileInfo boolean */
 
 ?>
+<?php $counter = 0; ?>
+<?php if ( count( $files ) > 0 ) : ?>
+	<?php if ( isset( $options['index'] ) && empty( $options['for'] ) ) {
+		if ( isset( $files[ $options['index'] ] ) ) {
+			if ( $previewImage->applyFile( $files[ $options['index'] ] ) ) {
+				$arr                   = array(
+					'height' => isset( $options['height'] ) ? $options['height'] : 100,
+					'width'  => isset( $options['width'] ) ? $options['width'] : 100,
+					'mode'   => 'force'
+				);
+				$previewImage->options = $arr; ?>
+					<?php
+					echo $previewImage->render(); ?>
+				<?php
+			}
+		}
+		?>
 
-<?php if (count($files) > 0) : ?>
-<?php if(isset($options['index'])) {
-    if(isset($files[$options['index']])) {
-        if ($previewImage->applyFile($files[$options['index']])){
-	        $arr = array(
-		        'height' => isset($options['height'])?$options['height']:100,
-		        'width' => isset($options['width'])?$options['width']:100,
-		        'mode' => 'force');
-	        $previewImage->options = $arr;
-	        echo $previewImage->render();
-        }
-    }
-    ?>
+	<?php } elseif ( isset( $options['for'] ) && $options['for'] === 'dessireGallery' ) { ?>
+		<?php foreach ( $files as $file ) {
+			if ( $previewImage->applyFile( $file ) ) {
 
-    <?php } else {  ?>
-	<!-- hideOnEdit mandatory since 1.2 -->
-	<div class="hideOnEdit">
-		<!-- Show Images as Thumbnails -->
+				if ( $counter === 1 ) {
+					$arr = array(
+						'height' => 350,
+						'width'  => 510,
+					);
+				} elseif ( $counter ) {
+					$arr = array(
+						'height' => 172,
+						'width'  => 251,
+					);
+				}
 
-		<?php if($showPreview) :?>
-			<div class="post-files" id="post-files-<?= $object->getUniqueId(); ?>">
-                <?php $counter = 0; ?>
-				<?php foreach ($files as $file): ?>
-					<?php if ($previewImage->applyFile($file)): ?>
+				?>
+				<?php if ( $counter ) {
+					$previewImage->options = $arr;
+					?>
+                    <div class="item">
+                        <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>"
+                           href="<?= $file->getUrl(); ?>#.jpeg" title="<?= Html::encode( $file->file_name ) ?>">
+							<?= $previewImage->render(); ?>
+                        </a>
+                    </div>
+				<?php }
+			}
+			$counter ++;
+		}
+	} else { ?>
+        <!-- hideOnEdit mandatory since 1.2 -->
+        <div class="hideOnEdit">
+            <!-- Show Images as Thumbnails -->
 
-						<?php if($counter == 0){ ?>
-							<?php $arr = array(
-								'height' => 130,
-								'width' => 65,
-								'mode' => 'force');
-							$previewImage->options = $arr;
-							?>
-                            <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" href="<?= $file->getUrl(); ?>#.jpeg" title="<?= Html::encode($file->file_name) ?>">
-								<?= $previewImage->render(); ?>
-                            </a>
-						<?php } ?>
-						<?php if($counter == 1 || $counter == 2){ ?>
-							<?php $arr = array(
-								'height' => 65,
-								'width' => 65,
-								'mode' => 'force');
-							$previewImage->options = $arr;
-							?>
-                            <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" href="<?= $file->getUrl(); ?>#.jpeg" title="<?= Html::encode($file->file_name) ?>">
-								<?= $previewImage->render(); ?>
-                            </a>
-						<?php } ?>
-                        <?php if($counter > 2) { ?>
-                            <p><?php echo count($files)-3;
-                                break;
-                            ?></p>
-                        <?php } ?>
+			<?php if ( $showPreview ) : ?>
+                <div class="post-files" id="post-files-<?= $object->getUniqueId(); ?>">
 
-					<?php endif; ?>
-                <?php $counter++; ?>
-				<?php endforeach; ?>
+					<?php foreach ( $files as $file ): ?>
+						<?php if ( $previewImage->applyFile( $file ) ): ?>
 
-				<?php $playlist = [] ?>
+							<?php if ( $counter == 0 ) { ?>
+								<?php $arr             = array(
+									'height' => 181,
+									'width'  => 137,
+									'mode'   => 'force'
+								);
+								$previewImage->options = $arr;
+								?>
+
+                                <div class="item"><?= $previewImage->render(); ?></div>
 
 
 
-			</div>
-		<?php endif; ?>
+							<?php } ?>
+							<?php if ( $counter ===1 ) { ?>
+								<?php $arr             = array(
+									'height' => 91,
+									'width'  => 128,
+									'mode'   => 'force'
+								);
+								$previewImage->options = $arr;
+								?>
 
 
+                                <div class="item"><?= $previewImage->render(); ?></div>
 
-	</div>
+							<?php } ?>
+							<?php if ( $counter === 2 ) { ?>
+								<?php $arr             = array(
+									'height' => 91,
+									'width'  => 128,
+									'mode'   => 'force'
+								);
+								$previewImage->options = $arr;
+								?>
+                                <div class="item"><?= $previewImage->render(); ?>
+                                    <?php if(count($files) > 3) { ?>
+                                    <div class="show-more"><span>+<?php echo count( $files ) - 3; ?></span></div>
+                                    <?php } ?>
+                                </div>
+                                <?php
+									break;
+									?>
+							<?php } ?>
+
+						<?php endif; ?>
+						<?php $counter ++; ?>
+					<?php endforeach; ?>
+
+					<?php $playlist = [] ?>
+
+
+                </div>
+			<?php endif; ?>
+
+
+        </div>
 
 	<?php } ?>
 <?php endif; ?>

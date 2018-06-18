@@ -8,6 +8,7 @@
 
 namespace humhub\modules\content\components;
 
+use humhub\modules\user\models\User;
 use Yii;
 use yii\web\HttpException;
 
@@ -83,7 +84,12 @@ class ContentAddonController extends \humhub\components\Controller
             throw new HttpException(500, 'Model & ID parameter required!');
         }
 
-        \humhub\libs\Helpers::CheckClassType($modelClass, array(ContentAddonActiveRecord::className(), ContentActiveRecord::className()));
+        \humhub\libs\Helpers::CheckClassType( $modelClass, array(
+        	ContentAddonActiveRecord::className(),
+	        ContentActiveRecord::className(),
+	        ContentContainerActiveRecord::className()
+        ) );
+
         $target = $modelClass::findOne(['id' => $pk]);
 
         if ($target === null) {
@@ -96,8 +102,8 @@ class ContentAddonController extends \humhub\components\Controller
         } else {
             $this->parentContent = $target;
         }
-
-        if (!$this->parentContent->content->canRead()) {
+	    $this->parentContent->content;
+        if ($modelClass !== User::className() && !$this->parentContent->content->canRead()) {
             throw new HttpException(403, 'Access denied!');
         }
 

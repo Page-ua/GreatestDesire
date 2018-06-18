@@ -11,9 +11,10 @@ if($isProfileOwner) {
 			'enableAjaxValidation' => true
 		]
 	] ); ?>
-	<?= $form->field( $user, 'status_online' )->label( false )->dropDownList( $arrayStatusOnline, ['options' => $arrayStatusOnlineClass, 'class' => false] );; ?>
+	<?= $form->field( $user, 'status_online' )
+             ->label( false )
+             ->dropDownList( $arrayStatusOnline, ['options' => $arrayStatusOnlineClass, 'class' => 'status'] );; ?>
 	<?php ActiveForm::end(); ?>
-
 
 	<?php
 	$script = <<< JS
@@ -60,6 +61,7 @@ function sendUserData(form, action, data){
 JS;
 	$this->registerJs( $script );
 } else {
-	echo $arrayStatusOnline[$user->status_online];
+	echo '<div class="status ' . strtolower($arrayStatusOnline[$user->status_online]) . '">' . $arrayStatusOnline[$user->status_online] . '</div>';
+
 }
 ?>

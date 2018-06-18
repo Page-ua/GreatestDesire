@@ -154,9 +154,23 @@ class User extends ContentContainerActiveRecord implements \yii\web\IdentityInte
                 $this->populateRelation('profile', $profile);
             }
             return $profile;
+        } else if ($name == 'content') {
+	        $content = parent::__get('content');
+	        if (!$this->isRelationPopulated('content') || $content === null) {
+		        $content = new Content();
+		        $this->populateRelation('content', $content);
+		        $content->setPolymorphicRelation($this);
+	        }
+	        return $content;
         }
         return parent::__get($name);
     }
+
+	public function getContent()
+	{
+		return $this->hasOne(Content::className(), ['object_id' => 'id'])
+		            ->andWhere(['content.object_model' => self::className()]);
+	}
 
     public function scenarios()
     {
