@@ -59,7 +59,7 @@ class ListController extends BaseController
         }
 
         if($item instanceof CustomGallery) {
-            return $this->htmlRedirect($this->contentContainer->createUrl('/gallery/list'));
+            return $this->htmlRedirect($this->contentContainer->createUrl('/user/profile/photo-albums'));
         }
 
         return $this->htmlRedirect($this->contentContainer->createUrl('/gallery/custom-gallery/view', ['openGalleryId' => $openGalleryId]));

@@ -576,4 +576,10 @@ class Space extends ContentContainerActiveRecord implements \humhub\modules\sear
         return Content::VISIBILITY_PRIVATE;
     }
 
+	public function getContent()
+	{
+		return $this->hasOne(Content::className(), ['object_id' => 'id'])
+		            ->andWhere(['content.object_model' => self::className()]);
+	}
+
 }

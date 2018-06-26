@@ -81,11 +81,16 @@ class ProfileMenu extends \humhub\widgets\BaseMenu
                 'isActive' => (Yii::$app->controller->id == "profile" && ( Yii::$app->controller->action->id == "blog" || Yii::$app->controller->action->id == "blog-one")),
             ]);
 
-
+	        $this->addItem([
+		        'label' => Yii::t('GalleryModule.base', 'Photos'),
+		        'url' => $this->user->createUrl('//user/profile/photo-albums'),
+		        'sortOrder' => 700,
+		        'isActive' => (Yii::$app->controller->id == "profile" && (Yii::$app->controller->action->id == "photo-albums" || Yii::$app->controller->action->id == "photos" || Yii::$app->controller->action->id == 'photo-one'))
+	        ]);
 
             $this->addItem([
                 'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Groups'),
-                'url' => $this->user->createUrl('//user/profile/groups'),
+                'url' => $this->user->createUrl('//user/profile/space-membership-list'),
                 'sortOrder' => 800,
                 'isActive' => (Yii::$app->controller->id == "profile" && Yii::$app->controller->action->id == "groups"),
             ]);

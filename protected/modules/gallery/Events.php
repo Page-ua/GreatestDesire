@@ -32,7 +32,6 @@ class Events extends Object
                 'icon' => '<i class="fa fa-picture-o"></i>',
                 'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'gallery')
 
-
             ]);
         }
     }

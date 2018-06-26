@@ -37,8 +37,8 @@ class ManageController extends BaseAccountController
 	public function actionList($id)
 	{
 		$this->user = User::findOne($id);
-		$data = Friendship::getAllFriends($this->user, 15);
-
+		$data = Friendship::getAllFriends($this->user, 5);
+		$ajaxUrl = '/friendship/manage/friend-list-ajax';
 
 		$this->subLayout = $this->subLayout = "@humhub/modules/user/views/profile/_layout";
 
@@ -64,6 +64,7 @@ class ManageController extends BaseAccountController
 			'user' => $this->user,
 			'friends' => $friends,
 			'count' => $count,
+			'ajaxUrl' => $ajaxUrl,
 		]);
 	}
 

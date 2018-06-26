@@ -12,6 +12,10 @@ use humhub\modules\blog\models\Blog;
 use humhub\modules\content\models\Category;
 use humhub\modules\desire\models\Desire;
 use humhub\modules\favorite\models\Favorite;
+use humhub\modules\file\converter\PreviewImage;
+use humhub\modules\file\models\File;
+use humhub\modules\gallery\models\CustomGallery;
+use humhub\modules\gallery\models\Media;
 use humhub\modules\user\components\Session;
 use humhub\modules\user\models\Profile;
 use UserModel;
@@ -143,11 +147,8 @@ class ProfileController extends ContentContainerController
 	{
 		$this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
 
-		$blogList = Blog::find();
-		$favorite = (new \yii\db\Query())->from('favorite');
-		$blogList->leftJoin(['f' => $favorite], 'f.object_id = blog.id');
-		$blogList->andWhere(['f.object_model' => Blog::className()]);
-		$blogList = $blogList->all();
+
+		$blogList = Favorite::getFavoriteContent(Blog::className(), $this->contentContainer->id);
 
 		$category = new Category();
 		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
@@ -195,12 +196,7 @@ class ProfileController extends ContentContainerController
     {
 	    $this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
 
-	    $desireList = Desire::find();
-	    $favorite = (new \yii\db\Query())->from('favorite');
-	    $desireList->leftJoin(['f' => $favorite], 'f.object_id = desire.id');
-	    $desireList->andWhere(['<>', 'desire.id', $this->contentContainer->greatest_desire]);
-	    $desireList->andWhere(['f.object_model' => Desire::className()]);
-	    $desireList = $desireList->all();
+	    $desireList = Favorite::getFavoriteContent(Desire::className(), $this->contentContainer->id);
 
 	    $greatestDesire = Desire::getGreatestDesire($this->user);
 
@@ -224,6 +220,85 @@ class ProfileController extends ContentContainerController
 		    'user' => $this->contentContainer,
 	    ] );
 
+    }
+
+    public function actionPhotoAlbums()
+    {
+	    $albums = CustomGallery::find()->contentContainer($this->contentContainer)->readable();
+	    $albums = $albums->all();
+
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'gallery');
+
+    	return $this->render('photoAlbums', [
+			'albums' => $albums,
+		    'category' => $category,
+	    ]);
+    }
+
+    public function actionFavoritePhotoAlbums()
+    {
+		$albums = Favorite::getFavoriteContent(CustomGallery::className(), $this->contentContainer->id);
+
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'gallery');
+
+	    return $this->render('photoAlbums', [
+		    'albums' => $albums,
+		    'category' => $category,
+	    ]);
+    }
+
+    public function actionPhotos($id)
+    {
+
+	    $album = CustomGallery::findOne(['id' => $id]);
+
+    	return $this->render('photos', [
+			'photos' => $album->getMediaList(),
+		    'album' => $album,
+
+	    ]);
+    }
+
+    public function actionFavoritePhotos()
+    {
+
+	    $photos = Favorite::getFavoriteContent(Media::className(), $this->contentContainer->id);
+
+    	return $this->render('favorite-photos', [
+			'photos' => $photos,
+
+	    ]);
+    }
+
+    public function actionPhotoOne($id)
+    {
+
+	    $photo = Media::findOne($id);
+	    $nextPhoto = Media::find()->where(['>', 'id', $photo->id])->andWhere(['gallery_id' => $photo->gallery_id])->one();
+	    $prevPhoto = Media::find()->where(['<', 'id', $photo->id])->andWhere(['gallery_id' => $photo->gallery_id])->one();
+		$album = CustomGallery::findOne([$photo->gallery_id]);
+
+	    $nextPhotoUrl =(!empty($nextPhoto))?$this->contentContainer->createUrl('/user/profile/photo-one', ['id' => $nextPhoto->id]):'';
+	    $prevPhotoUrl =(!empty($prevPhoto))?$this->contentContainer->createUrl('/user/profile/photo-one', ['id' => $prevPhoto->id]):'';
+
+		$photoPreview = new PreviewImage;
+		$photoPreview->options = [
+			'mode' => 'force',
+			'width' => 751,
+			'height' => 513,
+		];
+		$file = File::findOne(['object_id' => $photo->id, 'object_model' => $photo::className()]);
+		$photoPreview->applyFile($file);
+
+    	return $this->render('photoOne', [
+			'photo' => $photo,
+		    'album' => $album,
+		    'photoUrl' => $photoPreview->getUrl(),
+		    'urlNext' => $nextPhotoUrl,
+		    'urlPrev' => $prevPhotoUrl,
+	    ]);
     }
 
     public function actionFollow()
@@ -287,10 +362,11 @@ class ProfileController extends ContentContainerController
         if (!$this->getUser()->isCurrentUser()) {
             $query->andWhere(['!=', 'space.visibility', \humhub\modules\space\models\Space::VISIBILITY_NONE]);
         }
+        $spaces = $query->all();
 
-        $title = Yii::t('UserModule.widgets_views_userSpaces', '<strong>Member</strong> in these spaces');
-        return $this->renderAjaxContent(\humhub\modules\space\widgets\ListBox::widget(['query' => $query, 'title' => $title]));
+        return $this->render('space', ['spaces' => $spaces]);
     }
+
 
 }
 

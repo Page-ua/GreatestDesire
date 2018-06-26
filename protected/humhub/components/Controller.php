@@ -132,7 +132,7 @@ class Controller extends \yii\web\Controller
 
         $layoutFile = $this->findLayoutFile($this->getView());
         if ($layoutFile !== false) {
-            return $this->getView()->renderFile($layoutFile, ['content' => Html::tag('div', $content, ['id' => 'layout-content'])], $this);
+            return $this->getView()->renderFile($layoutFile, ['content' => Html::tag('div', $content, ['id' => 'layout-content', 'class' => 'right-side-wrap'])], $this);
         } else {
             return $content;
         }
@@ -281,7 +281,7 @@ class Controller extends \yii\web\Controller
         $this->view->registerJs('humhub.modules.ui.view.setState("' . $moduleId . '", "' . Yii::$app->controller->id . '", "' . Yii::$app->controller->action->id . '");', \yii\web\View::POS_BEGIN);
 
         if (Yii::$app->request->isPjax) {
-            \humhub\widgets\TopMenu::setViewState();
+            \humhub\widgets\BaseLeftMenu::setViewState();
         }
     }
 

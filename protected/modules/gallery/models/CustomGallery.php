@@ -113,4 +113,23 @@ class CustomGallery extends BaseGallery
         return $this->mediaListQuery()->one() === null;
     }
 
+    public static function getPublicAlbums($offset = 0)
+    {
+
+	    $content = (new \yii\db\Query())->from('content');
+	    $object = self::find();
+	    $object->leftJoin(['c' => $content], 'c.object_id = gallery_gallery.id');
+	    $object->andWhere(['c.object_model' => CustomGallery::className()]);
+	    $object->andWhere(['c.visibility' => 1]);
+	    $object->limit(9);
+	    $object->offset($offset);
+
+		$objectClone = clone $object;
+
+	    $data['albums'] = $object->all();
+	    $data['count'] = $objectClone->count();
+
+        return $data;
+    }
+
 }

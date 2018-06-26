@@ -36,15 +36,7 @@ $bundle = Assets::register($this);
                 <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
             </a>
         </div>
-        <div class="panel-footer overlay">
-            <div class="social-activities colorFont5 pull-right">
-                <?php if ($footerOverwrite): ?>
-                    <?= $footerOverwrite ?>
-                <?php else: ?>
-                    <?= LikeLink::widget(['object' => $contentObject]) ?> | <?= CommentLink::widget(['object' => $contentObject, 'mode' => CommentLink::MODE_POPUP]) ?>
-                <?php endif; ?>
-            </div>
-        </div>
+
         <div class="panel-heading background-none <?=$alwaysShowHeading ? '' : 'overlay'?>">
             <div class="footnotesize pull-left truncate tt" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?= $showTooltip ? Html::encode($title) : '' ?>">
                 <?= Html::encode($title); ?>

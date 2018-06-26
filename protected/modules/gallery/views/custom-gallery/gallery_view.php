@@ -73,15 +73,6 @@ $bundle = Assets::register($this);
         <div class="row">
             <?= humhub\modules\gallery\widgets\GalleryList::widget(['entryList' => $gallery->getMediaList(), 'parentGallery' => $gallery]); ?>
         </div>
-        <div class="row">
-            <div class="col-sm-12 social-activities-gallery colorFont5">
-                <?= LikeLink::widget(['object' => $gallery]); ?>
-                |
-                <?= CommentLink::widget(['object' => $gallery]); ?>
-            </div>
-            <div class="col-sm-12 comments">
-                <?= Comments::widget(['object' => $gallery]); ?>
-            </div>
-        </div>
+
     </div>
 </div>

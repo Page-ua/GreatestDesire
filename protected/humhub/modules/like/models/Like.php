@@ -8,6 +8,7 @@
 
 namespace humhub\modules\like\models;
 
+use humhub\modules\space\models\Space;
 use Yii;
 use humhub\modules\content\components\ContentAddonActiveRecord;
 use humhub\modules\content\interfaces\ContentOwner;
@@ -93,16 +94,19 @@ class Like extends ContentAddonActiveRecord
      */
     public function afterSave($insert, $changedAttributes)
     {
-        Yii::$app->cache->delete('likes_' . $this->object_model . "_" . $this->object_id);
+	    Yii::$app->cache->delete( 'likes_' . $this->object_model . "_" . $this->object_id );
 
-        \humhub\modules\like\activities\Liked::instance()->about($this)->save();
+    	if($this->object_model !== Space::className()) {
 
-        if ($this->getSource() instanceof ContentOwner && $this->getSource()->content->createdBy !== null) {
-            // Send notification
-            NewLike::instance()->from(Yii::$app->user->getIdentity())->about($this)->send($this->getSource()->content->createdBy);
-        }
+		    \humhub\modules\like\activities\Liked::instance()->about( $this )->save();
 
-        return parent::afterSave($insert, $changedAttributes);
+		    if ( $this->getSource() instanceof ContentOwner && $this->getSource()->content->createdBy !== null ) {
+			    // Send notification
+			    NewLike::instance()->from( Yii::$app->user->getIdentity() )->about( $this )->send( $this->getSource()->content->createdBy );
+		    }
+
+		    return parent::afterSave($insert, $changedAttributes);
+	    }
     }
 
     /**

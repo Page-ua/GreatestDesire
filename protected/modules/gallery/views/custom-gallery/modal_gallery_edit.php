@@ -21,14 +21,22 @@
     <?php $form = \yii\bootstrap\ActiveForm::begin(['id' => 'Gallery', 'class' => 'form-horizontal']); ?>
 
         <div class="modal-body">
-            <?= $form->field($galleryForm->instance, 'title'); ?>
-            <?= $form->field($galleryForm->instance, 'description')->textArea(); ?>
-            <?= $form->field($galleryForm, 'visibility')->checkbox(['label' => Yii::t('GalleryModule.base', 'Make this gallery public')])?>
-            <?= $form->field($galleryForm->instance, 'category')->dropDownList($category); ?>
+            <select name="album" id="album-choice">
+                <option value="new">Create new Album</option>
+                <?php foreach( $listGallery as $gallery) { ?>
+                    <option value="<?= $this->context->contentContainer->createUrl('/gallery/custom-gallery/view', ['openGalleryId' => $gallery->id. '#.jpeg']); ?>"><?= $gallery->title; ?></option>
+                <?php } ?>
+            </select>
+            <div id="fields-for-create">
+                <?= $form->field($galleryForm->instance, 'title'); ?>
+                <?= $form->field($galleryForm->instance, 'description')->textArea(); ?>
+                <?= $form->field($galleryForm, 'visibility')->checkbox(['label' => Yii::t('GalleryModule.base', 'Make this gallery public')])?>
+                <?= $form->field($galleryForm->instance, 'category')->dropDownList($category); ?>
+            </div>
         </div>
 
         <div class="modal-footer">
-            <button class="btn btn-primary" data-action-click="ui.modal.submit" data-ui-loader type="submit"
+            <button id="create-gallery-button" class="btn btn-primary" data-action-click="ui.modal.submit" data-ui-loader type="submit"
                     data-action-url="<?= $contentContainer->createUrl('/gallery/custom-gallery/edit', ['itemId' => $galleryForm->instance->getItemId()]) ?>">
                         <?= \Yii::t('GalleryModule.base', 'Save'); ?>
             </button>
@@ -38,3 +46,24 @@
         </div>
     <?php \yii\bootstrap\ActiveForm::end(); ?>
 <?php \humhub\widgets\ModalDialog::end(); ?>
+
+
+<script>
+    $('#album-choice').change(function () {
+        var value = $(this).val();
+        var fields = $('#fields-for-create');
+        if(value === 'new') {
+            fields.css('display', 'block');
+        } else {
+            fields.css('display', 'none');
+        }
+    })
+
+    $('#create-gallery-button').on('click', function () {
+        var value = $('#album-choice').val();
+        if(value !== 'new') {
+            window.location.href = value;
+            return false;
+        }
+    })
+</script>

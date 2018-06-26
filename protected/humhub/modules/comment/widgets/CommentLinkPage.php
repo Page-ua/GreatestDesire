@@ -38,7 +38,7 @@ class CommentLinkPage extends \yii\base\Widget
 	{
 
 		if(!$this->user) {
-			$this->user = User::findOne( $this->object->created_by );
+			$this->user = User::findOne( $this->object->content->created_by );
 		}
 		return $this->render('linkPage', [
 			'id' => $this->object->getUniqueId(),

@@ -8,6 +8,7 @@
 
 namespace humhub\modules\content\components;
 
+use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
 use Yii;
 use yii\web\HttpException;
@@ -103,7 +104,7 @@ class ContentAddonController extends \humhub\components\Controller
             $this->parentContent = $target;
         }
 	    $this->parentContent->content;
-        if ($modelClass !== User::className() && !$this->parentContent->content->canRead()) {
+        if ($modelClass !== User::className() && $modelClass !== Space::className() && !$this->parentContent->content->canRead()) {
             throw new HttpException(403, 'Access denied!');
         }
 

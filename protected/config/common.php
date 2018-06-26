@@ -7,7 +7,7 @@ return [
 				'facebook' => [
 					'class' => 'humhub\modules\user\authclient\Facebook',
 					'clientId' => '1516365641795595',
-					'clientSecret' => '11bc401aebec38c807a6d0b007fbec35',
+					'clientSecret' => 'cb0767c2a412a143a52d33b0e3cde83f',
 				],
 				'google' => [
 					'class' => 'humhub\modules\user\authclient\Google',

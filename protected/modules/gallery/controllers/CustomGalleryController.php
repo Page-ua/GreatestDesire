@@ -78,10 +78,14 @@ class CustomGalleryController extends ListController
             return $this->htmlRedirect($this->contentContainer->createUrl('/gallery/custom-gallery/view', ['openGalleryId' => $gallery->instance->id]));
         }
 
+        $listGallery = CustomGallery::find()->contentContainer($this->contentContainer)->readable();
+        $listGallery = $listGallery->all();
+
         return $this->renderPartial('modal_gallery_edit', [
                     'galleryForm' => $gallery,
                     'contentContainer' => $this->contentContainer,
 	                'category' => $category,
+	                'listGallery' => $listGallery,
         ]);
     }
 
@@ -139,6 +143,7 @@ class CustomGalleryController extends ListController
     protected function renderGallery($ajax = false, $openGalleryId = null)
     {
         $gallery = $this->getOpenGallery($openGalleryId);
+
 
         if ($gallery) {
             if(!$gallery->content->canView()) {

@@ -8,6 +8,7 @@
 
 namespace humhub\modules\favorite\models;
 
+use humhub\modules\gallery\models\CustomGallery;
 use Yii;
 use humhub\modules\content\components\ContentAddonActiveRecord;
 use humhub\modules\content\interfaces\ContentOwner;
@@ -72,5 +73,16 @@ class Favorite extends ContentAddonActiveRecord
 	}
 
 	public function afterSave( $insert, $changedAttributes ) { }
+
+	public static function getFavoriteContent($objectName, $userId)
+	{
+		$favorite = (new \yii\db\Query())->from('favorite');
+		$object = $objectName::find();
+		$object->leftJoin(['f' => $favorite], 'f.object_id = '.$objectName::tableName().'.id');
+		$object->andWhere(['f.object_model' => $objectName::className()]);
+		$object->andWhere(['f.created_by' => $userId]);
+
+		return $object->all();
+	}
 
 }

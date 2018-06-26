@@ -20,17 +20,24 @@ use \Yii;
 class SquarePreviewImage extends PreviewImage
 {
 
-    const DEFAULT_GALLERY_PREVIEW_IMAGE_MAX_DIM = 400;
+    const DEFAULT_GALLERY_PREVIEW_IMAGE_MAX_DIM = 250;
+
+    public $first;
 
     public function applyFile(\humhub\modules\file\models\File $file)
     {
+
+
         if (parent::applyFile($file)) {
             $this->options['mode'] = 'force';
             $galleryPreviewImageMaxDim = Yii::$app->getModule('gallery')->settings->get('galleryPreviewImageMaxDim') ? Yii::$app->getModule('gallery')->settings->get('galleryPreviewImageMaxDim') : SquarePreviewImage::DEFAULT_GALLERY_PREVIEW_IMAGE_MAX_DIM;
             $imageInfo = @getimagesize($file->store->get());
             $dim = min($imageInfo[0], $imageInfo[1], $galleryPreviewImageMaxDim);
+            if($this->first) {
+	            $dim = $dim * 2;
+            }
             $this->options['width'] = $dim;
-            $this->options['height'] = $dim;
+            $this->options['height'] = $dim*0.7;
             return true;
         } else {
             return false;
@@ -44,9 +51,10 @@ class SquarePreviewImage extends PreviewImage
      * @param number $maxDimension limit maximum with/height.
      * @return string the thumbnail's url or null if an error occured.
      */
-    public static function getSquarePreviewImageUrlFromFile($basefile = null)
+    public static function getSquarePreviewImageUrlFromFile($basefile = null, $first = false)
     {
         $previewImage = new SquarePreviewImage();
+        $previewImage->first = $first;
         if ($previewImage->applyFile($basefile)) {
             return $previewImage->getUrl();
         } else {

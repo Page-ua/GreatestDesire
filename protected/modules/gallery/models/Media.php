@@ -133,10 +133,10 @@ class Media extends ContentActiveRecord
         return $path;
     }
 
-    public function getSquarePreviewImageUrl()
+    public function getSquarePreviewImageUrl($first = false)
     {
         try {
-            $previewImage = SquarePreviewImage::getSquarePreviewImageUrlFromFile($this->baseFile);
+            $previewImage = SquarePreviewImage::getSquarePreviewImageUrlFromFile($this->baseFile, $first);
         } catch (Exception $e) {
             
         }
@@ -204,7 +204,27 @@ class Media extends ContentActiveRecord
 
         return $mediaUpload;
     }
-    
+
+    public static function getPublicPhotos($offset = 0)
+    {
+	    $media = (new \yii\db\Query())->from('gallery_media');
+	    $content = (new \yii\db\Query())->from('content');
+	    $object = File::find();
+	    $object->leftJoin(['m' => $media], 'm.id = file.object_id');
+	    $object->leftJoin(['c' => $content], 'c.object_id = m.gallery_id');
+	    $object->where(['file.object_model' => Media::className()]);
+	    $object->andWhere(['c.object_model' => CustomGallery::className()]);
+	    $object->andWhere(['c.visibility' => 1]);
+	    $object->limit(9);
+	    $object->offset($offset);
+		$objectClone = clone $object;
+
+	    $data['photos'] = $object->all();
+	    $data['count'] = $objectClone->count();
+
+	    return $data;
+    }
+
     public function afterDelete()
     {
         if($this->baseFile !== NULL) {

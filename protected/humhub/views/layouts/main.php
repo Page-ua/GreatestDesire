@@ -18,15 +18,17 @@ use yii\helpers\Url;
         <meta name="theme-color" content="#000">
         <link rel="shortcut icon" href="/<?= $this->theme->getBaseUrl(); ?>/img/favicon/apple-touch-icon.png">
         <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/main.min.css">
-        <base href="<?= $this->theme->getBaseUrl(); ?>/">
+
         <?php $this->head() ?>
         <?= $this->render('head'); ?>
+        <base id="myBase" href="<?= $this->theme->getBaseUrl(); ?>/">
     </head>
     <body>
         <?php $this->beginBody() ?>
 
+        <?php $userModel = Yii::$app->user->getIdentity(); ?>
 
-       <?php if(!isset($_GET['old'])) { ?>
+
 
         <header class="privHeader">
             <div class="fixed-privHeader-wrap">
@@ -176,7 +178,15 @@ use yii\helpers\Url;
                                         <div class="add-link-block">
                                             <div class="link greatest-desire"><a href="<?= Url::to(['/desire/desire/create']); ?>"><svg class="icon icon-earth_green"><use xlink:href="svg/sprite/sprite.svg#earth_green"></use></svg> Greatest Desire</a></div>
                                             <div class="link"><a href="<?= Url::to(['/blog/blog/create']); ?>"><svg class="icon icon-success_stories"><use xlink:href="svg/sprite/sprite.svg#success_stories"></use></svg> Success story</a></div>
-                                            <div class="link"><a href="<?= Url::to(['/gallery/list']); ?>"><svg class="icon icon-photos"><use xlink:href="svg/sprite/sprite.svg#photos"></use></svg> Photos</a></div>
+
+                                            <div class="link">
+                                                <a data-target="#globalModal" href="<?= $userModel->createUrl('/gallery/custom-gallery/edit'); ?>">
+                                                    <svg class="icon icon-photos">
+                                                        <use xlink:href="svg/sprite/sprite.svg#photos"></use>
+                                                    </svg> Photos
+                                                </a>
+                                            </div>
+
                                             <div class="link"><a href="<?= Url::to(['/blog/blog/create']); ?>"><svg class="icon icon-blog"><use xlink:href="svg/sprite/sprite.svg#blog"></use></svg> Blog post</a></div>
                                             <div class="link"><a href="#"><svg class="icon icon-Group"><use xlink:href="svg/sprite/sprite.svg#Group"></use></svg> Group</a></div>
                                             <div class="link"><a href="#"><svg class="icon icon-poll"><use xlink:href="svg/sprite/sprite.svg#poll"></use></svg> Poll</a></div>
@@ -201,7 +211,6 @@ use yii\helpers\Url;
                     <div class="user-navigation">
                         <div class="wrap">
                             <div class="account-block">
-	                            <?php $userModel = Yii::$app->user->getIdentity(); ?>
                                 <a href="<?= $userModel->createUrl('/user/profile/home'); ?>">
                                     <div class="user-img"><img src="<?= $userModel->getProfileImage()->getUrl(); ?>"></div><span>My Account</span></a>
                             </div>
@@ -236,15 +245,7 @@ use yii\helpers\Url;
 
                            </div>
                            <div class="general-menu">
-                               <ul>
-                                   <li><a href="<?= Url::to(['/desire/desire/list']); ?>">Desires</a></li>
-                                   <li><a href="#">Chat</a></li>
-                                   <li><a href="<?= Url::to(['/gallery/list']); ?>">Photos</a></li>
-                                   <li><a href="<?= Url::to(['/blog/blog/list']); ?>">Blogs</a></li>
-                                   <li><a href="#">Groups</a></li>
-                                   <li><a href="#">Polls</a></li>
-                                   <li><a href="#">News</a></li>
-                               </ul>
+                               <?= humhub\widgets\BaseLeftMenu::widget(); ?>
                            </div>
                            <div class="sidebar-notification">
                                <div class="item">
@@ -262,10 +263,10 @@ use yii\helpers\Url;
                            </div>
                        </div>
                    </aside>
-                   <div class="right-side-wrap">
+
 	                   <?= $content; ?>
-                   </div>
                </div>
+
                <div class="popular-desire-tags">
                    <div class="base-lg-wrap">
                        <div class="title">Popular desire tags</div>
@@ -337,6 +338,7 @@ use yii\helpers\Url;
                        </div>
                    </div>
                </div>
+
            </main>
            <footer>
                <div class="top">
@@ -367,49 +369,7 @@ use yii\helpers\Url;
                </div>
            </footer>
 
-        <?php } else { ?>
 
-           <div id="topbar-first" class="topbar">
-               <div class="container">
-                   <div class="topbar-brand hidden-xs">
-				       <?= \humhub\widgets\SiteLogo::widget(); ?>
-                   </div>
-
-                   <div class="topbar-actions pull-right">
-				       <?= \humhub\modules\user\widgets\AccountTopMenu::widget(); ?>
-                   </div>
-
-                   <div class="notifications pull-right">
-				       <?= \humhub\widgets\NotificationArea::widget(); ?>
-                   </div>
-               </div>
-           </div>
-           <!-- end: first top navigation bar -->
-
-           <!-- start: second top navigation bar -->
-           <div id="topbar-second" class="topbar">
-               <div class="container">
-                   <ul class="nav" id="top-menu-nav">
-                       <!-- load space chooser widget -->
-				       <?= \humhub\modules\space\widgets\Chooser::widget(); ?>
-
-                       <!-- load navigation from widget -->
-				       <?= \humhub\widgets\TopMenu::widget(); ?>
-                   </ul>
-
-                   <ul class="nav pull-right" id="search-menu-nav">
-				       <?= \humhub\widgets\TopMenuRightStack::widget(); ?>
-                   </ul>
-               </div>
-           </div>
-
-
-
-
-        <!-- end: second top navigation bar -->
-
-        <?= $content; ?>
-       <?php } ?>
         <?php $this->endBody() ?>
         <script src="<?= $this->theme->getBaseUrl(); ?>/js/scripts.min.js"></script>
         <script src="<?= $this->theme->getBaseUrl(); ?>/js/main.js"></script>
