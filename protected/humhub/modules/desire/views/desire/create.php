@@ -13,10 +13,12 @@ use yii\widgets\ActiveForm;
 ?>
 <h2>Write your Greatest Desire</h2>
 
-<?php $form = ActiveForm::begin(['action' => [$submitUrl], 'method' => 'post']); ?>
+<div class="page-content">
+    <div class="content-wrap">
+        <div class="create-blog"></div>
 
-<?= Html::hiddenInput("containerGuid", $contentContainer->guid); ?>
-<?= Html::hiddenInput("containerClass", get_class($contentContainer)); ?>
+<?php $form = ActiveForm::begin(); ?>
+
 <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 <?= $form->field($model, 'Tags')->widget(TagsinputWidget::classname(), [
 	'clientOptions' => [
@@ -58,3 +60,6 @@ humhub\modules\file\widgets\UploadButton::widget([
 </div>
 
 <?php ActiveForm::end(); ?>
+
+    </div>
+</div>

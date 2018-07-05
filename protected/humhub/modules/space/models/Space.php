@@ -582,4 +582,17 @@ class Space extends ContentContainerActiveRecord implements \humhub\modules\sear
 		            ->andWhere(['content.object_model' => self::className()]);
 	}
 
+	public static function getAllPublic($offset = 0)
+	{
+		$query = self::find();
+		$query->andWhere(['!=', 'space.visibility', \humhub\modules\space\models\Space::VISIBILITY_NONE]);
+		$query->limit(10);
+		$query->offset($offset);
+
+		$data['count'] = $query->count();
+		$data['spaces'] = $query->all();
+
+		return $data;
+	}
+
 }

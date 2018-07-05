@@ -3,6 +3,7 @@ use yii\helpers\Html;
 ?>
 
 <?= Html::beginTag('span', $options) ?>
-    <i class="fa fa-cloud-upload" aria-hidden="true"></i> <?= $label ?>
+    <?= Yii::t('FileModule.widgets_views_fileUploadButton', 'Upload files') ?>
+     <?= $label ?>
     <?= $input ?>
 <?= Html::endTag('span') ?>

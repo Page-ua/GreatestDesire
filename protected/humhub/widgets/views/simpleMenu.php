@@ -14,7 +14,7 @@
 
 		<?php foreach ($items as $item) : ?>
 			<?php $item['htmlOptions']['class'] .= " list-group-item"; ?>
-			<li class="<?= $item['isActive']?'active':''; ?>"><?php echo \yii\helpers\Html::a($item['label'], $item['url']); ?></li>
+			<li class="<?= $item['isActive']?'active':''; ?> <?= isset($item['class'])?$item['class']:''; ?>"><?php echo \yii\helpers\Html::a($item['label'], $item['url']); ?></li>
 		<?php endforeach; ?>
 	</ul>
 <?php endforeach; ?>

@@ -123,7 +123,7 @@ class AuthController extends Controller
         // User already logged in - Add new authclient to existing user
         if (!Yii::$app->user->isGuest) {
             AuthClientHelpers::storeAuthClientForUser($authClient, Yii::$app->user->getIdentity());
-            return $this->redirect(['/user/account/connected-accounts']);
+            return $this->redirect(['/user/account/edit']);
         }
 
         // Login existing user 

@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\desire\models\Desire;
 use Yii;
 use yii\helpers\Url;
 use yii\web\HttpException;
@@ -63,6 +64,48 @@ class AccountController extends BaseAccountController
      */
     public function actionEdit()
     {
+
+
+
+	    if (!Yii::$app->user->canChangePassword()) {
+		    throw new HttpException(500, 'Password change is not allowed');
+	    }
+
+	    $userPassword = new \humhub\modules\user\models\Password();
+	    $userPassword->scenario = 'changePassword';
+
+
+	    $this->subLayout = "@humhub/views/layouts/_sublayout";
+
+	    $user = Yii::$app->user->getIdentity();
+
+	    if(Yii::$app->request->isPost && $user->profile->load(Yii::$app->request->post())) {
+		    if($user->profile->validate()) {
+			    $result3 = $user->profile->save();
+		    }
+		    $pass = Yii::$app->request->post('Password');
+            if(!empty($pass['newPassword'])) {
+	            if ( ! Yii::$app->user->canChangePassword() ) {
+		            throw new HttpException( 500, 'Password change is not allowed' );
+	            }
+	            if ( $userPassword->load( Yii::$app->request->post() ) && $userPassword->validate() ) {
+		            $userPassword->user_id = Yii::$app->user->id;
+		            $userPassword->setPassword( $userPassword->newPassword );
+		            $userPassword->save();
+	            }
+            }
+        }
+
+    	return $this->render('edit', [
+            'user' => $user,
+            'changePasswordModel' => $userPassword,
+            'socialButton' => $this->ConnectedAccounts(),
+
+	    ]);
+    }
+
+    public function actionSettings()
+    {
         $user = Yii::$app->user->getIdentity();
         $user->profile->scenario = 'editProfile';
 
@@ -87,7 +130,7 @@ class AccountController extends BaseAccountController
             return $this->redirect(['edit']);
         }
 
-        return $this->render('edit', ['hForm' => $form]);
+        return $this->render('settings', ['hForm' => $form]);
     }
 
 
@@ -208,14 +251,19 @@ class AccountController extends BaseAccountController
 
     public function actionConnectedAccounts()
     {
-        if (Yii::$app->request->isPost && Yii::$app->request->get('disconnect')) {
-            foreach (Yii::$app->user->getAuthClients() as $authClient) {
-                if ($authClient->getId() == Yii::$app->request->get('disconnect')) {
-                    \humhub\modules\user\authclient\AuthClientHelpers::removeAuthClientForUser($authClient, Yii::$app->user->getIdentity());
-                }
-            }
-            return $this->redirect(['connected-accounts']);
-        }
+	    if (Yii::$app->request->isPost && Yii::$app->request->get('disconnect')) {
+		    foreach (Yii::$app->user->getAuthClients() as $authClient) {
+			    if ($authClient->getId() == Yii::$app->request->get('disconnect')) {
+				    \humhub\modules\user\authclient\AuthClientHelpers::removeAuthClientForUser($authClient, Yii::$app->user->getIdentity());
+			    }
+		    }
+		    return $this->redirect(['/user/account/edit']);
+	    }
+    }
+
+    public function ConnectedAccounts()
+    {
+
         $clients = [];
         foreach (Yii::$app->get('authClientCollection')->getClients() as $client) {
             if (!$client instanceof humhub\modules\user\authclient\BaseFormAuth && !$client instanceof \humhub\modules\user\authclient\interfaces\PrimaryClient) {
@@ -233,7 +281,7 @@ class AccountController extends BaseAccountController
             $activeAuthClientIds[] = $authClient->getId();
         }
 
-        return $this->render('connected-accounts', [
+        return $this->renderPartial('connected-accounts', [
                     'authClients' => $clients,
                     'currentAuthProviderId' => $currentAuthProviderId,
                     'activeAuthClientIds' => $activeAuthClientIds

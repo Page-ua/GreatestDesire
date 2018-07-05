@@ -40,7 +40,6 @@ class DesireController extends GeneralController {
 	public function actionCreate() {
 
 		$model = new Desire();
-		$this->setContentSettings($model);
 
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
 
@@ -55,8 +54,6 @@ class DesireController extends GeneralController {
 		return $this->render( 'create',
 			[
 				'model' => $model,
-				'contentContainer' => $this->contentContainer,
-				'submitUrl' => $this->generateSubmitUrl()
 			]
 		);
 	}
@@ -80,7 +77,6 @@ class DesireController extends GeneralController {
 			$this->forbidden();
 		}
 
-		$this->setContentSettings($model);
 
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
 
@@ -94,8 +90,6 @@ class DesireController extends GeneralController {
 		return $this->render( 'update',
 			[
 				'model' => $model,
-				'contentContainer' => $this->contentContainer,
-				'submitUrl' => $this->generateSubmitUrl()
 			]
 		);
 	}

@@ -4,7 +4,7 @@ use humhub\modules\friendship\models\Friendship;
 use yii\helpers\Url;
 
 if ( $isProfileOwner) { ?>
-    <li class="edit"><a href="<?= Url::to( [ '/user/account/edit' ] ); ?>">
+    <li class="edit"><a class="link" href="<?= Url::to( [ '/user/account/edit' ] ); ?>">
             <svg class="icon icon-edit">
                 <use xlink:href="./svg/sprite/sprite.svg#edit"></use>
             </svg>

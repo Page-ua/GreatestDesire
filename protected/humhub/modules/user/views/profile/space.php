@@ -23,7 +23,7 @@ use yii\helpers\Html;
 					<div class="photo"><img src="<?php echo $space->getProfileImage()->getUrl(); ?>"></div>
 					<div class="group-wrap">
 						<div class="title"><?php echo Html::encode($space->name); ?></div>
-						<div class="category">Activities</div><?php //TODO add display category Group; ?>
+						<div class="category"><?= $category[$space->category]; ?></div><?php //TODO add display category Group; ?>
 						<div class="text"><?php echo Html::encode($space->description); ?></div>
 					</div>
 				</a>
@@ -32,7 +32,7 @@ use yii\helpers\Html;
 						<div class="val"><?= $space->getMemberships()->count(); ?></div>
 					</div>
                     <?= \humhub\modules\like\widgets\LikeLink::widget(['object' => $space, 'mode' => true]); ?>
-                    <?= \humhub\modules\favorite\widgets\FavoriteLink::widget(['object' => $space]); ?>
+                    <?= \humhub\modules\favorite\widgets\FavoriteLink::widget(['object' => $space, 'mode' => true]); ?>
 				</div>
 			</li>
             <?php } ?>

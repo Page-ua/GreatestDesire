@@ -9,6 +9,7 @@
 namespace humhub\modules\blog\controllers;
 
 use humhub\components\GeneralController;
+use humhub\components\Response;
 use humhub\modules\blog\models\Blog;
 use humhub\modules\content\models\Category;
 use Yii;
@@ -42,14 +43,32 @@ class BlogController extends GeneralController {
 			'articles' => $data['blog'],
 			'count' => $data['count'],
 			'category' => $category,
+			'ajaxUrl' => '/blog/blog/ajax-list',
 		]);
+
+	}
+
+	public function actionAjaxList($offset) {
+		$data = Blog::getAllPublic($offset);
+
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+		Yii::$app->response->format = Response::FORMAT_JSON;
+
+		$result['html'] = $this->renderPartial('_list', [
+			'articles' => $data['blog'],
+			'category' => $category,
+		]);
+		$result['count'] = $data['count'];
+
+		return $result;
 
 	}
 
 	public function actionCreate() {
 
 		$model = new Blog();
-		$this->setContentSettings($model);
 
 		$category = new Category();
 		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
@@ -66,7 +85,6 @@ class BlogController extends GeneralController {
 		return $this->render( 'create',
 			[
 				'model' => $model,
-				'submitUrl' => $this->generateSubmitUrl(),
 				'category'  => $category,
 			]
 		);

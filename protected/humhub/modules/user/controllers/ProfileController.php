@@ -364,7 +364,13 @@ class ProfileController extends ContentContainerController
         }
         $spaces = $query->all();
 
-        return $this->render('space', ['spaces' => $spaces]);
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'space');
+
+        return $this->render('space', [
+        	'spaces' => $spaces,
+	        'category' => $category,
+        ]);
     }
 
 

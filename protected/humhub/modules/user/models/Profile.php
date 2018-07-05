@@ -299,4 +299,16 @@ class Profile extends \yii\db\ActiveRecord {
 
 		return $query->one();
 	}
+
+	public function getOptionsField($field)
+	{
+		$profileField = \humhub\modules\user\models\ProfileField::findOne(['internal_name' => $field]);
+		$fieldOptions = json_decode($profileField->field_type_config);
+		$select = new \humhub\modules\user\models\fieldtype\Select();
+		$select->options = $fieldOptions->options;
+		$select->profileField = $profileField;
+		$item = $select->getSelectItems();
+
+		return $item;
+	}
 }

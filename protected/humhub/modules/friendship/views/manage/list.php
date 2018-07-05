@@ -45,7 +45,7 @@ use yii\helpers\Url;
         </ul>
 
     </div>
-    <?= LoadMoreButton::widget(['object' => $friend, 'count' => $count, 'user' => $user, 'ajaxUrl' => $ajaxUrl]); ?>
+    <?= LoadMoreButton::widget(['object' => $friends, 'count' => $count, 'user' => $user, 'ajaxUrl' => $ajaxUrl]); ?>
 </div>
 
 <div class="panel-body">

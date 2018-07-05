@@ -2,6 +2,7 @@
 
 namespace humhub\modules\polls;
 
+use humhub\modules\user\models\User;
 use Yii;
 use humhub\modules\polls\models\Poll;
 use humhub\modules\space\models\Space;
@@ -27,6 +28,7 @@ class Module extends ContentContainerModule
     {
         return [
             Space::className(),
+	        User::className(),
         ];
     }
 

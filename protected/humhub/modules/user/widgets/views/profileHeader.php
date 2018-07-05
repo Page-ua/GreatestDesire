@@ -51,6 +51,7 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
                 <div class="name"><?= Html::encode( $user->displayName ); ?></div>
                 <div class="subText"><?= $user->info_status; ?></div>
             </div>
+            <div class="mobile-desire-img"><img src="img/user-info-top-desire.png"></div>
             <div class="bottom">
                 <div class="avatar-menu">
 
@@ -96,6 +97,7 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
                     </div>
                 </div>
             </div>
+            <div class="mobile-toggle-btn"></div>
         </div>
     </div>
     <div class="user-info-menu">

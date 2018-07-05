@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\models;
 
+use humhub\modules\desire\models\Desire;
 use Yii;
 use yii\base\Exception;
 use humhub\modules\content\components\ContentContainerActiveRecord;
@@ -260,6 +261,11 @@ class User extends ContentContainerActiveRecord implements \yii\web\IdentityInte
     public function getProfile()
     {
         return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+    }
+
+    public function getGreatestDesire()
+    {
+    	return $this->hasOne(Desire::className(), ['id' => 'greatest_desire']);
     }
 
     /**

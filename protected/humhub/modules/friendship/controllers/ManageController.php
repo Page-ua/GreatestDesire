@@ -37,15 +37,16 @@ class ManageController extends BaseAccountController
 	public function actionList($id)
 	{
 		$this->user = User::findOne($id);
-		$data = Friendship::getAllFriends($this->user, 5);
+		$data = Friendship::getAllFriends($this->user, 10);
 		$ajaxUrl = '/friendship/manage/friend-list-ajax';
 
 		$this->subLayout = $this->subLayout = "@humhub/modules/user/views/profile/_layout";
 
 		$online_freinds = Friendship::getOnlineFriends($this->user)->all();
+
 		$friends = $data['friends'];
 		$count = $data['count'];
-		$countFriends = Friendship::getFriendsQuery($this->user)->count();
+
 		foreach($friends as $friend) {
 			if(!$friend->status_online) {
 				foreach ( $online_freinds as $online_freind ) {

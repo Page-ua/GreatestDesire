@@ -49,6 +49,14 @@ class BaseLeftMenu extends \humhub\widgets\BaseMenu
 
 
 			$this->addItem([
+				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Success stories'),
+				'url' => Url::to(['/desire/desire/list']),
+				'class' => 'show-on-tablet',
+				'sortOrder' => 500,
+				'isActive' => (Yii::$app->controller->module->id == 'blog' && Yii::$app->controller->id == "blog" && Yii::$app->controller->action->id == "index"),
+			]);
+
+			$this->addItem([
 				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Desires'),
 				'url' => Url::to(['/desire/desire/list']),
 				'sortOrder' => 500,
@@ -57,9 +65,9 @@ class BaseLeftMenu extends \humhub\widgets\BaseMenu
 
 			$this->addItem([
 				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Chat'),
-				'url' => Url::toRoute(['/friendship/manage/list']),
+				'url' => Url::toRoute(['/mail/chat']),
 				'sortOrder' => 500,
-				'isActive' => (Yii::$app->controller->id == "manage" && Yii::$app->controller->action->id == "list"),
+				'isActive' => (Yii::$app->controller->id == "chat" && Yii::$app->controller->action->id == "index"),
 			]);
 
 			$this->addItem([

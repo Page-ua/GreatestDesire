@@ -38,6 +38,8 @@ class PollController extends ContentContainerController
      */
     public function actionShow()
     {
+	    $this->subLayout = "@humhub/views/layouts/_sublayout";
+
         return $this->render('show', array(
                     'contentContainer' => $this->contentContainer
         ));
@@ -50,10 +52,8 @@ class PollController extends ContentContainerController
      */
     public function actionCreate()
     {
-        if (!$this->contentContainer->permissionManager->can(new \humhub\modules\polls\permissions\CreatePoll())) {
-            throw new HttpException(400, 'Access denied!');
-        }
-        
+
+
         $poll = new Poll();
         $poll->scenario = Poll::SCENARIO_CREATE;
         $poll->question = Yii::$app->request->post('question');

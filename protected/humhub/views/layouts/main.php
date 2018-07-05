@@ -34,16 +34,32 @@ use yii\helpers\Url;
             <div class="fixed-privHeader-wrap">
                 <div class="base-lg-wrap">
                     <div class="search-block"><input type="text" placeholder="Search" id="headerSearch"><input type="submit" value=""></div>
+                    <div class="sidebar-mobile-block">
+                        <div class="logo-btn"><svg class="icon icon-logo"><use xlink:href="./svg/sprite/sprite.svg#logo"></use></svg></div>
+                        <div class="mobile-wrap">
+                            <div class="general-menu">
+	                            <?= humhub\widgets\BaseLeftMenu::widget(); ?>
+                            </div>
+                            <div class="sidebar-mobile-footer">
+                                <div class="lang-block">
+	                                <?= humhub\widgets\LanguageChooser::widget(); ?>
+                                </div>
+                                <div class="search-block"><input type="text" placeholder="Search" id="headerSearch2"><input type="submit" value=""></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="activities-menu">
                         <div class="mobile-activities-btn">
                             <p>Activities</p>
                             <div class="activity-counter"><span>9</span></div>
                         </div>
+                        <div class="mobile-wrap">
                         <div class="wrap">
                             <?= \humhub\modules\mail\widgets\Notifications::widget(); ?>
                             <?= \humhub\modules\friendship\widgets\Notifications::widget(); ?>
 
                             <div class="item">
+                                <a class="mobile-link" href="#"></a>
                                 <div class="activity-icon"><svg class="icon icon-notifications"><use xlink:href="svg/sprite/sprite.svg#notifications"></use></svg>
                                     <div class="activity-counter"><span>4</span></div>
                                 </div>
@@ -113,6 +129,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <div class="item">
+                                <a class="mobile-link" href="#"></a>
                                 <div class="activity-icon"><svg class="icon icon-favorites"><use xlink:href="svg/sprite/sprite.svg#favorites"></use></svg></div>
                                 <div class="tooltip">Favorites</div>
                                 <div class="activity-sub-menu">
@@ -166,6 +183,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <div class="item">
+                                <a class="mobile-link" href="#"></a>
                                 <div class="activity-icon"><svg class="icon icon-add"><use xlink:href="svg/sprite/sprite.svg#add"></use></svg></div>
                                 <div class="tooltip">Add new</div>
                                 <div class="activity-sub-menu">
@@ -195,6 +213,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <div class="item">
+                                <a class="mobile-link" href="#"></a>
                                 <div class="activity-icon"><svg class="icon icon-invite"><use xlink:href="svg/sprite/sprite.svg#invite"></use></svg></div>
                                 <div class="tooltip">Invite friend</div>
                                 <div class="activity-sub-menu">
@@ -206,6 +225,7 @@ use yii\helpers\Url;
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                     <div class="user-navigation">
@@ -227,6 +247,31 @@ use yii\helpers\Url;
                             <div class="logOut">
                                 <a href="<?= Url::toRoute('/user/auth/logout'); ?>">
                                     <div class="logOut-img"><svg class="icon icon-logout"><use xlink:href="svg/sprite/sprite.svg#logout"></use></svg></div><span>Logout</span></a>
+                            </div>
+                        </div>
+                        <div class="mobile-user-block">
+                            <div class="mobile-user-btn">
+                                <div class="user-img"><img src="img/user-1.png"></div>
+                            </div>
+                            <div class="mobile-wrap">
+                                <div class="name"><?= Yii::$app->user->getIdentity()->username; ?></div>
+                                        <?= \humhub\modules\user\widgets\ProfileMenu::widget(['user' => Yii::$app->user->getIdentity()]); ?>
+                                <div class="user-controls-btn">
+                                    <div class="setting-block">
+                                        <a href="<?= Url::toRoute('/user/account/edit'); ?>">
+                                            <div class="setting-img"><svg class="icon icon-settings"><use xlink:href="svg/sprite/sprite.svg#settings"></use></svg></div><span>Settings</span></a>
+                                    </div>
+	                                <?php if (\humhub\modules\admin\widgets\AdminMenu::canAccess()) { ?>
+                                    <div class="setting-block">
+                                        <a href="<?= Url::toRoute('/admin'); ?>">
+                                            <div class="setting-img"><svg class="icon icon-settings"><use xlink:href="svg/sprite/sprite.svg#settings"></use></svg></div><span>Admin</span></a>
+                                    </div>
+                                    <?php } ?>
+                                    <div class="logOut">
+                                        <a href="<?= Url::toRoute('/user/auth/logout'); ?>">
+                                            <div class="logOut-img"><svg class="icon icon-logout"><use xlink:href="svg/sprite/sprite.svg#logout"></use></svg></div><span>Logout</span></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -265,6 +310,9 @@ use yii\helpers\Url;
                    </aside>
 
 	                   <?= $content; ?>
+                   <?php if(isset($_GET['test'])){ ?>
+	               <?= \humhub\widgets\TopMenu::widget(); ?>
+                   <?php } ?>
                </div>
 
                <div class="popular-desire-tags">
