@@ -36,12 +36,12 @@ class ProfileImage
     /**
      * @var Integer width of the Image
      */
-    protected $width = 150;
+    protected $width = 216;
 
     /**
      * @var Integer height of the Image
      */
-    protected $height = 150;
+    protected $height = 216;
 
     /**
      * @var String folder name inside the uploads directory

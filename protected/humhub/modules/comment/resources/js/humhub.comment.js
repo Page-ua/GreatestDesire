@@ -57,7 +57,7 @@ humhub.module('comment', function (module, require, $) {
     };
 
     Form.prototype.getCommentsContainer = function () {
-        return this.$.siblings('.comment');
+        return this.$.siblings('.comment-container');
     };
 
     Form.prototype.getInput = function () {
@@ -176,7 +176,7 @@ humhub.module('comment', function (module, require, $) {
             }
         });
         client.post(evt, {dataType: 'html'}).then(function (response) {
-            var $container = evt.$trigger.closest('.comment');
+            var $container = evt.$trigger.closest('.comment-container');
             var $html = $(response.html);
             $container.prepend($html);
             evt.$trigger.closest('.showMore').remove();

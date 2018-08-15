@@ -477,7 +477,12 @@ humhub.module('file', function (module, require, $) {
     };
 
     var upload = function (evt) {
+        var base = document.getElementById("myBase").href;
+        document.getElementById("myBase").href = "";
+
         Upload.instance(evt.$target).trigger('upload');
+
+        document.getElementById("myBase").href = base;
     };
 
     module.export({

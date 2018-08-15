@@ -1,5 +1,5 @@
-a:2:{i:0;s:1477:"
-<a href="/index.php?r=activity%2Flink&id=6">
+a:2:{i:0;s:1465:"
+<a href="/index.php/activity/link?id=6">
     <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="8">
         <div class="media">
                             <!-- Show user image -->
@@ -16,7 +16,7 @@ a:2:{i:0;s:1477:"
                 <strong>David Roberts</strong> прокомментировал "Nike – Просто купите это."<br/>
 
                 <!-- show time -->
-                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г. - 10:56</span></span>            </div>
+                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г.</span></span>            </div>
         </div>
     </li>
 </a>

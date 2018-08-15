@@ -65,6 +65,7 @@ class SettingsMenu extends \humhub\widgets\BaseMenu
             'isVisible' => $canEditSettings
         ]);
 
+
         parent::init();
     }
 

@@ -15,7 +15,7 @@ use yii\helpers\Html;
 
 <?php if (count($files) > 0) : ?>
 <!-- hideOnEdit mandatory since 1.2 -->
-<div class="hideOnEdit">
+<div class="hideOnEdit comment-img">
     <!-- Show Images as Thumbnails -->
 
     <?php if($showPreview) :?>
@@ -54,14 +54,6 @@ use yii\helpers\Html;
 
         </div>
     <?php endif; ?>
-
-    <!-- Show List of all files -->
-    <hr>
-    <?= FilePreview::widget([
-        'hideImageFileInfo' => $hideImageFileInfo,
-        'items' => $files,
-        'model' => $object,
-    ]);?>
     
 </div>
 <?php endif; ?>

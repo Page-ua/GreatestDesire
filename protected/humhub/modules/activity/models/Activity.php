@@ -90,7 +90,7 @@ class Activity extends ContentActiveRecord
             $result = Yii::createObject([
                 'class' => $this->class,
                 'originator' => $this->content->createdBy,
-                'source' => $this->getSource(),
+                'source' => $this->getSource()
             ]);
             $result->record = $this; // If we include the record in createObject, it somehow loses activerecord data (id etc...)
             return $result;

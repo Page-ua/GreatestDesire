@@ -1,7 +1,11 @@
 <?php
+use yii\widgets\ActiveForm;
 
 ?>
+
+
 <?php echo \humhub\modules\post\widgets\Form::widget(['contentContainer' => $user]); ?>
+<div class="content-wrap">
 <?php
 
 echo \humhub\modules\stream\widgets\StreamViewer::widget(array(
@@ -15,3 +19,4 @@ echo \humhub\modules\stream\widgets\StreamViewer::widget(array(
             '',
 ));
 ?>
+</div>

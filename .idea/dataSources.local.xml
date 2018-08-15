@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="humhub@165.227.76.89" uuid="477543b8-31af-4de6-bb0e-019e64fd884b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:humhub</introspection-schemas>
+    </data-source>
+    <data-source name="@volia" uuid="9b85ac6b-507d-4053-955a-b79e91298197">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+  </component>
+</project>

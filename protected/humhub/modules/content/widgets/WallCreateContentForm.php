@@ -10,6 +10,7 @@ namespace humhub\modules\content\widgets;
 
 use humhub\modules\content\permissions\CreatePublicContent;
 use Yii;
+use yii\helpers\Url;
 use yii\web\HttpException;
 use humhub\components\Widget;
 use humhub\modules\user\models\User;
@@ -138,7 +139,8 @@ class WallCreateContentForm extends Widget
 
         if ($record->save()) {
             $record->fileManager->attach(Yii::$app->request->post('fileList'));
-            return \humhub\modules\stream\actions\Stream::getContentResultEntry($record->content);
+            Yii::$app->response->redirect(Url::toRoute(['/content/perma/', 'id' => $record->content->id]));
+            //return \humhub\modules\stream\actions\Stream::getContentResultEntry($record->content);
         }
 
         return array('errors' => $record->getErrors());

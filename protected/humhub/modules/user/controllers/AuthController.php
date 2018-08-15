@@ -8,6 +8,11 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\admin\models\AdminDesires;
+use humhub\modules\admin\models\AdminDesiresSearch;
+use humhub\modules\user\models\DesiresAdmin;
+use humhub\modules\user\models\forms\AccountRecoverPassword;
+use humhub\modules\user\widgets\AuthChoice;
 use Yii;
 use humhub\components\Controller;
 use humhub\modules\user\models\User;
@@ -16,6 +21,7 @@ use humhub\modules\user\models\Invite;
 use humhub\modules\user\models\forms\Login;
 use humhub\modules\user\authclient\AuthClientHelpers;
 use humhub\modules\user\authclient\interfaces\ApprovalBypass;
+use yii\helpers\Url;
 
 /**
  * AuthController handles login and logout
@@ -61,6 +67,8 @@ class AuthController extends Controller
     /**
      * Displays the login page
      */
+
+
     public function actionLogin()
     {
         // If user is already logged in, redirect him to the dashboard
@@ -70,11 +78,13 @@ class AuthController extends Controller
 
         // Login Form Handling
         $login = new Login;
+	    $info = new \humhub\modules\admin\models\forms\WelcomeSettingsForm();
+	    $stories = AdminDesires::find()->limit(3)->orderBy('date DESC')->all();
         if ($login->load(Yii::$app->request->post()) && $login->validate()) {
             return $this->onAuthSuccess($login->authClient);
         }
 
-        // Self Invite 
+        // Self Invite
         $invite = new Invite();
         $invite->scenario = 'invite';
         if ($invite->load(Yii::$app->request->post()) && $invite->selfInvite()) {
@@ -88,7 +98,15 @@ class AuthController extends Controller
         if (Yii::$app->request->isAjax) {
             return $this->renderAjax('login_modal', array('model' => $login, 'invite' => $invite, 'canRegister' => $invite->allowSelfInvite()));
         }
-        return $this->render('login', array('model' => $login, 'invite' => $invite, 'canRegister' => $invite->allowSelfInvite()));
+
+        Yii::$app->params['class_body'] = 'front-header';
+
+        $authChoice = new AuthChoice();
+        $authUrl = '/index.php'.Url::to($authChoice->getBaseAuthUrl()[0]);
+
+	    $reсoverPassword = new AccountRecoverPassword();
+
+        return $this->render('login', array('model' => $login, 'info' => $info, 'invite' => $invite, 'stories' => $stories, 'authUrl' => $authUrl, 'recoverPassword' => $reсoverPassword, 'canRegister' => $invite->allowSelfInvite()));
     }
 
     /**
@@ -99,12 +117,13 @@ class AuthController extends Controller
      */
     public function onAuthSuccess(\yii\authclient\BaseClient $authClient)
     {
+
         $attributes = $authClient->getUserAttributes();
 
         // User already logged in - Add new authclient to existing user
         if (!Yii::$app->user->isGuest) {
             AuthClientHelpers::storeAuthClientForUser($authClient, Yii::$app->user->getIdentity());
-            return $this->redirect(['/user/account/connected-accounts']);
+            return $this->redirect(['/user/account/edit']);
         }
 
         // Login existing user 
@@ -141,10 +160,10 @@ class AuthController extends Controller
         }
 
         // Try automatically create user & login user
-        $user = AuthClientHelpers::createUser($authClient);
-        if ($user !== null) {
-            return $this->login($user, $authClient);
-        }
+//        $user = AuthClientHelpers::createUser($authClient);
+//        if ($user !== null) {
+//            return $this->login($user, $authClient);
+//        }
 
         // Make sure we normalized user attributes before put it in session (anonymous functions)
         $authClient->setNormalizeUserAttributeMap([]);

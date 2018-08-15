@@ -77,7 +77,9 @@ humhub.module('content.form', function(module, require, $) {
 
         this.resetNotifyUser();
         this.setDefaultVisibility();
-        this.resetFilePreview();
+        if($('#contentFormFiles_preview').html()) {
+            this.resetFilePreview();
+        }
 
         $('#public').attr('checked', false);
         $('#contentFormBody').find('.humhub-ui-richtext').trigger('clear');

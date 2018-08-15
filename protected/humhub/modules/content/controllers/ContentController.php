@@ -8,6 +8,7 @@
 
 namespace humhub\modules\content\controllers;
 
+use humhub\modules\sharebetween\models\Share;
 use Yii;
 use yii\web\HttpException;
 use humhub\components\Controller;
@@ -66,15 +67,19 @@ class ContentController extends Controller
     {
         Yii::$app->response->format = 'json';
 
-        $this->forcePostRequest();
+//        $this->forcePostRequest();
 
         $model = Yii::$app->request->get('model');
 
         //Due to backward compatibility we use the old delte mechanism in case a model parameter is provided
         $id = (int) ($model != null) ? Yii::$app->request->get('id') : Yii::$app->request->post('id');
 
-        $contentObj = ($model != null) ? Content::Get($model, $id) : Content::findOne($id);
+        if($id == null) {
+            $id = Yii::$app->request->get('id');
+        }
 
+        $contentObj = ($model != null) ? Content::Get($model, $id) : Content::findOne($id);
+        Share::deleteShare($contentObj);
         if (!$contentObj->canDelete()) {
             throw new HttpException(400, Yii::t('ContentModule.controllers_ContentController', 'Could not delete content: Access denied!'));
         }

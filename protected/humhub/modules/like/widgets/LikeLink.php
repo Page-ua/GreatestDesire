@@ -23,13 +23,15 @@ class LikeLink extends \yii\base\Widget
      */
     public $object;
 
+    public $mode;
+
     /**
      * Executes the widget.
      */
     public function run()
     {
         $currentUserLiked = false;
-
+		Yii::$app->assetManager->forceCopy = true;
         $likes = Like::GetLikes($this->object->className(), $this->object->id);
         foreach ($likes as $like) {
             if ($like->user->id == Yii::$app->user->id) {
@@ -45,7 +47,8 @@ class LikeLink extends \yii\base\Widget
                     'likeUrl' => Url::to(['/like/like/like', 'contentModel' => $this->object->className(), 'contentId' => $this->object->id]),
                     'unlikeUrl' => Url::to(['/like/like/unlike', 'contentModel' => $this->object->className(), 'contentId' => $this->object->id]),
                     'userListUrl' => Url::to(['/like/like/user-list', 'contentModel' => $this->object->className(), 'contentId' => $this->object->getPrimaryKey()]),
-                    'title' => $this->generateLikeTitleText($currentUserLiked, $likes)
+                    'title' => $this->generateLikeTitleText($currentUserLiked, $likes),
+	                'mode' => $this->mode,
         ));
     }
 

@@ -8,7 +8,10 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\activity\models\MailSummaryForm;
+use humhub\modules\desire\models\Desire;
 use Yii;
+use yii\helpers\Url;
 use yii\web\HttpException;
 use humhub\modules\user\components\BaseAccountController;
 use humhub\modules\user\models\User;
@@ -62,6 +65,65 @@ class AccountController extends BaseAccountController
      */
     public function actionEdit()
     {
+
+	    if (!Yii::$app->user->canChangePassword()) {
+		    throw new HttpException(500, 'Password change is not allowed');
+	    }
+
+	    $userPassword = \humhub\modules\user\models\Password::findOne(['user_id' => Yii::$app->user->getId()]);
+	    $userPassword->scenario = 'changePassword';
+
+
+
+	    $this->subLayout = "@humhub/views/layouts/_sublayout";
+
+	    $user = Yii::$app->user->getIdentity();
+
+	    $notificationEmail = new MailSummaryForm();
+	    $notificationEmail->user = $user;
+	    $notificationEmail->loadCurrent();
+
+	    $notificationInterval = $notificationEmail->interval;
+
+	    if(Yii::$app->request->isPost && $user->profile->load(Yii::$app->request->post())) {
+		    if($user->profile->validate()) {
+			    $result3 = $user->profile->save();
+		    }
+		    $pass = Yii::$app->request->post('Password');
+
+            if(!empty($pass['newPassword'])) {
+	            if ( ! Yii::$app->user->canChangePassword() ) {
+		            throw new HttpException( 500, 'Password change is not allowed' );
+	            }
+	            if ( $userPassword->load( Yii::$app->request->post() ) && $userPassword->validate() ) {
+		            $userPassword->user_id = Yii::$app->user->id;
+		            $userPassword->setPassword( $userPassword->newPassword );
+		            $userPassword->save();
+	            }
+            }
+		    $notificationInterval = Yii::$app->request->post('Notification');
+            if( !$notificationInterval ) {
+
+                $notificationEmail->interval = 0;
+
+            } else {
+	            $settingsManager = Yii::$app->getModule('activity')->settings;
+                $notificationEmail->interval = $settingsManager->get('mailSummaryInterval');
+            }
+		    $notificationEmail->save();
+        }
+
+    	return $this->render('edit', [
+            'user' => $user,
+            'changePasswordModel' => $userPassword,
+            'socialButton' => $this->ConnectedAccounts(),
+            'notificationOn' => $notificationInterval,
+
+	    ]);
+    }
+
+    public function actionSettings()
+    {
         $user = Yii::$app->user->getIdentity();
         $user->profile->scenario = 'editProfile';
 
@@ -86,10 +148,40 @@ class AccountController extends BaseAccountController
             return $this->redirect(['edit']);
         }
 
-        return $this->render('edit', ['hForm' => $form]);
+        return $this->render('settings', ['hForm' => $form]);
     }
 
-    /**
+
+    public function actionChangeLanguage()
+    {
+	    $user = Yii::$app->user->getIdentity();
+	    $request = Yii::$app->request->post();
+	    $user->language = $request['ChooseLanguage']['language'];
+	    $user->save();
+	    return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionChangeStatus()
+    {
+	    $user = Yii::$app->user->getIdentity();
+	    $request = Yii::$app->request->post();
+	    $user->info_status = $request['User']['info_status'];
+	    $user->save();
+	    return $this->redirect(Yii::$app->request->referrer);
+    }
+
+	public function actionChangeStatusOnline()
+	{
+		$user = Yii::$app->user->getIdentity();
+		$request = Yii::$app->request->post();
+		$user->status_online = $request['User']['status_online'];
+		$user->save();
+		return $this->asJson('successful');
+	}
+
+
+
+	/**
      * Change Account
      *
      * @todo Add Group
@@ -107,8 +199,9 @@ class AccountController extends BaseAccountController
         if ($model->timeZone == "") {
             $model->timeZone = Yii::$app->settings->get('timeZone');
         }
-
+		$model->status_online = $user->status_online;
         $model->tags = $user->tags;
+        $model->info_status = $user->info_status;
         $model->show_introduction_tour = Yii::$app->getModule('tour')->settings->contentContainer($user)->get("hideTourPanel");
         $model->visibility = $user->visibility;
 
@@ -118,6 +211,8 @@ class AccountController extends BaseAccountController
             $user->tags = $model->tags;
             $user->time_zone = $model->timeZone;
             $user->visibility = $model->visibility;
+            $user->status_online = $model->status_online;
+            $user->info_status = $model->info_status;
             $user->save();
 
             $this->view->saved();
@@ -174,14 +269,19 @@ class AccountController extends BaseAccountController
 
     public function actionConnectedAccounts()
     {
-        if (Yii::$app->request->isPost && Yii::$app->request->get('disconnect')) {
-            foreach (Yii::$app->user->getAuthClients() as $authClient) {
-                if ($authClient->getId() == Yii::$app->request->get('disconnect')) {
-                    \humhub\modules\user\authclient\AuthClientHelpers::removeAuthClientForUser($authClient, Yii::$app->user->getIdentity());
-                }
-            }
-            return $this->redirect(['connected-accounts']);
-        }
+	    if (Yii::$app->request->isPost && Yii::$app->request->get('disconnect')) {
+		    foreach (Yii::$app->user->getAuthClients() as $authClient) {
+			    if ($authClient->getId() == Yii::$app->request->get('disconnect')) {
+				    \humhub\modules\user\authclient\AuthClientHelpers::removeAuthClientForUser($authClient, Yii::$app->user->getIdentity());
+			    }
+		    }
+		    return $this->redirect(['/user/account/edit']);
+	    }
+    }
+
+    public function ConnectedAccounts()
+    {
+
         $clients = [];
         foreach (Yii::$app->get('authClientCollection')->getClients() as $client) {
             if (!$client instanceof humhub\modules\user\authclient\BaseFormAuth && !$client instanceof \humhub\modules\user\authclient\interfaces\PrimaryClient) {
@@ -199,7 +299,7 @@ class AccountController extends BaseAccountController
             $activeAuthClientIds[] = $authClient->getId();
         }
 
-        return $this->render('connected-accounts', [
+        return $this->renderPartial('connected-accounts', [
                     'authClients' => $clients,
                     'currentAuthProviderId' => $currentAuthProviderId,
                     'activeAuthClientIds' => $activeAuthClientIds

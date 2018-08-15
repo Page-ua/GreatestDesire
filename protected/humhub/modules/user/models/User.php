@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\models;
 
+use humhub\modules\desire\models\Desire;
 use Yii;
 use yii\base\Exception;
 use humhub\modules\content\components\ContentContainerActiveRecord;
@@ -154,9 +155,23 @@ class User extends ContentContainerActiveRecord implements \yii\web\IdentityInte
                 $this->populateRelation('profile', $profile);
             }
             return $profile;
+        } else if ($name == 'content') {
+	        $content = parent::__get('content');
+	        if (!$this->isRelationPopulated('content') || $content === null) {
+		        $content = new Content();
+		        $this->populateRelation('content', $content);
+		        $content->setPolymorphicRelation($this);
+	        }
+	        return $content;
         }
         return parent::__get($name);
     }
+
+	public function getContent()
+	{
+		return $this->hasOne(Content::className(), ['object_id' => 'id'])
+		            ->andWhere(['content.object_model' => self::className()]);
+	}
 
     public function scenarios()
     {
@@ -246,6 +261,11 @@ class User extends ContentContainerActiveRecord implements \yii\web\IdentityInte
     public function getProfile()
     {
         return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+    }
+
+    public function getGreatestDesire()
+    {
+    	return $this->hasOne(Desire::className(), ['id' => 'greatest_desire']);
     }
 
     /**

@@ -8,6 +8,8 @@
 
 namespace humhub\modules\admin\controllers;
 
+use humhub\models\MultiUploadImage;
+use humhub\models\UploadOneImage;
 use Yii;
 use humhub\libs\Helpers;
 use humhub\libs\ThemeHelper;
@@ -15,6 +17,9 @@ use humhub\models\UrlOembed;
 use humhub\modules\admin\components\Controller;
 use humhub\modules\admin\models\Log;
 use humhub\modules\notification\models\forms\NotificationSettings;
+use humhub\modules\file\widgets\FileUploadButton;
+use humhub\modules\file\widgets\FileUploadList;
+use yii\web\UploadedFile;
 
 /**
  * SettingController
@@ -209,6 +214,9 @@ class SettingController extends Controller
     /**
      * File Settings
      */
+
+
+
     public function actionFile()
     {
         $form = new \humhub\modules\admin\models\forms\FileSettingsForm;
@@ -370,5 +378,10 @@ class SettingController extends Controller
             'caching'
         ]);
     }
+
+
+
+
+
 
 }

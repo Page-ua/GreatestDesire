@@ -2,6 +2,22 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="HostGreatesDesire" deleteMissingItems="true" autoUploadExternalChanges="true">
     <serverData>
+      <paths name="ChildrenSity">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="DecemberProject">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="ForumDaily">
         <serverdata>
           <mappings>
@@ -10,7 +26,23 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="Greatest Desire">
+      <paths name="ForumDailyTest">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Hats">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Hoden.top">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
@@ -23,6 +55,118 @@
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
             <mapping deploy="/" local="$USER_HOME$/PhpstormProjects/start" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Merkuriy">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="MyVPS">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Page.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="SityChildren">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="StudioDoors">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="TeatrProduction">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Thailand">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Volia">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WM">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WrM">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="hoden">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="myvps">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="sityChildren">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Верстка">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

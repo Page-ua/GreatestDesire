@@ -286,6 +286,24 @@ return [
             'all',
         ],
     ],
+    'humhub\\modules\\desire\\assets\\DesireAsset' => [
+        'sourcePath' => null,
+        'js' => [],
+        'css' => [],
+        'depends' => [
+            'humhub\\assets\\CoreApiAsset',
+            'all',
+        ],
+    ],
+    'humhub\\modules\\blog\\assets\\BlogAsset' => [
+        'sourcePath' => null,
+        'js' => [],
+        'css' => [],
+        'depends' => [
+            'humhub\\assets\\CoreApiAsset',
+            'all',
+        ],
+    ],
     'humhub\\modules\\space\\assets\\SpaceAsset' => [
         'sourcePath' => null,
         'js' => [],
@@ -389,6 +407,8 @@ return [
             'humhub\\modules\\user\\assets\\UserPickerAsset',
             'humhub\\modules\\file\\assets\\FileAsset',
             'humhub\\modules\\post\\assets\\PostAsset',
+            'humhub\\modules\\desire\\assets\\DesireAsset',
+            'humhub\\modules\\blog\\assets\\BlogAsset',
             'humhub\\modules\\space\\assets\\SpaceAsset',
             'humhub\\modules\\comment\\assets\\CommentAsset',
             'humhub\\assets\\NProgressAsset',

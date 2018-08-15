@@ -6,13 +6,13 @@ humhub.module('like', function (module, require, $) {
     var toggleLike = function (evt) {
         client.post(evt).then(function (response) {
             if(response.currentUserLiked) {
-                additions.switchButtons(evt.$trigger, evt.$trigger.siblings('.unlike'));
+                additions.switchButtons(evt.$trigger, evt.$trigger.siblings('.unliked'));
                 var component = Component.closest(evt.$trigger);
                 if(component) {
                     component.$.trigger('humhub:like:liked');
                 }
             } else {
-                additions.switchButtons(evt.$trigger, evt.$trigger.siblings('.like'));
+                additions.switchButtons(evt.$trigger, evt.$trigger.siblings('.liked'));
             }
             
             _updateCounter(evt.$trigger.parent(), response.likeCounter);

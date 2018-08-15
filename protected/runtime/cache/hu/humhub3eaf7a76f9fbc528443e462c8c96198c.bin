@@ -1,5 +1,5 @@
-a:2:{i:0;s:1530:"
-<a href="/index.php?r=activity%2Flink&id=7">
+a:2:{i:0;s:1518:"
+<a href="/index.php/activity/link?id=7">
     <li class="activity-entry" data-stream-entry data-action-component="activity.ActivityStreamEntry" data-content-key="9">
         <div class="media">
                             <!-- Show user image -->
@@ -16,7 +16,7 @@ a:2:{i:0;s:1530:"
                 <strong>Sara Schuster</strong> прокомментировал "Calvin Klein - Между любовью и безумием лежит одержимость."<br/>
 
                 <!-- show time -->
-                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г. - 10:56</span></span>            </div>
+                <span class="time"><span title="8 дек. 2017 г. - 10:56">8 дек. 2017 г.</span></span>            </div>
         </div>
     </li>
 </a>

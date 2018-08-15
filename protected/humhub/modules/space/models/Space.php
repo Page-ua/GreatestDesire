@@ -71,6 +71,11 @@ class Space extends ContentContainerActiveRecord implements \humhub\modules\sear
         return 'space';
     }
 
+	public static function objectName()
+	{
+		return 'space'; //TODO translate;
+	}
+
     /**
      * @inheritdoc
      */
@@ -575,5 +580,24 @@ class Space extends ContentContainerActiveRecord implements \humhub\modules\sear
 
         return Content::VISIBILITY_PRIVATE;
     }
+
+	public function getContent()
+	{
+		return $this->hasOne(Content::className(), ['object_id' => 'id'])
+		            ->andWhere(['content.object_model' => self::className()]);
+	}
+
+	public static function getAllPublic($offset = 0)
+	{
+		$query = self::find();
+		$query->andWhere(['!=', 'space.visibility', \humhub\modules\space\models\Space::VISIBILITY_NONE]);
+		$query->limit(10);
+		$query->offset($offset);
+
+		$data['count'] = $query->count();
+		$data['spaces'] = $query->all();
+
+		return $data;
+	}
 
 }

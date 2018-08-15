@@ -23,6 +23,8 @@ class AccountSettings extends \yii\base\Model
     public $show_introduction_tour;
     public $visibility;
     public $timeZone;
+    public $status_online;
+    public $info_status;
 
     /**
      * @inheritdoc
@@ -35,6 +37,8 @@ class AccountSettings extends \yii\base\Model
             [['timeZone'], 'in', 'range' => \DateTimeZone::listIdentifiers()],
             ['language', 'in', 'range' => array_keys(Yii::$app->i18n->getAllowedLanguages())],
             ['visibility', 'in', 'range' => [1, 2]],
+	        [['status_online'], 'integer'],
+	        [['info_status'], 'string', 'max' => 150],
         );
     }
 

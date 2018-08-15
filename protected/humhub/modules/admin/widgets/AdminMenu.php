@@ -87,6 +87,53 @@ class AdminMenu extends \humhub\widgets\BaseMenu
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'information'),
             'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\SeeAdminInformation())
         ]);
+        $this->addItem([
+            'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Success stories'),
+            'url' => Url::toRoute('/admin/admin-desires'),
+            'icon' => '<i class="fa fa-volume-up" aria-hidden="true"></i>',
+            'sortOrder' => 12000,
+            'newItemCount' => 0,
+            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'desires'),
+            'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+        ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Pages'),
+		    'url' => Url::toRoute('/admin/pages'),
+		    'icon' => '<i class="fa fa-pagelines" aria-hidden="true"></i>',
+		    'sortOrder' => 14000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'pages'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Guest Question'),
+		    'url' => Url::toRoute('/admin/guest-question'),
+		    'icon' => '<i class="fa fa-question-circle" aria-hidden="true"></i>',
+		    'sortOrder' => 16000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'guest-question'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'News'),
+		    'url' => Url::toRoute('/admin/news/create'),
+		    'icon' => '<i class="fa fa-newspaper-o" aria-hidden="true"></i>',
+		    'sortOrder' => 17000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'news'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
+	    $this->addItem([
+		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Category'),
+		    'url' => Url::toRoute('/admin/category'),
+		    'icon' => '<i class="fa fa-archive"></i>',
+		    'sortOrder' => 18000,
+		    'newItemCount' => 0,
+		    'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'category'),
+		    'isVisible' => Yii::$app->user->can(new \humhub\modules\admin\permissions\ManageSettings())
+	    ]);
+
+
 
         parent::init();
     }

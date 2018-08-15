@@ -20,10 +20,13 @@ use humhub\modules\content\components\ContentAddonActiveRecord;
  * @package humhub.modules_core.activity
  * @since 0.5
  */
+
 class Activity extends WallEntry
 {
 
     protected $themePath = 'modules/activity';
+
+
 
     /**
      * @var Activity is the current activity object.

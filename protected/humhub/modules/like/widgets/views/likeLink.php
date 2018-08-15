@@ -2,30 +2,57 @@
 
 use yii\helpers\Html;
 
-humhub\modules\like\assets\LikeAsset::register($this);
+humhub\modules\like\assets\LikeAsset::register( $this );
 ?>
+<?php if ( ! $mode ) { ?>
+    <div class="like likeLinkContainer" id="likeLinkContainer_<?= $id ?>">
 
-<span class="likeLinkContainer" id="likeLinkContainer_<?= $id ?>">
+        <div href="#" data-action-click="like.toggleLike" data-action-url="<?= $likeUrl ?>"
+             class="liked likeAnchor text" style="<?= ( ! $currentUserLiked ) ? '' : 'display:none' ?>">
+			<?= Yii::t( 'LikeModule.widgets_views_likeLink', 'Like' ) ?>
+        </div>
+        <div href="#" data-action-click="like.toggleLike" data-action-url="<?= $unlikeUrl ?>"
+             class="unliked likeAnchor text" style="<?= ( $currentUserLiked ) ? '' : 'display:none' ?>">
+			<?= Yii::t( 'LikeModule.widgets_views_likeLink', 'Unlike' ) ?>
+        </div>
 
-    <?php if (Yii::$app->user->isGuest): ?>
 
-        <?php echo Html::a(Yii::t('LikeModule.widgets_views_likeLink', 'Like'), Yii::$app->user->loginUrl, ['data-target' => '#globalModal']); ?>
-    <?php else: ?>
-        <a href="#" data-action-click="like.toggleLike" data-action-url="<?= $likeUrl ?>" class="like likeAnchor" style="<?= (!$currentUserLiked) ? '' : 'display:none'?>">
-            <?= Yii::t('LikeModule.widgets_views_likeLink', 'Like') ?>
-        </a>
-        <a href="#" data-action-click="like.toggleLike" data-action-url="<?= $unlikeUrl ?>" class="unlike likeAnchor" style="<?= ($currentUserLiked) ? '' : 'display:none'?>">
-            <?= Yii::t('LikeModule.widgets_views_likeLink', 'Unlike') ?>
-        </a>
-    <?php endif; ?>
+		<?php if ( count( $likes ) > 0 ) { ?>
+            <!-- Create link to show all users, who liked this -->
+            <div class="val likeCount">(<span><?= count( $likes ) ?></span>)</div>
+		<?php } else { ?>
+            <div class="val likeCount"></div>
+		<?php } ?>
+    </div>
 
-    <?php if (count($likes) > 0) { ?>
-        <!-- Create link to show all users, who liked this -->
-        <a href="<?php echo $userListUrl; ?>" data-target="#globalModal">
-            <span class="likeCount tt" data-placement="top" data-toggle="tooltip" title="<?= $title ?>">(<?= count($likes) ?>)</span>
-        </a>
-    <?php } else { ?>
-        <span class="likeCount"></span>
-    <?php } ?>
+<?php } else { ?>
+    <div id="likeLinkContainer_<?= $id ?>">
+        <div data-action-click="like.toggleLike" data-action-url="<?= $likeUrl ?>"
+             class="thumbUp liked likeAnchor text" style="<?= ( ! $currentUserLiked ) ? '' : 'display:none' ?>">
+            <svg class="icon icon-liked">
+                <use xlink:href="./svg/sprite/sprite.svg#liked"></use>
+            </svg>
 
-</span>
+	        <?php if ( count( $likes ) > 0 ) { ?>
+                <!-- Create link to show all users, who liked this -->
+                <div class="val likeCount">(<span><?= count( $likes ) ?></span>)</div>
+	        <?php } else { ?>
+                <div class="val likeCount"></div>
+	        <?php } ?>
+        </div>
+
+        <div data-action-click="like.toggleLike" data-action-url="<?= $unlikeUrl ?>"
+             class="thumbUp unliked likeAnchor text" style="<?= (  $currentUserLiked ) ? '' : 'display:none' ?>">
+            <svg class="icon icon-liked">
+                <use xlink:href="./svg/sprite/sprite.svg#liked"></use>
+            </svg>
+
+		    <?php if ( count( $likes ) > 0 ) { ?>
+                <!-- Create link to show all users, who liked this -->
+                <div class="val likeCount">(<span><?= count( $likes ) ?></span>)</div>
+		    <?php } else { ?>
+                <div class="val likeCount"></div>
+		    <?php } ?>
+        </div>
+    </div>
+<?php } ?>

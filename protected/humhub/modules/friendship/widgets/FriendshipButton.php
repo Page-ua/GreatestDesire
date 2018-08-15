@@ -22,25 +22,28 @@ class FriendshipButton extends \yii\base\Widget
     /**
      * @var User the target user 
      */
-    public $user;
+    public $object;
 
     /**
      * @inheritdoc
      */
     public function run()
     {
+
+	    Yii::$app->assetManager->forceCopy = true;
+
         if (!Yii::$app->getModule('friendship')->getIsEnabled()) {
             return;
         }
         
         // Do not display a buttton if user is it self or guest
-        if ($this->user->isCurrentUser() || \Yii::$app->user->isGuest) {
+        if ($this->object->isCurrentUser() || \Yii::$app->user->isGuest) {
             return;
         }
 
         return $this->render('friendshipButton', array(
-                    'user' => $this->user,
-                    'friendshipState' => Friendship::getStateForUser(Yii::$app->user->getIdentity(), $this->user)
+                    'user' => $this->object,
+                    'friendshipState' => Friendship::getStateForUser(Yii::$app->user->getIdentity(), $this->object)
         ));
     }
 

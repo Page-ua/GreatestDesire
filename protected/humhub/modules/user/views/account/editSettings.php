@@ -17,6 +17,15 @@ use \humhub\compat\CHtml;
 
 <?= $form->field($model, 'timeZone')->dropDownList(TimezoneHelper::generateList(), ['data-ui-select2' => '']); ?>
 
+<?= $form->field($model, 'status_online')->dropDownList([
+    '0'=>'Online',
+    '1'=>'Ofline',
+    '2' =>'Away',
+    '3'=>'Busy',
+    ]);; ?>
+
+<?= $form->field($model, 'info_status')->textInput(); ?>
+
 <?php if (Yii::$app->getModule('user')->settings->get('auth.allowGuestAccess')): ?>
 
     <?php

@@ -8,7 +8,10 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\desire\models\Desire;
+use humhub\modules\user\widgets\AuthChoice;
 use Yii;
+use yii\helpers\Url;
 use yii\web\HttpException;
 use yii\authclient\ClientInterface;
 use humhub\components\Controller;
@@ -51,7 +54,7 @@ class RegistrationController extends Controller
     public function actionIndex()
     {
         $registration = new Registration();
-
+        $desire = new Desire();
         /**
          * @var \yii\authclient\BaseClient
          */
@@ -63,28 +66,47 @@ class RegistrationController extends Controller
         } elseif (Yii::$app->session->has('authClient')) {
             $authClient = Yii::$app->session->get('authClient');
             $this->handleAuthClientRegistration($authClient, $registration);
-        } else {
-            Yii::$app->session->setFlash('error', 'Registration failed.');
-            return $this->redirect(['/user/auth/login']);
         }
+//        else {
+//            Yii::$app->session->setFlash('error', 'Registration failed.');
+//            return $this->redirect(['/user/auth/login']);
+//        }
+        Yii::$app->params['class_body'] = 'publicHeader';
 
-        if ($registration->submitted('save') && $registration->validate() && $registration->register($authClient)) {
-            Yii::$app->session->remove('authClient');
+	    if ($registration->submitted('save')) {
+		    $desire->load(Yii::$app->request->post());
+		    $desireFlag = $desire->validate();
+		    $registrationFlag = $registration->validate();
+		    if($desireFlag && $registrationFlag) {
+			    $registration->register( $authClient );
+			    Yii::$app->session->remove( 'authClient' );
+			    // Autologin when user is enabled (no approval required)
+			    if ( $registration->getUser()->status === User::STATUS_ENABLED ) {
+				    Yii::$app->user->switchIdentity( $registration->models['User'] );
+				    $registration->models['User']->updateAttributes( [ 'last_login' => new \yii\db\Expression( 'NOW()' ), 'joined' ] );
+				    $registration->models['User']->profile->joined = new \yii\db\Expression( 'NOW()' );
+				    $registration->models['User']->profile->save();
+				    $desire->save();
+				    $this->view->saved();
+				    $tags = explode( ',', Yii::$app->request->post( 'tags' ) );
+				    $desire->saveTags( $tags );
+				    $desire->saveGreatestDesire( true );
 
-            // Autologin when user is enabled (no approval required)
-            if ($registration->getUser()->status === User::STATUS_ENABLED) {
-                Yii::$app->user->switchIdentity($registration->models['User']);
-                $registration->models['User']->updateAttributes(['last_login' => new \yii\db\Expression('NOW()')]);
-                return $this->redirect(['/dashboard/dashboard']);
-            }
 
-            return $this->render('success', [
-                        'form' => $registration,
-                        'needApproval' => ($registration->getUser()->status === User::STATUS_NEED_APPROVAL)
-            ]);
-        }
+				    return $this->redirect( [ '/dashboard/dashboard' ] );
+			    }
 
-        return $this->render('index', ['hForm' => $registration]);
+			    return $this->render( 'success', [
+				    'form'         => $registration,
+				    'needApproval' => ( $registration->getUser()->status === User::STATUS_NEED_APPROVAL )
+			    ] );
+		    }
+	    }
+
+	    $authChoice = new AuthChoice();
+	    $authUrl = '/index.php'.Url::to($authChoice->getBaseAuthUrl()[0]);
+
+	    return $this->render('index', ['hForm' => $registration, 'desire' => $desire, 'authUrl' => $authUrl]);
     }
 
     protected function handleInviteRegistration($inviteToken, Registration $form)
@@ -113,7 +135,6 @@ class RegistrationController extends Controller
             throw new Exception("No user id given by authclient!");
         }
 
-        $registration->enablePasswordForm = false;
         if ($authClient instanceof ApprovalBypass) {
             $registration->enableUserApproval = false;
         }
