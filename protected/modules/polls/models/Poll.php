@@ -44,6 +44,11 @@ class Poll extends ContentActiveRecord implements \humhub\modules\search\interfa
     {
         return 'poll';
     }
+
+	public static function objectName()
+	{
+		return 'poll'; //TODO translate;
+	}
     
     public function scenarios()
     {
@@ -320,6 +325,12 @@ class Poll extends ContentActiveRecord implements \humhub\modules\search\interfa
     /**
      * @inheritdoc
      */
+
+    public function getTitle()
+    {
+    	return $this->question;
+    }
+
     public function getSearchAttributes()
     {
 

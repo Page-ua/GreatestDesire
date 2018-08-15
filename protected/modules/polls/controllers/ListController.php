@@ -16,10 +16,22 @@ use humhub\modules\polls\models\Poll;
 class ListController extends GeneralController
 {
 
+	public function actions() {
+		return array(
+			'streamPublic' => array(
+				'class' => \humhub\modules\polls\components\StreamPublicAction::className(),
+				'includes' => Poll::className(),
+				'mode' => \humhub\modules\polls\components\StreamPublicAction::MODE_NORMAL,
+			),
+		);
+	}
+
 	public function actionIndex()
 	{
-		return $this->render('index', [
+		$model = Poll::find();
 
+		return $this->render('index', [
+			'count' => $model->count(),
 		]);
 	}
 

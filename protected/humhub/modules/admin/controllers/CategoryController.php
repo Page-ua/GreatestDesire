@@ -48,6 +48,16 @@ class CategoryController extends Controller
 		return $this->getCategoryEdit($lan, Yii::$app->controller->action->id);
 	}
 
+	public function actionPoll($lan)
+	{
+		return $this->getCategoryEdit($lan, Yii::$app->controller->action->id);
+	}
+
+	public function actionNews($lan)
+	{
+		return $this->getCategoryEdit($lan, Yii::$app->controller->action->id);
+	}
+
 	public function actionDelete($id)
 	{
 		$test = $this->form->findOne($id);

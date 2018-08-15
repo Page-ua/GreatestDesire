@@ -71,6 +71,11 @@ class Space extends ContentContainerActiveRecord implements \humhub\modules\sear
         return 'space';
     }
 
+	public static function objectName()
+	{
+		return 'space'; //TODO translate;
+	}
+
     /**
      * @inheritdoc
      */

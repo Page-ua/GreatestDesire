@@ -116,7 +116,7 @@ class AdminMenu extends \humhub\widgets\BaseMenu
 	    ]);
 	    $this->addItem([
 		    'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'News'),
-		    'url' => Url::toRoute('/admin/news'),
+		    'url' => Url::toRoute('/admin/news/create'),
 		    'icon' => '<i class="fa fa-newspaper-o" aria-hidden="true"></i>',
 		    'sortOrder' => 17000,
 		    'newItemCount' => 0,

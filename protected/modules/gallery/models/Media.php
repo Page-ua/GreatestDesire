@@ -48,6 +48,11 @@ class Media extends ContentActiveRecord
         return 'gallery_media';
     }
 
+	public static function objectName()
+	{
+		return 'photo'; //TODO translate;
+	}
+
     /**
      * @inheritdoc
      */
@@ -141,6 +146,20 @@ class Media extends ContentActiveRecord
             
         }
         return empty($previewImage) ? $this->getFallbackPreviewImageUrl() : $previewImage;
+    }
+
+    public function getMyLastPhoto($pageSize)
+    {
+    	$userID = Yii::$app->user->id;
+    	$query = self::find();
+    	$query->leftJoin('file', 'file.object_id = gallery_media.id');
+	    $query->andWhere(['file.object_model' => self::className()]);
+    	$query->andWhere(['file.created_by' => $userID]);
+    	$query->orderBy('date_create DESC');
+    	$query->limit($pageSize);
+
+
+    	return $query->all();
     }
 
     /**

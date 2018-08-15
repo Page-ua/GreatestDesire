@@ -50,10 +50,10 @@ use yii\helpers\Url;
                 </div>
 	            <?php } ?>
 
-                <?php if(!empty($age)) { ?>
+                <?php if(!empty($profile->age)) { ?>
                 <div class="item">
                     <div class="label">Age</div>
-                    <div class="text"><?= $age; ?></div>
+                    <div class="text"><?= $profile->age; ?></div>
                 </div>
 	            <?php } ?>
 

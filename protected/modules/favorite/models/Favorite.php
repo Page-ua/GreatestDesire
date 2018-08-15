@@ -8,7 +8,9 @@
 
 namespace humhub\modules\favorite\models;
 
+use Codeception\Lib\Generator\Shared\Classname;
 use humhub\modules\gallery\models\CustomGallery;
+use humhub\modules\user\models\User;
 use Yii;
 use humhub\modules\content\components\ContentAddonActiveRecord;
 use humhub\modules\content\interfaces\ContentOwner;
@@ -82,7 +84,17 @@ class Favorite extends ContentAddonActiveRecord
 		$object->andWhere(['f.object_model' => $objectName::className()]);
 		$object->andWhere(['f.created_by' => $userId]);
 
+
 		return $object->all();
+	}
+
+	public static function getCountObjectsByUser(User $user, string $classname)
+	{
+		$query = self::find();
+		$query->where(['object_model' => $classname]);
+		$query->andWhere(['created_by' => $user->id]);
+
+		return $query->count();
 	}
 
 }

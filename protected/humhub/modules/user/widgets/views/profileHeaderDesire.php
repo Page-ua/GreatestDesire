@@ -50,4 +50,3 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
 	</div>
 </div>
 
-<div class="page-content">

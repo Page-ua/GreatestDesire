@@ -8,6 +8,7 @@
 
 namespace humhub\modules\user\controllers;
 
+use humhub\modules\activity\models\MailSummaryForm;
 use humhub\modules\desire\models\Desire;
 use Yii;
 use yii\helpers\Url;
@@ -65,25 +66,31 @@ class AccountController extends BaseAccountController
     public function actionEdit()
     {
 
-
-
 	    if (!Yii::$app->user->canChangePassword()) {
 		    throw new HttpException(500, 'Password change is not allowed');
 	    }
 
-	    $userPassword = new \humhub\modules\user\models\Password();
+	    $userPassword = \humhub\modules\user\models\Password::findOne(['user_id' => Yii::$app->user->getId()]);
 	    $userPassword->scenario = 'changePassword';
+
 
 
 	    $this->subLayout = "@humhub/views/layouts/_sublayout";
 
 	    $user = Yii::$app->user->getIdentity();
 
+	    $notificationEmail = new MailSummaryForm();
+	    $notificationEmail->user = $user;
+	    $notificationEmail->loadCurrent();
+
+	    $notificationInterval = $notificationEmail->interval;
+
 	    if(Yii::$app->request->isPost && $user->profile->load(Yii::$app->request->post())) {
 		    if($user->profile->validate()) {
 			    $result3 = $user->profile->save();
 		    }
 		    $pass = Yii::$app->request->post('Password');
+
             if(!empty($pass['newPassword'])) {
 	            if ( ! Yii::$app->user->canChangePassword() ) {
 		            throw new HttpException( 500, 'Password change is not allowed' );
@@ -94,12 +101,23 @@ class AccountController extends BaseAccountController
 		            $userPassword->save();
 	            }
             }
+		    $notificationInterval = Yii::$app->request->post('Notification');
+            if( !$notificationInterval ) {
+
+                $notificationEmail->interval = 0;
+
+            } else {
+	            $settingsManager = Yii::$app->getModule('activity')->settings;
+                $notificationEmail->interval = $settingsManager->get('mailSummaryInterval');
+            }
+		    $notificationEmail->save();
         }
 
     	return $this->render('edit', [
             'user' => $user,
             'changePasswordModel' => $userPassword,
             'socialButton' => $this->ConnectedAccounts(),
+            'notificationOn' => $notificationInterval,
 
 	    ]);
     }

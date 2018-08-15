@@ -81,4 +81,11 @@ $this->pageTitle = Yii::t( 'UserModule.views_auth_createAccount', 'Create Accoun
 	<?php endif; ?>
 	<?php endforeach; ?>
 
+    $("form").keypress(function(e) {
+        //Enter key
+        if (e.which == 13) {
+            return false;
+        }
+    });
+
 </script>

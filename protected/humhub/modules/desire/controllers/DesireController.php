@@ -40,9 +40,11 @@ class DesireController extends GeneralController {
 	public function actionCreate() {
 
 		$model = new Desire();
+		$model->content->visibility = 1;
+		$model->content->container = $this->contentContainer;
+
 
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
-
 			$this->view->saved();
 			$model->saveFiles();
 			$model->saveTags();
@@ -60,13 +62,8 @@ class DesireController extends GeneralController {
 
 	public function actionView( $id ) {
 
-		$model = $this->findModel($id);
-
-
-
-		return $this->render( 'view', [
-			'model' => $model,
-		] );
+		$user = Yii::$app->user->getIdentity();
+		$this->redirect($user->createUrl('/user/profile/desire-one', ['id' => $id]));
 	}
 
 	public function actionUpdate( $id ) {

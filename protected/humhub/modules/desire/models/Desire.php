@@ -45,6 +45,11 @@ class Desire extends ContentActiveRecord implements Searchable
         return 'desire';
     }
 
+	public static function objectName()
+	{
+		return 'desire';
+	}
+
     /**
      * @inheritdoc
      */

@@ -29,7 +29,7 @@ use yii\helpers\Url;
 					<div class="date"><?= \humhub\widgets\TimeAgo::widget(['timestamp' => $blog->created_at]); ?></div>
 					<a href="<?= $contentContainer->createUrl('/user/profile/blog-one', ['id' => $blog->id]); ?>" class="title"><?= $blog->title; ?></a>
 					<div class="subtitle">
-                    <?php echo $category[$blog->category]; ?>
+                    <?= isset($category[$blog->category])?$category[$blog->category]:''; ?>
                     </div>
 					<div class="text"><?= $blog->message; ?></div>
 				</div>

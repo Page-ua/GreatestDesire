@@ -40,11 +40,10 @@ use yii\widgets\DetailView;
         <div class="sub-context-menu">
             <div class="context-menu-btn"><span></span><span></span><span></span></div>
             <ul class="context-menu">
-                <li><a href="<?= Url::toRoute(['desire/update', 'id'=>$model->id]); ?>">Edit</a></li>
-                <li><a href="<?= Url::toRoute(['desire/delete', 'id'=>$model->id],  ['data-pjax' => 0]); ?>">Remove</a></li>
+                <li><a href="<?= Url::toRoute(['/desire/desire/update', 'id'=>$model->id]); ?>">Edit</a></li>
+                <li><a href="<?= Url::toRoute(['/content/content/delete', 'id'=>$model->content->id],  ['data-pjax' => 0]); ?>">Remove</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="base-btn"><a href="<?= $user->createUrl('/user/profile/desires'); ?>">Back to list</a></div>
-</div>

@@ -38,7 +38,7 @@ use yii\helpers\Url;
                         <div class="logo-btn"><svg class="icon icon-logo"><use xlink:href="./svg/sprite/sprite.svg#logo"></use></svg></div>
                         <div class="mobile-wrap">
                             <div class="general-menu">
-	                            <?= humhub\widgets\BaseLeftMenu::widget(); ?>
+	                            <?= humhub\widgets\BaseLeftMenu::widget(['id' => 'left-menu-nav-mobile' ]); ?>
                             </div>
                             <div class="sidebar-mobile-footer">
                                 <div class="lang-block">
@@ -138,45 +138,7 @@ use yii\helpers\Url;
                                             <div class="title">Favorites</div>
                                         </div>
                                         <div class="sub-menu-content">
-                                            <div class="latestList">
-                                                <div class="list-header"><span>Latest</span></div>
-                                                <ul>
-                                                    <li class="favorite">
-                                                        <div class="photo"><img src="img/user-2.png"><span class="active"></span></div>
-                                                        <div class="favorite-wrap has-img">
-                                                            <div class="text">
-                                                                <div class="name">Lary Mockhart</div> likes your photo:<a href="#"> Road to Africa.</a></div>
-                                                            <div class="img-block"><img src="img/notify-img-1.png"></div>
-                                                            <div class="date">October 30 at 23:03</div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="favorite">
-                                                        <div class="photo"><img src="img/user-2.png"><span class="active"></span></div>
-                                                        <div class="favorite-wrap ">
-                                                            <div class="text">
-                                                                <div class="name">Christopher Lawrence</div> blog post:.<a href="#"> Australia</a></div>
-                                                            <div class="date">October 30 at 23:03</div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="favorite">
-                                                        <div class="photo"><img src="img/user-2.png"><span class="active"></span></div>
-                                                        <div class="favorite-wrap ">
-                                                            <div class="text">
-                                                                <div class="name">Lary Mockhart</div> <a href="#"> Poll</a></div>
-                                                            <div class="date">October 30 at 23:03</div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="anotherFavorites">
-                                                <ul>
-                                                    <li><a href="#">Photos (245)</a></li>
-                                                    <li><a href="#">Albums (75)</a></li>
-                                                    <li><a href="#">Blog Posts (234565)</a></li>
-                                                    <li><a href="#">Desires</a></li>
-                                                    <li><a href="#">Polls (2)</a></li>
-                                                </ul>
-                                            </div>
+                                            <?= \humhub\modules\favorite\widgets\TopWindows::widget(); ?>
                                         </div>
                                         <div class="sub-menu-footer"><a class="seeAll" href="#">See all</a></div>
                                     </div>
@@ -207,7 +169,7 @@ use yii\helpers\Url;
 
                                             <div class="link"><a href="<?= Url::to(['/blog/blog/create']); ?>"><svg class="icon icon-blog"><use xlink:href="svg/sprite/sprite.svg#blog"></use></svg> Blog post</a></div>
                                             <div class="link"><a href="#"><svg class="icon icon-Group"><use xlink:href="svg/sprite/sprite.svg#Group"></use></svg> Group</a></div>
-                                            <div class="link"><a href="#"><svg class="icon icon-poll"><use xlink:href="svg/sprite/sprite.svg#poll"></use></svg> Poll</a></div>
+                                            <div class="link"><a href="<?= $userModel->createUrl('/polls/poll/create'); ?>"><svg class="icon icon-poll"><use xlink:href="svg/sprite/sprite.svg#poll"></use></svg> Poll</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -291,6 +253,7 @@ use yii\helpers\Url;
                            </div>
                            <div class="general-menu">
                                <?= humhub\widgets\BaseLeftMenu::widget(); ?>
+
                            </div>
                            <div class="sidebar-notification">
                                <div class="item">

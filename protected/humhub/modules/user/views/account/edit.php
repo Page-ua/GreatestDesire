@@ -9,6 +9,10 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
+
+
+
+
 ?>
 
 <div class="page-content">
@@ -16,6 +20,7 @@ use yii\helpers\Url;
 		<div class="profile-settings">
 			<div class="base-kaushan-title">Settings</div>
 			<?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
+
 				<div class="profile-info general-info">
 					<div class="title">General Info</div>
 					<?= $form->field($user->profile, 'firstname',[
@@ -39,11 +44,17 @@ use yii\helpers\Url;
 						<p class="desire-input-desc">You can change it or add a description<a href="<?= Url::to(['/desire/desire/update', 'id' => $user->greatest_desire]); ?>"> here</a></p>
 					</div>
 					<div class="form-item personal-info">
+
 						<div class="photo">
 							<div class="personal-info-label">Add profile photo</div>
+
 							<div class="wrap">
-								<div class="img-block"><img src="img/user-1.png"></div><input type="file" data-browse="Select file" data-placeholder=""></div>
+								<div class="img-block">
+									<?= \humhub\modules\user\widgets\UserPhotoControl::widget(['user' => $user]); ?>
+                                </div>
+                            </div>
 						</div>
+
 						<div class="birthday">
 							<div class="personal-info-label">Birthday*</div>
 							<div class="wrap"><label><svg class="icon icon-calendar"><use xlink:href="./svg/sprite/sprite.svg#calendar"></use></svg>
@@ -76,7 +87,10 @@ use yii\helpers\Url;
 
 					<?php echo $form->field($changePasswordModel, 'newPasswordConfirm', ['options' => ['class' => 'form-item sm-item']])->passwordInput(['maxlength' => 45]); ?>
 
-					<div class="form-item site-notifications"><input id="site-notification" type="checkbox"><label for="site-notification">Receive Site Notifications</label></div>
+					<div class="form-item site-notifications">
+                        <input name="Notification[interval]" <?= $notificationOn ?'checked':''; ?> id="site-notification" type="checkbox">
+                        <label for="site-notification">Receive Site Notifications</label>
+                    </div>
 				</div>
 
 
@@ -195,7 +209,16 @@ use yii\helpers\Url;
 				<p class="bottom-sub-title">Invite your Facebook friends</p>
 
 				<div class="base-btn reverse"><input type="submit" value="Save"></div>
+
+
+
 			<?php ActiveForm::end(); ?>
 		</div>
 	</div>
 </div>
+<form class="fileupload" id="profilefileupload" action="" method="POST" enctype="multipart/form-data"
+      style="position: absolute; top: 0; left: 0; opacity: 0; height: 140px; width: 140px;">
+    <input type="file" aria-hidden="true" name="images[]">
+</form>
+
+

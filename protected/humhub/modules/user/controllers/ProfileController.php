@@ -119,11 +119,9 @@ class ProfileController extends ContentContainerController
             throw new \yii\web\HttpException(403, 'Forbidden');
         }
 
-	    $birthDate = new \DateTime($this->contentContainer->profile->birthday);
-	    $lifeSpan = $birthDate->diff(new \DateTime());
-	    $age = $lifeSpan->format("%y");
 
-        return $this->render('about', ['user' => $this->contentContainer, 'age' => $age]);
+
+        return $this->render('about', ['user' => $this->contentContainer]);
     }
 
     public function actionBlog()
@@ -179,7 +177,7 @@ class ProfileController extends ContentContainerController
 	    $this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
 
 	    $desireList = Desire::find();
-	    $desireList->where(['created_by' => $this->contentContainer->id]);
+	    $desireList->where(['created_by' => $this->user->id]);
 	    $desireList->andWhere(['<>', 'id', $this->contentContainer->greatest_desire]);
 	    $desireList = $desireList->all();
 
@@ -196,7 +194,7 @@ class ProfileController extends ContentContainerController
     {
 	    $this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
 
-	    $desireList = Favorite::getFavoriteContent(Desire::className(), $this->contentContainer->id);
+	    $desireList = Favorite::getFavoriteContent(Desire::className(), $this->user->id);
 
 	    $greatestDesire = Desire::getGreatestDesire($this->user);
 
@@ -371,6 +369,22 @@ class ProfileController extends ContentContainerController
         	'spaces' => $spaces,
 	        'category' => $category,
         ]);
+    }
+
+    public function actionPolls()
+    {
+	    return $this->render('poll', array(
+		    'contentContainer' => $this->contentContainer,
+		    'streamUrl' => '/polls/poll/stream',
+	    ));
+    }
+
+    public function actionFavoritePolls()
+    {
+    	return $this->render('poll', array(
+    		'contentContainer' => $this->contentContainer,
+		    'streamUrl' => '/polls/poll/streamFavorite',
+	    ));
     }
 
 

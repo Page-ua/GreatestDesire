@@ -35,7 +35,7 @@ class LanguageCategoryMenu extends \humhub\widgets\BaseMenu
 			$increment += 100;
 			$this->addItem([
 				'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', $name),
-				'url' => '?lan='.$key,
+				'url' => Url::current(['lan'=> $key], TRUE),
 				'sortOrder' => $increment,
 				'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'category' && Yii::$app->request->get('lan') == $key),
 				'isVisible' => $canEditSettings

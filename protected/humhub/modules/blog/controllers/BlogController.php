@@ -13,6 +13,7 @@ use humhub\components\Response;
 use humhub\modules\blog\models\Blog;
 use humhub\modules\content\models\Category;
 use Yii;
+use yii\helpers\Url;
 
 /**
  * @package humhub.modules_core.blog.controllers
@@ -73,6 +74,9 @@ class BlogController extends GeneralController {
 		$category = new Category();
 		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
 
+		$model->content->visibility = 1;
+		$model->content->container = $this->contentContainer;
+
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
 
 			$this->view->saved();
@@ -108,7 +112,10 @@ class BlogController extends GeneralController {
 			$this->forbidden();
 		}
 
-		$this->setContentSettings($model);
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+//		$this->setContentSettings($model);
 
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
 
@@ -119,10 +126,11 @@ class BlogController extends GeneralController {
 			return $this->redirect( [ 'view', 'id' => $model->id ] );
 		}
 
-		return $this->render( 'update',
+		return $this->render( 'create',
 			[
 				'model' => $model,
-				'submitUrl' => $this->generateSubmitUrl()
+				'submitUrl' => Url::toRoute('/blog/blog/update'),
+				'category' => $category,
 			]
 		);
 	}

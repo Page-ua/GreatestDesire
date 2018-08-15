@@ -41,6 +41,10 @@ class Post extends ContentActiveRecord implements Searchable
         return 'post';
     }
 
+	public static function objectName()
+	{
+		return 'post'; //TODO translate;
+	}
     /**
      * @inheritdoc
      */

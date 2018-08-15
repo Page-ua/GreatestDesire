@@ -128,20 +128,20 @@ $(document).on('ready pjax:success', function () {
         e.preventDefault();
     });
 
-    // show buttons at image rollover
-    $('#profilefileupload').mouseover(function () {
-        $('#profile-image-upload-buttons').show();
-    })
-
-    // show buttons also at buttons rollover (better: prevent the mouseleave event)
-    $('#profile-image-upload-buttons').mouseover(function () {
-        $('#profile-image-upload-buttons').show();
-    });
-
-    // hide buttons at image mouse leave
-    $('#profilefileupload').mouseleave(function () {
-        $('#profile-image-upload-buttons').hide();
-    })
+    // // show buttons at image rollover
+    // $('#profilefileupload').mouseover(function () {
+    //     $('#profile-image-upload-buttons').show();
+    // })
+    //
+    // // show buttons also at buttons rollover (better: prevent the mouseleave event)
+    // $('#profile-image-upload-buttons').mouseover(function () {
+    //     $('#profile-image-upload-buttons').show();
+    // });
+    //
+    // // hide buttons at image mouse leave
+    // $('#profilefileupload').mouseleave(function () {
+    //     $('#profile-image-upload-buttons').hide();
+    // })
 
 
     // show buttons at image rollover

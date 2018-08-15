@@ -300,6 +300,20 @@ class Profile extends \yii\db\ActiveRecord {
 		return $query->one();
 	}
 
+	public function getAge()
+	{
+		if(isset($this->birthday) && !empty($this->birthday)) {
+
+			$birthDate = new \DateTime( $this->birthday );
+			$lifeSpan  = $birthDate->diff( new \DateTime() );
+			$age       = $lifeSpan->format( "%y" );
+			return $age;
+		} else {
+			return 'Set birth date, please.';
+		}
+
+	}
+
 	public function getOptionsField($field)
 	{
 		$profileField = \humhub\modules\user\models\ProfileField::findOne(['internal_name' => $field]);

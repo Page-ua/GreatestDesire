@@ -50,6 +50,20 @@ class CategoryMenu extends \humhub\widgets\BaseMenu
 			'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'category' && Yii::$app->controller->action->id == 'gallery'),
 			'isVisible' => $canEditSettings
 		]);
+		$this->addItem([
+			'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'Poll'),
+			'url' => Url::toRoute('/admin/category/poll?lan=en'),
+			'sortOrder' => 300,
+			'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'category' && Yii::$app->controller->action->id == 'poll'),
+			'isVisible' => $canEditSettings
+		]);
+		$this->addItem([
+			'label' => Yii::t('AdminModule.widgets_AdminMenuWidget', 'News'),
+			'url' => Url::toRoute('/admin/category/news?lan=en'),
+			'sortOrder' => 300,
+			'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'category' && Yii::$app->controller->action->id == 'news'),
+			'isVisible' => $canEditSettings
+		]);
 
 
 		parent::init();

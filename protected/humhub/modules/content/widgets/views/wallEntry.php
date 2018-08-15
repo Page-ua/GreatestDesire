@@ -19,37 +19,51 @@ use humhub\modules\content\widgets\WallEntryLabels;
 
 
 
-<div class="panel panel-default wall_<?= $object->getUniqueId(); ?>">
+<div class=" wall_<?= $object->getUniqueId(); ?>">
     <div class="panel-body">
 
-        <div class="media">
+        <div class="media base-post">
+
+
             <!-- since v1.2 -->
             <div class="stream-entry-loader"></div>
 
-            <!-- start: show wall entry options -->
-            <?php if($renderControls) : ?>
-                <ul class="nav nav-pills preferences">
-                    <li class="dropdown ">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-label="<?= Yii::t('base', 'Toggle stream entry menu'); ?>" aria-haspopup="true">
-                            <i class="fa fa-angle-down"></i>
-                        </a>
+
+            <div class="header">
+                <div class="user-img">
+	                <?=
+	                UserImage::widget([
+		                'user' => $user,
+		                'width' => false,
+	                ]);
+	                ?>
+                </div>
+                <div style="padding-right: 40px;" class="pull-right <?= ($renderControls) ? 'labels' : ''?>">
+		            <?= WallEntryLabels::widget(['object' => $object]); ?>
+                </div>
+                <div class="wrap">
+                    <div class="name"><?= Html::containerLink($user); ?></div>
+	                <?php if ($showContentContainer): ?>
+                        <span class="viaLink">
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>
+			                <?= Html::containerLink($container); ?>
+                        </span>
+	                <?php endif; ?>
+                    <div class="title"><?= $userAction; ?></div>
+                    <div class="type"><?= $actionName; ?></div>
+                    <div class="date"><?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+	                    <?php if ($updatedAt !== null) : ?>
+                            &middot;
+                            <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
+	                    <?php endif; ?>
+                    </div>
 
 
-                            <ul class="dropdown-menu pull-right">
-                                <?= WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
-                            </ul>
-                    </li>
-                </ul>
-            <?php endif; ?>
-            <!-- end: show wall entry options -->
+                </div>
 
-            <?=
-            UserImage::widget([
-                'user' => $user,
-                'width' => 40,
-                'htmlOptions' => ['class' => 'pull-left']
-            ]);
-            ?>
+            </div>
+
+
 
             <?php if ($showContentContainer && $container instanceof Space): ?>
                 <?=
@@ -63,41 +77,33 @@ use humhub\modules\content\widgets\WallEntryLabels;
                 ?>
             <?php endif; ?>
 
-            <div class="media-body">
-                <div class="media-heading">
-                    <?= Html::containerLink($user); ?>
-                    <?php if ($showContentContainer): ?>
-                        <span class="viaLink">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <?= Html::containerLink($container); ?>
-                        </span>
-                    <?php endif; ?>
-
-                    <div class="pull-right <?= ($renderControls) ? 'labels' : ''?>">
-                        <?= WallEntryLabels::widget(['object' => $object]); ?>
-                    </div>
-                </div>
-                <div class="media-subheading">
-                    <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
-                    <?php if ($updatedAt !== null) : ?>
-                        &middot;
-                        <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <hr/>
-
             <div class="content" id="wall_content_<?= $object->getUniqueId(); ?>">
                 <?= $content; ?>
             </div>
 
             <!-- wall-entry-addons class required since 1.2 -->
             <?php if($renderAddons) : ?>
-                <div class="stream-entry-addons clearfix">
-                    <?= WallEntryAddons::widget($addonOptions); ?>
-                    <?= \humhub\modules\sharebetween\widgets\ShareLink::widget(['object' => $object]); ?>
+
+                <div class="footer">
+                        <?= \humhub\modules\content\widgets\BottomPanelContent::widget(['object' => $object]); ?>
                 </div>
+	            <?= \humhub\modules\comment\widgets\Comments::widget(['object' => $object]); ?>
+
             <?php endif; ?>
+
+
+
+            <!-- start: show wall entry options -->
+	        <?php if($renderControls) : ?>
+                <div class="sub-context-menu">
+                    <div class="context-menu-btn"><span></span><span></span><span></span></div>
+                    <ul class="context-menu">
+	                    <?= WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
+                    </ul>
+                </div>
+
+	        <?php endif; ?>
+            <!-- end: show wall entry options -->
 
         </div>
     </div>

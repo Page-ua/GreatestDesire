@@ -37,6 +37,11 @@ class BaseGallery extends ContentActiveRecord
         return 'gallery_gallery';
     }
 
+    public static function objectName()
+    {
+    	return 'albums';
+    }
+
     /**
      * @inheritdoc
      */

@@ -7222,3 +7222,497 @@ Array
     ]
     'argc' => 3
 ]
+2018-07-16 21:40:07 [172.17.0.1][-][ktv144jkp3lfhlkej3ua31u6p7][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in /var/www/html/protected/humhub/modules/user/views/auth/login.php:27
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(250): yii\base\View->renderPhpFile()
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile()
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render()
+#3 /var/www/html/protected/humhub/modules/user/controllers/AuthController.php(109): yii\base\Controller->render()
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): humhub\modules\user\controllers\AuthController->actionLogin()
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(57): ::call_user_func_array()
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams()
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction()
+#8 /var/www/html/protected/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction()
+#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest()
+#10 /var/www/html/index.php(26): yii\base\Application->run()
+#11 {main}
+2018-07-16 21:40:06 [172.17.0.1][-][ktv144jkp3lfhlkej3ua31u6p7][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'uk-UA,uk;q=0.9,ru;q=0.8,en-US;q=0.7,en;q=0.6,ky;q=0.5,tg;q=0.4'
+    'HTTP_COOKIE' => 'language=b4349aea2a12f8bb9fa5283a2be327d77f6be88f1f6163d3e12caefa69a8c4dfa%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; csrftoken=ApJTnHb0QBq1m0YAcqH21nVxnDa6R9gAtdXCc3RvSjhULPiBL5824gUy7EW4vNML; XDEBUG_SESSION=PHPSTORM; wp-settings-1=editor%3Dhtml%26libraryContent%3Dbrowse%26advImgDetails%3Dshow%26imgsize%3Dfull%26post_dfw%3Doff%26editor_plain_text_paste_warning%3D2; wp-settings-time-1=1516888455; Phpstorm-c2a34be6=5899bb0d-ce16-4b72-af95-3f1611f949f7; PHPSESSID=ktv144jkp3lfhlkej3ua31u6p7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '172.17.0.2'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.17.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/index.php'
+    'REMOTE_PORT' => '43114'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/user/auth/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/user/auth/login'
+    'PATH_TRANSLATED' => '/var/www/html/user/auth/login'
+    'PHP_SELF' => '/index.php/user/auth/login'
+    'REQUEST_TIME_FLOAT' => 1531816806.126
+    'REQUEST_TIME' => 1531816806
+]
+2018-08-02 22:29:20 [-][-][-][error][yii\console\Exception] yii\console\Exception: Неизвестная опция: --fileds in /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php:120
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#4 /var/www/html/protected/yii(29): yii\base\Application->run()
+#5 {main}
+2018-08-02 22:29:17 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1662'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2802'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1478,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1478'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-QODg9OJqyk,guid=c36130991262cddeaad727ad5b6401ef'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/var/www/html'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1533288557.7953
+    'REQUEST_TIME' => 1533288557
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => '--migrationPath=/modules/polls/migrations'
+        3 => 'add_category_column_to_poll_table'
+        4 => '--fileds=category:integer'
+    ]
+    'argc' => 5
+]
+2018-08-02 22:29:34 [-][-][-][error][yii\base\Exception] yii\base\ErrorException: mkdir(): Permission denied in /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php:499
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mkdir(): Permis...', '/var/www/html/p...', 499, Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(499): mkdir('/modules', 509)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules', 509, true)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules/polls', 509, true)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(125): yii\helpers\BaseFileHelper::createDirectory('/modules/polls/...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /var/www/html/protected/yii(29): yii\base\Application->run()
+#13 {main}
+
+Next yii\base\Exception: Failed to create directory "/modules": mkdir(): Permission denied in /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php:504
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules', 509, true)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules/polls', 509, true)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(125): yii\helpers\BaseFileHelper::createDirectory('/modules/polls/...')
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /var/www/html/protected/yii(29): yii\base\Application->run()
+#11 {main}
+2018-08-02 22:29:33 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1662'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2802'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1478,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1478'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-QODg9OJqyk,guid=c36130991262cddeaad727ad5b6401ef'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/var/www/html'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1533288573.3026
+    'REQUEST_TIME' => 1533288573
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => '--migrationPath=/modules/polls/migrations'
+        3 => 'add_category_column_to_poll_table'
+        4 => '--fields=category:integer'
+    ]
+    'argc' => 5
+]
+2018-08-02 22:30:36 [-][-][-][error][yii\base\Exception] yii\base\ErrorException: mkdir(): Permission denied in /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php:499
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mkdir(): Permis...', '/var/www/html/p...', 499, Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(499): mkdir('/humhub', 509)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/humhub', 509, true)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/humhub/modules', 509, true)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/humhub/modules...', 509, true)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(125): yii\helpers\BaseFileHelper::createDirectory('/humhub/modules...')
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#12 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 /var/www/html/protected/yii(29): yii\base\Application->run()
+#14 {main}
+
+Next yii\base\Exception: Failed to create directory "/humhub": mkdir(): Permission denied in /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php:504
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/humhub', 509, true)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/humhub/modules', 509, true)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/humhub/modules...', 509, true)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(125): yii\helpers\BaseFileHelper::createDirectory('/humhub/modules...')
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#11 /var/www/html/protected/yii(29): yii\base\Application->run()
+#12 {main}
+2018-08-02 22:30:35 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1662'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2802'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1478,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1478'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-QODg9OJqyk,guid=c36130991262cddeaad727ad5b6401ef'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/var/www/html'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1533288635.5451
+    'REQUEST_TIME' => 1533288635
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => '--migrationPath=/humhub/modules/polls/migrations'
+        3 => 'add_category_column_to_poll_table'
+        4 => '--fields=category:integer'
+    ]
+    'argc' => 5
+]
+2018-08-02 22:30:45 [-][-][-][error][yii\base\Exception] yii\base\ErrorException: mkdir(): Permission denied in /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php:499
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mkdir(): Permis...', '/var/www/html/p...', 499, Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(499): mkdir('/modules', 509)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules', 509, true)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules/polls', 509, true)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(125): yii\helpers\BaseFileHelper::createDirectory('/modules/polls/...')
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#10 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#11 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /var/www/html/protected/yii(29): yii\base\Application->run()
+#13 {main}
+
+Next yii\base\Exception: Failed to create directory "/modules": mkdir(): Permission denied in /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php:504
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules', 509, true)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/helpers/BaseFileHelper.php(496): yii\helpers\BaseFileHelper::createDirectory('/modules/polls', 509, true)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(125): yii\helpers\BaseFileHelper::createDirectory('/modules/polls/...')
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/controllers/MigrateController.php(168): yii\console\controllers\BaseMigrateController->beforeAction(Object(yii\base\InlineAction))
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(154): yii\console\controllers\MigrateController->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('create', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('create', Array)
+#7 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#8 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#9 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /var/www/html/protected/yii(29): yii\base\Application->run()
+#11 {main}
+2018-08-02 22:30:45 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1662'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '2802'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1478,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1478'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-QODg9OJqyk,guid=c36130991262cddeaad727ad5b6401ef'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/var/www/html'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1533288645.0204
+    'REQUEST_TIME' => 1533288645
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/create'
+        2 => '--migrationPath=/modules/polls/migrations'
+        3 => 'add_category_column_to_poll_table'
+        4 => '--fields=category:integer'
+    ]
+    'argc' => 5
+]

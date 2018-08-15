@@ -17,7 +17,11 @@ class WallEntry extends \humhub\modules\content\widgets\WallEntry
 {
 
     public $editRoute = "/polls/poll/edit";
-    
+
+    public $userAction = 'create';
+
+    public $actionName = 'polls';
+
     public function run()
     {
         //We don't want an edit menu when the poll is closed

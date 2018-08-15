@@ -44,6 +44,11 @@ class Blog extends ContentActiveRecord implements Searchable
         return 'blog';
     }
 
+	public static function objectName()
+	{
+		return 'blog post';
+	}
+
     /**
      * @inheritdoc
      */
@@ -179,6 +184,7 @@ class Blog extends ContentActiveRecord implements Searchable
 		$query->andWhere(['content.object_model' => self::className()]);
 		$query->limit(10);
 		$query->offset($offset);
+		$query->orderBy('created_at DESC');
 
 		$data['count'] = $query->count();
 		$data['blog'] = $query->all();

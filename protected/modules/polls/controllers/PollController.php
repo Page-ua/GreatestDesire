@@ -2,6 +2,7 @@
 
 namespace humhub\modules\polls\controllers;
 
+use humhub\modules\content\models\Category;
 use Yii;
 use yii\web\HttpException;
 use yii\helpers\Html;
@@ -30,6 +31,12 @@ class PollController extends ContentContainerController
                 'mode' => \humhub\modules\polls\components\StreamAction::MODE_NORMAL,
                 'contentContainer' => $this->contentContainer
             ),
+            'streamFavorite' => array(
+                'class' => \humhub\modules\polls\components\StreamFavoriteAction::className(),
+                'includes' => Poll::className(),
+                'mode' => \humhub\modules\polls\components\StreamFavoriteAction::MODE_NORMAL,
+                'contentContainer' => $this->contentContainer
+            ),
         );
     }
 
@@ -53,15 +60,32 @@ class PollController extends ContentContainerController
     public function actionCreate()
     {
 
+	    $this->subLayout = "@humhub/views/layouts/_fullpage";
+		Yii::$app->assetManager->forceCopy = true;
+		if(Yii::$app->request->post()) {
 
-        $poll = new Poll();
-        $poll->scenario = Poll::SCENARIO_CREATE;
-        $poll->question = Yii::$app->request->post('question');
-        $poll->setNewAnswers(Yii::$app->request->post('newAnswers'));
-        $poll->allow_multiple = Yii::$app->request->post('allowMultiple', 0);
-        $poll->anonymous = Yii::$app->request->post('anonymous', 0);
-        $poll->is_random = Yii::$app->request->post('is_random', 0);
-        return \humhub\modules\polls\widgets\WallCreateForm::create($poll, $this->contentContainer);
+			$poll           = new Poll();
+			$poll->scenario = Poll::SCENARIO_CREATE;
+			$poll->question = Yii::$app->request->post( 'question' );
+			$poll->setNewAnswers( Yii::$app->request->post( 'newAnswers' ) );
+			$poll->allow_multiple = Yii::$app->request->post( 'allowMultiple', 0 );
+			$poll->category = Yii::$app->request->post('category');
+			$poll->anonymous      = Yii::$app->request->post( 'anonymous', 0 );
+			$poll->is_random      = Yii::$app->request->post( 'is_random', 0 );
+
+			$errors = \humhub\modules\polls\widgets\WallCreateForm::create( $poll, $this->contentContainer );
+
+		}
+
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'poll');
+		Yii::$app->response->format = 'html';
+	    return $this->render('create', array(
+		    'contentContainer' => $this->contentContainer,
+		    'submitUrl' => $this->contentContainer->createUrl('/polls/poll/create'),
+		    'category' => $category,
+		    'errors' => isset($errors)?$errors['errors']:'',
+	    ));
     }
 
     /**

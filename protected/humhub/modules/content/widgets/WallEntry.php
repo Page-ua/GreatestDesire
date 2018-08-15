@@ -268,7 +268,9 @@ class WallEntry extends Widget
             'addonOptions' => $addonOptions,
             'container' => $container,
             'createdAt' => $createdAt,
-            'updatedAt' => $updatedAt
+            'updatedAt' => $updatedAt,
+	        'userAction' => (isset($this->userAction))?$this->userAction:'',
+	        'actionName' => (isset($this->actionName))?$this->actionName:'',
         ];
     }
 
