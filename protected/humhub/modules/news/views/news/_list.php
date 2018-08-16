@@ -1,5 +1,8 @@
 <?php use humhub\modules\comment\widgets\Comments;
+use humhub\modules\content\widgets\WallEntryControls;
 use humhub\modules\user\models\User;
+
+\humhub\modules\stream\assets\StreamAsset::register($this);
 
 foreach($articles as $article) { ?>
     <?php $user = User::findOne($article->created_by); ?>
@@ -24,18 +27,13 @@ foreach($articles as $article) { ?>
 				</div>
 			</div>
 		</div>
-		<div class="footer">
+		<div class="footer">d
 			<?= \humhub\modules\content\widgets\BottomPanelContent::widget(['object' => $article]); ?>
 		</div>
 
 		<?= Comments::widget(['object' => $article]); ?>
-		<div class="sub-context-menu">
-			<div class="context-menu-btn"><span></span><span></span><span></span></div>
-			<ul class="context-menu">
-				<li><a href="#">Edit</a></li>
-				<li><a href="#">Edit 2</a></li>
-				<li><a href="#">Edit 3</a></li>
-			</ul>
-		</div>
+
+        <?= \humhub\modules\content\widgets\ContentControlLinks::widget(['contentObject' => $article]); ?>
+
 	</div>
 <?php } ?>

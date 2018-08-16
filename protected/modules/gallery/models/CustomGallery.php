@@ -122,6 +122,7 @@ class CustomGallery extends BaseGallery
 	    $object->andWhere(['c.object_model' => CustomGallery::className()]);
 	    $object->andWhere(['c.visibility' => 1]);
 	    $object->limit(9);
+	    $object->orderBy('created_at DESC');
 	    $object->offset($offset);
 
 		$objectClone = clone $object;

@@ -22,6 +22,8 @@ class NewsController extends GeneralController {
 
 	public $submitUrl = 'news/create';
 
+	public $controlsOptions = [];
+
 	public function behaviors()
 	{
 		return [
@@ -30,6 +32,16 @@ class NewsController extends GeneralController {
 				'guestAllowedActions' => ['index', 'stream', 'about']
 			]
 		];
+	}
+
+	public function actions() {
+		return array(
+			'streamPublic' => array(
+				'class' => \humhub\modules\news\components\StreamPublicAction::className(),
+				'includes' => News::className(),
+				'mode' => \humhub\modules\news\components\StreamPublicAction::MODE_NORMAL,
+			),
+		);
 	}
 
 	public function actionIndex() {
@@ -44,6 +56,7 @@ class NewsController extends GeneralController {
 			'count' => $data['count'],
 			'category' => $category,
 			'ajaxUrl' => '/news/news/ajax-list',
+			'class' => $this,
 		]);
 
 	}
@@ -71,9 +84,12 @@ class NewsController extends GeneralController {
 
 		$model = $this->findModel($id);
 
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'news');
 
 		return $this->render( 'view', [
 			'model' => $model,
+			'category' => $category,
 		] );
 	}
 

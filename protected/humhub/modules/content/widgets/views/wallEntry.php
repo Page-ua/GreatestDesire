@@ -28,8 +28,8 @@ use humhub\modules\content\widgets\WallEntryLabels;
             <!-- since v1.2 -->
             <div class="stream-entry-loader"></div>
 
-
-            <div class="header">
+            <?php if($showHeader) { ?>
+                <div class="header">
                 <div class="user-img">
 	                <?=
 	                UserImage::widget([
@@ -62,7 +62,7 @@ use humhub\modules\content\widgets\WallEntryLabels;
                 </div>
 
             </div>
-
+            <?php } ?>
 
 
             <?php if ($showContentContainer && $container instanceof Space): ?>

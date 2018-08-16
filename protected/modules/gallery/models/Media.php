@@ -234,6 +234,7 @@ class Media extends ContentActiveRecord
 	    $object->where(['file.object_model' => Media::className()]);
 	    $object->andWhere(['c.object_model' => CustomGallery::className()]);
 	    $object->andWhere(['c.visibility' => 1]);
+	    $object->orderBy('created_at DESC');
 	    $object->limit(9);
 	    $object->offset($offset);
 		$objectClone = clone $object;

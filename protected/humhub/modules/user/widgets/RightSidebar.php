@@ -13,6 +13,7 @@ namespace humhub\modules\user\widgets;
 use humhub\modules\blog\models\Blog;
 use humhub\modules\friendship\models\Friendship;
 use humhub\modules\gallery\models\Media;
+use humhub\modules\news\models\News;
 use humhub\modules\polls\models\Poll;
 use humhub\modules\space\models\Membership;
 use humhub\modules\space\models\Space;
@@ -79,7 +80,7 @@ class RightSidebar extends \yii\base\Widget
 		$result['members'] = User::find()->count();
 		$result['blogs'] = Blog::find()->count();
 		$result['polls'] = Poll::find()->count();
-		$result['news'] = 0; //TODO Get counted news in to statistic;
+		$result['news'] = News::find()->count();
 		$result['groups'] = Space::find()->count();
 		$result['photos'] = Media::find()->count();
 

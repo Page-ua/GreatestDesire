@@ -29,13 +29,6 @@ foreach($articles as $article) { ?>
 		</div>
 
 		<?= Comments::widget(['object' => $article]); ?>
-		<div class="sub-context-menu">
-			<div class="context-menu-btn"><span></span><span></span><span></span></div>
-			<ul class="context-menu">
-				<li><a href="#">Edit</a></li>
-				<li><a href="#">Edit 2</a></li>
-				<li><a href="#">Edit 3</a></li>
-			</ul>
-		</div>
+		<?= \humhub\modules\content\widgets\ContentControlLinks::widget(['contentObject' => $article]); ?>
 	</div>
 <?php } ?>
