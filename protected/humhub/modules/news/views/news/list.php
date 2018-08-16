@@ -8,24 +8,30 @@
 
 use humhub\modules\comment\widgets\Comments;
 ?>
+
 <div class="page-content">
     <div class="content-wrap">
-        <div class="news-post-list news-page">
-            <div class="news-page-header">
-                <div class="title">Newss</div>
-                <div class="stat"><?= $count; ?> News Posts</div>
-                <div class="filters">
-                    <div class="page-filter category-filter show-on-tablet"><select><option>Activities (1)</option><option>Success Stories (34434)</option><option>Culture (34)</option><option>Food&Drink (643)</option><option>Fashion&Style (45)</option><option>Business&Money (46)</option></select></div>
-                    <div
-                            class="page-filter"><select><option>Newest first</option><option>Newest first 2</option><option>Newest first 3</option></select></div>
-                </div>
-            </div>
-            <div id="list-object">
-            <?= $this->render('_list', ['articles' => $articles, 'category' => $category]); ?>
-            </div>
+        <div class="polls-page">
+            <div class="polls-page-header">
+                <div class="title">News</div>
+                <div class="stat"><?= $count; ?> news</div><select><option>Top</option><option>All</option><option>Top top</option></select></div>
+			<?php
+
+
+
+			echo \humhub\modules\stream\widgets\StreamViewer::widget(array(
+				'streamAction' => '/news/news/streamPublic',
+				'messageStreamEmpty' =>
+					Yii::t('PollsModule.widgets_views_stream', '<b>There are no polls yet!</b><br>Be the first and create one...'),
+				'messageStreamEmptyCss' => 'placeholder-empty-stream',
+				'filters' => [
+					'filter_visibility_public' => Yii::t('PollsModule.widgets_views_stream', 'Only public news'),
+					'filter_visibility_private' => Yii::t('PollsModule.widgets_views_stream', 'Only private news')
+				]
+			));
+			?>
 
         </div>
     </div>
-    <?= \humhub\widgets\LoadMoreButton::widget(['count' => $count, 'object' => $articles, 'ajaxUrl' => $ajaxUrl]); ?>
+    <!--	<div class="base-btn"><a href="#">Load more</a></div>-->
 </div>
-

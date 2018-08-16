@@ -126,6 +126,8 @@ class WallEntry extends Widget
      */
     public $renderAddons = true;
 
+    public $showHeader = true;
+
     /**
      * @inheritdoc
      */
@@ -267,6 +269,7 @@ class WallEntry extends Widget
             'renderAddons' => $this->renderAddons,
             'addonOptions' => $addonOptions,
             'container' => $container,
+	        'showHeader' => $this->showHeader,
             'createdAt' => $createdAt,
             'updatedAt' => $updatedAt,
 	        'userAction' => (isset($this->userAction))?$this->userAction:'',

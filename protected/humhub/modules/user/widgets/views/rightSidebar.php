@@ -186,7 +186,7 @@
             <div class="footer-item"><a href="<?= Url::toRoute('/'); ?>"><svg class="icon icon-members"><use xlink:href="./svg/sprite/sprite.svg#members"></use></svg><?= $statistic['members']; ?> Members</a></div>
             <div class="footer-item"><a href="<?= Url::toRoute('/blog/blog'); ?>"><svg class="icon icon-blogs"><use xlink:href="./svg/sprite/sprite.svg#blogs"></use></svg><?= $statistic['blogs']; ?> Blogs</a></div>
             <div class="footer-item"><a href="<?= Url::toRoute('/polls/list'); ?>"><svg class="icon icon-polls"><use xlink:href="./svg/sprite/sprite.svg#polls"></use></svg><?= $statistic['polls']; ?> Polls</a></div>
-            <div class="footer-item"><a href="<?= Url::toRoute('/'); ?>"><svg class="icon icon-news"><use xlink:href="./svg/sprite/sprite.svg#news"></use></svg><?= $statistic['news']; ?> News</a></div>
+            <div class="footer-item"><a href="<?= Url::toRoute('/news/news'); ?>"><svg class="icon icon-news"><use xlink:href="./svg/sprite/sprite.svg#news"></use></svg><?= $statistic['news']; ?> News</a></div>
             <div class="footer-item"><a href="<?= Url::toRoute('/space/list'); ?>"><svg class="icon icon-groups"><use xlink:href="./svg/sprite/sprite.svg#groups"></use></svg><?= $statistic['groups']; ?> Groups</a></div>
             <div class="footer-item"><a href="<?= Url::toRoute('/gallery/gallery'); ?>"><svg class="icon icon-photos"><use xlink:href="./svg/sprite/sprite.svg#photos"></use></svg><?= $statistic['photos']; ?> Photos</a></div>
         </div>
