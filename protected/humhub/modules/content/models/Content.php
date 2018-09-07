@@ -224,9 +224,9 @@ class Content extends ContentDeprecated
             ->about($contentSource)
             ->sendBulk($notifyUsers);
 
-        \humhub\modules\content\activities\ContentCreated::instance()
-            ->from($this->user)
-            ->about($contentSource)->save();
+//        \humhub\modules\content\activities\ContentCreated::instance()
+//            ->from($this->user)
+//            ->about($contentSource)->save();
     }
 
     /**

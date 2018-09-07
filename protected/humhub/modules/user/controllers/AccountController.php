@@ -87,7 +87,7 @@ class AccountController extends BaseAccountController
 
 	    if(Yii::$app->request->isPost && $user->profile->load(Yii::$app->request->post())) {
 		    if($user->profile->validate()) {
-			    $result3 = $user->profile->save();
+			    $user->profile->save();
 		    }
 		    $pass = Yii::$app->request->post('Password');
 

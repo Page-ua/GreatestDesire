@@ -3,6 +3,7 @@
 namespace humhub\modules\gallery\models;
 
 use humhub\modules\content\components\ContentContainerActiveRecord;
+use humhub\modules\content\models\Category;
 use humhub\modules\content\models\Content;
 use humhub\modules\space\models\Space;
 use Yii;
@@ -121,6 +122,7 @@ class CustomGallery extends BaseGallery
 	    $object->leftJoin(['c' => $content], 'c.object_id = gallery_gallery.id');
 	    $object->andWhere(['c.object_model' => CustomGallery::className()]);
 	    $object->andWhere(['c.visibility' => 1]);
+	    Category::addFilter($object);
 	    $object->limit(9);
 	    $object->orderBy('created_at DESC');
 	    $object->offset($offset);

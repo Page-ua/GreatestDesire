@@ -8,8 +8,13 @@
 
 namespace humhub\modules\search\controllers;
 
+use humhub\components\GeneralController;
+use humhub\modules\blog\models\Blog;
+use humhub\modules\desire\models\Desire;
+use humhub\modules\news\models\News;
+use humhub\modules\polls\models\Poll;
+use humhub\modules\post\models\Post;
 use Yii;
-use humhub\components\Controller;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
 use humhub\modules\search\models\forms\SearchForm;
@@ -21,7 +26,7 @@ use humhub\modules\space\widgets\Image;
  * @author Luke
  * @since 0.12
  */
-class SearchController extends Controller
+class SearchController extends GeneralController
 {
 
     /**
@@ -55,8 +60,11 @@ class SearchController extends Controller
     {
         $model = new SearchForm();
         $model->load(Yii::$app->request->get());
-
-        $limitSpaces = [];
+        $request = Yii::$app->request->get('scope');
+        if(isset($request) && !empty($request)) {
+	        $model->scope = Yii::$app->request->get( 'scope' );
+        }
+            $limitSpaces = [];
         if (!empty($model->limitSpaceGuids)) {
             foreach ($model->limitSpaceGuids as $guid) {
                 $space = Space::findOne(['guid' => trim($guid)]);
@@ -73,14 +81,31 @@ class SearchController extends Controller
             'limitSpaces' => $limitSpaces
         ];
 
-        if ($model->scope == SearchForm::SCOPE_CONTENT) {
-            $options['type'] = \humhub\modules\search\engine\Search::DOCUMENT_TYPE_CONTENT;
-        } elseif ($model->scope == SearchForm::SCOPE_SPACE) {
-            $options['model'] = Space::className();
-        } elseif ($model->scope == SearchForm::SCOPE_USER) {
-            $options['model'] = User::className();
-        } else {
-            $model->scope = SearchForm::SCOPE_ALL;
+
+
+        if (array_key_exists(SearchForm::SCOPE_SPACE, $model->scope)) {
+	        $options['model'][] = Space::className();
+        }
+        if (array_key_exists(SearchForm::SCOPE_USER, $model->scope)) {
+	        $options['model'][] = User::className();
+        }
+        if (array_key_exists(SearchForm::SCOPE_BLOG, $model->scope)) {
+	        $options['model'][] = Blog::className();
+        }
+        if (array_key_exists(SearchForm::SCOPE_DESIRE, $model->scope)) {
+	        $options['model'][] = Desire::className();
+        }
+        if (array_key_exists(SearchForm::SCOPE_NEWS, $model->scope)) {
+	        $options['model'][] = News::className();
+        }
+        if (array_key_exists(SearchForm::SCOPE_POST, $model->scope)) {
+        	$options['model'][] = Post::className();
+        }
+        if (array_key_exists(SearchForm::SCOPE_POLL, $model->scope)) {
+        	$options['model'][] = Poll::className();
+        }
+        if (empty($options['model'])) {
+            $model->scope = [SearchForm::SCOPE_ALL];
         }
 
         $searchResultSet = Yii::$app->search->find($model->keyword, $options);

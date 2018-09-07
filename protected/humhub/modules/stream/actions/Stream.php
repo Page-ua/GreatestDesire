@@ -62,6 +62,7 @@ abstract class Stream extends Action
      */
     const MODE_NORMAL = "normal";
     const MODE_ACTIVITY = "activity";
+    const MODE_ALL = "all";
 
     /**
      * Maximum wall entries per request
@@ -164,6 +165,9 @@ abstract class Stream extends Action
             if (Yii::$app->getRequest()->get('mode', $this->mode) === self::MODE_ACTIVITY) {
                 $this->mode = self::MODE_ACTIVITY;
             }
+            if (Yii::$app->getRequest()->get('mode', $this->mode) === self::MODE_ALL) {
+                $this->mode = self::MODE_ALL;
+            }
 
             foreach (explode(',', Yii::$app->getRequest()->get('filters', "")) as $filter) {
                 $this->streamQuery->addFilter(trim($filter));
@@ -205,6 +209,9 @@ abstract class Stream extends Action
                 $this->streamQuery->query()->andWhere('content.created_by != :userId', [':userId' => $this->streamQuery->user->id]);
             }
         }
+        if ($this->mode == self::MODE_ALL) {
+	        $this->streamQuery->channel(StreamQuery::CHANNEL_ALL);
+        }
 
     }
 
@@ -229,7 +236,8 @@ abstract class Stream extends Action
         $output['content'] = [];
 
         $i = 0;
-        foreach ($this->streamQuery->all() as $content) {
+        $streams = $this->streamQuery->all();
+        foreach ($streams as $content) {
             try {
                 $output['content'][$content->id] = static::getContentResultEntry($content);
             } catch (\Exception $e) {

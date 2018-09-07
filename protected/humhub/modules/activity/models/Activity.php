@@ -27,7 +27,7 @@ class Activity extends ContentActiveRecord
     /**
      * @inheritdoc
      */
-    public $wallEntryClass = "humhub\modules\activity\widgets\Activity";
+    public $wallEntryClass = "humhub\modules\activity\widgets\WallEntry";
 
     /**
      * @inheritdoc
@@ -107,14 +107,12 @@ class Activity extends ContentActiveRecord
         $cacheKey = 'activity_wall_out_' . Yii::$app->language . '_' . $this->id;
         $output = false;
 
-        if ($output === false) {
-            $activity = $this->getActivityBaseClass();
-            if ($activity !== null) {
-                $renderer = new ActivityWebRenderer();
-                $output = $renderer->render($activity);
-                Yii::$app->cache->set($cacheKey, $output);
-                return $output;
-            }
+        $activity = $this->getActivityBaseClass();
+        if ($activity !== null) {
+            $renderer = new ActivityWebRenderer();
+            $output = $renderer->render($activity);
+            Yii::$app->cache->set($cacheKey, $output);
+            return $output;
         }
 
         return $output;
@@ -130,4 +128,16 @@ class Activity extends ContentActiveRecord
     {
         return $this->getPolymorphicRelation();
     }
+
+	public function getContentName()
+	{
+		return Yii::t('ActivityModule.activity', "Activity");
+	}
+
+	public function afterSave( $insert, $changedAttributes ) {
+		$user = Yii::$app->user->getIdentity();
+    	$this->content->contentcontainer_id = $user->contentcontainer_id;
+
+		parent::afterSave( $insert, $changedAttributes );
+	}
 }

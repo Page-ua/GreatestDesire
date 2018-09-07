@@ -179,6 +179,7 @@ class ProfileController extends ContentContainerController
 	    $desireList = Desire::find();
 	    $desireList->where(['created_by' => $this->user->id]);
 	    $desireList->andWhere(['<>', 'id', $this->contentContainer->greatest_desire]);
+	    $desireList->orderBy('created_at DESC');
 	    $desireList = $desireList->all();
 
 	    $greatestDesire = Desire::getGreatestDesire($this->user);

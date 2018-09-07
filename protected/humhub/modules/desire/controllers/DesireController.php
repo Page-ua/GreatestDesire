@@ -9,19 +9,18 @@
 namespace humhub\modules\desire\controllers;
 
 use const Couchbase\ENCODER_FORMAT_JSON;
-use humhub\components\GeneralController;
-use humhub\modules\content\components\ContentContainerController;
-use humhub\modules\content\models\Category;
+use humhub\components\Controller;
 use humhub\modules\desire\models\Desire;
-use humhub\modules\user\models\User as UserModel;
-use humhub\modules\user\components\User;
+use humhub\modules\desire\models\forms\SearchForm;
+use humhub\modules\tags\models\Tags;
+use humhub\modules\user\models\Profile;
 use Yii;
 
 /**
  * @package humhub.modules_core.desire.controllers
  * @since 0.5
  */
-class DesireController extends GeneralController {
+class DesireController extends Controller {
 
 	public $submitUrl = 'desire/create';
 
@@ -70,6 +69,9 @@ class DesireController extends GeneralController {
 
 		$model = $this->findModel( $id );
 
+		$model->content->visibility = 1;
+		$model->content->container = $this->contentContainer;
+
 		if ( ! $model->content->canEdit() ) {
 			$this->forbidden();
 		}
@@ -80,6 +82,7 @@ class DesireController extends GeneralController {
 			$this->view->saved();
 			$model->saveFiles();
 			$model->saveTags();
+			$model->saveGreatestDesire();
 
 			return $this->redirect( [ 'view', 'id' => $model->id ] );
 		}
@@ -99,7 +102,7 @@ class DesireController extends GeneralController {
 		if ( ! $model->content->canEdit() ) {
 			$this->forbidden();
 		}
-		$model->delete();
+		$model->content->delete();
 		$user = Yii::$app->user->getIdentity();
 		return $this->redirect($user->createUrl('/user/profile/desires'));
 	}
@@ -108,6 +111,7 @@ class DesireController extends GeneralController {
 	{
 
 		//Yii::$app->assetManager->forceCopy = true; // for develepment
+		$this->subLayout = "@humhub/views/layouts/_sublayout";
 		$data = Desire::getAll(10);
 		$articles = $data['articles'];
 		$count = $data['count'];
@@ -135,6 +139,50 @@ class DesireController extends GeneralController {
 		return $result;
 	}
 
+	public function actionSearch()
+	{
+
+		$model = new SearchForm();
+		$resultSearch = null;
+
+		if($model->load(Yii::$app->request->get()) && $model->validate()) {
+
+			$resultSearch = $model->searchByTags();
+		}
+
+		return $this->render('search',[
+			'model' => $model,
+			'resultSearch' => $resultSearch,
+		]);
+	}
+
+	public function actionAutoTips()
+	{
+		Yii::$app->response->format = Response::FORMAT_JSON;
+		$word = Yii::$app->request->post('word');
+
+		$tips = Tags::find();
+		$tips->where(['like', 'title', $word.'%', false]);
+		$tips->limit(5);
+		$result = $tips->all();
+
+		return $result;
+	}
+	public function actionAutoTipsCountry()
+	{
+		Yii::$app->response->format = Response::FORMAT_JSON;
+		$word = Yii::$app->request->post('word');
+
+		$tips = Profile::find();
+		$tips->select('country');
+		$tips->where(['like', 'country', $word.'%', false]);
+		$tips->limit(5);
+		$tips->groupBy('country');
+		$result = $tips->all();
+
+		return $result;
+	}
+
 	protected function findModel($id)
 	{
 		if (($model = Desire::findOne($id)) !== null) {
@@ -143,7 +191,6 @@ class DesireController extends GeneralController {
 			throw new NotFoundHttpException('The requested page does not exist.');
 		}
 	}
-
 
 
 

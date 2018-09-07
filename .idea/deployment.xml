@@ -10,6 +10,22 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="DO">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="DOcontainer">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="DecemberProject">
         <serverdata>
           <mappings>
@@ -114,7 +130,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="Volia">
+      <paths name="VPS_WM">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
@@ -131,6 +147,14 @@
         </serverdata>
       </paths>
       <paths name="WrM">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="bimboka">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />

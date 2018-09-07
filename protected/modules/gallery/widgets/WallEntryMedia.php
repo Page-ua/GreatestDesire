@@ -32,22 +32,27 @@ class WallEntryMedia extends \humhub\modules\content\widgets\WallEntry
      */
     public $editMode = self::EDIT_MODE_MODAL;
 
+    public $objectName;
+
     /**
      * @inheritdoc
      */
     public function run()
     {
         $media = $this->contentObject;
-
-        $galleryUrl = '#';
+		$groupPhotos = Media::find();
+	    $groupPhotos->where(['guid' => $this->contentObject->guid]);
+	    $groupPhotos = $groupPhotos->all();
+		$galleryUrl = '#';
+		$this->userAction = 'added ' . count($groupPhotos) . ' new photos to album';
         $galleryName = null;
         if ($media->parentGallery !== null) {
             $galleryUrl = $media->parentGallery->getUrl();
             $galleryName = $media->parentGallery->title;
         }
-
+	    $this->objectName = '<a style="color: #ffb74d" href="'.$media->creator->createUrl('/user/profile/photos', ['id' => $media->gallery_id]).'">'.$galleryName.'</a>';
         return $this->render('wallEntryMedia', [
-                    'media' => $media,
+                    'photos' => $groupPhotos,
                     'title' => $media->getTitle(),
                     'fileSize' => $media->getSize(),
                     'file' => $media->baseFile,

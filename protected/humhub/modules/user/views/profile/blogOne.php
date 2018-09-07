@@ -8,6 +8,7 @@
 
 use humhub\modules\comment\widgets\Comments;
 use humhub\modules\file\widgets\ShowPhotoPreview;
+use yii\helpers\Url;
 
 ?>
 
@@ -34,9 +35,8 @@ use humhub\modules\file\widgets\ShowPhotoPreview;
 		<div class="sub-context-menu">
 			<div class="context-menu-btn"><span></span><span></span><span></span></div>
 			<ul class="context-menu">
-				<li><a href="#">Edit</a></li>
-				<li><a href="#">Edit 2</a></li>
-				<li><a href="#">Edit 3</a></li>
+                <li><a href="<?= Url::toRoute(['/blog/blog/update', 'id'=>$model->id]); ?>">Edit</a></li>
+                <li><a href="<?= Url::toRoute(['/blog/blog/delete', 'id'=>$model->id],  ['data-pjax' => 0]); ?>">Remove</a></li>
 			</ul>
 		</div>
 	</div>

@@ -2,29 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dd3920e-9f91-4c56-a509-82ecb9bdd12a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/ContentControlLinks.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/contentControlLinks.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/components/StreamPublicAction.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/activity/widgets/WallEntry.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/CategoryFilter.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/categoryFilter.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/activities/GreatestDesireUpdate.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/activities/views/greatestDesireUpdate.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/models/forms/SearchForm.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/_item.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/search.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/friendship/activities/FriendAdded.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/friendship/activities/views/friendAdded.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/_spaceItem.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/tags/models/TagsRelationship.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/TagsCloud.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/tagsCloud.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/activities/ChangeCity.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/activities/ChangeRelationship.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/activities/views/changeCity.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/activities/views/changeRelationship.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/components/GeneralController.php" afterPath="$PROJECT_DIR$/protected/humhub/components/GeneralController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/activity/models/Activity.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/activity/models/Activity.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/activity/views/layouts/web.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/activity/views/layouts/web.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/blog/controllers/BlogController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/blog/controllers/BlogController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/blog/models/Blog.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/blog/models/Blog.php" />
       <change beforePath="$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/_list.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/_list.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/blog/widgets/WallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/blog/widgets/WallEntry.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/blog/widgets/views/wallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/blog/widgets/views/wallEntry.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/controllers/ContentController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/controllers/ContentController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/models/Category.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/models/Category.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/models/Content.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/models/Content.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/views/layouts/wallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/views/layouts/wallEntry.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/BottomPanelContent.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/BottomPanelContent.php" />
       <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/WallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/WallEntry.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/wallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/wallEntry.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/dashboard/views/dashboard/index.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/dashboard/views/dashboard/index.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/controllers/NewsController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/controllers/NewsController.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/views/news/_list.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/views/news/_list.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/views/news/list.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/views/news/list.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/views/news/view.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/views/news/view.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/widgets/WallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/widgets/WallEntry.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/widgets/views/wallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/widgets/views/wallEntry.php" />
-      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/widgets/RightSidebar.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/widgets/RightSidebar.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/dashboard/components/actions/DashboardStream.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/dashboard/components/actions/DashboardStream.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/desire/models/Desire.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/models/Desire.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/list.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/list.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/wallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/wallEntry.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/file/widgets/views/showPhotoPreview.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/file/widgets/views/showPhotoPreview.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/friendship/models/Friendship.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/friendship/models/Friendship.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/news/models/News.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/news/models/News.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/post/widgets/views/wallEntry.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/post/widgets/views/wallEntry.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/search/controllers/SearchController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/search/controllers/SearchController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/search/models/forms/SearchForm.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/search/models/forms/SearchForm.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/search/views/search/index.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/search/views/search/index.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/activities/Created.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/Created.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/activities/MemberAdded.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/MemberAdded.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/activities/MemberRemoved.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/MemberRemoved.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/created.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/created.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/memberAdded.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/memberAdded.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/memberRemoved.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/activities/views/memberRemoved.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/models/Space.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/models/Space.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/space/widgets/views/spaceWall.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/space/widgets/views/spaceWall.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/stream/actions/Stream.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/stream/actions/Stream.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/stream/models/StreamQuery.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/stream/models/StreamQuery.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/stream/widgets/StreamViewer.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/stream/widgets/StreamViewer.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/tags/models/Tags.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/tags/models/Tags.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/displayTags.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/displayTags.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/controllers/AccountController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/controllers/AccountController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/controllers/ProfileController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/controllers/RegistrationController.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/controllers/RegistrationController.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/models/Profile.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/models/Profile.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/models/User.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/models/User.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/views/profile/blogOne.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/views/profile/blogOne.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/views/profile/desireOne.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/views/profile/desireOne.php" />
       <change beforePath="$PROJECT_DIR$/protected/humhub/modules/user/widgets/views/rightSidebar.php" afterPath="$PROJECT_DIR$/protected/humhub/modules/user/widgets/views/rightSidebar.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/views/layouts/main.php" afterPath="$PROJECT_DIR$/protected/humhub/views/layouts/main.php" />
+      <change beforePath="$PROJECT_DIR$/protected/humhub/widgets/BaseLeftMenu.php" afterPath="$PROJECT_DIR$/protected/humhub/widgets/BaseLeftMenu.php" />
+      <change beforePath="$PROJECT_DIR$/protected/modules/favorite/widgets/views/favoriteLink.php" afterPath="$PROJECT_DIR$/protected/modules/favorite/widgets/views/favoriteLink.php" />
+      <change beforePath="$PROJECT_DIR$/protected/modules/gallery/controllers/CustomGalleryController.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/controllers/CustomGalleryController.php" />
       <change beforePath="$PROJECT_DIR$/protected/modules/gallery/models/CustomGallery.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/models/CustomGallery.php" />
       <change beforePath="$PROJECT_DIR$/protected/modules/gallery/models/Media.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/models/Media.php" />
-      <change beforePath="$PROJECT_DIR$/protected/modules/gallery/views/gallery/_one-albums.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/views/gallery/_one-albums.php" />
+      <change beforePath="$PROJECT_DIR$/protected/modules/gallery/widgets/WallEntryGallery.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/widgets/WallEntryGallery.php" />
+      <change beforePath="$PROJECT_DIR$/protected/modules/gallery/widgets/WallEntryMedia.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/widgets/WallEntryMedia.php" />
+      <change beforePath="$PROJECT_DIR$/protected/modules/gallery/widgets/views/wallEntryGallery.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/widgets/views/wallEntryGallery.php" />
+      <change beforePath="$PROJECT_DIR$/protected/modules/gallery/widgets/views/wallEntryMedia.php" afterPath="$PROJECT_DIR$/protected/modules/gallery/widgets/views/wallEntryMedia.php" />
       <change beforePath="$PROJECT_DIR$/protected/modules/humhub-modules-messenger" afterPath="$PROJECT_DIR$/protected/modules/humhub-modules-messenger" />
       <change beforePath="$PROJECT_DIR$/protected/modules/sharebetween" afterPath="$PROJECT_DIR$/protected/modules/sharebetween" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub0dc73b6a78ce934fbfdd79f8d27fecb6.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub0dc73b6a78ce934fbfdd79f8d27fecb6.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub11de55a89e5d9782a2c63e53200524a2.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub11de55a89e5d9782a2c63e53200524a2.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub4c689818bdf15761c6c7ed5f0003042b.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub4c689818bdf15761c6c7ed5f0003042b.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub5cfe4da5ff4bbbaf03a0c61529e25b63.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhub5cfe4da5ff4bbbaf03a0c61529e25b63.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhuba333a2d85919f4373fe883fd9cd39528.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhuba333a2d85919f4373fe883fd9cd39528.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhubb7866fad38cb1aee297b2687c8c53ed1.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhubb7866fad38cb1aee297b2687c8c53ed1.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhubd90c15b8bd45e499b6c11a1d72beb627.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhubd90c15b8bd45e499b6c11a1d72beb627.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/cache/hu/humhubf4af5f6cc916b9c33955c3c1cac91a52.bin" afterPath="$PROJECT_DIR$/protected/runtime/cache/hu/humhubf4af5f6cc916b9c33955c3c1cac91a52.bin" />
+      <change beforePath="$PROJECT_DIR$/protected/runtime/logs/app.log" afterPath="$PROJECT_DIR$/protected/runtime/logs/app.log" />
+      <change beforePath="$PROJECT_DIR$/themes/HumHub/css/theme.css" afterPath="$PROJECT_DIR$/themes/HumHub/css/theme.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,98 +122,7 @@
     <favorites_list name="html" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="desireCloud.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GalleryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/gallery/controllers/GalleryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="30" column="48" lean-forward="false" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_one-albums.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/gallery/views/gallery/_one-albums.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="87" lean-forward="false" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/blog/controllers/BlogController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="47" column="11" lean-forward="false" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesireController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3234">
-              <caret line="375" column="31" lean-forward="false" selection-start-line="375" selection-start-column="26" selection-end-line="375" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesireCloud.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blogOne.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/views/profile/blogOne.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -156,36 +133,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Like</find>
-      <find>Access denied</find>
-      <find>contentModel</find>
-      <find>before</find>
-      <find>container</find>
-      <find>show</find>
-      <find>sidebar-footer</find>
-      <find>Blo</find>
-      <find>Blog</find>
-      <find>Bl</find>
-      <find>news</find>
-      <find>design</find>
-      <find>regi</find>
-      <find>asse</find>
-      <find>bundle</find>
-      <find>blog</find>
-      <find>.panel</find>
-      <find>controls</find>
-      <find>ontrolsOptions</find>
-      <find>getContextMenu</find>
-      <find>widget</find>
-      <find>permalink</find>
-      <find>controlsOptions</find>
-      <find>description-block</find>
-      <find>edit</find>
-      <find>categor</find>
-      <find>view</find>
-      <find>image</find>
-      <find>right</find>
+      <find>content</find>
+      <find>Space</find>
       <find>user</find>
+      <find>find</find>
+      <find>getSearchAttributes</find>
+      <find>tags</find>
+      <find>getTag</find>
+      <find>tag</find>
+      <find>getSearch</find>
+      <find>panel-heading</find>
+      <find>model</find>
+      <find>search</find>
+      <find>search-block</find>
+      <find>content-wrap</find>
+      <find>wall</find>
+      <find>Groups</find>
+      <find>groups-list</find>
+      <find>search-input-field</find>
+      <find>birthday</find>
+      <find>content-wra</find>
+      <find>has</find>
+      <find>load</find>
+      <find>getOptionsField</find>
+      <find>rul</find>
+      <find>gender</find>
+      <find>birth</find>
+      <find>dropdown-notifications</find>
+      <find>category</find>
+      <find>layout</find>
+      <find>list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,57 +171,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/blog/edit.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/blog/list.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/blog/update.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/blog/view.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/layouts/base.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/widgets/views/form.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/widgets/CreateForm.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/widgets/Form.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/config.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/Events.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/module.json" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/Module.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/migrations/m180814_121629_create_news_table.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/news/create.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/widgets/AdminMenu.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/controllers/SettingController.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/views/setting/design.php" />
-        <option value="$PROJECT_DIR$/themes/HumHub/css/theme.css" />
-        <option value="$PROJECT_DIR$/protected/modules/polls/views/poll/create.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/views/news/create.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/controllers/CategoryController.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/widgets/CategoryMenu.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/widgets/BaseLeftMenu.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/news/update.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/views/news/update.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/update.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/blog/controllers/BlogController.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/admin/controllers/NewsController.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/ContentControlLinks.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/contentControlLinks.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/_list.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/stream/widgets/views/stream.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/news/_list.php" />
-        <option value="$PROJECT_DIR$/protected/modules/polls/views/poll/show.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/components/StreamPublicAction.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/wallEntry.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/BottomPanelContent.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/post/widgets/views/wallEntry.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/file/widgets/views/showPhotoPreview.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/migrations/m180822_085744_add_hash_column_to_gallery_media_table.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/controllers/CustomGalleryController.php" />
         <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/WallEntry.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/wallEntry.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/news/list.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/widgets/WallEntry.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/widgets/views/wallEntry.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/controllers/NewsController.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/news/views/news/view.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/user/widgets/RightSidebar.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/user/widgets/views/rightSidebar.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/dashboard/views/dashboard/index.php" />
-        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/desireCloud.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/widgets/views/wallEntryMedia.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/widgets/WallEntryMedia.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/widgets/WallEntryGallery.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/widgets/views/wallEntryGallery.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/controllers/AccountController.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/activities/ChangeCity.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/activities/views/changeCity.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/activities/ChangeRelationship.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/activities/views/changeRelationship.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/search/engine/Search.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/list.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/search/models/forms/SearchForm.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/space/widgets/views/spaceWall.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/search/views/search/index.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/search/controllers/SearchController.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/models/Test.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/models/DesireSearch.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/models/Desire.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/models/form/SearchForm.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/_item.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/displayTags.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/components/GeneralController.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/models/Profile.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/models/forms/SearchForm.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/tags/models/Tags.php" />
         <option value="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/search.php" />
+        <option value="$PROJECT_DIR$/themes/HumHub/css/theme.css" />
         <option value="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php" />
-        <option value="$PROJECT_DIR$/protected/modules/gallery/models/Media.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/tags/models/TagsRelationship.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/tagsCloud.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/tags/widgets/TagsCloud.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/CategoryFilter.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/categoryFilter.php" />
         <option value="$PROJECT_DIR$/protected/modules/gallery/models/CustomGallery.php" />
-        <option value="$PROJECT_DIR$/protected/modules/gallery/views/gallery/_one-albums.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/blog/models/Blog.php" />
+        <option value="$PROJECT_DIR$/protected/modules/gallery/models/Media.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/news/models/News.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/space/models/Space.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/content/models/Category.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/user/widgets/views/rightSidebar.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php" />
+        <option value="$PROJECT_DIR$/protected/humhub/widgets/BaseLeftMenu.php" />
       </list>
     </option>
   </component>
@@ -266,6 +243,7 @@
         </path_mappings>
       </server>
       <server host="localhost" id="bc0e0cc7-4b4b-4a43-b0e8-fd643afa216e" name="localhost" />
+      <server host="165.227.76.89" id="effd29ae-0b76-49fb-9f09-fb9c03c1a728" name="165.227.76.89" />
     </servers>
   </component>
   <component name="PhpWebServerValidation" deployment_server_id="c5c63064-3d28-4308-93e9-36d59319a436" path_to_validation_script="$PROJECT_DIR$" selected_validation_type="REMOTE" web_path_to_validation_script="http://127.0.0.1/" />
@@ -310,125 +288,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="desire" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="desire" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="desire" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="desire" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="gallery" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="gallery" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="gallery" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="gallery" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="HumHub" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="HumHub" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Changed Files">
           <expand>
@@ -458,6 +317,41 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="html" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="html" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="html" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="html" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="humhub" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="html" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="protected" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,13 +362,15 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
-    <property name="SearchEverywhereHistoryKey" value="user&#9;null&#9;null&#10;setPolymorphicRelation&#9;null&#9;null&#10;desire&#9;null&#9;null&#10;MailSummaryForm&#9;null&#9;null&#10;left&#9;FILE&#9;file:///var/www/html/protected/humhub/widgets/BaseLeftMenu.php&#10;getSquarePreviewImageUrl&#9;null&#9;null&#10;layout-content&#9;null&#9;null&#10;jquery.nicescroll.min.js&#9;FILE&#9;file:///var/www/html/protected/vendor/bower/jquery-nicescroll/dist/jquery.nicescroll.min.js&#10;bower&#9;null&#9;null&#10;ShareLink&#9;FILE&#9;file:///var/www/html/protected/modules/sharebetween/widgets/ShareLink.php&#10;showMore&#9;null&#9;null&#10;readmore&#9;null&#9;null&#10;createUr&#9;null&#9;null&#10;createUrl&#9;null&#9;null&#10;online&#9;null&#9;null&#10;fixTimestampTimeZone&#9;null&#9;null&#10;time&#9;null&#9;null&#10;show&#9;null&#9;null&#10;birthday&#9;null&#9;null&#10;getProfileImage&#9;null&#9;null&#10;_layout&#9;FILE&#9;file:///var/www/html/protected/humhub/modules/directory/views/directory/_layout.php" />
+    <property name="SearchEverywhereHistoryKey" value="right&#9;null&#9;null&#10;Left&#9;null&#9;null&#10;bottom&#9;null&#9;null&#10;addMember&#9;null&#9;null&#10;favorite&#9;FILE&#9;file:///var/www/html/protected/modules/favorite/widgets/views/favoriteLink.php&#10;ratin&#9;FILE&#9;file:///var/www/html/protected/modules/rating/widgets/views/rating-link.php&#10;rightSidebar&#9;FILE&#9;file:///var/www/html/protected/humhub/modules/user/widgets/views/rightSidebar.php&#10;user&#9;null&#9;null&#10;setPolymorphicRelation&#9;null&#9;null&#10;desire&#9;null&#9;null&#10;MailSummaryForm&#9;null&#9;null&#10;left&#9;FILE&#9;file:///var/www/html/protected/humhub/widgets/BaseLeftMenu.php&#10;getSquarePreviewImageUrl&#9;null&#9;null&#10;layout-content&#9;null&#9;null&#10;jquery.nicescroll.min.js&#9;FILE&#9;file:///var/www/html/protected/vendor/bower/jquery-nicescroll/dist/jquery.nicescroll.min.js&#10;bower&#9;null&#9;null&#10;ShareLink&#9;FILE&#9;file:///var/www/html/protected/modules/sharebetween/widgets/ShareLink.php&#10;showMore&#9;null&#9;null&#10;readmore&#9;null&#9;null&#10;createUr&#9;null&#9;null&#10;createUrl&#9;null&#9;null&#10;online&#9;null&#9;null&#10;fixTimestampTimeZone&#9;null&#9;null&#10;time&#9;null&#9;null&#10;show&#9;null&#9;null&#10;birthday&#9;null&#9;null&#10;getProfileImage&#9;null&#9;null&#10;_layout&#9;FILE&#9;file:///var/www/html/protected/humhub/modules/directory/views/directory/_layout.php" />
+    <property name="Constants" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/protected/humhub/modules/content/widgets/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/protected/humhub/modules/activity/widgets" />
       <recent name="$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views" />
       <recent name="$PROJECT_DIR$/protected/humhub/modules/admin/views/news" />
       <recent name="$PROJECT_DIR$/protected/humhub/modules/space/views/list" />
@@ -557,7 +453,22 @@
       <workItem from="1534230521062" duration="22279000" />
       <workItem from="1534316476739" duration="9769000" />
       <workItem from="1534342479583" duration="2790000" />
-      <workItem from="1534402537500" duration="22121000" />
+      <workItem from="1534402537500" duration="27059000" />
+      <workItem from="1534490371204" duration="24032000" />
+      <workItem from="1534750153696" duration="22078000" />
+      <workItem from="1534836361666" duration="11131000" />
+      <workItem from="1534852259836" duration="15588000" />
+      <workItem from="1534922204394" duration="24471000" />
+      <workItem from="1535009863101" duration="20899000" />
+      <workItem from="1535442247228" duration="8313000" />
+      <workItem from="1535529446117" duration="7827000" />
+      <workItem from="1535615641756" duration="6443000" />
+      <workItem from="1535702906422" duration="8031000" />
+      <workItem from="1535960244482" duration="19973000" />
+      <workItem from="1536132549275" duration="53000" />
+      <workItem from="1536141284000" duration="17926000" />
+      <workItem from="1536218645527" duration="19116000" />
+      <workItem from="1536326620282" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="top menu and start inner profile">
       <created>1527589243190</created>
@@ -584,7 +495,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="824969000" />
+    <option name="totallyTimeSpent" value="1035824000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -597,30 +508,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="575" y="217" width="1920" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3079434" sideWeight="0.54002136" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14363438" sideWeight="0.4754536" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.49359658" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.49760437" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546246" sideWeight="0.47865528" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23692636" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20277481" sideWeight="0.49506173" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23692636" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23906083" sideWeight="0.49506173" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3079434" sideWeight="0.54002136" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24653149" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.49760437" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752994" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24949014" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546246" sideWeight="0.47865528" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3079434" sideWeight="0.45997867" order="4" side_tool="false" content_ui="tabs" x="18" y="379" width="924" height="364" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25455773" sideWeight="0.50493824" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3079434" sideWeight="0.45997867" order="3" side_tool="false" content_ui="tabs" x="18" y="379" width="924" height="364" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.49786553" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14363438" sideWeight="0.4754536" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.49786553" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18171926" sideWeight="0.49786553" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18171926" sideWeight="0.49786553" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -647,41 +558,6 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/user/controllers/AccountController.php</url>
-          <line>97</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/user/controllers/AccountController.php</url>
-          <line>72</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/WallEntry.php</url>
-          <line>135</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/WallEntry.php</url>
-          <line>137</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/content/controllers/ContentController.php</url>
-          <line>80</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/content/models/Content.php</url>
-          <line>239</line>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/content/controllers/ContentController.php</url>
-          <line>76</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/protected/humhub/modules/post/controllers/PostController.php</url>
           <line>21</line>
           <option name="timeStamp" value="134" />
@@ -692,173 +568,411 @@
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php</url>
-          <line>50</line>
-          <option name="timeStamp" value="144" />
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/view.php</url>
+          <line>17</line>
+          <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php</url>
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/view.php</url>
+          <line>23</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/view.php</url>
+          <line>25</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/activity/widgets/Activity.php</url>
+          <line>47</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/activity/widgets/Activity.php</url>
           <line>49</line>
-          <option name="timeStamp" value="145" />
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/activity/widgets/Activity.php</url>
+          <line>53</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/space/controllers/MembershipController.php</url>
+          <line>105</line>
+          <option name="timeStamp" value="184" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/space/behaviors/SpaceModelMembership.php</url>
+          <line>415</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/activity/models/Activity.php</url>
+          <line>138</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/activity/models/Activity.php</url>
+          <line>137</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/search/engine/ZendLuceneSearch.php</url>
+          <line>108</line>
+          <option name="timeStamp" value="241" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/Birthday.php</url>
+          <line>134</line>
+          <option name="timeStamp" value="255" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/Birthday.php</url>
+          <line>99</line>
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/Birthday.php</url>
+          <line>74</line>
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/Birthday.php</url>
+          <line>73</line>
+          <option name="timeStamp" value="260" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="146" />
+      <option name="time" value="267" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/stream/actions/Stream.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/models/Desire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4562">
-          <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="32" column="6" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/polls/widgets/views/entry.php">
+    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2-bootstrap/ActiveField.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="203">
+          <caret line="270" column="20" lean-forward="false" selection-start-line="270" selection-start-column="20" selection-end-line="270" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2-bootstrap/ActiveForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="104" column="20" lean-forward="false" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/admin/controllers/ModuleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/polls/views/poll/show.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/admin/controllers/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/polls/views/list/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/wallEntryAnonim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/polls/components/StreamPublicAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/polls/controllers/ListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/helpers/BaseUrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="95" column="27" lean-forward="false" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-360">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/_list.php">
+    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/di/ServiceLocator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="105" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="105" />
-          <folding />
+        <state relative-caret-position="218">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/components/StreamPublicAction.php">
+    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/web/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="218">
+          <caret line="506" column="0" lean-forward="false" selection-start-line="506" selection-start-column="0" selection-end-line="506" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/widgets/WallEntry.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/Date.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="35" column="82" lean-forward="false" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
+        <state relative-caret-position="525">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/BaseType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/models/fieldtype/Birthday.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <element signature="e#186#229#0#PHP" expanded="false" />
+            <marker date="1508771232000" expanded="true" signature="1621:1700" ph="ALTER TABLE profile... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/controllers/NewsController.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/models/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="87" column="79" lean-forward="false" selection-start-line="87" selection-start-column="79" selection-end-line="87" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="276">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/widgets/views/wallEntry.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/views/account/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/base/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10245">
+          <caret line="695" column="0" lean-forward="false" selection-start-line="695" selection-start-column="0" selection-end-line="695" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/tags/models/Tags.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="71" column="48" lean-forward="false" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/displayTags.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="97" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/models/forms/SearchForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/HumHub/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="3060" column="1" lean-forward="false" selection-start-line="3060" selection-start-column="1" selection-end-line="3060" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/dashboard/views/dashboard/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/_item.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#a#0;n#!!top" expanded="false" />
-          </folding>
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/views/profile/desireOne.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/tags/models/TagsRelationship.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="43" column="34" lean-forward="false" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="76" column="8" lean-forward="false" selection-start-line="76" selection-start-column="8" selection-end-line="94" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/tags/widgets/views/tagsCloud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/admin/controllers/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/EditLink.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/notification/views/user/notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/tags/widgets/TagsCloud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" column="52" lean-forward="false" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/notification/widgets/Overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/views/layouts/_sublayout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="74" column="79" lean-forward="false" selection-start-line="74" selection-start-column="79" selection-end-line="74" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/notification/widgets/views/overview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/components/ContentActiveRecord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/models/CustomGallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/controllers/GalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/models/Media.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="248" column="38" lean-forward="false" selection-start-line="248" selection-start-column="38" selection-end-line="248" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/models/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="171" column="0" lean-forward="true" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/blog/models/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="186" column="34" lean-forward="false" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/space/controllers/ListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/space/models/Space.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="594" column="36" lean-forward="false" selection-start-line="594" selection-start-column="36" selection-end-line="594" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/CategoryFilter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/categoryFilter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/components/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/components/GeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/widgets/BaseLeftMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="48" column="128" lean-forward="false" selection-start-line="48" selection-start-column="128" selection-end-line="48" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/views/profile/_layout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/views/news/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/widgets/views/rightSidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="188" column="74" lean-forward="false" selection-start-line="188" selection-start-column="74" selection-end-line="188" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/polls/widgets/WallEntry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/news/views/news/list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -866,256 +980,44 @@
     <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/widgets/RightSidebar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/WallEntry.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/widgets/views/rightSidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#49#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/Form.php">
+    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/models/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/CreateForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/Stream.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/PinLink.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/dashboard/views/dashboard/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/file/widgets/ShowPhotoPreview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/views/profile/desires.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/base/Action.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/base/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/base/ErrorHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="105" column="13" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/dashboard/controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/base/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/WallEntry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/vendor/yiisoft/yii2/base/Object.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/dashboard/components/actions/DashboardStream.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/blog/views/blog/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/views/profile/blogOne.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/models/Desire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="137" column="5" lean-forward="false" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/DesireCloud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/user/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3234">
-          <caret line="375" column="31" lean-forward="false" selection-start-line="375" selection-start-column="26" selection-end-line="375" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/content/widgets/views/wallEntry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="196" column="115" lean-forward="false" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/widgets/views/desireCloud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/models/Media.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="236" column="44" lean-forward="false" selection-start-line="236" selection-start-column="44" selection-end-line="236" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/models/CustomGallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="124" column="44" lean-forward="false" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/controllers/GalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="48" lean-forward="false" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/gallery/views/gallery/_one-albums.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="87" lean-forward="false" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="87" />
+        <state relative-caret-position="338">
+          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/humhub/modules/blog/controllers/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="47" column="11" lean-forward="false" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/views/desire/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/humhub/modules/desire/controllers/DesireController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="116" column="32" lean-forward="false" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+          <folding>
+            <element signature="e#193#233#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

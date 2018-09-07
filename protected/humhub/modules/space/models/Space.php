@@ -8,6 +8,7 @@
 
 namespace humhub\modules\space\models;
 
+use humhub\modules\content\models\Category;
 use humhub\modules\space\widgets\Members;
 use Yii;
 
@@ -591,6 +592,7 @@ class Space extends ContentContainerActiveRecord implements \humhub\modules\sear
 	{
 		$query = self::find();
 		$query->andWhere(['!=', 'space.visibility', \humhub\modules\space\models\Space::VISIBILITY_NONE]);
+		Category::addFilter($query);
 		$query->limit(10);
 		$query->offset($offset);
 

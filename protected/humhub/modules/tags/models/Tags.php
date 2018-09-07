@@ -42,6 +42,40 @@ class Tags extends ActiveRecord
 		            ->viaTable('tags_relationship', ['tags_id' => 'id']);
 	}
 
+	public function getFilterArticles($options = null)
+	{
+		$desire = Desire::find();
+		$desire->leftJoin('tags_relationship', 'desire.id = tags_relationship.desire_id');
+		$desire->leftJoin('profile', 'desire.created_by = profile.user_id');
+		$desire->where(['tags_relationship.tags_id' => $this->id]);
+		$this->customFilterSearch($desire, $options);
+//		$desire->andWhere(['profile.gender' => 'male']);
+		return $desire->all();
+	}
+
+	protected function customFilterSearch($request, $options)
+	{
+		if(isset($options->gender) && !empty($options->gender)) {
+			$request->andWhere(['profile.gender' => $options->gender]);
+		}
+		if(isset($options->age_from) && !empty($options->age_from)) {
+			$age_from = $options->age_from;
+			$date_from = date("Y-m-d", strtotime("-$age_from year"));
+			$request->andWhere(['<', 'profile.birthday', $date_from]);
+		}
+		if(isset($options->age_to) && !empty($options->age_to)) {
+			$age_to = $options->age_to+1;
+			$date_to = date("Y-m-d", strtotime("-$age_to year"));
+			$request->andWhere(['>', 'profile.birthday', $date_to]);
+		}
+		if(isset($options->country) && !empty($options->country)) {
+			$request->andWhere(['profile.country' => $options->country]);
+		}
+
+		return $request;
+	}
+
+
 	/**
 	 * Returns static class instance, which can be used to obtain meta information.
 	 *

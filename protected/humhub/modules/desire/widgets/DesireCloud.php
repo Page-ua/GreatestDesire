@@ -9,6 +9,7 @@
 namespace humhub\modules\desire\widgets;
 
 use humhub\modules\desire\models\Desire;
+use humhub\modules\desire\models\forms\SearchForm;
 use Yii;
 use yii\helpers\Url;
 use humhub\modules\content\components\ContentContainerController;
@@ -36,8 +37,12 @@ class DesireCloud extends \yii\base\Widget
 		$desires->limit(10);
 		$desires = $desires->all();
 
+		$model = new SearchForm();
+
+
 		return $this->render('desireCloud', array(
 			'desires' => $desires,
+			'model' => $model,
 		));
 	}
 

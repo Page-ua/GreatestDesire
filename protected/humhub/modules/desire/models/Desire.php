@@ -8,6 +8,7 @@
 
 namespace humhub\modules\desire\models;
 
+use humhub\modules\desire\activities\GreatestDesireUpdate;
 use humhub\modules\tags\models\Tags;
 use humhub\modules\tags\models\TagsDesire;
 use Yii;
@@ -122,6 +123,7 @@ class Desire extends ContentActiveRecord implements Searchable
     {
         $attributes = array(
             'message' => $this->message,
+            'tags' => $this->getTagsString(),
             'url' => $this->url,
             'user' => $this->getDesireAuthorName()
         );
@@ -185,6 +187,14 @@ class Desire extends ContentActiveRecord implements Searchable
 		            ->viaTable('tags_relationship', ['desire_id' => 'id']);
 	}
 
+	public function getTagsString() {
+		$result = '';
+		foreach ($this->tags as $tag) {
+			$result .= $tag->title . ' ';
+		}
+		return $result;
+	}
+
 
 	public function saveTags()
 	{
@@ -231,6 +241,9 @@ class Desire extends ContentActiveRecord implements Searchable
 			$user = User::findOne(['id' => $this->created_by]);
 			$user->greatest_desire = $this->id;
 			$user->save();
+			if(!$this->isNewRecord) {
+				GreatestDesireUpdate::instance()->from($user)->about($this)->save();
+			}
 		}
 	}
 
@@ -247,15 +260,4 @@ class Desire extends ContentActiveRecord implements Searchable
 		TagsDesire::deleteAll(['desire_id'=>$this->id]);
 	}
 
-
-
-	/**
-	 * Returns static class instance, which can be used to obtain meta information.
-	 *
-	 * @param bool $refresh whether to re-create static instance even, if it is already cached.
-	 *
-	 * @return static class instance.
-	 */
-	public static function instance( $refresh = false ) {
-		// TODO: Implement instance() method.
-}}
+}

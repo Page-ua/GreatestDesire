@@ -263,6 +263,12 @@ class Friendship extends \humhub\components\ActiveRecord
         $friendship = new Friendship();
         $friendship->user_id = $user->id;
         $friendship->friend_user_id = $friend->id;
+//	    \humhub\modules\space\activities\MemberAdded::instance()->from($user)->about($friendship)->save();
+	    $activity = new \humhub\modules\friendship\activities\FriendAdded();
+	    $activity->source = $friend;
+	    $activity->originator = $user;
+	    $activity->create();
+
         return $friendship->save();
     }
 

@@ -21,6 +21,10 @@ class Category extends ActiveRecord
 
 	public $default_language;
 
+	public $filter = null;
+
+	public static $object = ['blog', 'gallery', 'space'];
+
 	public static function tableName()
 	{
 		return 'category';
@@ -31,6 +35,7 @@ class Category extends ActiveRecord
 		return [
 			[['id'], 'integer'],
 			[['name', 'object_model'], 'string'],
+			['filter', 'each', 'rule' => ['integer']]
 		];
 	}
 
@@ -60,6 +65,16 @@ class Category extends ActiveRecord
 
 		return $categoryModule;
 
+	}
+
+	public static function addFilter($object) {
+
+		$model = new Category();
+		if($model->load(\Yii::$app->request->get()) && $model->validate()) {
+			if($model->filter) {
+				$object->andWhere( [ 'category' => $model->filter ] );
+			}
+		}
 	}
 
 }

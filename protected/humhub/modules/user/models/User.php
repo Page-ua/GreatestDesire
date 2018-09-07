@@ -38,6 +38,7 @@ use humhub\modules\content\models\Content;
  * @property string $authclient_id
  * @property integer $visibility
  * @property integer $contentcontainer_id
+ * @property integer $greatest_desire
  * @property Profile $profile
  */
 class User extends ContentContainerActiveRecord implements \yii\web\IdentityInterface, \humhub\modules\search\interfaces\Searchable

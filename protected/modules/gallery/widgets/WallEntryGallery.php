@@ -8,6 +8,7 @@
 
 namespace humhub\modules\gallery\widgets;
 
+use humhub\modules\content\models\Category;
 use humhub\modules\file\converter\PreviewImage;
 use humhub\modules\gallery\models\Media;
 use humhub\libs\MimeHelper;
@@ -41,10 +42,14 @@ class WallEntryGallery extends \humhub\modules\content\widgets\WallEntry
 
 		$galleryUrl = '#';
 		$galleryName = null;
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(\Yii::$app->language, 'gallery');
+		$category = $category[$gallery->category];
+
 		return $this->render('wallEntryGallery', [
-			'media' => $gallery,
-			'title' => $gallery->getTitle(),
+			'gallery' => $gallery,
 			'previewImage' => new PreviewImage(),
+			'category' => $category,
 		]);
 	}
 

@@ -33,6 +33,8 @@ class Created extends BaseActivity
      */
     public $viewName = "created";
 
+	public $userAction = 'created the new space';
+
     /**
      * @inheritdoc
      */

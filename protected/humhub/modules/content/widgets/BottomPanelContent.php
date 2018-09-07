@@ -7,8 +7,10 @@
  */
 
 namespace humhub\modules\content\widgets;
+use Codeception\Util\Debug;
 use humhub\modules\comment\widgets\CommentLink;
 use humhub\modules\comment\widgets\CommentLinkPage;
+use humhub\modules\desire\models\Desire;
 use humhub\modules\favorite\widgets\FavoriteLink;
 use humhub\modules\like\widgets\LikeLink;
 use humhub\modules\rating\widgets\RatingLink;
@@ -34,7 +36,7 @@ class BottomPanelContent extends \yii\base\Widget
 	const FULL_MODE = 0;
 	const SMALL_MODE = 1;
 
-	public $mode = 0;
+	public $mode = self::FULL_MODE;
 
 	public $components = ['CommentLink' => 1, 'CommentLinkPage' => 0, 'LikeLink' => 1, 'RatingLink' => 0, 'ShareLink' => 1, 'FavoriteLink' => 1];
 
@@ -49,6 +51,10 @@ class BottomPanelContent extends \yii\base\Widget
 	 */
 	public function run()
 	{
+		if ($this->object instanceof Desire) {
+			$this->ratingLink = true;
+		}
+
 		if ($this->commentLinkPage) {
 			$this->components['CommentLinkPage'] = 1;
 			$this->components['CommentLink'] = 0;
@@ -57,6 +63,7 @@ class BottomPanelContent extends \yii\base\Widget
 			$this->components['RatingLink'] = 1;
 			$this->components['LikeLink'] = 0;
 		}
+
 
 		foreach ($this->components as $component => $status) {
 			if($status) {

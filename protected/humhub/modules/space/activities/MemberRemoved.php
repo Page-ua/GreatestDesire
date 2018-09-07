@@ -30,6 +30,9 @@ class MemberRemoved extends BaseActivity implements ConfigurableActivityInterfac
      */
     public $moduleId = "space";
 
+
+    public $userAction = "left the space";
+
     /**
      * @inheritdoc
      */

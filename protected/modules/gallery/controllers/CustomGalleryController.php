@@ -32,6 +32,9 @@ class CustomGalleryController extends ListController
     /**
      * @return redirect to /view.
      */
+
+    private $guid;
+
     public function actionIndex()
     {
         return $this->redirect('/gallery/custom-gallery/view');
@@ -106,6 +109,7 @@ class CustomGalleryController extends ListController
 
         $errors = false;
         $files = [];
+        $this->guid = \humhub\libs\UUID::v4();
         foreach (UploadedFile::getInstancesByName('files') as $cFile) {
             $result = $this->handleMediaUpload($parentGallery, $cFile);
             $errors = $errors | $result['error'];
@@ -121,7 +125,7 @@ class CustomGalleryController extends ListController
     protected function handleMediaUpload(BaseGallery $parentGallery, UploadedFile $cfile)
     {
         $media = new Media(['gallery' => $parentGallery]);
-        $mediaUpload = $media->handleUpload($cfile);
+        $mediaUpload = $media->handleUpload($cfile, $this->guid);
 
         $result = FileHelper::getFileInfos($mediaUpload);
         $result['error'] = $mediaUpload->hasErrors();

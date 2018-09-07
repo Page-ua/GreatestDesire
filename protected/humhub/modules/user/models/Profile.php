@@ -8,6 +8,8 @@
 
 namespace humhub\modules\user\models;
 
+use humhub\modules\user\activities\ChangeCity;
+use humhub\modules\user\activities\ChangeRelationship;
 use Yii;
 
 /**
@@ -314,7 +316,7 @@ class Profile extends \yii\db\ActiveRecord {
 
 	}
 
-	public function getOptionsField($field)
+	public static function getOptionsField($field)
 	{
 		$profileField = \humhub\modules\user\models\ProfileField::findOne(['internal_name' => $field]);
 		$fieldOptions = json_decode($profileField->field_type_config);
@@ -324,5 +326,18 @@ class Profile extends \yii\db\ActiveRecord {
 		$item = $select->getSelectItems();
 
 		return $item;
+	}
+
+	public function afterSave($insert, $changedAttributes)
+	{
+		foreach ($changedAttributes as $attribute => $value) {
+			switch ($attribute)
+			{
+				case 'city':
+					ChangeCity::instance()->from($this->user)->about($this)->save();
+				case 'relationship':
+					ChangeRelationship::instance()->from($this->user)->about($this)->save();
+			}
+		}
 	}
 }

@@ -1,24 +1,30 @@
 <?php
 
+use humhub\modules\content\widgets\BottomPanelContent;
+use humhub\modules\favorite\widgets\FavoriteLink;
+use humhub\modules\like\widgets\LikeLink;
 use yii\helpers\Html;
 ?>
-<div class="panel panel-default">
-    <div class="panel-body">
 
-        <div class="media">
-            <a href="<?php echo $space->getUrl(); ?>" class="pull-left">
-                <!-- Show space image -->
-                <?php echo \humhub\modules\space\widgets\Image::widget([
-                    'space' => $space,
-                    'width' => 40,
-                ]); ?>
-            </a>
-            <div class="media-body">
-                <!-- show username with link and creation time-->
-                <h4 class="media-heading"><a href="<?php echo $space->getUrl(); ?>"><?php echo Html::encode($space->displayName); ?></a> </h4>
-                <h5><?php echo Html::encode($space->description); ?></h5>
-            </div>
+
+<li class="group">
+    <a href="<?php echo $space->getUrl(); ?>">
+        <div class="photo">
+	        <?php echo \humhub\modules\space\widgets\Image::widget([
+		        'space' => $space,
+		        'width' => 99,
+	        ]); ?>
         </div>
-
+        <div class="group-wrap">
+            <div class="title"><a href="<?php echo $space->getUrl(); ?>"><?php echo Html::encode($space->displayName); ?></a></div>
+            <div class="text"><?php echo Html::encode($space->description); ?></div>
+        </div>
+    </a>
+    <div class="statistic-info">
+        <div class="subscribers"><svg class="icon icon-members"><use xlink:href="./svg/sprite/sprite.svg#members"></use></svg>
+            <div class="val"><?= $space->getMemberships()->count(); ?></div>
+        </div>
+	    <?= LikeLink::widget(['object' => $space, 'mode' => BottomPanelContent::SMALL_MODE]); ?>
+	    <?= FavoriteLink::widget(['object' => $space, 'mode' => BottomPanelContent::SMALL_MODE]); ?>
     </div>
-</div>
+</li>

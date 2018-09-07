@@ -3,3 +3,4 @@
         <?= humhub\widgets\RichText::widget(['text' => $post->message, 'record' => $post, 'markdown' => true]) ?>
     </div>
 </div>
+<?= \humhub\modules\file\widgets\ShowPhotoPreview::widget(['object' => $post, 'options' => ['for' => 'post']]); ?>

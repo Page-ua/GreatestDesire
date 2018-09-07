@@ -112,7 +112,7 @@ class StreamViewer extends Widget
     protected function getStreamUrl()
     {
         $params = array_merge([
-            'mode' => \humhub\modules\stream\actions\Stream::MODE_NORMAL
+            'mode' => \humhub\modules\stream\actions\Stream::MODE_ALL
                 ], $this->streamActionParams);
 
         if ($this->contentContainer) {

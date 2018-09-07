@@ -26,9 +26,9 @@
                                         <?= \humhub\modules\rating\widgets\RatingDisplay::widget(['object' => $article]); ?>
                                     </div>
                                     <div class="desire-text">
-                                        <a class="text <?php if($article->greatest) { ?>favorite <?php } ?>" href="<?= $article->user->createUrl('/user/profile/desire-one', ['id' => $article->id]); ?>">
+                                        <a class="text <?php if($article->greatest && $article->id === $article->user->greatest_desire) { ?>favorite <?php } ?>" href="<?= $article->user->createUrl('/user/profile/desire-one', ['id' => $article->id]); ?>">
                                             <!-- If disere is favorite add class favorite & add icon-->
-                                            <?php if($article->greatest) { ?>
+                                            <?php if($article->greatest && $article->id === $article->user->greatest_desire) { ?>
                                             <svg class="icon icon-earth_green">
                                                 <use xlink:href="./svg/sprite/sprite.svg#earth_green"></use>
                                             </svg>

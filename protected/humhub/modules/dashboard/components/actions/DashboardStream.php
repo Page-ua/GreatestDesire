@@ -8,6 +8,7 @@
 
 namespace humhub\modules\dashboard\components\actions;
 
+use humhub\modules\stream\models\StreamQuery;
 use Yii;
 use yii\db\Query;
 use humhub\modules\stream\actions\Stream;

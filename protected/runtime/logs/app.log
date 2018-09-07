@@ -7716,3 +7716,583 @@ Stack trace:
     ]
     'argc' => 5
 ]
+2018-08-21 21:57:27 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "create/migrate". in /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php:532
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('create/migrate', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('create/migrate', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 /var/www/html/protected/yii(29): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "create/migrate". in /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('create/migrate', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /var/www/html/protected/yii(29): yii\base\Application->run()
+#3 {main}
+2018-08-21 21:57:25 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1948'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '3746'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1854,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1854'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-TAzceNfv1c,guid=824ca3b503daabbf5c9a02d55b7d0ce5'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    'OLDPWD' => '/var/www/html'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1534928245.0963
+    'REQUEST_TIME' => 1534928245
+    'argv' => [
+        0 => 'yii'
+        1 => 'create/migrate'
+        2 => '--migrationPath=@app/modules/gallery/migrations'
+        3 => 'add_hash_column_to_gallery_media_table'
+    ]
+    'argc' => 4
+]
+2018-08-22 04:20:24 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request: search/ in /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php:127
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('search', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#5 /var/www/html/protected/yii(29): yii\base\Application->run()
+#6 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "search". in /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /var/www/html/protected/yii(29): yii\base\Application->run()
+#3 {main}
+2018-08-22 04:20:23 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1948'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '3746'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1854,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1854'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-TAzceNfv1c,guid=824ca3b503daabbf5c9a02d55b7d0ce5'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    'OLDPWD' => '/var/www/html'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1534951223.2504
+    'REQUEST_TIME' => 1534951223
+    'argv' => [
+        0 => 'yii'
+        1 => 'search'
+    ]
+    'argc' => 2
+]
+2018-08-22 04:20:45 [-][-][-][error][yii\console\Exception] yii\console\Exception: Отсутствуют обязательные аргументы: keyword in /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php:166
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/base/InlineAction.php(51): yii\console\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('find', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('find', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('search/find', Array)
+#5 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search/find', Array)
+#6 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 /var/www/html/protected/yii(29): yii\base\Application->run()
+#8 {main}
+2018-08-22 04:20:44 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1948'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '3746'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1854,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1854'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-TAzceNfv1c,guid=824ca3b503daabbf5c9a02d55b7d0ce5'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    'OLDPWD' => '/var/www/html'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1534951244.4723
+    'REQUEST_TIME' => 1534951244
+    'argv' => [
+        0 => 'yii'
+        1 => 'search/find'
+    ]
+    'argc' => 2
+]
+2018-08-22 04:21:22 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request: search/ in /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php:127
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('search', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#5 /var/www/html/protected/yii(29): yii\base\Application->run()
+#6 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "search". in /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /var/www/html/protected/yii(29): yii\base\Application->run()
+#3 {main}
+2018-08-22 04:21:21 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1948'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '3746'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1854,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1854'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-TAzceNfv1c,guid=824ca3b503daabbf5c9a02d55b7d0ce5'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    'OLDPWD' => '/var/www/html'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1534951281.3216
+    'REQUEST_TIME' => 1534951281
+    'argv' => [
+        0 => 'yii'
+        1 => 'search'
+    ]
+    'argc' => 2
+]
+2018-08-22 04:21:30 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request: search/ in /var/www/html/protected/vendor/yiisoft/yii2/base/Controller.php:127
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Controller.php(128): yii\base\Controller->runAction('', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Module.php(523): yii\console\Controller->runAction('', Array)
+#2 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction('search', Array)
+#3 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search', Array)
+#4 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#5 /var/www/html/protected/yii(29): yii\base\Application->run()
+#6 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "search". in /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /var/www/html/protected/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction('search', Array)
+#1 /var/www/html/protected/vendor/yiisoft/yii2/base/Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /var/www/html/protected/yii(29): yii\base\Application->run()
+#3 {main}
+2018-08-22 04:21:29 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1948'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '3746'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1854,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1854'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-TAzceNfv1c,guid=824ca3b503daabbf5c9a02d55b7d0ce5'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    'OLDPWD' => '/var/www/html'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1534951289.5271
+    'REQUEST_TIME' => 1534951289
+    'argv' => [
+        0 => 'yii'
+        1 => 'search'
+        2 => 'test'
+    ]
+    'argc' => 3
+]
+2018-08-22 04:22:12 [-][-][-][error][application] Underlying object class humhub\modules\linklist\models\Category not found!
+    in /var/www/html/protected/humhub/components/behaviors/PolymorphicRelation.php:63
+    in /var/www/html/protected/humhub/modules/content/Events.php:88
+    in /var/www/html/protected/humhub/modules/search/engine/Search.php:94
+2018-08-22 04:22:12 [-][-][-][error][application] Underlying object class humhub\modules\cfiles\models\Folder not found!
+    in /var/www/html/protected/humhub/components/behaviors/PolymorphicRelation.php:63
+    in /var/www/html/protected/humhub/modules/content/Events.php:88
+    in /var/www/html/protected/humhub/modules/search/engine/Search.php:94
+2018-08-22 04:22:12 [-][-][-][error][application] Underlying object class humhub\modules\cfiles\models\Folder not found!
+    in /var/www/html/protected/humhub/components/behaviors/PolymorphicRelation.php:63
+    in /var/www/html/protected/humhub/modules/content/Events.php:88
+    in /var/www/html/protected/humhub/modules/search/engine/Search.php:94
+2018-08-22 04:21:37 [-][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'LC_PAPER' => 'uk_UA.UTF-8'
+    'MANPATH' => '/home/work/.nvm/versions/node/v10.0.0/share/man:/usr/local/man:/usr/local/share/man:/usr/share/man'
+    'XDG_SESSION_ID' => 'c1'
+    'LC_ADDRESS' => 'uk_UA.UTF-8'
+    'SSH_AGENT_PID' => '1948'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/work'
+    'LC_MONETARY' => 'uk_UA.UTF-8'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '3746'
+    'QT_STYLE_OVERRIDE' => 'gtk'
+    'NVM_CD_FLAGS' => ''
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'TERM' => 'xterm-256color'
+    'SHELL' => '/bin/bash'
+    'NVM_PATH' => '/home/work/.nvm/versions/node/v10.0.0/lib/node'
+    'QT_LINUX_ACCESSIBILITY_ALWAYS_ON' => '1'
+    'LC_NUMERIC' => 'uk_UA.UTF-8'
+    'GTK_MODULES' => 'pantheon-filechooser-module'
+    'NVM_DIR' => '/home/work/.nvm'
+    'USER' => 'work'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+    'QT_ACCESSIBILITY' => '1'
+    'LC_TELEPHONE' => 'uk_UA.UTF-8'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring/ssh'
+    'SESSION_MANAGER' => 'local/work-To-be-filled-by-O-E-M:@/tmp/.ICE-unix/1854,unix/work-To-be-filled-by-O-E-M:/tmp/.ICE-unix/1854'
+    'DEFAULTS_PATH' => '/usr/share/gconf/pantheon.default.path'
+    'GIO_LAUNCHED_DESKTOP_FILE' => '/usr/share/applications/jetbrains-phpstorm.desktop'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-pantheon:/etc/xdg'
+    'DESKTOP_SESSION' => 'pantheon'
+    'PATH' => '/home/work/.nvm/versions/node/v10.0.0/bin:/home/work/bin:/home/work/.local/bin:/home/work/bin:/home/work/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/work/.composer/vendor/bin:/home/work/.composer/vendor/bin'
+    'GSETTINGS_SCHEMA_DIR' => '/home/work/data'
+    'QT_IM_MODULE' => 'ibus'
+    'NVM_NODEJS_ORG_MIRROR' => 'https://nodejs.org/dist'
+    'LC_IDENTIFICATION' => 'uk_UA.UTF-8'
+    'XDG_SESSION_TYPE' => 'x11'
+    'PWD' => '/var/www/html/protected'
+    'XMODIFIERS' => '@im=ibus'
+    'LANG' => 'en_US.UTF-8'
+    'GDM_LANG' => 'en_US'
+    'MANDATORY_PATH' => '/usr/share/gconf/pantheon.mandatory.path'
+    'LC_MEASUREMENT' => 'uk_UA.UTF-8'
+    'GDMSESSION' => 'pantheon'
+    'HOME' => '/home/work'
+    'XDG_SEAT' => 'seat0'
+    'SHLVL' => '1'
+    'LANGUAGE' => 'en_US'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'XDG_SESSION_DESKTOP' => 'pantheon'
+    'LOGNAME' => 'work'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-TAzceNfv1c,guid=824ca3b503daabbf5c9a02d55b7d0ce5'
+    'XDG_DATA_DIRS' => '/usr/share/pantheon:/usr/local/share/:/usr/share/'
+    'NVM_BIN' => '/home/work/.nvm/versions/node/v10.0.0/bin'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'GTK_CSD' => '1'
+    'NVM_IOJS_ORG_MIRROR' => 'https://iojs.org/dist'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Pantheon'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'LC_TIME' => 'uk_UA.UTF-8'
+    'LC_NAME' => 'uk_UA.UTF-8'
+    'XAUTHORITY' => '/home/work/.Xauthority'
+    'BASH_FUNC_generate_command_executed_sequence%%' => '() {  printf \'\\e\\7\'
+}'
+    'OLDPWD' => '/var/www/html'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1534951297.6682
+    'REQUEST_TIME' => 1534951297
+    'argv' => [
+        0 => 'yii'
+        1 => 'search/rebuild'
+    ]
+    'argc' => 2
+]

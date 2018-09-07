@@ -46,13 +46,14 @@ class BaseLeftMenu extends \humhub\widgets\BaseMenu
 	 */
 	public function init()
 	{
+		$parameter = isset(Yii::$app->request->get('Category')['filter'][0])?Yii::$app->request->get('Category')['filter'][0]:'';
 
 
 			$this->addItem([
 				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Success stories'),
-				'url' => Url::to(['/blog/blog']),
+				'url' => Url::to(['/blog/blog', 'Category[filter][]' => 100]),
 				'sortOrder' => 500,
-				'isActive' => (Yii::$app->controller->module->id == 'blog' && Yii::$app->controller->id == "blog" && Yii::$app->controller->action->id == "index"),
+				'isActive' => (Yii::$app->controller->module->id == 'blog' && Yii::$app->controller->id == "blog" && Yii::$app->controller->action->id == "index" && $parameter == 100 ),
 			]);
 
 			$this->addItem([
@@ -80,7 +81,7 @@ class BaseLeftMenu extends \humhub\widgets\BaseMenu
 				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Blogs'),
 				'url' => Url::toRoute(['/blog/blog/']),
 				'sortOrder' => 500,
-				'isActive' => (Yii::$app->controller->module->id == 'blog' && Yii::$app->controller->id == "blog" && Yii::$app->controller->action->id == "index"),
+				'isActive' => (Yii::$app->controller->module->id == 'blog' && Yii::$app->controller->id == "blog" && Yii::$app->controller->action->id == "index" && $parameter != 100),
 			]);
 
 			$this->addItem([

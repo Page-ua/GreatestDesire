@@ -10,112 +10,78 @@ use humhub\modules\content\components\ContentContainerActiveRecord;
 humhub\modules\stream\assets\StreamAsset::register($this);
 
 ?>
-<div class="container" data-action-component="stream.SimpleStream">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel">
-                <div class="panel-heading"><strong><?php echo Yii::t('base', 'Search'); ?></strong></div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <?php $form = ActiveForm::begin(['action' => Url::to(['index']), 'method' => 'GET']); ?>
-                                <div class="form-group form-group-search">
-                                    <?= $form->field($model, 'keyword')->textInput(['placeholder' => Yii::t('SearchModule.views_search_index', 'Search for user, spaces and content'), 
-                                        'title' => Yii::t('SearchModule.views_search_index', 'Search for user, spaces and content'), 'class' => 'form-control form-search', 'id' => 'search-input-field'])->label(false); ?>
-                                    <?php echo Html::submitButton(Yii::t('base', 'Search'), ['class' => 'btn btn-default btn-sm form-button-search', 'data-ui-loader' => '']); ?>
-                                </div>
 
-                                <div class="text-center">
-                                    <a data-toggle="collapse" id="search-settings-link" href="#collapse-search-settings"
-                                       style="font-size: 11px;"><i
-                                            class="fa fa-caret-right"></i> <?php echo Yii::t('SearchModule.views_search_index', 'Advanced search settings'); ?>
-                                    </a>
-                                </div>
-
-                                <div id="collapse-search-settings" class="panel-collapse collapse">
-                                    <br>
-                                    <?=  Yii::t('SearchModule.views_search_index', 'Search only in certain spaces:'); ?>
-                                    <?= \humhub\modules\space\widgets\SpacePickerField::widget([
-                                        'id' => 'space_filter',
-                                        'model' => $model,
-                                        'attribute' => 'limitSpaceGuids',
-                                        'selection' => $limitSpaces,
-                                        'placeholder' => Yii::t('SearchModule.views_search_index', 'Specify space')
-                                    ]) ?>
-                                </div>
-                                <br>
-                            <?php ActiveForm::end(); ?>
-                        </div>
-                        <div class="col-md-3"></div>
+<div class="page-content" data-action-component="stream.SimpleStream">
+    <div class="content-wrap">
+        <div class="general-search">
+            <div class="search-header">
+                <div class="title">Your search</div>
+                <div class="search-form">
+	                <?php $form = ActiveForm::begin(['action' => Url::to(['index']), 'method' => 'GET', 'fieldConfig' => [
+		                'options' => [
+			                'tag' => false,
+		                ],
+	                ],]); ?>
+                    <div class="wrap">
+	                    <?= $form->field($model, 'keyword', ['errorOptions' => ['tag' => null]])->textInput([
+		                    'placeholder' => Yii::t('SearchModule.views_search_index', 'Search for user, spaces and content'),
+		                    'title' => Yii::t('SearchModule.views_search_index', 'Search for user, spaces and content'),
+		                    'id' => 'search-input-field',
+	                    ])->label(false); ?>
+                        <input type="submit">
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <?php if ($model->keyword != ""): ?>
-        <div class="row">
-            <div class="col-md-2">
-                <div class="panel panel-default">
-                    <div
-                        class="panel-heading"><?php echo Yii::t('SearchModule.views_search_index', '<strong>Search </strong> results'); ?></div>
-                    <div class="list-group">
-                        <a data-pjax-prevent href='<?php echo Url::to(['/search/search/index', 'SearchForm[keyword]' => $model->keyword, 'SearchForm[limitSpaceGuids]' => $model->limitSpaceGuids, 'SearchForm[scope]' => SearchForm::SCOPE_ALL]); ?>'
-                           class="list-group-item <?php if ($model->scope == SearchForm::SCOPE_ALL): ?>active<?php endif; ?>">
-                            <div>
-                                <div class="edit_group "><?php echo Yii::t('SearchModule.views_search_index', 'All'); ?>
-                                    (<?php echo $totals[SearchForm::SCOPE_ALL]; ?>)
-                                </div>
-                            </div>
-                        </a>
-                        <br/>
-                        <a data-pjax-prevent href='<?php echo Url::to(['/search/search/index', 'SearchForm[keyword]' => $model->keyword, 'SearchForm[limitSpaceGuids]' => $model->limitSpaceGuids, 'SearchForm[scope]' => SearchForm::SCOPE_CONTENT]); ?>'
-                           class="list-group-item <?php if ($model->scope == SearchForm::SCOPE_CONTENT): ?>active<?php endif; ?>">
-                            <div>
-                                <div
-                                    class="edit_group "><?php echo Yii::t('SearchModule.views_search_index', 'Content'); ?>
-                                    (<?php echo $totals[SearchForm::SCOPE_CONTENT]; ?>)
-                                </div>
-                            </div>
-                        </a>
-                        <a data-pjax-prevent href='<?php echo Url::to(['/search/search/index', 'SearchForm[keyword]' => $model->keyword, 'SearchForm[limitSpaceGuids]' => $model->limitSpaceGuids, 'SearchForm[scope]' => SearchForm::SCOPE_USER]); ?>'
-                           class="list-group-item <?php if ($model->scope == SearchForm::SCOPE_USER): ?>active<?php endif; ?>">
-                            <div>
-                                <div
-                                    class="edit_group "><?php echo Yii::t('SearchModule.views_search_index', 'Users'); ?>
-                                    (<?php echo $totals[SearchForm::SCOPE_USER]; ?>)
-                                </div>
-                            </div>
-                        </a>
-                        <a data-pjax-prevent href='<?php echo Url::to(['/search/search/index', 'SearchForm[keyword]' => $model->keyword, 'SearchForm[limitSpaceGuids]' => $model->limitSpaceGuids, 'SearchForm[scope]' => SearchForm::SCOPE_SPACE]); ?>'
-                           class="list-group-item <?php if ($model->scope == SearchForm::SCOPE_SPACE): ?>active<?php endif; ?>">
-                            <div>
-                                <div
-                                    class="edit_group "><?php echo Yii::t('SearchModule.views_search_index', 'Spaces'); ?>
-                                    (<?php echo $totals[SearchForm::SCOPE_SPACE]; ?>)
-                                </div>
-                            </div>
+	                <?php if ($model->keyword != "") { ?>
+                    <div class="filters">
+                        <div class="filter-title">Search in categories:</div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_DESIRE , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_DESIRE ; ?>]" type="checkbox" id="1"><label for="1">Desires</label></div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_BLOG , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_BLOG ; ?>]" type="checkbox" id="2"><label for="2">Blogs</label></div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_NEWS , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_NEWS ; ?>]" type="checkbox" id="3"><label for="3">News</label></div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_POLL , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_POLL ; ?>]" type="checkbox" id="5"><label for="5">Polls</label></div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_SPACE , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_SPACE ; ?>]" type="checkbox" id="6"><label for="6">Groups</label></div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_USER , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_USER ; ?>]" type="checkbox" id="7"><label for="7">User</label></div>
+                        <div class="category"><input <?php if(array_key_exists(SearchForm::SCOPE_POST , $model->scope)) echo 'checked'; ?> name="scope[<?= SearchForm::SCOPE_POST; ?>]" type="checkbox" id="7"><label for="7">Post</label></div>
+                    </div>
+                    <?php } ?>
+
+                    <div class="text-center">
+                        <a data-toggle="collapse" id="search-settings-link" href="#collapse-search-settings"
+                           style="font-size: 11px;"><i
+                                    class="fa fa-caret-right"></i> <?php echo Yii::t('SearchModule.views_search_index', 'Advanced search settings'); ?>
                         </a>
                     </div>
+
+                    <div id="collapse-search-settings" class="panel-collapse collapse">
+                        <br>
+		                <?=  Yii::t('SearchModule.views_search_index', 'Search only in certain spaces:'); ?>
+		                <?= \humhub\modules\space\widgets\SpacePickerField::widget([
+			                'id' => 'space_filter',
+			                'model' => $model,
+			                'attribute' => 'limitSpaceGuids',
+			                'selection' => $limitSpaces,
+			                'placeholder' => Yii::t('SearchModule.views_search_index', 'Specify space')
+		                ]) ?>
+                    </div>
+                    <br>
+	                <?php ActiveForm::end(); ?>
                 </div>
             </div>
-
-            <div class="col-md-10">
-
+            <div class="general-search-result">
+	            <?php if ($model->keyword != "") { ?>
                 <div class="searchResults">
 
-                    <?php if (count($results) > 0): ?>
-                        <?php foreach ($results as $result): ?>
-                            <?php if ($result instanceof ContentActiveRecord) : ?>
-                                <?= humhub\modules\stream\actions\Stream::renderEntry($result) ?>
-                            <?php elseif ($result instanceof ContentContainerActiveRecord) : ?>
-                                 <?= $result->getWallOut(); ?>
-                            <?php else: ?>
+		            <?php if (count($results) > 0): ?>
+                    <ul class="search-result">
+			            <?php foreach ($results as $result): ?>
+				            <?php if ($result instanceof ContentActiveRecord) : ?>
+					            <?= humhub\modules\stream\actions\Stream::renderEntry($result) ?>
+				            <?php elseif ($result instanceof ContentContainerActiveRecord) : ?>
+					            <?= $result->getWallOut(); ?>
+				            <?php else: ?>
                                 No Output for Class <?php echo get_class($result); ?>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php else: ?>
+				            <?php endif; ?>
+			            <?php endforeach; ?>
+                    </ul>
+		            <?php else: ?>
 
 
                         <div class="panel panel-default">
@@ -123,18 +89,18 @@ humhub\modules\stream\assets\StreamAsset::register($this);
                                 <p><strong><?php echo Yii::t('SearchModule.views_search_index', 'Your search returned no matches.'); ?></strong></p>
                             </div>
                         </div>
-                    <?php endif; ?>
+		            <?php endif; ?>
                 </div>
 
                 <div
-                    class="pagination-container"><?php echo humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?></div>
-                <br><br>
+                        class="pagination-container"><?php echo humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?>
+                </div>
+                <?php } ?>
             </div>
-
         </div>
-    <?php endif; ?>
-
+    </div>
 </div>
+
 
 <script type="text/javascript">
 

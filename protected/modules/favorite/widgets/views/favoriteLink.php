@@ -59,14 +59,14 @@ humhub\modules\favorite\assets\FavoriteAsset::register( $this );
     <?php } else { ?>
         <div data-action-click="favorite.toggleFavorite" data-action-url="<?= $favoriteUrl ?>" style="<?= ( ! $currentUserFavorited ) ? '' : 'display:none' ?>" class="favorite">
         <svg class="icon icon-star_fill">
-            <use xlink:href="./svg/sprite/sprite.svg#star_fill"></use>
+            <use xlink:href="./svg/sprite/sprite.svg#star_empty"></use>
         </svg>
         </div>
 
         <div data-action-click="favorite.toggleFavorite" data-action-url="<?= $unfavoriteUrl ?>"
              style="<?= ( $currentUserFavorited ) ? '' : 'display:none' ?>" class="follow unfavorite active-item">
             <svg class="icon icon-star_fill">
-                <use xlink:href="./svg/sprite/sprite.svg#star_empty"></use>
+                <use xlink:href="./svg/sprite/sprite.svg#star_fill"></use>
             </svg>
         </div>
     <?php } ?>

@@ -8,6 +8,7 @@
 
 namespace humhub\modules\content\widgets;
 
+use humhub\modules\activity\models\Activity;
 use Yii;
 use humhub\components\Widget;
 use humhub\modules\space\models\Space;
@@ -59,6 +60,14 @@ class WallEntry extends Widget
      * @var string
      */
     public $editRoute = "";
+
+    /**
+     * Name to action with content
+     *
+     * @var string
+     */
+
+    public $userAction = "added new";
 
     /**
      * Defines the way the edit of this wallentry is displayed.
@@ -246,7 +255,7 @@ class WallEntry extends Widget
         $container = $content->container;
 
         // In case of e.g. dashboard, show contentContainer of this content
-        if (!Yii::$app->controller instanceof ContentContainerController && !($container instanceof User && $container->id == $user->id)) {
+        if (!Yii::$app->controller instanceof ContentContainerController && !($container instanceof User && $container->id == $user->id) && !($this->contentObject instanceof Activity && !$container instanceof Space)) {
             $showContentContainer = true;
         }
 
@@ -273,8 +282,17 @@ class WallEntry extends Widget
             'createdAt' => $createdAt,
             'updatedAt' => $updatedAt,
 	        'userAction' => (isset($this->userAction))?$this->userAction:'',
-	        'actionName' => (isset($this->actionName))?$this->actionName:'',
+	        'actionName' => $this->createActivityName(),
         ];
+    }
+
+    protected function createActivityName()
+    {
+	    if (isset($this->objectName)) {
+		    return $this->objectName;
+	    } elseif(method_exists($this->contentObject,'objectName')) {
+		    return $this->contentObject->objectName();
+	    }
     }
 
 }

@@ -14,11 +14,12 @@ foreach($articles as $article) { ?>
 		<div class="content">
 			<div class="article-post">
 				<div class="img-block">
+                    <a href="<?= $user->createUrl('/user/profile/blog-one', ['id' => $article->id]); ?>">
 					<?= \humhub\modules\file\widgets\ShowPhotoPreview::widget(['object' => $article]); ?>
-
+                    </a>
 				</div>
 				<div class="description-block">
-					<div class="title"><?= $article->title; ?></div>
+					<div class="title"><a href="<?= $user->createUrl('/user/profile/blog-one', ['id' => $article->id]); ?>"><?= $article->title; ?></a></div>
 					<div class="subtitle"><?= isset($category[$article->category])?$category[$article->category]:''; ?></div>
 					<div class="text"><?= \humhub\widgets\RichText::widget(['text' => $article->message, 'maxLength' => 40]); ?></div>
 				</div>

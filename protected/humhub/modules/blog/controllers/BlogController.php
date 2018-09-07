@@ -83,7 +83,7 @@ class BlogController extends GeneralController {
 			$model->saveFiles();
 			$model->saveTags();
 
-			return $this->redirect( [ 'view', 'id' => $model->id ] );
+			return $this->redirect( $model->user->createUrl('/user/profile/blog-one', ['id' => $model->id ]) );
 		}
 
 		return $this->render( 'create',
@@ -143,9 +143,9 @@ class BlogController extends GeneralController {
 		if ( ! $model->content->canEdit() ) {
 			$this->forbidden();
 		}
-		$model->delete();
+		$model->content->delete();
 
-		return $this->redirect(['list']);
+		return $this->redirect($model->user->createUrl('/user/profile/blog'));
 	}
 
 	protected function findModel($id)

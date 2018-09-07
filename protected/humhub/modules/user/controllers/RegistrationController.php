@@ -74,6 +74,7 @@ class RegistrationController extends Controller
         Yii::$app->params['class_body'] = 'publicHeader';
 
 	    if ($registration->submitted('save')) {
+
 		    $desire->load(Yii::$app->request->post());
 		    $desireFlag = $desire->validate();
 		    $registrationFlag = $registration->validate();
@@ -86,6 +87,8 @@ class RegistrationController extends Controller
 				    $registration->models['User']->updateAttributes( [ 'last_login' => new \yii\db\Expression( 'NOW()' ), 'joined' ] );
 				    $registration->models['User']->profile->joined = new \yii\db\Expression( 'NOW()' );
 				    $registration->models['User']->profile->save();
+				    $desire->content->visibility = 1;
+				    $desire->content->container = $registration->getUser();
 				    $desire->save();
 				    $this->view->saved();
 				    $tags = explode( ',', Yii::$app->request->post( 'tags' ) );

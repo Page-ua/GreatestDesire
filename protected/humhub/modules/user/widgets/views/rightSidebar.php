@@ -1,9 +1,23 @@
 <?php
+use humhub\modules\content\models\Category;
+use humhub\modules\content\widgets\BottomPanelContent;
+use humhub\modules\content\widgets\CategoryFilter;
+use humhub\modules\desire\models\Desire;
+use humhub\modules\file\widgets\ShowPhotoPreview;
+use humhub\modules\polls\widgets\PollsItem;
+use yii\helpers\Html;
+use yii\helpers\Url;
 ?>
+
+
 
 
 <aside class="right-side">
 	<div class="right-sidebar">
+        <?php $currentModule = Yii::$app->controller->module->id; ?>
+        <?php if(in_array($currentModule, Category::$object)) { ?>
+		<?= CategoryFilter::widget(['model' => $currentModule]); ?>
+        <?php } ?>
 		<div class="item" id="sidebar-info">
 			<div class="item-header">
 				<div class="label">Info
@@ -12,13 +26,7 @@
 			</div>
 			<div class="item-content ">
 				<div class="content-wrap">
-                    <?php use humhub\modules\content\widgets\BottomPanelContent;
-                    use humhub\modules\desire\models\Desire;
-                    use humhub\modules\file\widgets\ShowPhotoPreview;
-                    use humhub\modules\polls\widgets\PollsItem;
-                    use yii\helpers\Html;
-                    use yii\helpers\Url;
-
+                    <?php
                     if(isset($userInfo->gender)) { ?>
 					<div class="gender">
 						<div class="label">Gender</div>

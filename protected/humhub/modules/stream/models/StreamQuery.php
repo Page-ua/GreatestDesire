@@ -36,6 +36,7 @@ class StreamQuery extends \yii\base\Model
      */
     const CHANNEL_DEFAULT = 'default';
     const CHANNEL_ACTIVITY = 'activity';
+    const CHANNEL_ALL = 'all';
 
     /**
      * Maximum wall entries per request
@@ -483,7 +484,9 @@ class StreamQuery extends \yii\base\Model
     {
         $this->_channel = $channel;
 
-	    $this->_query->andWhere(['content.stream_channel' => $channel]);
+        if($channel !== self::CHANNEL_ALL) {
+	        $this->_query->andWhere( [ 'content.stream_channel' => $channel ] );
+        }
         return $this;
     }
 

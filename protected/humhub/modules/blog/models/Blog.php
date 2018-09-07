@@ -8,6 +8,7 @@
 
 namespace humhub\modules\blog\models;
 
+use humhub\modules\content\models\Category;
 use humhub\modules\tags\models\Tags;
 use humhub\modules\tags\models\TagsDesire;
 use Yii;
@@ -120,6 +121,7 @@ class Blog extends ContentActiveRecord implements Searchable
     public function getSearchAttributes()
     {
         $attributes = array(
+        	'title' => $this->title,
             'message' => $this->message,
             'url' => $this->url,
             'user' => $this->getBlogAuthorName()
@@ -182,6 +184,7 @@ class Blog extends ContentActiveRecord implements Searchable
 		$query->leftJoin('content', 'content.object_id = blog.id');
 		$query->where(['content.visibility' => 1]);
 		$query->andWhere(['content.object_model' => self::className()]);
+		Category::addFilter($query);
 		$query->limit(10);
 		$query->offset($offset);
 		$query->orderBy('created_at DESC');
@@ -196,6 +199,11 @@ class Blog extends ContentActiveRecord implements Searchable
 	{
 		return $this->hasMany(Tags::className(), ['id' => 'tags_id'])
 		            ->viaTable('tags_relationship', ['desire_id' => 'id']);
+	}
+
+	public function getUser()
+	{
+		return $this->hasOne(User::className(), ['id' => 'created_by']);
 	}
 
 	public function saveTags()

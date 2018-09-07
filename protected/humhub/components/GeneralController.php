@@ -5,6 +5,7 @@ namespace humhub\components;
 
 use humhub\modules\user\behaviors\ProfileController;
 use Yii;
+use yii\web\HttpException;
 
 class GeneralController extends Controller {
 

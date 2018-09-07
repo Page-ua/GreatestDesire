@@ -29,6 +29,8 @@ class MemberAdded extends BaseActivity implements ConfigurableActivityInterface
      */
     public $moduleId = "space";
 
+
+    public $userAction = 'joined the group';
     /**
      * @inheritdoc
      */
@@ -53,5 +55,6 @@ class MemberAdded extends BaseActivity implements ConfigurableActivityInterface
     {
         return Yii::t('SpaceModule.activities', 'Whenever a new member joined one of your spaces.');
     }
+
 
 }

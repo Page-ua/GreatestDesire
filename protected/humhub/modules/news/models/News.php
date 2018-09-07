@@ -8,6 +8,7 @@
 
 namespace humhub\modules\news\models;
 
+use humhub\modules\content\models\Category;
 use humhub\modules\tags\models\Tags;
 use humhub\modules\tags\models\TagsDesire;
 use Yii;
@@ -165,9 +166,9 @@ class News extends ContentActiveRecord implements Searchable
 		$pagination = new Pagination(['totalCount' => $count, 'pageSize'=>$pageSize]);
 
 		// limit the query using the pagination and retrieve the articles
-		$articles = $query->offset($pagination->offset)
-		                  ->limit($pagination->limit)
-		                  ->all();
+		$articles = $query->offset($pagination->offset);
+		                  $query->limit($pagination->limit);
+		                  $query->all();
 
 		$data['articles'] = $articles;
 		$data['pagination'] = $pagination;

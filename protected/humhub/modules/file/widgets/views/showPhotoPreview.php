@@ -59,7 +59,26 @@ use yii\helpers\Html;
 			}
 			$counter ++;
 		}
-	} else { ?>
+	} elseif(isset( $options['for'] ) && $options['for'] === 'post') {
+		foreach ( $files as $file ) {
+			if ( $previewImage->applyFile( $file ) ) {
+					$arr = array(
+						'height' => 152,
+						'width'  => 211,
+						'mode'   => 'force'
+					);
+				    $previewImage->options = $arr;
+					?>
+                    <div class="item">
+                        <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>"
+                           href="<?= $file->getUrl(); ?>#.jpeg" title="<?= Html::encode( $file->file_name ) ?>">
+							<?= $previewImage->render(); ?>
+                        </a>
+                    </div>
+				<?php
+			}
+		}
+    } else { ?>
         <!-- hideOnEdit mandatory since 1.2 -->
         <div class="hideOnEdit">
             <!-- Show Images as Thumbnails -->
