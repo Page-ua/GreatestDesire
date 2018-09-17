@@ -43,6 +43,7 @@ class   TopWindows extends \yii\base\Widget
 		$counts['space'] = Favorite::getCountObjectsByUser($user, Space::className());
 
 		$latest = Favorite::find();
+		$latest->where(['created_by' => $user->getId()]);
 		$latest->limit(3);
 		$latest->orderBy('created_at DESC');
 		$latest = $latest->all();

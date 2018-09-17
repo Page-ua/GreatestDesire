@@ -30,7 +30,7 @@ class CreateMessage extends Model
     public function rules()
     {
         return array(
-            array(['message', 'recipient', 'title'], 'required'),
+            array(['recipient'], 'required'),
             array('recipient', 'checkRecipient')
         );
     }

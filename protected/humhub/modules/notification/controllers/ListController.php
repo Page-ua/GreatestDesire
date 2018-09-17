@@ -39,10 +39,11 @@ class ListController extends Controller
     {
         Yii::$app->response->format = 'json';
 
-        $notifications = Notification::loadMore(Yii::$app->request->get('from', 0));
+        $notifications = Notification::loadMore(Yii::$app->request->get('from', 0), 3, 0);
         $lastEntryId = 0;
         
         $output = "";
+        $outputOld = "";
         foreach ($notifications as $notification) {
             try {
                 $output .= $notification->getBaseModel()->render();
@@ -54,10 +55,20 @@ class ListController extends Controller
             }
         }
 
+        $notificationOld = Notification::loadMore(Yii::$app->request->get('from', 0), 3, 1);
+	    foreach ( $notificationOld as $item) {
+		    try {
+			    $outputOld .= $item->getBaseModel()->render();
+		    } catch(\Exception $e) {
+			    Yii::error($e);
+		    }
+        }
+
         return [
             'newNotifications' => Notification::findUnseen()->count(),
             'lastEntryId' => $lastEntryId,
             'output' => $output,
+	        'outputOld' => $outputOld,
             'counter' => count($notifications)
         ];
     }

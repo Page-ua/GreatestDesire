@@ -47,6 +47,8 @@ class Activity extends ContentActiveRecord
     /**
      * @inheritdoc
      */
+    public $title = 'new';
+
     public function behaviors()
     {
         return [
@@ -65,6 +67,11 @@ class Activity extends ContentActiveRecord
     public static function tableName()
     {
         return 'activity';
+    }
+
+    public static function objectName()
+    {
+    	return 'activity';
     }
 
     /**

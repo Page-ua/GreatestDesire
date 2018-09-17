@@ -292,7 +292,7 @@ class Friendship extends \humhub\components\ActiveRecord
             $myFriendship->delete();
         } elseif ($friendsFriendship !== null) {
             // Is declined friendship request - send declined notification
-            RequestDeclined::instance()->from($user)->send($friend);
+            RequestDeclined::instance()->from($user)->about(new Friendship())->send($friend);
         }
 
         if ($myFriendship !== null && $friendsFriendship !== null) {

@@ -10,11 +10,14 @@ namespace humhub\modules\desire\controllers;
 
 use const Couchbase\ENCODER_FORMAT_JSON;
 use humhub\components\Controller;
+use humhub\components\Response;
 use humhub\modules\desire\models\Desire;
 use humhub\modules\desire\models\forms\SearchForm;
 use humhub\modules\tags\models\Tags;
+use humhub\modules\user\behaviors\ProfileController;
 use humhub\modules\user\models\Profile;
 use Yii;
+use yii\web\HttpException;
 
 /**
  * @package humhub.modules_core.desire.controllers
@@ -23,6 +26,25 @@ use Yii;
 class DesireController extends Controller {
 
 	public $submitUrl = 'desire/create';
+
+	public $contentContainer = null;
+
+	public function init() {
+
+		$this->contentContainer = YII::$app->user->getIdentity();
+		if ( $this->contentContainer == null ) {
+			throw new HttpException( 404, Yii::t( 'base', 'User not found!' ) );
+		}
+
+		$this->attachBehavior( 'ProfileControllerBehavior', [
+			'class' => ProfileController::className(),
+			'user'  => $this->contentContainer,
+		] );
+
+
+		parent::init();
+	}
+
 
 	public function behaviors()
 	{

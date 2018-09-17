@@ -10,35 +10,45 @@ $this->registerJsConfig('notification', [
         'placeholder' => Yii::t('NotificationModule.widgets_views_list', 'There are no notifications yet.')
     ]
 ]);
-
 ?>
-<div id="notification_widget" data-ui-widget="notification.NotificationDropDown" data-ui-init='<?= \yii\helpers\Json::encode($update); ?>' class="btn-group">
-    <a href="#" id="icon-notifications" data-action-click='toggle' aria-label="<?= Yii::t('NotificationModule.widgets_views_list', 'Open the notification dropdown menu')?>" data-toggle="dropdown" >
-        <i class="fa fa-bell"></i>
-    </a>
-    
-    <span id="badge-notifications" style="display:none;" class="label label-danger label-notifications"></span>
 
-    <!-- container for ajax response -->
-    <ul id="dropdown-notifications" class="dropdown-menu">
-        <li class="dropdown-header">
-            <div class="arrow"></div><?= Yii::t('NotificationModule.widgets_views_list', 'Notifications'); ?>
-            <div class="dropdown-header-link">
-                <a id="mark-seen-link" data-action-click='markAsSeen' data-action-url="<?= Url::to(['/notification/list/mark-as-seen']); ?>">
-                    <?= Yii::t('NotificationModule.widgets_views_list', 'Mark all as seen'); ?>
-                </a>
+
+<div class="item item-notification" data-ui-widget="notification.NotificationDropDown" data-ui-init='<?= \yii\helpers\Json::encode($update); ?>'>
+    <a class="mobile-link" href="#"></a>
+    <div class="activity-icon" data-action-click='toggle'>
+        <svg class="icon icon-notifications" id="icon-notifications">
+            <use xlink:href="svg/sprite/sprite.svg#notifications"></use>
+        </svg>
+        <div id="badge-notifications" class="activity-counter" style="display: flex;"><span></span></div>
+    </div>
+    <div class="tooltip">Notifications</div>
+    <div class="activity-sub-menu">
+        <div class="notifications-sub-menu">
+            <div class="sub-menu-header">
+                <div class="title">Notifications</div>
+                <div class="counter"><span><span></span> New</span></div>
             </div>
-        </li>
-        <ul class="media-list"></ul>
-        <li id="loader_notifications">
-            <?= \humhub\widgets\LoaderWidget::widget(); ?>
-        </li>
-        <li>
-            <div class="dropdown-footer">
-                <a class="btn btn-default col-md-12" href="<?= Url::to(['/notification/overview']); ?>">
-                    <?= Yii::t('NotificationModule.widgets_views_list', 'Show all notifications'); ?>
-                </a>
+            <div class="sub-menu-content">
+                <div class="newList">
+                    <div class="list-header"><span>New</span></div>
+                    <ul id="dropdown-notifications">
+                        <ul class="media-list"></ul>
+                        <li id="loader_notifications">
+							<?= \humhub\widgets\LoaderWidget::widget(); ?>
+                        </li>
+
+                    </ul>
+                </div>
+                                <div class="earlierList">
+                                    <div class="list-header"><span>Earlier</span></div>
+                                    <ul class="media-list-old"></ul>
+                                </div>
             </div>
-        </li>
-    </ul>
+            <div class="sub-menu-footer">
+                <a href="#" class="markAsRead" id="mark-seen-link" data-action-click='markAsSeen' data-action-url="<?= Url::to(['/notification/list/mark-as-seen']); ?>">
+		            <?= Yii::t('NotificationModule.widgets_views_list', 'Mark all as seen'); ?>
+                </a>
+                <a class="seeAll" href="<?= Url::to(['/notification/overview']); ?>">See all</a></div>
+        </div>
+    </div>
 </div>

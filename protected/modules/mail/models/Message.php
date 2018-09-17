@@ -67,6 +67,11 @@ class Message extends ActiveRecord
                         ->viaTable('user_message', ['message_id' => 'id']);
     }
 
+    public function getAnotherUsers()
+    {
+    	return $this->getUsers()->andWhere(['<>', 'id', Yii::$app->user->getId()]);
+    }
+
     public function isParticipant($user)
     {
         foreach ($this->users as $participant) {

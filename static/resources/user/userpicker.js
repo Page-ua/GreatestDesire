@@ -275,7 +275,7 @@ $.fn.userpicker = function (options) {
                     }
 
                     // build <li> entry
-                    var str = '<li id="user_' + json[i].guid + '"><a style="' + _takenStyle + '" data-taken="' + _takenData + '" tabindex="-1" href="javascript:$.fn.userpicker.addUserTag(\'' + json[i].guid + '\', \'' + json[i].image + '\', \'' + json[i].displayName.replace(/&#039;/g, "\\'") + '\', \'' + uniqueID + '\');"><img class="img-rounded" src="' + json[i].image + '" height="20" width="20" alt=""/> ' + json[i].displayName + '</a></li>';
+                    var str = '<li id="user_' + json[i].guid + '"><a style="' + _takenStyle + '" data-taken="' + _takenData + '" tabindex="-1" href="javascript:$.fn.userpicker.addUserTag(\'' + json[i].guid + '\', \'' + json[i].image + '\', \'' + json[i].displayName.replace(/&#039;/g, "\\'") + '\', \'' + uniqueID + '\', \'' + json[i].autoSend + '\');"><img class="img-rounded" src="' + json[i].image + '" height="20" width="20" alt=""/> ' + json[i].displayName + '</a></li>';
 
                     // append the entry to the <ul> list
                     $('#' + uniqueID + '_userpicker').append(str);
@@ -331,13 +331,20 @@ $.fn.userpicker = function (options) {
 
 
 // Add an usertag for invitation
-$.fn.userpicker.addUserTag = function (guid, image_url, name, id) {
-    
+$.fn.userpicker.addUserTag = function (guid, image_url, name, id, autoSend) {
+
+
+
     if ($('#user_' + guid + ' a').attr('data-taken') != "true") {
-      
+
+        if(autoSend == 1) {
+
+            $.post($('#create-message-form').attr('action'), {'CreateMessage[recipient]': guid}, function(data) { console.log(data) });
+            return false;
+
+        }
         // Building a new <li> entry
         var _tagcode = '<li class="userInput" id="' + id + '_' + guid + '"><img class="img-rounded" alt="24x24" data-src="holder.js/24x24" style="width: 24px; height: 24px;" src="' + image_url + '" alt="' + name + '" width="24" height="24" />' + name + '<i class="fa fa-times-circle"></i></li>';
-
 
         // insert the new created <li> entry into the <ul> construct
         $('#' + id + '_tag_input').before(_tagcode);

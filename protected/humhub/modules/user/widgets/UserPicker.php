@@ -204,7 +204,7 @@ class UserPicker extends \yii\base\Widget
             
             //Either the additional users are disabled (by default) or we disable them by permission
             $disableCondition = (isset($cfg['permission'])) ? $cfg['permission']  : $cfg['disableFillUser'];
-            $jsonResult = array_merge($jsonResult, UserPicker::asJSON($fillUser, $disableCondition, 1));
+            $jsonResult = array_merge($jsonResult, static::asJSON($fillUser, $disableCondition, 1));
         }   
         
         return $jsonResult;
@@ -239,12 +239,12 @@ class UserPicker extends \yii\base\Widget
             $result = [];
             foreach ($users as $user) {
                 if ($user != null) {
-                    $result[] = self::createJSONUserInfo($user, $permission, $priority);
+                    $result[] = static::createJSONUserInfo($user, $permission, $priority);
                 }
             }
             return $result;
         } else {
-            return self::createJSONUserInfo($users, $permission, $priority);
+            return static::createJSONUserInfo($users, $permission, $priority);
         }
     }
 
@@ -256,7 +256,7 @@ class UserPicker extends \yii\base\Widget
      * @param type $permission
      * @return type
      */
-    private static function createJSONUserInfo($user, $permission = null, $priority = null)
+    protected static function createJSONUserInfo($user, $permission = null, $priority = null)
     {
         $disabled = false;
         
@@ -279,6 +279,7 @@ class UserPicker extends \yii\base\Widget
         $userInfo['image'] = $user->getProfileImage()->getUrl();
         $userInfo['priority'] = $priority;
         $userInfo['link'] = $user->getUrl();
+        $userInfo['autoSend'] = 0;
         return $userInfo;
     }
 }

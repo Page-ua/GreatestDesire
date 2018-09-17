@@ -202,12 +202,15 @@ class Notification extends \humhub\components\ActiveRecord
      * @param limit $limit limit count of results.
      * @since 1.2
      */
-    public static function loadMore($from = 0, $limit = 6)
+    public static function loadMore($from = 0, $limit = 6, $seen = null)
     {
         $query = Notification::findGrouped();
 
         if ($from != 0) {
             $query->andWhere(['<', 'id', $from]);
+        }
+        if($seen || $seen === 0) {
+	        $query->andWhere(['seen' => $seen]);
         }
 
         $query->limit($limit);

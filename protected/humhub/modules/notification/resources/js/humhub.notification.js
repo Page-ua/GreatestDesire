@@ -22,7 +22,7 @@ humhub.module('notification', function (module, require, $) {
     object.inherits(NotificationDropDown, Widget);
 
     NotificationDropDown.prototype.init = function (update) {
-        
+
         this.isOpen = false;
         this.lastEntryLoaded = false;
         this.lastEntryId = 0;
@@ -41,6 +41,7 @@ humhub.module('notification', function (module, require, $) {
 
     NotificationDropDown.prototype.initDropdown = function () {
         this.$entryList = this.$.find('ul.media-list');
+        this.$entryListOld = this.$.find('ul.media-list-old');
         this.$dropdown = this.$.find('#dropdown-notifications');
 
         var that = this;
@@ -90,12 +91,14 @@ humhub.module('notification', function (module, require, $) {
     NotificationDropDown.prototype.handleResult = function (response) {
         if (!response.counter) {
             this.$entryList.append(string.template(module.templates.placeholder, {'text': module.text('placeholder')}));
+
         } else {
             this.lastEntryId = response.lastEntryId;
             this.$entryList.append(response.output);
             $('span.time').timeago();
         }
-
+        this.$entryListOld.empty();
+        this.$entryListOld.append(response.outputOld);
         this.updateCount(parseInt(response.newNotifications));
         this.lastEntryLoaded = (response.counter < 6);
         this.$entryList.fadeIn('fast');
@@ -115,17 +118,19 @@ humhub.module('notification', function (module, require, $) {
 
         if (!$count) {
             updateTitle(false);
-            $('#badge-notifications').html('0');
+            $('#badge-notifications span').html('0');
             $('#mark-seen-link').hide();
-            $('#icon-notifications .fa').removeClass("animated swing");
+            $('#icon-notifications').removeClass("animated swing");
+            $('.item-notification').removeClass('has-notification');
         } else {
             updateTitle($count);
-            $('#badge-notifications').html($count);
+            $('#badge-notifications span').html($count);
             $('#mark-seen-link').show();
             $('#badge-notifications').fadeIn('fast');
+            $('.item-notification').addClass('has-notification');
 
             // Clone icon to retrigger animation
-            var $icon = $('#icon-notifications .fa');
+            var $icon = $('#icon-notifications');
             var $clone = $icon.clone();
             $clone.addClass("animated swing");
             $icon.replaceWith($clone);
@@ -202,7 +207,7 @@ humhub.module('notification', function (module, require, $) {
 
     /**
      * Global action handler (used in overview page).
-     * 
+     *
      * @param {type} evt
      * @returns {undefined}
      */
@@ -229,11 +234,11 @@ humhub.module('notification', function (module, require, $) {
         if (user.isGuest()) {
             return;
         }
-        
+
         if (!$('#notification_widget').length) {
             return;
         }
-        
+
         updateTitle($('#notification_widget').data('notification-count'));
         initOverviewPage();
         if (!$pjax) {

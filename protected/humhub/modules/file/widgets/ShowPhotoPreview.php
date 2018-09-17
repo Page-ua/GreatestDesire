@@ -10,6 +10,7 @@ namespace humhub\modules\file\widgets;
 
 use humhub\components\ActiveRecord;
 use humhub\modules\file\converter\PreviewImage;
+use humhub\modules\gallery\models\Media;
 use Yii;
 use humhub\modules\content\components\ContentActiveRecord;
 
@@ -57,10 +58,18 @@ class ShowPhotoPreview extends \yii\base\Widget
 			}
 		}
 
+
+		if($this->object instanceof Media) {
+			$files = [$this->object->baseFile];
+		} else {
+			$files = $this->object->fileManager->findStreamFiles();
+		}
+
+
 		$hidePreviewFileInfo = ($this->preview) ? Yii::$app->getModule('file')->settings->get('hideImageFileInfo') : false;
 
 		return $this->render('showPhotoPreview', [
-			'files' => $this->object->fileManager->findStreamFiles(),
+			'files' => $files,
 			'object' => $this->object,
 			'previewImage' => new PreviewImage(),
 			'showPreview' => $this->preview,

@@ -18,7 +18,31 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="DOcontainer">
+      <paths name="DOelon-musk.space">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="DOhoden.top">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="DOroman">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="DOtest.hoden.top">
         <serverdata>
           <mappings>
             <mapping local="$USER_HOME$/PhpstormProjects/start" web="/" />
@@ -72,6 +96,9 @@
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
             <mapping deploy="/" local="$USER_HOME$/PhpstormProjects/start" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/themes/HumHub" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="Merkuriy">

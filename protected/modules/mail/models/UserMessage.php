@@ -49,7 +49,7 @@ class UserMessage extends ActiveRecord {
 	}
 
 	public function getUser() {
-		return $this->hasOne( User::className(), [ 'id' => 'user_id' ] );
+		return $this->hasOne( \humhub\modules\user\models\User::className(), [ 'id' => 'user_id' ] );
 	}
 
 	/**
@@ -93,8 +93,18 @@ class UserMessage extends ActiveRecord {
 
 	public static function getMessageTwoUsser( $curentUser, $anotherUser )
 	{
+		$queryDialog = self::find();
+		$queryDialog->select('message_id, COUNT(message_id)');
+		$queryDialog->groupBy('message_id');
+		$queryDialog->having('COUNT(message_id) < 3');
+		$dialogs = $queryDialog->all();
+		$dialogs = ArrayHelper::getColumn($dialogs, function($element) {
+			return $element->message_id;
+		});
+
 		$queryMyMessage = self::find();
 		$queryMyMessage->where(['user_id' => $curentUser])->select('message_id');
+		$queryMyMessage->andWhere(['in', 'message_id', $dialogs]);
 		$myMessage = $queryMyMessage->all();
 		$myMessage = ArrayHelper::getColumn($myMessage, function($element) {
 			return $element->message_id;

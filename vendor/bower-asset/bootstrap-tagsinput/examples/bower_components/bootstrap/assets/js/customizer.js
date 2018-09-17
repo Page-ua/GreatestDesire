@@ -173,7 +173,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     if (vars) css += generateCustomCSS(vars)
     css += __less['mixins.less']
     css += __less['normalize.less']
-    css += __less['scaffolding.less']
+    // css += __less['scaffolding.less']
     css += $checked
       .map(function () { return __less[this.value] })
       .toArray()

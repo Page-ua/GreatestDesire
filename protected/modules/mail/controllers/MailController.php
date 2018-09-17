@@ -2,8 +2,10 @@
 
 namespace humhub\modules\mail\controllers;
 
+use humhub\modules\mail\widgets\UserPickerAutoSend;
 use Yii;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\web\HttpException;
 use humhub\components\Controller;
 use humhub\modules\file\models\File;
@@ -80,10 +82,26 @@ class MailController extends Controller
             $messageId = $userMessages[0]->message->id;
         }
 
+
+
+	    $userGuid = Yii::$app->request->get('userGuid');
+	    $newMessage = new CreateMessage();
+
+	    // Preselect user if userGuid is given
+	    if ($userGuid != "") {
+		    $user = User::findOne(['guid' => $userGuid]);
+		    if (isset($user) && (version_compare(Yii::$app->version, '1.1', 'lt') || $user->getPermissionManager()->can(new SendMail())
+		                         || (!Yii::$app->user->isGuest && Yii::$app->user->isAdmin()))) {
+			    $newMessage->recipient = $user->guid;
+		    }
+	    }
+
+
         return $this->render('/mail/index', array(
                     'userMessages' => $userMessages,
                     'messageId' => $messageId,
-                    'pagination' => $pagination
+                    'pagination' => $pagination,
+	                'newMessage' => $newMessage,
         ));
     }
 
@@ -198,13 +216,13 @@ class MailController extends Controller
         if (version_compare(Yii::$app->version, '1.1', 'lt')) {
             return $this->findUserByFilter($keyword, 10);
         } else if(Yii::$app->getModule('friendship')->getIsEnabled()) {
-            return UserPicker::filter([
+            return UserPickerAutoSend::filter([
                 'keyword' => $keyword,
                 'permission' => new SendMail(),
                 'fillUser' => true
             ]);
         } else {
-            return UserPicker::filter([
+            return UserPickerAutoSend::filter([
                 'keyword' => $keyword,
                 'permission' => new SendMail()
             ]);
@@ -295,7 +313,7 @@ class MailController extends Controller
     {
         $userGuid = Yii::$app->request->get('userGuid');
         $model = new CreateMessage();
-        
+
         // Preselect user if userGuid is given
         if ($userGuid != "") {
             $user = User::findOne(['guid' => $userGuid]);
@@ -309,6 +327,15 @@ class MailController extends Controller
         
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // Create new Message
+	        if(count($model->recipients) === 1) {
+		        $messageId = UserMessage::getMessageTwoUsser(Yii::$app->user->id, $model->recipients[0]->id);
+
+		        if($messageId != null) {
+			        $urlGoMessage = Url::to(['/mail/mail', 'id' => $messageId]);
+			        return $this->redirect(['index', 'id' => $messageId]);
+		        }
+	        }
+
             $message = new Message();
             $message->title = $model->title;
             $message->save();
@@ -346,10 +373,10 @@ class MailController extends Controller
             $userMessage->last_viewed = new \yii\db\Expression('NOW()');
             $userMessage->save();
 
-            return $this->htmlRedirect(['index', 'id' => $message->id]);
+            return $this->redirect(['index', 'id' => $message->id]);
         }
         
-        return $this->renderAjax('create', array('model' => $model));
+        return $this->render('create', array('model' => $model));
     }
 
     /**

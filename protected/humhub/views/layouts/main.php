@@ -72,7 +72,7 @@ use yii\helpers\Url;
                 </div>
             </div>
             <div class="activities-menu">
-                <?= \humhub\modules\notification\widgets\Overview::widget(); ?>
+
                 <div class="mobile-activities-btn">
                     <p>Activities</p>
                     <div class="activity-counter"><span>9</span></div>
@@ -81,92 +81,7 @@ use yii\helpers\Url;
                     <div class="wrap">
 						<?= \humhub\modules\mail\widgets\Notifications::widget(); ?>
 						<?= \humhub\modules\friendship\widgets\Notifications::widget(); ?>
-
-                        <div class="item">
-                            <a class="mobile-link" href="#"></a>
-                            <div class="activity-icon">
-                                <svg class="icon icon-notifications">
-                                    <use xlink:href="svg/sprite/sprite.svg#notifications"></use>
-                                </svg>
-                                <div class="activity-counter"><span>4</span></div>
-                            </div>
-                            <div class="tooltip">Notifications</div>
-                            <div class="activity-sub-menu">
-                                <div class="notifications-sub-menu">
-                                    <div class="sub-menu-header">
-                                        <div class="title">Notifications</div>
-                                        <div class="counter"><span>1 New</span></div>
-                                    </div>
-                                    <div class="sub-menu-content">
-                                        <div class="newList">
-                                            <div class="list-header"><span>New</span></div>
-                                            <ul>
-                                                <li class="notification">
-                                                    <div class="photo"><img src="img/user-2.png"></div>
-                                                    <div class="notifi-wrap">
-                                                        <div class="text">
-                                                            <div class="name">Mary Lockhart</div>
-                                                        </div>
-                                                        added 5 new photos to album<a href="#"> My Photo.</a>
-                                                        <div class="date">an hour ago</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="earlierList">
-                                            <div class="list-header"><span>Earlier</span></div>
-                                            <ul>
-                                                <li class="notification">
-                                                    <div class="photo"><img src="img/user-2.png"><span
-                                                                class="active"></span></div>
-                                                    <div class="notifi-wrap ">
-                                                        <div class="text">
-                                                            <div class="name">Mary Lockhart</div>
-                                                            posted in<a href="#"> Group</a></div>
-                                                        <div class="date">October 30 at 23:03</div>
-                                                    </div>
-                                                </li>
-                                                <li class="notification">
-                                                    <div class="photo"><img src="img/user-2.png"><span
-                                                                class="active"></span></div>
-                                                    <div class="notifi-wrap ">
-                                                        <div class="text">
-                                                            <div class="name">Christopher Lawrence</div>
-                                                            have birthday today.<a href="#"> Сongratulate him!</a></div>
-                                                        <div class="date">October 30 at 23:03</div>
-                                                    </div>
-                                                </li>
-                                                <li class="notification">
-                                                    <div class="photo"><img src="img/user-2.png"><span
-                                                                class="active"></span></div>
-                                                    <div class="notifi-wrap has-img">
-                                                        <div class="text">
-                                                            <div class="name">Lary Mockhart</div>
-                                                            likes your photo:<a href="#"> Road to Africa.</a></div>
-                                                        <div class="img-block"><img src="img/notify-img-1.png"></div>
-                                                        <div class="date">October 30 at 23:03</div>
-                                                    </div>
-                                                </li>
-                                                <li class="notification">
-                                                    <div class="photo"><img src="img/user-2.png"><span
-                                                                class="active"></span></div>
-                                                    <div class="notifi-wrap ">
-                                                        <div class="text">
-                                                            <div class="name">Lary Mockhart</div>
-                                                            that the hope that has overcome fear in my country will help
-                                                            vanquish it around the world.
-                                                        </div>
-                                                        <div class="date">October 30 at 23:03</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="sub-menu-footer"><a class="markAsRead" href="#">Mark all as read</a><a
-                                                class="seeAll" href="#">See all</a></div>
-                                </div>
-                            </div>
-                        </div>
+	                    <?= \humhub\modules\notification\widgets\Overview::widget(); ?>
                         <div class="item">
                             <a class="mobile-link" href="#"></a>
                             <div class="activity-icon">
@@ -356,7 +271,6 @@ use yii\helpers\Url;
         </div>
     </div>
 </header>
-
 <main class="base-col-layout">
     <div class="base-lg-wrap">
         <aside class="left-side">

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/html.iml" filepath="$PROJECT_DIR$/.idea/html.iml" />
-      <module fileurl="file://$USER_HOME$/PhpstormProjects/start/.idea/start.iml" filepath="$USER_HOME$/PhpstormProjects/start/.idea/start.iml" />
     </modules>
   </component>
 </project>
