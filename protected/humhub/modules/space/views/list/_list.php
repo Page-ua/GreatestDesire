@@ -17,7 +17,7 @@ use humhub\modules\like\widgets\LikeLink;
 		<div class="photo"><img src="<?php echo $space->getProfileImage()->getUrl(); ?>"></div>
 		<div class="group-wrap">
 			<div class="title"><?= $space->name; ?></div>
-			<div class="category"><?= $category[$space->category]; ?></div>
+			<div class="category"><?= isset($category[$space->category])?$category[$space->category]:''; ?></div>
 			<div class="text"><?= $space->description; ?></div>
 		</div>
 	</a>

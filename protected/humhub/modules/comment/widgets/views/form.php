@@ -15,10 +15,15 @@ use yii\helpers\Url;
     <?=
     humhub\widgets\RichtextField::widget([
         'id' => 'newCommentForm_' . $id,
-        'placeholder' => Yii::t('CommentModule.widgets_views_form', 'Write a new comment...'),
         'name' => 'message'
     ]);
     ?>
+        <script>
+            $(document).ready(function() {
+                $("#<?= 'newCommentForm_' . $id; ?>").emojioneArea({
+                });
+            });
+        </script>
 
     <div class="comment-buttons">
         <?=

@@ -6,10 +6,11 @@ use yii\helpers\Url;
 ?>
 
 <div class="item">
+    <a class="mobile-link" href="<?= Url::to(['/friendship/manage/list', 'id' => Yii::$app->user->id]); ?>"></a>
 	<div id="icon-friends" class="activity-icon"><svg class="icon icon-friends"><use xlink:href="svg/sprite/sprite.svg#friends"></use></svg>
 		<div class="activity-counter"><span id="badge-requests"><?php echo $receivedRequestsCount; ?></span></div>
 	</div>
-	<div class="tooltip">Friends</div>
+	<div class="tooltip-base">Friends</div>
 	<div class="activity-sub-menu">
 		<div class="friends-sub-menu">
 
@@ -33,7 +34,7 @@ use yii\helpers\Url;
 					</ul>
 				</div>
 			</div>
-			<div class="sub-menu-footer"><a class="seeAll" href="#">See all</a></div>
+			<div class="sub-menu-footer"><a class="seeAll" href="<?= Url::to(['/friendship/manage/list', 'id' => Yii::$app->user->id]); ?>">See all</a></div>
 		</div>
 	</div>
 </div>

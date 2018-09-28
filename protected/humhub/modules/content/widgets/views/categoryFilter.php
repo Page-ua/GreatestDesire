@@ -23,7 +23,8 @@ use yii\helpers\Url;
             <?= $form->field($model, 'filter')->checkboxList($category,[
 	            'tag' => false,
 	            'item' => function ($index, $label, $name, $checked, $value) {
-		            return '<div class="category">'.Html::checkbox($name, $checked, ['value' => $value, 'onchange' => 'return form.submit();', 'id' => 'category-filter-id-'.$index]) .
+                $checked?$active = 'active':$active = '';
+		            return '<div class="category '.$active.'">'.Html::checkbox($name, $checked, ['value' => $value, 'onchange' => 'return form.submit();', 'id' => 'category-filter-id-'.$index]) .
 		                   '<label for="category-filter-id-'.$index.'">' . $label . '</label></div>';
 	            },
                     'options' => [

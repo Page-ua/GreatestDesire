@@ -81,10 +81,12 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
                         <a href="<?= $user->createUrl('/user/profile/desire-one', ['id' => $greatestDesire->id]); ?>">
                             <div class="text"><?= $greatestDesire->title; ?></div>
                         </a>
+                    </div>
+                    <div class="mobile-wrap">
                         <ul class="tags">
 							<?= DisplayTags::widget(['user' => $greatestDesire]); ?>
                         </ul>
-                    </div>
+
                     <div class="desire-bottom">
 
 						<?= \humhub\modules\comment\widgets\CommentLinkPage::widget(['object' => $greatestDesire, 'options' => ['commentPageUrl' => '/user/profile/desire-one']]); ?>
@@ -94,6 +96,7 @@ if ( $allowModifyProfileBanner || $allowModifyProfileImage ) {
 							<?= \humhub\modules\favorite\widgets\FavoriteLink::widget(['object' => $greatestDesire]); ?>
                             <a class="text" href=" <?= $user->createUrl('/user/profile/desires'); ?>">View all desires</a>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

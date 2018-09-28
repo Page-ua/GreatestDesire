@@ -11,6 +11,7 @@ Assets::register($this);
 ?>
 
 <div class="item">
+    <a class="mobile-link" href="<?= Url::to(['/mail/mail']); ?>"></a>
     <div id="icon-messages" class="activity-icon"><svg class="icon icon-messages"><use xlink:href="svg/sprite/sprite.svg#messages"></use></svg>
         <div class="activity-counter"><span id="badge-messages" ></span></div>
     </div>

@@ -42,17 +42,16 @@ use yii\helpers\Html;
 		            }
 	            }
 
-	            $voteText = Yii::t('PollsModule.widgets_views_entry', 'votes');
 	            ?>
                 <p style="margin-top: 14px; display:inline-block;" class="tt" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo $userlist; ?>">
 		            <?php if (!$poll->anonymous && count($answer->votes) > 0) { ?>
                         <a href="<?php echo $contentContainer->createUrl('/polls/poll/user-list-results', array('pollId' => $poll->id, 'answerId' => $answer->id)); ?>" data-target="#globalModal">
-				            <?php echo count($answer->votes) . " " . $voteText ?>
+				            <?php echo count($answer->votes) ?>
                         </a>
 		            <?php } else if(count($answer->votes) > 0) { ?>
-			            <?php echo count($answer->votes) . " " . $voteText ?>
+			            <?php echo count($answer->votes) ?>
 		            <?php } else { ?>
-                        0 <?php echo $voteText ?>
+                        0
 		            <?php } ?>
 
                 </p></div>

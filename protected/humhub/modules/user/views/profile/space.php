@@ -23,7 +23,7 @@ use yii\helpers\Html;
 					<div class="photo"><img src="<?php echo $space->getProfileImage()->getUrl(); ?>"></div>
 					<div class="group-wrap">
 						<div class="title"><?php echo Html::encode($space->name); ?></div>
-						<div class="category"><?= $category[$space->category]; ?></div><?php //TODO add display category Group; ?>
+						<div class="category"><?= isset($category[$space->category])?$category[$space->category]:''; ?></div><?php //TODO add display category Group; ?>
 						<div class="text"><?php echo Html::encode($space->description); ?></div>
 					</div>
 				</a>

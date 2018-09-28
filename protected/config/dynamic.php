@@ -7,7 +7,7 @@
       'dsn' => 'mysql:host=165.227.76.89;dbname=humhub',
       'username' => 'root',
       'password' => '4854279e93a779a3e59efb2aa90c8d366d16db5bb9f5e1eb',
-      'charset' => 'utf8',
+      'charset' => 'utf8mb4',
     ),
     'formatter' => 
     array (

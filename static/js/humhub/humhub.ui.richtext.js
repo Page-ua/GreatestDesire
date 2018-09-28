@@ -30,6 +30,23 @@ humhub.module('ui.richtext', function(module, require, $) {
 
     Richtext.prototype.initEvents = function() {
         var that = this;
+        $('#my-test-button').on('click', function () {
+
+            var e = jQuery.Event( "keyup", { keyCode: 186, 'currentTarget': $('#message-field') } );
+
+            $('#message-field').click();
+            setTimeout(function () {
+                $('#message-field').trigger( e );
+            },100);
+
+
+
+
+
+            console.log($('#message-field').data('atwho'));
+
+           return false;
+        });
         this.$.on('focus', function() {
             that.checkPlaceholder(true);
             // Initialize features on first focus.
@@ -203,7 +220,6 @@ humhub.module('ui.richtext', function(module, require, $) {
     Richtext.prototype.checkPlaceholder = function(focus) {
         if(!focus && !this.$.text().trim().length && !this.$.find('[data-richtext-feature]').length) {
             this.$.addClass('atwho-placeholder');
-            this.$.html(this.options.placeholder);
             this.$.attr('spellcheck', 'false');
         } else if(this.$.hasClass('atwho-placeholder')) {
             this.$.removeClass('atwho-placeholder');

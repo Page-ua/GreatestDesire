@@ -17,8 +17,10 @@ use humhub\modules\desire\models\Desire;
 		<div class="user-wrap">
 			<div class="name"><a href="<?= $friend->createUrl('/user/profile/home'); ?>"><?= $friend->username; ?></a></div>
 			<?php $greatestDesire = Desire::getGreatestDesire($friend); ?>
+            <?php if($greatestDesire) { ?>
 			<a href="<?= $friend->createUrl('/user/profile/desire-one', ['id' => $greatestDesire->id]); ?>"><div class="user-desire"><?= $greatestDesire->title; ?></div></a>
-			<div class="statistic-info">
+
+            <div class="statistic-info">
 				<?= BottomPanelContent::widget([
 					'object' => $greatestDesire,
 					'mode' => BottomPanelContent::SMALL_MODE,
@@ -27,6 +29,7 @@ use humhub\modules\desire\models\Desire;
 					'options' => ['commentPageUrl' => '/user/profile/desire-one'],
 				]); ?>
 			</div>
+            <?php } ?>
 		</div>
 		<ul class="menu">
 			<?= \humhub\modules\user\widgets\UserButtons::widget(['user' => $friend, 'displayControl' => true]); ?>

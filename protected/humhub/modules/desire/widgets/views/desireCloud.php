@@ -12,7 +12,7 @@ use yii\helpers\Url;
 
 ?>
 
-<div class="desires-cloud">
+<div class="desires-cloud main-network-page">
 	<div class="random-desires">
         <?php foreach($desires as $desire) { ?>
 		<div class="random-desire">
@@ -72,9 +72,8 @@ use yii\helpers\Url;
         <?php } ?>
 	</div>
 	<div class="title">Desire board</div>
-	<div class="search-tags">
 
-		<?php $form = ActiveForm::begin(['action' => Url::to(['/desire/desire/search']), 'method' => 'GET', 'id' => 'search-by-tags', 'fieldConfig' => [
+		<?php $form = ActiveForm::begin(['action' => Url::to(['/desire/desire/search']), 'method' => 'GET', 'id' => 'search-by-tags', 'options' => ['class' => 'search-tags'], 'fieldConfig' => [
 			'options' => [
 				'tag' => false,
 			],
@@ -94,7 +93,6 @@ use yii\helpers\Url;
         </div>
 		<?php ActiveForm::end(); ?>
 
-	</div>
 </div>
 
 

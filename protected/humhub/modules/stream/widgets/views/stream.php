@@ -57,7 +57,7 @@ $contentIdData = ($contentId != "") ? 'data-stream-contentid="' . $contentId . '
         <div class="back_button_holder" style="display:none">
             <a href="#" class="singleBackLink btn btn-primary"><?= Yii::t('ContentModule.widgets_views_stream', 'Back to stream'); ?></a><br><br>
         </div>
-        <div class="s2_streamContent" data-stream-content></div>
+        <div class="s2_streamContent profile-timeline" data-stream-content></div>
 
         <div class="emptyStreamMessage" style="display:none;">
             <div class="<?php echo $this->context->messageStreamEmptyCss; ?>">

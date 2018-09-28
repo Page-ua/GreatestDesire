@@ -16,3 +16,4 @@
 </div>
 
 <?= \humhub\modules\user\widgets\RightSidebar::widget(); ?>
+

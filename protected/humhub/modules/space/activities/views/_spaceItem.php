@@ -14,7 +14,7 @@ $category = $category->getAllCurrentLanguage( Yii::$app->language, 'space' );
 				src="<?php echo $source->getProfileImage()->getUrl(); ?>"></a></div>
 	<div class="description-block">
 		<div class="title"><a href="<?= $source->getUrl(); ?>"><?= $source->name; ?></a></div>
-		<div class="subtitle"><?= $category[ $source->category ]; ?></div>
+		<div class="subtitle"><?= isset($category[ $source->category ])?$category[ $source->category ]:''; ?></div>
 		<div class="text"><?= $source->description; ?></div>
 		<div class="footer">
 			<div class="subscribers">

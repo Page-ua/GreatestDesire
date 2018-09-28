@@ -127,7 +127,8 @@ REGEXP;
 
         $this->trigger(self::EVENT_BEFORE_OUTPUT, new ParameterEvent(['output' => &$output]));
 
-        return trim($output);
+        return EmojiConvertToImage::widget(['content' => trim($output) ]);
+
     }
 
     /**

@@ -14,14 +14,14 @@ $this->registerJsConfig('notification', [
 
 
 <div class="item item-notification" data-ui-widget="notification.NotificationDropDown" data-ui-init='<?= \yii\helpers\Json::encode($update); ?>'>
-    <a class="mobile-link" href="#"></a>
+    <a class="mobile-link" href="<?= Url::to(['/notification/overview']); ?>"></a>
     <div class="activity-icon" data-action-click='toggle'>
         <svg class="icon icon-notifications" id="icon-notifications">
             <use xlink:href="svg/sprite/sprite.svg#notifications"></use>
         </svg>
         <div id="badge-notifications" class="activity-counter" style="display: flex;"><span></span></div>
     </div>
-    <div class="tooltip">Notifications</div>
+    <div class="tooltip-base">Notifications</div>
     <div class="activity-sub-menu">
         <div class="notifications-sub-menu">
             <div class="sub-menu-header">

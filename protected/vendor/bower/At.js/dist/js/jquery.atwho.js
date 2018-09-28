@@ -650,10 +650,12 @@ EditableController = (function(superClass) {
 
   EditableController.prototype._getRange = function() {
     var sel;
-    sel = this.app.window.getSelection();
-    if (sel.rangeCount > 0) {
-      return sel.getRangeAt(0);
-    }
+    var root = document.getElementById('message-field');
+    var rng = root.createRange();
+      rng.setStart(root, 0);
+      rng.setEnd(root, 0);
+
+    return rng;
   };
 
   EditableController.prototype._setRange = function(position, node, range) {

@@ -413,8 +413,9 @@ class SpaceModelMembership extends Behavior
         
         
         // Create Activity
-        \humhub\modules\space\activities\MemberAdded::instance()->from($user)->about($this->owner)->save();
-
+	    if(!Yii::$app->request->post('Password')) {
+		    \humhub\modules\space\activities\MemberAdded::instance()->from( $user )->about( $this->owner )->save();
+	    }
         // Members can't also follow the space
         $this->owner->unfollow($userId);
 

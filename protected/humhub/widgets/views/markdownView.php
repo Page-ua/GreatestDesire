@@ -1,9 +1,13 @@
 <?php
-$this->registerJsFile('@web-static/resources/js/highlight.js/highlight.pack.js', ['position' => yii\web\View::POS_BEGIN]);
+
+use Emojione\Client;
+use Emojione\Ruleset;
+
+$this->registerJsFile('@web-static/resources/js/highlight.js/highlight.pack.js', [ 'position' => yii\web\View::POS_BEGIN]);
 $this->registerCssFile('@web-static/resources/js/highlight.js/styles/' . $highlightJsCss . '.css');
 ?>
-<div class="markdown-render">
-    <?php echo $content; ?>
+<div class="markdown-render hasEmoji">
+    <?= \humhub\widgets\EmojiConvertToImage::widget(['content' => $content]); ?>
 </div>
 
 <script>

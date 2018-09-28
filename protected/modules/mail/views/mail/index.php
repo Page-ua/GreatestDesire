@@ -4,24 +4,14 @@ use humhub\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-if ($messageId != "") {
-    $this->registerJs('loadMessage(' . Html::encode($messageId) . ');');
-}
+//if ($messageId != "") {
+//    $this->registerJs('loadMessage(' . Html::encode($messageId) . ');');
+//}
 ?>
 <div class="page-content">
     <div class="content-wrap">
-        <div id="mail_message_details">
-            <div class="loader"></div>
-        </div>
-	    <?=
+        <?= $this->render('_show', ['message' => $message, 'replyForm' => $replyForm]); ?>
 
-	    humhub\widgets\RichtextField::widget([
-		    'id' => 'newCommentForm_',
-		    'placeholder' => Yii::t('CommentModule.widgets_views_form', 'Write a new comment...'),
-		    'name' => 'message'
-	    ]);
-
-	    ?>
     </div>
 </div>
 <aside class="right-side">

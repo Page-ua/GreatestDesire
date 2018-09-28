@@ -36,7 +36,7 @@ $message = $userMessage->message;
                     </span>
                 <?php } ?>
                 </div>
-                <div class="shortMsg"><?php echo $message->getLastEntry()->user->displayName.': '.Helpers::truncateText(MarkdownView::widget(['markdown' => $message->getLastEntry()->content, 'parserClass' => '\humhub\libs\MarkdownPreview', 'returnPlain' => true]), 30); ?></div>
+                <div class="shortMsg"><?php echo $message->getLastEntry()->user->displayName.': '.\humhub\widgets\EmojiConvertToImage::widget(['content' => Helpers::truncateText(MarkdownView::widget(['markdown' => $message->getLastEntry()->content, 'parserClass' => '\humhub\libs\MarkdownPreview', 'returnPlain' => true]), 30)]); ?></div>
                 <div class="date"><?php echo TimeAgo::widget(['timestamp' => $message->updated_at]); ?></div>
                 <?php if($unread) { ?>
                 <div class="dialog-couter"><span><?= Yii::t('MailModule.views_mail_index', 'New'); ?></span></div>

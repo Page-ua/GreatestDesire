@@ -42,9 +42,10 @@ class MailController extends Controller
     {
         // Initially displayed message
         $messageId = (int) Yii::$app->request->get('id');
+
 		$userId = (int) Yii::$app->request->get('user');
 
-		//create new message
+	   		//create new message
 	    if($userId != 0) {
 
 		    $messageModel = new Message();
@@ -82,7 +83,15 @@ class MailController extends Controller
             $messageId = $userMessages[0]->message->id;
         }
 
+	    $message = $this->getMessage($messageId);
+	    $this->checkMessagePermissions($message);
 
+
+	    $replyForm = new ReplyMessage();
+
+	    $this->loadMessage($replyForm, $message);
+
+	    $message->seen(Yii::$app->user->id);
 
 	    $userGuid = Yii::$app->request->get('userGuid');
 	    $newMessage = new CreateMessage();
@@ -98,12 +107,62 @@ class MailController extends Controller
 
 
         return $this->render('/mail/index', array(
+        	        'message' => $message,
+                    'replyForm' => $replyForm,
                     'userMessages' => $userMessages,
                     'messageId' => $messageId,
                     'pagination' => $pagination,
 	                'newMessage' => $newMessage,
         ));
     }
+
+	private function loadMessage($replyForm, $message) {
+		if ($replyForm->load(Yii::$app->request->post()) && $replyForm->validate()) {
+			$messageEntry             = new MessageEntry();
+			$messageEntry->message_id = $message->id;
+			$messageEntry->user_id    = Yii::$app->user->id;
+			$messageEntry->content    = $replyForm->message;
+			$messageEntry->save();
+			$messageEntry->fileManager->attach(Yii::$app->request->post('fileList'));
+			$messageEntry->notify();
+			File::attachPrecreated( $messageEntry, Yii::$app->request->post( 'fileUploaderHiddenGuidField' ) );
+
+			return $this->redirect( [ 'index', 'id' => $message->id ] );
+		}
+	}
+
+	public function actionShow()
+	{
+		// Load Message
+		$id = (int) Yii::$app->request->get('id');
+		$message = $this->getMessage($id);
+
+		$this->checkMessagePermissions($message);
+
+		// Reply Form
+		$replyForm = new ReplyMessage();
+		if ($replyForm->load(Yii::$app->request->post()) && $replyForm->validate()) {
+			$messageEntry = new MessageEntry();
+			$messageEntry->message_id = $message->id;
+			$messageEntry->user_id = Yii::$app->user->id;
+			$messageEntry->content = $replyForm->message;
+			$messageEntry->save();
+			$messageEntry->notify();
+			File::attachPrecreated($messageEntry, Yii::$app->request->post('fileUploaderHiddenGuidField'));
+
+			return $this->htmlRedirect(['index', 'id' => $message->id]);
+		}
+
+		// Marks message as seen
+		$message->seen(Yii::$app->user->id);
+
+		return $this->renderAjax('/mail/show', [
+			'message' => $message,
+			'replyForm' => $replyForm,
+		]);
+	}
+
+
 
     /**
      * Overview of all messages
@@ -123,37 +182,8 @@ class MailController extends Controller
     /**
      * Shows a Message Thread
      */
-    public function actionShow()
-    {
-        // Load Message
-        $id = (int) Yii::$app->request->get('id');
-        $message = $this->getMessage($id);
 
-        $this->checkMessagePermissions($message);
 
-        // Reply Form
-        $replyForm = new ReplyMessage();
-        if ($replyForm->load(Yii::$app->request->post()) && $replyForm->validate()) {
-            // Attach Message Entry
-            $messageEntry = new MessageEntry();
-            $messageEntry->message_id = $message->id;
-            $messageEntry->user_id = Yii::$app->user->id;
-            $messageEntry->content = $replyForm->message;
-            $messageEntry->save();
-            $messageEntry->notify();
-            File::attachPrecreated($messageEntry, Yii::$app->request->post('fileUploaderHiddenGuidField'));
-
-            return $this->htmlRedirect(['index', 'id' => $message->id]);
-        }
-
-        // Marks message as seen
-        $message->seen(Yii::$app->user->id);
-
-        return $this->renderAjax('/mail/show', [
-                    'message' => $message,
-                    'replyForm' => $replyForm,
-        ]);
-    }
     
     private function checkMessagePermissions($message)
     {

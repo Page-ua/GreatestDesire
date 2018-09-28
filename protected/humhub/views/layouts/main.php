@@ -19,11 +19,14 @@ use yii\helpers\Url;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#000">
     <link rel="shortcut icon" href="/<?= $this->theme->getBaseUrl(); ?>/img/favicon/apple-touch-icon.png">
-    <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/main.min.css">
+
 
 	<?php $this->head() ?>
 	<?= $this->render( 'head' ); ?>
+    <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/css/main.min.css">
+    <link rel="stylesheet" href="<?= $this->theme->getBaseUrl(); ?>/lib/emoji/emojionearea.min.css">
     <base id="myBase" href="<?= $this->theme->getBaseUrl(); ?>/">
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -89,7 +92,7 @@ use yii\helpers\Url;
                                     <use xlink:href="svg/sprite/sprite.svg#favorites"></use>
                                 </svg>
                             </div>
-                            <div class="tooltip">Favorites</div>
+                            <div class="tooltip-base">Favorites</div>
                             <div class="activity-sub-menu">
                                 <div class="favorites-sub-menu">
                                     <div class="sub-menu-header">
@@ -109,7 +112,7 @@ use yii\helpers\Url;
                                     <use xlink:href="svg/sprite/sprite.svg#add"></use>
                                 </svg>
                             </div>
-                            <div class="tooltip">Add new</div>
+                            <div class="tooltip-base">Add new</div>
                             <div class="activity-sub-menu">
                                 <div class="add-sub-menu">
                                     <div class="add-header"> Add new</div>
@@ -145,7 +148,7 @@ use yii\helpers\Url;
                                                     <use xlink:href="svg/sprite/sprite.svg#blog"></use>
                                                 </svg>
                                                 Blog post</a></div>
-                                        <div class="link"><a href="#">
+                                        <div class="link"><a href="<?= Url::to(['/space/create']); ?>">
                                                 <svg class="icon icon-Group">
                                                     <use xlink:href="svg/sprite/sprite.svg#Group"></use>
                                                 </svg>
@@ -167,7 +170,7 @@ use yii\helpers\Url;
                                     <use xlink:href="svg/sprite/sprite.svg#invite"></use>
                                 </svg>
                             </div>
-                            <div class="tooltip">Invite friend</div>
+                            <div class="tooltip-base">Invite friend</div>
                             <div class="activity-sub-menu">
                                 <div class="invite-sub-menu">
                                     <a href="#">
@@ -373,6 +376,9 @@ use yii\helpers\Url;
 <?php $this->endBody() ?>
 <script src="<?= $this->theme->getBaseUrl(); ?>/js/scripts.min.js"></script>
 <script src="<?= $this->theme->getBaseUrl(); ?>/js/main.js"></script>
+<script src="<?= $this->theme->getBaseUrl(); ?>/lib/emoji/emojionearea.min.js"></script>
+
+
 </body>
 </html>
 <?php $this->endPage() ?>

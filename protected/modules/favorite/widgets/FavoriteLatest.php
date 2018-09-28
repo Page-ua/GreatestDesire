@@ -31,8 +31,11 @@ class FavoriteLatest extends \yii\base\Widget
 
 		$object = $latest->object_model::findOne(['id' => $latest->object_id]);
 
-		$user = $object->content->user;
-
+		if($object instanceof User || $object instanceof Space) {
+			$user = $object;
+		} else {
+			$user = $object->content->user;
+		}
 
 //		$ownerContent = User::findOne(['id' => $object->content->created_by]);
 

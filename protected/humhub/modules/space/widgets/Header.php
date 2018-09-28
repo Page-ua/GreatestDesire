@@ -8,6 +8,7 @@
 
 namespace humhub\modules\space\widgets;
 
+use humhub\modules\content\models\Category;
 use Yii;
 use yii\base\Widget;
 use humhub\modules\content\models\Content;
@@ -37,10 +38,14 @@ class Header extends Widget
                     'contentcontainer_id' => $this->space->contentContainerRecord->id
                 ])->count();
 
+        $category = new Category();
+        $category = $category->getAllCurrentLanguage(Yii::$app->language, 'space');
+
         return $this->render('header', [
                     'space' => $this->space,
                     'followingEnabled' => !Yii::$app->getModule('space')->disableFollow,
-                    'postCount' => $postCount
+                    'postCount' => $postCount,
+	                'category' => $category,
         ]);
     }
 

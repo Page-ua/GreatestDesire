@@ -102,7 +102,7 @@ $this->registerJsConfig( 'content.form', [
                     </ul>
                 </div>
 
-                <input id="post_submit_button" data-action-click="submit" data-action-submit data-ui-loader type="submit"
+                <input id="post_submit_button" data-ui-loader type="submit"
                        value="post">
             </div>
         </div>

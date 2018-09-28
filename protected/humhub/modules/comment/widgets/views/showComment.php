@@ -52,8 +52,9 @@ use humhub\modules\like\widgets\LikeLink;
 	<?= UserImage::widget(['user' => $user, 'width' => 50, 'htmlOptions' => ['class' => 'author-img']]); ?>
 	<?= Html::containerLink($user, ['class' => 'author-name']); ?>
     <div class="comment-text comment_edit_content" id="comment_editarea_<?= $comment->id; ?>">
-        <div id="comment-message-<?= $comment->id; ?>" class="comment-message" data-ui-markdown data-ui-show-more data-read-more-text="<?= Yii::t('CommentModule.widgets_views_showComment', 'Read full comment...') ?>">
-	        <?= RichText::widget(['text' => $comment->message, 'record' => $comment, 'markdown' => true]); ?>
+        <div id="comment-message-<?= $comment->id; ?>" class="comment-message" data-ui-show-more data-read-more-text="<?= Yii::t('CommentModule.widgets_views_showComment', 'Read full comment...') ?>">
+
+            <?= \humhub\widgets\MarkdownView::widget(['markdown' => $comment->message]); ?>
         </div>
 	    <?= ShowFiles::widget(['object' => $comment]); ?>
     </div>

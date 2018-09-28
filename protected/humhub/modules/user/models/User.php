@@ -89,6 +89,11 @@ class User extends ContentContainerActiveRecord implements \yii\web\IdentityInte
         return 'user';
     }
 
+	public static function objectName()
+	{
+		return 'user'; //TODO translate;
+	}
+
     /**
      * @inheritdoc
      */

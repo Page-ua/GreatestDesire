@@ -17,7 +17,7 @@ $cssClass = ($entry->pinned) ? 'wall-entry pinned-entry' : 'wall-entry';
 
 <?php //if (!$isActivity) : ?>
  
-    <div class="<?= $cssClass ?> base-post" data-stream-entry data-stream-pinned="<?= $entry->pinned ?>" data-action-component="<?= $jsWidget ?>" data-content-key="<?= $entry->id; ?>" >
+    <div class="<?= $cssClass ?>" data-stream-entry data-stream-pinned="<?= $entry->pinned ?>" data-action-component="<?= $jsWidget ?>" data-content-key="<?= $entry->id; ?>" >
         
 <?php //endif; ?>
 

@@ -331,12 +331,13 @@ class Profile extends \yii\db\ActiveRecord {
 	public function afterSave($insert, $changedAttributes)
 	{
 		foreach ($changedAttributes as $attribute => $value) {
-			switch ($attribute)
-			{
-				case 'city':
-					ChangeCity::instance()->from($this->user)->about($this)->save();
-				case 'relationship':
-					ChangeRelationship::instance()->from($this->user)->about($this)->save();
+			if ( $value ) {
+				switch ( $attribute ) {
+					case 'city':
+						ChangeCity::instance()->from( $this->user )->about( $this )->save();
+					case 'relationship':
+						ChangeRelationship::instance()->from( $this->user )->about( $this )->save();
+				}
 			}
 		}
 	}
