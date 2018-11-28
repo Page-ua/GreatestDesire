@@ -272,12 +272,12 @@ class Poll extends ContentActiveRecord implements \humhub\modules\search\interfa
             }
         }
 
-        if ($voted && !$this->anonymous) {
-            $activity = new \humhub\modules\polls\activities\NewVote();
-            $activity->source = $this;
-            $activity->originator = Yii::$app->user->getIdentity();
-            $activity->create();
-        }
+//        if ($voted && !$this->anonymous) {
+//            $activity = new \humhub\modules\polls\activities\NewVote();
+//            $activity->source = $this;
+//            $activity->originator = Yii::$app->user->getIdentity();
+//            $activity->create();
+//        }
     }
 
     /**
@@ -344,6 +344,23 @@ class Poll extends ContentActiveRecord implements \humhub\modules\search\interfa
             'question' => $this->question,
             'itemAnswers' => $itemAnswers
         );
+    }
+
+    public static function getUserLastPoll($user, $pageSize)
+    {
+    	$cacheId = 'poll_last_'.$user->id.'_'.$pageSize;
+
+    	$cacheValue = Yii::$app->cache->get($cacheId);
+
+    	if(!$cacheValue) {
+    		$cacheValue = self::find()
+		        ->where(['created_by' => $user->id])
+		        ->orderBy('created_at DESC')
+		        ->limit($pageSize)
+			    ->all();
+	    }
+
+	    return $cacheValue;
     }
 
 }

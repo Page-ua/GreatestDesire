@@ -15,7 +15,7 @@ $category = $category->getAllCurrentLanguage( Yii::$app->language, 'space' );
 	<div class="description-block">
 		<div class="title"><a href="<?= $source->getUrl(); ?>"><?= $source->name; ?></a></div>
 		<div class="subtitle"><?= isset($category[ $source->category ])?$category[ $source->category ]:''; ?></div>
-		<div class="text"><?= $source->description; ?></div>
+		<div class="text"><?= \humhub\widgets\RichText::widget(['text' => $source->description, 'maxLength' => 190]); ?></div>
 		<div class="footer">
 			<div class="subscribers">
 				<svg class="icon icon-members">

@@ -23,10 +23,16 @@ class BirthdaySidebarWidget extends \yii\base\Widget
         $nextBirthDaySql = "DATE_ADD(profile.birthday, INTERVAL YEAR(CURDATE())-YEAR(profile.birthday) + IF((CURDATE() > DATE_ADD(`profile`.birthday, INTERVAL (YEAR(CURDATE())-YEAR(profile.birthday)) YEAR)),1,0) YEAR)";
         $birthdayCondition = $nextBirthDaySql . " BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL " . $range . " DAY)";
 
+        $user = Yii::$app->user;
+
         $users = User::find()
                 ->addSelect(['*', 'user.*', 'profile.*', new \yii\db\Expression($nextBirthDaySql . ' as next_birthday')])
                 ->joinWith('profile')
+                ->leftJoin('user_friendship recv', 'user.id=recv.friend_user_id AND recv.user_id=:userId', [':userId' => $user->id])
+                ->leftJoin('user_friendship snd', 'user.id=snd.user_id AND snd.friend_user_id=:userId', [':userId' => $user->id])
                 ->where($birthdayCondition)
+                ->andWhere(['IS NOT', 'recv.id', new \yii\db\Expression('NULL')])
+                ->andWhere(['IS NOT', 'snd.id', new \yii\db\Expression('NULL')])
                 ->addOrderBy(['next_birthday' => SORT_ASC])
                 ->active()
                 ->limit(10)

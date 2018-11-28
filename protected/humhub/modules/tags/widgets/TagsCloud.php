@@ -30,10 +30,10 @@ class TagsCloud extends \yii\base\Widget
 		$tags = TagsRelationship::getPopularTags(0);
 		$modelSearch = new SearchForm();
 
-		return $this->render('tagsCloud', array(
-			'tags' => $tags,
-			'model' => $modelSearch,
-		));
+//		return $this->render('tagsCloud', array(
+//			'tags' => $tags,
+//			'model' => $modelSearch,
+//		));
 	}
 
 

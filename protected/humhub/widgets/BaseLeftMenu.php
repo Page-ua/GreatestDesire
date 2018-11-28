@@ -50,6 +50,13 @@ class BaseLeftMenu extends \humhub\widgets\BaseMenu
 
 
 			$this->addItem([
+				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Home'),
+				'url' => Url::to(['/dashboard']),
+				'sortOrder' => 500,
+				'isActive' => (Yii::$app->controller->module->id == 'dashboard'),
+			]);
+
+			$this->addItem([
 				'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Success stories'),
 				'url' => Url::to(['/blog/blog', 'Category[filter][]' => 100]),
 				'sortOrder' => 500,

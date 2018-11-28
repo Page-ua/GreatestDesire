@@ -34,16 +34,16 @@ class DesireCloud extends \yii\base\Widget
 
 		$desires = Desire::find();
 		$desires->orderBy('created_at DESC');
-		$desires->limit(10);
+		$desires->limit(20);
 		$desires = $desires->all();
 
 		$model = new SearchForm();
 
 
-		return $this->render('desireCloud', array(
-			'desires' => $desires,
-			'model' => $model,
-		));
+//		return $this->render('desireCloud', array(
+//			'desires' => $desires,
+//			'model' => $model,
+//		));
 	}
 
 }

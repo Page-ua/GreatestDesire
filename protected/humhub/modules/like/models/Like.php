@@ -98,7 +98,7 @@ class Like extends ContentAddonActiveRecord
 
     	if($this->object_model !== Space::className()) {
 
-		    \humhub\modules\like\activities\Liked::instance()->about( $this )->save();
+//		    \humhub\modules\like\activities\Liked::instance()->about( $this )->save();
 
 		    if ( $this->getSource() instanceof ContentOwner && $this->getSource()->content->createdBy !== null ) {
 			    // Send notification

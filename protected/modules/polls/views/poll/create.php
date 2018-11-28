@@ -19,8 +19,8 @@ $this->registerJsConfig('content.form', [
 
 <div class="page-content">
     <div class="content-wrap">
-        <div class="create-poll">
-            <h2>Create post</h2>
+        <div class="create-blog create-poll">
+            <h2>Create poll</h2>
 
         <?php
         if(isset($errors) && !empty($error)) {
@@ -34,8 +34,16 @@ $this->registerJsConfig('content.form', [
 
 		<?= \humhub\widgets\RichtextField::widget([
 			'name' => 'question',
-			'placeholder' => Yii::t('PollsModule.widgets_views_pollForm', "Ask something...")
+			'placeholder' => Yii::t('PollsModule.widgets_views_pollForm', "Ask something..."),
+            'id' => 'pollForm_message',
 		]); ?>
+
+            <script>
+                $(document).ready(function() {
+                    $("#pollForm_message").emojioneArea({
+                    });
+                });
+            </script>
 
 		<div class="contentForm_options" data-content-component="polls.Poll">
 			<?= humhub\modules\polls\widgets\AddAnswerInput::widget(['name' => 'newAnswers[]', 'showTitle' => false]); ?>

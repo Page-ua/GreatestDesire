@@ -16,8 +16,9 @@ use yii\helpers\Url;
 	<div class="right-sidebar">
         <?php $currentModule = Yii::$app->controller->module->id; ?>
         <?php if(in_array($currentModule, Category::$object)) { ?>
+            <?php if(!($currentModule === 'space' && Yii::$app->controller->id != 'list')) { ?>
 		<?= CategoryFilter::widget(['model' => $currentModule]); ?>
-        <?php } ?>
+        <?php }  } ?>
 		<div class="item" id="sidebar-info">
 			<div class="item-header">
 				<div class="label">Info
@@ -150,7 +151,8 @@ use yii\helpers\Url;
 							<div class="photo"><img src="<?php echo $space->getProfileImage()->getUrl(); ?>"></div>
 							<div class="group-wrap">
 								<div class="title"><?php echo Html::encode($space->name); ?></div>
-								<div class="text"><?php echo Html::encode($space->description); ?></div>
+
+								<div class="text"><?= \humhub\widgets\RichText::widget(['text' => $space->description, 'maxLength' => 70]); ?></div>
 							</div>
 						</a>
 						<div class="statistic-info">

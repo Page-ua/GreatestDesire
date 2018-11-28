@@ -13,7 +13,7 @@ use humhub\modules\user\models\User;
 	<div class="album public-album">
 		<?php $metaData = $album->getMetaData(); ?>
 		<div class="img-block"><img src="<?= $metaData['thumbnailUrl']; ?>">
-			<div class="category"><?= $category[$album->category]; ?></div>
+			<div class="category"><?= isset($category[$album->category])?$category[$album->category]:''; ?></div>
 		</div>
 		<div class="desc">
 			<div class="author-block">

@@ -1,18 +1,57 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: work
+ * Date: 21.08.18
+ * Time: 11:27
+ */
 
-use humhub\libs\Html;
-use humhub\modules\user\widgets\Image;
-use humhub\modules\directory\widgets\UserTagList;
+use humhub\modules\file\widgets\ShowPhotoPreview;
+
+
+$source = $user;
+
 ?>
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="media">
-            <span class="label label-default pull-right"><?php echo Yii::t('UserModule.base', 'User'); ?></span>
-            <?= Image::widget(['user' => $user, 'width' => 40, 'htmlOptions' => ['class' => 'pull-left']]); ?>
-            <div class="media-body">
-                <h4 class="media-heading"><?= Html::containerLink($user); ?></h4>
-                <h5><?php echo Html::encode($user->profile->title); ?></h5>
-                <?= UserTagList::widget(['user' => $user]); ?>
+
+<div class="add-friends-post user-info-block">
+    <div class="desire-img">
+        <a href="<?= $user->createUrl( '/user/profile/desire-one', [ 'id' => $user->greatestDesire->id ] ); ?>">
+			<?= ShowPhotoPreview::widget( [
+				'object'  => $source->greatestDesire,
+				'options' => [
+					'width'  => 120,
+					'height' => 120,
+					'index'  => 0
+				]
+			] ); ?>
+        </a>
+    </div>
+    <div class="info-short">
+        <div class="top">
+            <div class="name"><a href="<?= $source->createUrl(); ?>"><?= $source->username ?></a></div>
+			<?= \humhub\modules\rating\widgets\RatingDisplay::widget( [ 'object' => $source->greatestDesire ] ); ?>
+        </div>
+        <div class="bottom">
+            <div class="img-block"><a href="<?= $source->createUrl(); ?>"><img
+                            src="<?= $source->getProfileImage()->getUrl(); ?>"></a></div>
+            <div class="wrap">
+                <a href="<?= $source->createUrl( '/user/profile/desire-one', [ 'id' => $source->greatestDesire->id ] ); ?>">
+                    <div class="desire-text">
+                        <svg class="icon icon-earth_green">
+                            <use xlink:href="./svg/sprite/sprite.svg#earth_green"></use>
+                        </svg>
+                        <div class="text"><a href="<?= $source->createUrl( '/user/profile/desire-one', [ 'id' => $source->greatestDesire->id ] ); ?>"><?= $source->greatestDesire->title; ?></a></div>
+                    </div>
+                </a>
+                <div class="desire-bottom">
+					<?= \humhub\modules\content\widgets\BottomPanelContent::widget([
+						'object' => $source->greatestDesire,
+						'ratingLink' => true,
+						'options' => [
+							'commentPageUrl' => '/user/profile/desire-one'
+						]
+					]); ?>
+                </div>
             </div>
         </div>
     </div>

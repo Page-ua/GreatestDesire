@@ -21,7 +21,7 @@ use humhub\modules\like\widgets\LikeLink;
         <ul class="nav nav-pills preferences">
             <li class="dropdown ">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-label="<?= Yii::t('base', 'Toggle comment menu'); ?>" aria-haspopup="true">
-                    <i class="fa fa-angle-down"></i>
+                    <span></span><span></span><span></span>
                 </a>
 
                 <ul class="dropdown-menu pull-right">
@@ -54,7 +54,7 @@ use humhub\modules\like\widgets\LikeLink;
     <div class="comment-text comment_edit_content" id="comment_editarea_<?= $comment->id; ?>">
         <div id="comment-message-<?= $comment->id; ?>" class="comment-message" data-ui-show-more data-read-more-text="<?= Yii::t('CommentModule.widgets_views_showComment', 'Read full comment...') ?>">
 
-            <?= \humhub\widgets\MarkdownView::widget(['markdown' => $comment->message]); ?>
+            <?= humhub\widgets\RichText::widget(['text' => $comment->message, 'record' => $comment, 'markdown' => true]) ?>
         </div>
 	    <?= ShowFiles::widget(['object' => $comment]); ?>
     </div>

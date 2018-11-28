@@ -26,7 +26,7 @@ humhub.module('comment', function (module, require, $) {
     };
 
     Form.prototype.getRichtext = function () {
-        return Widget.instance(this.$.find('div.humhub-ui-richtext'));
+        return Widget.instance(this.$.find('div.emojionearea-editor'));
     };
 
     Form.prototype.addComment = function (html) {

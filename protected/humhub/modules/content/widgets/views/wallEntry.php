@@ -93,17 +93,23 @@ use humhub\modules\content\widgets\WallEntryLabels;
 
 
 
-            <!-- start: show wall entry options -->
-	        <?php if($renderControls) : ?>
-                <div class="sub-context-menu">
-                    <div class="context-menu-btn"><span></span><span></span><span></span></div>
-                    <ul class="context-menu">
-	                    <?= WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
-                    </ul>
-                </div>
 
+
+	        <?php if($renderControls) : ?>
+                <ul class="nav nav-pills preferences">
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-label="<?= Yii::t('base', 'Toggle stream entry menu'); ?>" aria-haspopup="true">
+                            <span></span><span></span><span></span>
+                        </a>
+
+
+                        <ul class="dropdown-menu pull-right">
+					        <?= WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
+                        </ul>
+                    </li>
+                </ul>
 	        <?php endif; ?>
-            <!-- end: show wall entry options -->
+
 
         </div>
     </div>

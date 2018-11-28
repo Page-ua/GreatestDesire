@@ -1,30 +1,47 @@
+<?php
+use humhub\modules\file\widgets\ShowPhotoPreview;
+use humhub\modules\rating\widgets\RatingDisplay;
 
+?>
 
-
-<div class="article-post">
-    <div class="img-block">
-        <a href="<?= $desire->user->createUrl('/user/profile/desire-one', ['id' => $desire->id]); ?>">
-			<?= \humhub\modules\file\widgets\ShowPhotoPreview::widget(['object' => $desire]); ?>
+<div class="update-desire-post user-info-block">
+    <div class="desire-img">
+        <a href="<?= $desire->user->createUrl( '/user/profile/desire-one', [ 'id' => $desire->id ] ); ?>">
+			<?= ShowPhotoPreview::widget( [
+				'object'  => $desire,
+				'options' => [
+					'width'  => 120,
+					'height' => 120,
+					'index'  => 0
+				]
+			] ); ?>
         </a>
     </div>
-    <div class="description-block">
-        <div class="title">
-            <a href="<?= $desire->user->createUrl('/user/profile/desire-one', ['id' => $desire->id]); ?>">
-				<?= $desire->title; ?>
-            </a>
+    <div class="info-short">
+        <div class="top">
+            <div class="name"><?= $desire->user->displayName; ?></div>
+			<?= RatingDisplay::widget( [ 'object' => $desire ] ); ?>
         </div>
-
-        <ul
-                class="tags">
-		    <?= \humhub\modules\tags\widgets\DisplayTags::widget(['user' => $desire]); ?>
-
-        </ul>
-        <div class="text">
-            <div data-ui-widget="blog.Blog" data-state="collapsed" data-ui-init id="blog-content-<?= $desire->id; ?>" style="overflow: hidden; margin-bottom: 5px;">
-                <div data-ui-markdown data-ui-show-more style="overflow: hidden;">
-					<?= humhub\widgets\RichText::widget(['text' => $desire->message, 'record' => $desire, 'markdown' => true]) ?>
+        <div class="bottom">
+            <div class="wrap">
+                <div class="desire-text"><svg class="icon icon-earth_green"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./svg/sprite/sprite.svg#earth_green"></use></svg>
+                    <div class="text">
+                        <a href="<?= $desire->user->createUrl( '/user/profile/desire-one', [ 'id' => $desire->id ] ); ?>">
+							<?= $desire->title; ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="desire-bottom">
+					<?= \humhub\modules\content\widgets\BottomPanelContent::widget([
+						'object' => $desire,
+						'ratingLink' => true,
+						'options' => [
+							'commentPageUrl' => '/user/profile/desire-one'
+						]
+					]); ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

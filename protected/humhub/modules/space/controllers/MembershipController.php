@@ -125,7 +125,7 @@ class MembershipController extends \humhub\modules\content\components\ContentCon
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $space->requestMembership(Yii::$app->user->id, $model->message);
-            return $this->renderAjax('requestMembershipSave', ['space' => $space]);
+	        return $this->htmlRedirect($space->getUrl());
         }
 
         return $this->renderAjax('requestMembership', ['model' => $model, 'space' => $space]);
@@ -266,7 +266,7 @@ class MembershipController extends \humhub\modules\content\components\ContentCon
     {
         $title = Yii::t('SpaceModule.controllers_MembershipController', "<strong>Members</strong>");
 
-        return $this->renderAjaxContent(UserListBox::widget([
+        return $this->renderContent(UserListBox::widget([
                             'query' => Membership::getSpaceMembersQuery($this->getSpace())->visible(),
                             'title' => $title
         ]));

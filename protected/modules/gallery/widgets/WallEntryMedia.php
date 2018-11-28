@@ -50,7 +50,7 @@ class WallEntryMedia extends \humhub\modules\content\widgets\WallEntry
             $galleryUrl = $media->parentGallery->getUrl();
             $galleryName = $media->parentGallery->title;
         }
-	    $this->objectName = '<a style="color: #ffb74d" href="'.$media->creator->createUrl('/user/profile/photos', ['id' => $media->gallery_id]).'">'.$galleryName.'</a>';
+	    $this->objectName = '<a style="color: #ffb74d" href="'.$media->content->getContainer()->createUrl('/user/profile/photos', ['id' => $media->gallery_id]).'">'.$galleryName.'</a>';
         return $this->render('wallEntryMedia', [
                     'photos' => $groupPhotos,
                     'title' => $media->getTitle(),

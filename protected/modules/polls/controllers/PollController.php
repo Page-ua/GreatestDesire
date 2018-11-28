@@ -45,7 +45,6 @@ class PollController extends ContentContainerController
      */
     public function actionShow()
     {
-	    $this->subLayout = "@humhub/views/layouts/_sublayout";
 
         return $this->render('show', array(
                     'contentContainer' => $this->contentContainer
@@ -84,7 +83,7 @@ class PollController extends ContentContainerController
 		    'contentContainer' => $this->contentContainer,
 		    'submitUrl' => $this->contentContainer->createUrl('/polls/poll/create'),
 		    'category' => $category,
-		    'errors' => isset($errors)?$errors['errors']:'',
+		    'errors' => isset($errors)?$errors:'',
 	    ));
     }
 

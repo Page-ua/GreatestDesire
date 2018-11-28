@@ -143,7 +143,7 @@ class WallCreateContentForm extends Widget
             //return \humhub\modules\stream\actions\Stream::getContentResultEntry($record->content);
         }
 
-        return array('errors' => $record->getErrors());
+        return Yii::$app->response->redirect(Url::toRoute(['/dashboard']));
     }
 
 }

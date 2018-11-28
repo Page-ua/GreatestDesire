@@ -54,9 +54,7 @@ $contentIdData = ($contentId != "") ? 'data-stream-contentid="' . $contentId . '
 
     <!-- DIV for a normal wall stream -->
     <div class="s2_stream">
-        <div class="back_button_holder" style="display:none">
-            <a href="#" class="singleBackLink btn btn-primary"><?= Yii::t('ContentModule.widgets_views_stream', 'Back to stream'); ?></a><br><br>
-        </div>
+
         <div class="s2_streamContent profile-timeline" data-stream-content></div>
 
         <div class="emptyStreamMessage" style="display:none;">
@@ -77,6 +75,9 @@ $contentIdData = ($contentId != "") ? 'data-stream-contentid="' . $contentId . '
                 </div>
             </div>
 
+        </div>
+        <div class="back_button_holder" style="display:none">
+            <a href="#" class="singleBackLink btn btn-primary"><?= Yii::t('ContentModule.widgets_views_stream', 'Back to stream'); ?></a>
         </div>
     </div>
 </div>

@@ -109,7 +109,7 @@ class DesireController extends Controller {
 			return $this->redirect( [ 'view', 'id' => $model->id ] );
 		}
 
-		return $this->render( 'update',
+		return $this->render( 'create',
 			[
 				'model' => $model,
 			]

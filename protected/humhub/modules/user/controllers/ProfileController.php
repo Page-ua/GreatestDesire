@@ -24,6 +24,7 @@ use humhub\modules\content\components\ContentContainerController;
 use humhub\modules\stream\actions\ContentContainerStream;
 use humhub\modules\user\models\User;
 use humhub\modules\user\widgets\UserListBox;
+use yii\db\Query;
 
 /**
  * ProfileController is responsible for all user profiles.
@@ -127,8 +128,8 @@ class ProfileController extends ContentContainerController
     public function actionBlog()
     {
 		$blogListRequest = Blog::find();
-	    $blogListRequest->where(['created_by' => $this->contentContainer->id]);
-	    $blogListRequest->orderBy('created_at DESC');
+		Blog::sortByParameters($blogListRequest, Yii::$app->request->get('sort'));
+	    $blogListRequest->where(['blog.created_by' => $this->contentContainer->id]);
 	    $blogList = $blogListRequest->all();
 
 	    $category = new Category();
@@ -143,8 +144,6 @@ class ProfileController extends ContentContainerController
 
 	public function actionFavoriteBlog()
 	{
-		$this->subLayout = "@humhub/modules/user/views/profile/_layoutDesire";
-
 
 		$blogList = Favorite::getFavoriteContent(Blog::className(), $this->contentContainer->id);
 
@@ -170,6 +169,41 @@ class ProfileController extends ContentContainerController
 		    'category' => $category,
 	    ]);
     }
+
+	public function actionSuccessStories()
+	{
+		$blogListRequest = Blog::find();
+		$blogListRequest->where(['created_by' => $this->contentContainer->id]);
+		$blogListRequest->andWhere(['category' => 100]);
+		$blogListRequest->orderBy('created_at DESC');
+		$blogList = $blogListRequest->all();
+
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+		return $this->render('successStories', [
+			'blogList' => $blogList,
+			'category' => $category,
+			'contentContainer' => $this->contentContainer,
+		]);
+	}
+
+	public function actionFavoriteSuccessStories()
+	{
+
+		$blogList = Favorite::getFavoriteContentQuery(Blog::className(), $this->contentContainer->id);
+		$blogList->andWhere(['category' => 100]);
+		$blogList = $blogList->all();
+
+		$category = new Category();
+		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
+
+		return $this->render('successStories', [
+			'category' => $category,
+			'blogList' => $blogList,
+			'contentContainer' => $this->contentContainer,
+		]);
+	}
 
     public function actionDesires()
     {

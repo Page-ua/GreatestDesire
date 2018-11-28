@@ -98,6 +98,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="b0417287-6c7e-48ff-ba35-efe20e509877" name="GreatestDesire Server" url="http://165.227.76.89">
+        <fileTransfer host="165.227.76.89" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

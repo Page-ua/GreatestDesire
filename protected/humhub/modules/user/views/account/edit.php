@@ -41,7 +41,9 @@ use yii\helpers\Url;
                                 ]
                         ])->textarea(['id' => 'desire-input'])->label(false); ?>
 
-						<p class="desire-input-desc">You can change it or add a description<a href="<?= Url::to(['/desire/desire/update', 'id' => $user->greatest_desire]); ?>"> here</a></p>
+
+                        <p class="desire-input-desc">You can change Greatest Desire<a href="<?= Url::to(['/desire/desire/update', 'id' => $user->greatest_desire]); ?>"> here</a></p>
+                        <p class="desire-input-desc">You can add more any desires<a href="<?= Url::to(['/desire/desire/create']); ?>"> here</a></p>
 					</div>
 					<div class="form-item personal-info">
 

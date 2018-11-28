@@ -140,17 +140,26 @@ class Media extends ContentActiveRecord {
 		return empty( $previewImage ) ? $this->getFallbackPreviewImageUrl() : $previewImage;
 	}
 
-	public function getMyLastPhoto( $pageSize ) {
-		$userID = Yii::$app->user->id;
-		$query  = self::find();
-		$query->leftJoin( 'file', 'file.object_id = gallery_media.id' );
-		$query->andWhere( [ 'file.object_model' => self::className() ] );
-		$query->andWhere( [ 'file.created_by' => $userID ] );
-		$query->orderBy( 'date_create DESC' );
-		$query->limit( $pageSize );
+	public function getMyLastPhoto($user, $pageSize ) {
 
+		$cacheId = "photo_last_". $user->id. "_". $pageSize;
 
-		return $query->all();
+		$cacheValue = Yii::$app->cache->get($cacheId);
+
+		if(!$cacheValue) {
+
+			$query = self::find();
+			$query->leftJoin( 'file', 'file.object_id = gallery_media.id' );
+			$query->andWhere( [ 'file.object_model' => self::className() ] );
+			$query->andWhere( [ 'file.created_by' => $user->id ] );
+			$query->orderBy( 'date_create DESC' );
+			$query->limit( $pageSize );
+			$cacheValue = $query->all();
+
+			Yii::$app->cache->set($cacheId, $cacheValue, 3600);
+		}
+
+		return $cacheValue;
 	}
 
 	/**

@@ -8,6 +8,7 @@
 
 namespace humhub\modules\gallery\controllers;
 
+use humhub\modules\content\models\Category;
 use \humhub\modules\gallery\models\CustomGallery;
 use \humhub\modules\gallery\models\StreamGallery;
 use humhub\widgets\ModalClose;
@@ -33,7 +34,18 @@ class ListController extends BaseController
      */
     public function actionIndex()
     {
-        return $this->renderGallery();
+
+	    $albums = CustomGallery::find()->contentContainer($this->contentContainer)->readable();
+	    $albums = $albums->all();
+
+	    $category = new Category();
+	    $category = $category->getAllCurrentLanguage(Yii::$app->language, 'gallery');
+
+	    return $this->render('albums', [
+		    'albums' => $albums,
+		    'category' => $category,
+	    ]);
+
     }
 
     /**

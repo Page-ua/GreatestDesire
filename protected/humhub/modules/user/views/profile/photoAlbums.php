@@ -23,13 +23,12 @@ use humhub\modules\gallery\models\SquarePreviewImage;
                 <?php $metaData = $album->getMetaData(); ?>
 			    <div class="album">
 				<div class="img-block"><img src="<?= $metaData['thumbnailUrl']; ?>">
-					<div class="category"><?= $category[$album->category]; ?></div>
+					<div class="category"><?= isset($category[$album->category])?$category[$album->category]:''; ?></div>
 				</div>
 				<div class="desc"><a class="title" href="<?= $this->context->contentContainer->createUrl('/user/profile/photos', ['id' => $album->id]); ?>"><?= $album->title; ?></a>
 					<div class="img-counter"><?= count($album->getMediaList()); ?> photos</div>
 					<div class="statistic-info">
                         <?= BottomPanelContent::widget(['object' => $album, 'commentLinkPage' => true, 'mode' => BottomPanelContent::SMALL_MODE, 'options' => ['commentPageUrl' => '/user/profile/photos']]); ?>
-
 					</div>
 				</div>
 				<div class="sub-context-menu">

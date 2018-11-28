@@ -115,7 +115,8 @@ class Comment extends ContentAddonActiveRecord implements ContentOwner
         // flush the cache
         $this->flushCache();
 
-        NewComment::instance()->about($this)->save();
+        //Add post in timeline;
+//        NewComment::instance()->about($this)->save();
 
         // Handle mentioned users
         // Execute before NewCommentNotification to avoid double notification when mentioned.

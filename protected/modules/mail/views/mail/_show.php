@@ -9,7 +9,7 @@ use humhub\widgets\TimeAgo;
 use humhub\compat\CActiveForm;
 
 ?>
-<div class="panel panel-default">
+<div class="panel panel-default msg-box">
 
 	<?php if ( $message == null ) { ?>
 
@@ -118,8 +118,8 @@ use humhub\compat\CActiveForm;
                             <small><?php echo TimeAgo::widget( [ 'timestamp' => $entry->created_at ] ); ?></small>
                         </h4>
 
-                        <span class="content hasEmoji">
-                                <?php echo humhub\widgets\MarkdownView::widget( array( 'markdown' => $entry->content ) ); ?>
+                        <span class="content">
+                                <?= humhub\widgets\RichText::widget(['text' => $entry->content, 'record' => $entry, 'markdown' => true]) ?>
                             </span>
                         <div class="attach-content">
 	                        <?= ShowFiles::widget(['object' => $entry]); ?>

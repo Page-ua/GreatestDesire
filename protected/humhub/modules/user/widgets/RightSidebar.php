@@ -18,6 +18,7 @@ use humhub\modules\polls\models\Poll;
 use humhub\modules\space\models\Membership;
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
+use Yii;
 
 class RightSidebar extends \yii\base\Widget
 {
@@ -31,48 +32,48 @@ class RightSidebar extends \yii\base\Widget
 
 		$friends = Friendship::getPartFriends($user, 0, 4);
 
-		$blogs = Blog::getAll(3);
+		$blogs = Blog::getUserBlog($user, 3);
 
 		$media = new Media();
 
-		$media = $media->getMyLastPhoto(9);
+		$media = $media->getMyLastPhoto($user,9);
 
-		$spaces = $this->getUserSpace($user);
+		$spaces = Membership::getUserSpaceLast($user, 3);
 
-		$polls = $this->getUserPoll($user);
+		$polls = Poll::getUserLastPoll($user, 2);
 
-		$statistic = $this->getStatistic();
+		$cacheId = 'global_statistic_info';
 
-		return $this->render('rightSidebar', [
+		$statistic = Yii::$app->cache->get($cacheId);
+
+		if(!$statistic) {
+			$statistic = $this->getStatistic();
+			Yii::$app->cache->set( $cacheId, $statistic, Yii::$app->settings->get( 'cache.expireTime' ) );
+		}
+
+		$renderId = "right_sidebar_render";
+
+		$render = Yii::$app->cache->get($renderId);
+
+		if(!$render) {
+			$statistic = $this->getStatistic();
+			Yii::$app->cache->set( $renderId, $render, 3600);
+		}
+
+		$render = $this->render('rightSidebar', [
 			'user' => $user,
 			'userInfo' => $userInfo,
 			'friends' => $friends,
-			'blogs' => $blogs['articles'],
+			'blogs' => $blogs,
 			'media' => $media,
 			'spaces' => $spaces,
 			'polls' => $polls,
 			'statistic' => $statistic,
 		]);
+
+		return $render;
 	}
 
-	private function getUserPoll($user)
-	{
-		$polls = Poll::find();
-
-		$polls->where(['created_by' => $user->id]);
-		$polls->orderBy('created_at DESC');
-		$polls->limit(2);
-		return $polls->all();
-	}
-
-	private function getUserSpace($user)
-	{
-		$spaces = Membership::getUserSpaceQuery($user);
-
-		$spaces->limit(3);
-
-		return $spaces->all();
-	}
 
 	private function getStatistic()
 	{

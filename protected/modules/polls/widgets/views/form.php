@@ -8,9 +8,16 @@ use yii\helpers\Html;
 
 <?= \humhub\widgets\RichtextField::widget([
         'name' => 'question',
-        'placeholder' => Yii::t('PollsModule.widgets_views_pollForm', "Ask something...")
+        'placeholder' => Yii::t('PollsModule.widgets_views_pollForm', "Ask something..."),
+        'id' => 'pollForm_message',
 ]); ?>
 
+<script>
+    $(document).ready(function() {
+        $("#pollForm_message").emojioneArea({
+        });
+    });
+</script>
 <div class="contentForm_options" data-content-component="polls.Poll">
     <?= humhub\modules\polls\widgets\AddAnswerInput::widget(['name' => 'newAnswers[]', 'showTitle' => false]); ?>
     

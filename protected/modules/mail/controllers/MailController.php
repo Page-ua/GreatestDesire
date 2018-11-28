@@ -239,24 +239,22 @@ class MailController extends Controller
     public function actionSearchUser()
     {
         Yii::$app->response->format = 'json';
-        return $this->getUserPickerResult(Yii::$app->request->get('keyword'));
+        return $this->getUserPickerResult(Yii::$app->request->get('keyword'), true);
     }
     
-    private function getUserPickerResult($keyword) {
-        if (version_compare(Yii::$app->version, '1.1', 'lt')) {
-            return $this->findUserByFilter($keyword, 10);
-        } else if(Yii::$app->getModule('friendship')->getIsEnabled()) {
-            return UserPickerAutoSend::filter([
-                'keyword' => $keyword,
-                'permission' => new SendMail(),
-                'fillUser' => true
-            ]);
-        } else {
-            return UserPickerAutoSend::filter([
-                'keyword' => $keyword,
-                'permission' => new SendMail()
-            ]);
-        }
+    private function getUserPickerResult($keyword, $autoSend = false) {
+
+    	$filter = [
+		    'keyword'    => $keyword,
+		    'permission' => new SendMail(),
+		    'fillUser'   => true
+	    ];
+
+    	if($autoSend) {
+		    return UserPickerAutoSend::filter( $filter );
+	    } else {
+		    return UserPicker::filter( $filter );
+	    }
     }
 
     /**

@@ -9,6 +9,8 @@
 namespace humhub\modules\space\widgets;
 
 use humhub\modules\content\models\Category;
+use humhub\modules\favorite\models\Favorite;
+use humhub\modules\like\models\Like;
 use Yii;
 use yii\base\Widget;
 use humhub\modules\content\models\Content;
@@ -40,12 +42,15 @@ class Header extends Widget
 
         $category = new Category();
         $category = $category->getAllCurrentLanguage(Yii::$app->language, 'space');
-
+		$like = Like::GetLikes($this->space->className(), $this->space->id);
+		$favorite = Favorite::getCountObjects($this->space::className(), $this->space->id);
         return $this->render('header', [
                     'space' => $this->space,
                     'followingEnabled' => !Yii::$app->getModule('space')->disableFollow,
                     'postCount' => $postCount,
 	                'category' => $category,
+	                'like' => $like,
+	                'favorite' => $favorite,
         ]);
     }
 

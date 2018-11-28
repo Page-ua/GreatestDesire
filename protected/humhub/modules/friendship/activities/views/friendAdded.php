@@ -44,7 +44,6 @@ use humhub\modules\file\widgets\ShowPhotoPreview;
                 <div class="desire-bottom">
 	                <?= \humhub\modules\content\widgets\BottomPanelContent::widget([
 		                'object' => $source->greatestDesire,
-		                'commentLinkPage' => true,
 		                'ratingLink' => true,
 		                'options' => [
 			                'commentPageUrl' => '/user/profile/desire-one'

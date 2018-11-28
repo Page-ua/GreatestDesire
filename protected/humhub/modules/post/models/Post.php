@@ -8,6 +8,7 @@
 
 namespace humhub\modules\post\models;
 
+use humhub\widgets\RichText;
 use Yii;
 use humhub\modules\content\components\ContentActiveRecord;
 use humhub\modules\search\interfaces\Searchable;
@@ -51,7 +52,9 @@ class Post extends ContentActiveRecord implements Searchable
     public function rules()
     {
         return [
-            [['message'], 'required'],
+            [['message'], 'required', 'when' => function($model) {
+	            return empty(Yii::$app->request->post('fileList'));
+            }, 'message' => 'Client group or client selection is required'],
             [['message'], 'string'],
             [['url'], 'string', 'max' => 255]
         ];
@@ -86,6 +89,11 @@ class Post extends ContentActiveRecord implements Searchable
         \humhub\modules\user\models\Mentioning::parse($this, $this->message);
 
         return true;
+    }
+
+    public function getTitle()
+    {
+    	return RichText::widget(['text' => $this->message, 'maxLength' => 40]);
     }
 
     /**

@@ -26,11 +26,11 @@ class Events extends Object
     {
         if ($event->sender->space !== null && $event->sender->space->isModuleEnabled('gallery')) {
             $event->sender->addItem([
-                'label' => Yii::t('GalleryModule.base', 'Gallery'),
+                'label' => Yii::t('GalleryModule.base', 'Photos'),
                 'group' => 'modules',
                 'url' => $event->sender->space->createUrl('/gallery/list'),
                 'icon' => '<i class="fa fa-picture-o"></i>',
-                'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'gallery')
+                'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'gallery' || Yii::$app->controller->module->id == 'user')
 
             ]);
         }

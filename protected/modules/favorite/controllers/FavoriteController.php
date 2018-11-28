@@ -42,6 +42,7 @@ class FavoriteController extends \humhub\modules\content\components\ContentAddon
 		parent::init();
 	}
 
+
 	/**
 	 * Creates a new like
 	 */

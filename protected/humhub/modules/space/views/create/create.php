@@ -11,8 +11,8 @@ use humhub\modules\space\widgets\SpaceNameColorInput;
 
 $animation = $model->hasErrors() ? 'shake' : 'fadeIn';
 ?>
-
-<?php ModalDialog::begin(['header' => Yii::t('SpaceModule.views_create_create', '<strong>Create</strong> new space'), 'size' => 'small']) ?>
+<div class="page-content">
+    <div class="content-wrap">
     <?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
         <div class="modal-body">
 
@@ -43,8 +43,8 @@ $animation = $model->hasErrors() ? 'shake' : 'fadeIn';
                 ->setType('default')->icon('fa-forward', true)->cssClass('tt')->options(['title' => Yii::t('SpaceModule.views_create_create', 'Skip other steps')]) */?>
         </div>
     <?php ActiveForm::end(); ?>
-<?php ModalDialog::end(); ?>
-
+    </div>
+</div>
 <script type="text/javascript">
 
     var $checkedVisibility = $('input[type=radio][name="Space[visibility]"]:checked');

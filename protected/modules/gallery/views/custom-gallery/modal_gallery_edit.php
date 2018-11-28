@@ -54,8 +54,10 @@
         var fields = $('#fields-for-create');
         if(value === 'new') {
             fields.css('display', 'block');
+            $('#create-gallery-button').html('<?= \Yii::t('GalleryModule.base', 'Save'); ?>');
         } else {
             fields.css('display', 'none');
+            $('#create-gallery-button').html('open');
         }
     })
 

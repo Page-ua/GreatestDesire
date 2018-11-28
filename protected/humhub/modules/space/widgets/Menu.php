@@ -18,7 +18,8 @@ class Menu extends \humhub\widgets\BaseMenu
 {
     /** @var Space */
     public $space;
-    public $template = "@humhub/widgets/views/leftNavigation";
+	public $template = "@humhub/modules/user/widgets/views/topProfileNavigation";
+//    public $template = "@humhub/widgets/views/leftNavigation";
 
     public function init()
     {
@@ -39,12 +40,20 @@ class Menu extends \humhub\widgets\BaseMenu
         ));
 
         $this->addItem(array(
-            'label' => Yii::t('SpaceModule.widgets_SpaceMenuWidget', 'Stream'),
+            'label' => Yii::t('SpaceModule.widgets_SpaceMenuWidget', 'Timeline'),
             'group' => 'modules',
             'url' => $this->space->createUrl('/space/space/home'),
             'icon' => '<i class="fa fa-bars"></i>',
             'sortOrder' => 100,
             'isActive' => (Yii::$app->controller->id == "space" && (Yii::$app->controller->action->id == "index" || Yii::$app->controller->action->id == 'home') && Yii::$app->controller->module->id == "space"),
+        ));
+        $this->addItem(array(
+            'label' => Yii::t('SpaceModule.widgets_SpaceMenuWidget', 'Members'),
+            'group' => 'modules',
+            'url' => $this->space->createUrl('/space/membership/members-list'),
+            'icon' => '<i class="fa fa-bars"></i>',
+            'sortOrder' => 200,
+            'isActive' => (Yii::$app->controller->id == "membership" && Yii::$app->controller->action->id == "members-list" && Yii::$app->controller->module->id == "space"),
         ));
 
         parent::init();

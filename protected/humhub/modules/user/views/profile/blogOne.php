@@ -17,7 +17,7 @@ use yii\helpers\Url;
 		<div class="blog-top">
 			<div class="date"><?= \humhub\widgets\TimeAgo::widget(['timestamp' => $model->created_at]); ?></div>
 			<div class="title"><?= $model->title; ?></div>
-			<div class="category"><?= $category[$model->category]; ?></div>
+			<div class="category"><?= isset($category[$model->category])?$category[$model->category]:''; ?></div>
 		</div>
 		<div class="description">
 			<div class="blog-img">

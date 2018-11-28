@@ -15,7 +15,7 @@ use yii\helpers\Url;
     </div>
 </div>
 <aside class="right-side">
-    <div class="right-sidebar">
+    <div class="right-sidebar msg-box-sidebar">
         <div class="panel-heading">
 
 	        <?php $form = ActiveForm::begin(['id' => 'create-message-form', 'action' => Url::to(['/mail/mail/create'])  ]); ?>

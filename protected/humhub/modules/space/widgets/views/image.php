@@ -7,7 +7,7 @@ endif;
 echo Html::beginTag('div', $acronymHtmlOptions);
 echo $acronym;
 echo Html::endTag('div');
-echo Html::img($space->getProfileImage()->getUrl(), $imageHtmlOptions);
+echo Html::img($space->getProfileImage()->getUrl('_org'), $imageHtmlOptions);
 if ($link == true) :
     echo Html::endTag('a');
 endif;

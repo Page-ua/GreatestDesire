@@ -1,56 +1,50 @@
 <?php
 
-use humhub\widgets\ModalButton;
-use humhub\widgets\ModalDialog;
-use yii\helpers\Html;
+use humhub\modules\content\widgets\BottomPanelContent;
+use humhub\modules\desire\models\Desire;
 
 ?>
 
-<?php ModalDialog::begin(['header' => $title]) ?>
 
-    <?php if (count($users) === 0): ?>
+
+<div class="content-wrap">
+	<?php if (count($users) === 0): ?>
         <div class="modal-body">
             <p><?= Yii::t('UserModule.base', 'No users found.'); ?></p>
         </div>
-    <?php endif; ?>
+	<?php endif; ?>
+    <div class="personal-profile-friends">
+        <ul id="list-object" class="friends-list">
+			<?php foreach($users as $user) { ?>
+                <li class="friend">
+                    <div class="photo"><a href="<?= $user->createUrl('/user/profile/home'); ?>"><img src="<?= $user->getProfileImage()->getUrl(); ?>"></a><span class="<?php if($user->status_online === 1) echo 'active'; ?>"></span></div>
+                    <div class="user-wrap">
+                        <div class="name"><a href="<?= $user->createUrl('/user/profile/home'); ?>"><?= $user->username; ?></a></div>
+						<?php $greatestDesire = Desire::getGreatestDesire($user); ?>
+                        <?php if($greatestDesire) { ?>
+                        <a href="<?= $user->createUrl('/user/profile/desire-one', ['id' => $greatestDesire->id]); ?>"><div class="user-desire"><?= $greatestDesire->title; ?></div></a>
+                        <div class="statistic-info">
 
-    <div id="userlist-content">
 
-        <ul class="media-list">
-            <?php foreach ($users as $user) : ?>
-                <li>
-                    <a href="<?= $user->getUrl(); ?>">
-                        <div class="media">
-                            <img class="media-object img-rounded pull-left"
-                                 src="<?= $user->getProfileImage()->getUrl(); ?>" width="50"
-                                 height="50" alt="50x50" data-src="holder.js/50x50"
-                                 style="width: 50px; height: 50px;">
+							<?= BottomPanelContent::widget([
+								'object' => $greatestDesire,
+								'mode' => BottomPanelContent::SMALL_MODE,
+								'ratingLink' => true,
+								'commentLinkPage' => true,
+								'options' => ['commentPageUrl' => '/user/profile/desire-one'],
+							]); ?>
 
-                            <div class="media-body">
-                                <h4 class="media-heading"><?= Html::encode($user->displayName); ?></h4>
-                                <h5><?= Html::encode($user->profile->title); ?></h5>
-                            </div>
                         </div>
-                    </a>
+                        <?php } ?>
+                    </div>
+                    <ul class="menu">
+						<?= \humhub\modules\user\widgets\UserButtons::widget(['user' => $user]); ?>
+                    </ul>
                 </li>
-            <?php endforeach; ?>
+			<?php } ?>
         </ul>
-
         <div class="pagination-container">
-            <?= \humhub\widgets\AjaxLinkPager::widget(['pagination' => $pagination]); ?>
+		    <?= \humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?>
         </div>
     </div>
-
-    <div class="modal-footer">
-        <?= ModalButton::cancel(Yii::t('base', 'Close'))?>
-    </div>
-
-<?php ModalDialog::end() ?>
-
-<script type="text/javascript">
-
-    // scroll to top of list
-    $(".modal-body").animate({scrollTop: 0}, 200);
-
-</script>
-
+</div>

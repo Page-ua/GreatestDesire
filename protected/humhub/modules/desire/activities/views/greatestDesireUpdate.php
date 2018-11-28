@@ -40,7 +40,6 @@ use humhub\modules\rating\widgets\RatingDisplay;
 				<div class="desire-bottom">
                     <?= \humhub\modules\content\widgets\BottomPanelContent::widget([
 						'object' => $source,
-						'commentLinkPage' => true,
 						'ratingLink' => true,
 						'options' => [
 							'commentPageUrl' => '/user/profile/desire-one'

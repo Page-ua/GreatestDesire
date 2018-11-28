@@ -11,55 +11,57 @@ use wbraganca\tagsinput\TagsinputWidget;
 use yii\widgets\ActiveForm;
 
 ?>
-<h2>Write your Greatest Desire</h2>
+
 
 <div class="page-content">
     <div class="content-wrap">
-        <div class="create-blog"></div>
+        <div class="create-blog create-desire">
+            <h2>Write your Greatest Desire</h2>
+			<?php $form = ActiveForm::begin(); ?>
 
-<?php $form = ActiveForm::begin(); ?>
+			<?= $form->field( $model, 'title', [ 'options' => [ 'class' => 'form-group form-item' ] ] )->textInput( [ 'maxlength' => true ] ) ?>
+			<?= $form->field( $model, 'Tags', [ 'options' => [ 'class' => 'form-group form-item-tags' ] ] )->widget( TagsinputWidget::classname(), [
+				'clientOptions' => [
+					'trimValue'       => true,
+					'allowDuplicates' => false
+				],
+				'options'       => [
+					'multiple',
+				]
 
-<?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-<?= $form->field($model, 'Tags')->widget(TagsinputWidget::classname(), [
-	'clientOptions' => [
-		'trimValue' => true,
-		'allowDuplicates' => false
-	],
-    'options' => [
-            'multiple',
-    ]
-
-]);
-?>
+			] );
+			?>
 
 
 
-<?= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
-<?= $form->field($model, 'greatest')->radio(); ?>
-<?=
-humhub\modules\file\widgets\UploadButton::widget([
-	'id' => 'comment_create_upload_' . $model->id,
-	'progress' => '#comment_create_upload_progress_' . $model->id,
-	'preview' => '#comment_create_upload_preview_' . $model->id,
-	'dropZone' => '#comment_create_form_'.$model->id,
-	'max' => Yii::$app->getModule('content')->maxAttachedFiles
-]);
-?>
-<div id="comment_create_upload_progress_<?= $model->id ?>" style="display:none;margin:10px 0px;"></div>
+			<?= $form->field( $model, 'message', [ 'options' => [ 'class' => 'form-group form-item' ] ] )->textarea( [ 'rows' => 6 ] ) ?>
+            <div class="create-desire-wrap">
+				<?= $form->field( $model, 'greatest' )->checkbox(); ?>
+				<?=
+				humhub\modules\file\widgets\UploadButton::widget( [
+					'id'       => 'comment_create_upload_' . $model->id,
+					'progress' => '#comment_create_upload_progress_' . $model->id,
+					'preview'  => '#comment_create_upload_preview_' . $model->id,
+					'dropZone' => '#comment_create_form_' . $model->id,
+					'max'      => Yii::$app->getModule( 'content' )->maxAttachedFiles
+				] );
+				?>
+                <div id="comment_create_upload_progress_<?= $model->id ?>" style="display:none;margin:10px 0px;"></div>
 
-<?=
-\humhub\modules\file\widgets\FilePreview::widget([
-	'id' => 'comment_create_upload_preview_' . $model->id,
-	'options' => ['style' => 'margin-top:10px'],
-	'edit' => true
-]);
-?>
+				<?=
+				\humhub\modules\file\widgets\FilePreview::widget( [
+					'id'      => 'comment_create_upload_preview_' . $model->id,
+					'options' => [ 'style' => 'margin-top:10px' ],
+					'edit'    => true,
+					'model'   => $model,
+				] );
+				?>
 
-<div class="form-group">
-	<?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-</div>
-
-<?php ActiveForm::end(); ?>
-
+            </div>
+            <div class="form-group base-btn reverse">
+		        <?= Html::submitButton( $model->isNewRecord ? 'Create' : 'Update', [ 'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary' ] ) ?>
+            </div>
+			<?php ActiveForm::end(); ?>
+        </div>
     </div>
 </div>

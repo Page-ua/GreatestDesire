@@ -74,6 +74,17 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="GreatestDesire Server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$USER_HOME$/PhpstormProjects/start" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/themes/HumHub" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
       <paths name="Hats">
         <serverdata>
           <mappings>

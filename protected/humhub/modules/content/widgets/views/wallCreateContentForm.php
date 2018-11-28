@@ -84,23 +84,27 @@ $this->registerJsConfig( 'content.form', [
                 <span class="label label-info label-public hidden"><?= Yii::t( 'ContentModule.widgets_views_contentForm', 'Public' ); ?></span>
 
 
-                <div class="sub-context-menu">
-                    <div class="context-menu-btn"><span></span><span></span><span></span></div>
-                    <ul class="context-menu">
-                        <li>
-                            <a data-action-click="notifyUser">
-                                <i class="fa fa-bell"></i> <?php echo Yii::t( 'ContentModule.widgets_views_contentForm', 'Notify members' ); ?>
-                            </a>
-                        </li>
-						<?php if ( $canSwitchVisibility ): ?>
+                <ul class="nav nav-pills preferences">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-label="<?= Yii::t('base', 'Toggle post menu'); ?>" aria-haspopup="true">
+                            <span></span><span></span><span></span>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
                             <li>
-                                <a id="contentForm_visibility_entry" data-action-click="changeVisibility">
-                                    <i class="fa fa-unlock"></i> <?= Yii::t( 'ContentModule.widgets_views_contentForm', 'Make public' ); ?>
+                                <a data-action-click="notifyUser">
+                                    <i class="fa fa-bell"></i> <?php echo Yii::t('ContentModule.widgets_views_contentForm', 'Notify members'); ?>
                                 </a>
                             </li>
-						<?php endif; ?>
-                    </ul>
-                </div>
+				            <?php if ($canSwitchVisibility): ?>
+                                <li>
+                                    <a id="contentForm_visibility_entry" data-action-click="changeVisibility">
+                                        <i class="fa fa-unlock"></i> <?= Yii::t('ContentModule.widgets_views_contentForm', 'Make public'); ?>
+                                    </a>
+                                </li>
+				            <?php endif; ?>
+                        </ul>
+                    </li>
+                </ul>
 
                 <input id="post_submit_button" data-ui-loader type="submit"
                        value="post">

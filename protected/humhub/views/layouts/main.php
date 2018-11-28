@@ -101,12 +101,12 @@ use yii\helpers\Url;
                                     <div class="sub-menu-content">
 										<?= \humhub\modules\favorite\widgets\TopWindows::widget(); ?>
                                     </div>
-                                    <div class="sub-menu-footer"><a class="seeAll" href="#">See all</a></div>
+                                    <div class="sub-menu-footer"><a class="seeAll" href="<?= Url::to(['/favorite/list']); ?>">See all</a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <a class="mobile-link" href="#"></a>
+                            <a class="mobile-link activity-icon icon-add"></a>
                             <div class="activity-icon">
                                 <svg class="icon icon-add">
                                     <use xlink:href="svg/sprite/sprite.svg#add"></use>
@@ -127,7 +127,7 @@ use yii\helpers\Url;
                                                     <use xlink:href="svg/sprite/sprite.svg#earth_green"></use>
                                                 </svg>
                                                 Greatest Desire</a></div>
-                                        <div class="link"><a href="<?= Url::to( [ '/blog/blog/create' ] ); ?>">
+                                        <div class="link"><a href="<?= Url::to( [ '/blog/blog/create', 'id' => 100 ] ); ?>">
                                                 <svg class="icon icon-success_stories">
                                                     <use xlink:href="svg/sprite/sprite.svg#success_stories"></use>
                                                 </svg>
@@ -173,7 +173,7 @@ use yii\helpers\Url;
                             <div class="tooltip-base">Invite friend</div>
                             <div class="activity-sub-menu">
                                 <div class="invite-sub-menu">
-                                    <a href="#">
+                                    <a data-action-click="ui.modal.load" data-action-url="<?= $userModel->createUrl('/user/invite'); ?>">
                                         <div class="inv-icon">
                                             <svg class="icon icon-email">
                                                 <use xlink:href="svg/sprite/sprite.svg#email"></use>
@@ -334,27 +334,16 @@ use yii\helpers\Url;
 <footer>
     <div class="top">
         <div class="base-wrap">
-            <div class="logo">
-                <svg class="icon icon-logo">
-                    <use xlink:href="./svg/sprite/sprite.svg#logo"></use>
-                </svg>
-            </div>
+            <a data-pjax="0" href="<?= Url::to(['auth/login']); ?>"><div class="logo"><svg class="icon icon-logo"><use xlink:href="<?= $this->theme->getBaseUrl(); ?>/svg/sprite/sprite.svg#logo"></use></svg></div></a>
             <div class="footer-menu">
                 <ul>
-                    <li><a href="succes-stories-public.html">Discover more about network</a></li>
-                    <li><a href="privacy-police-public.html">Privacy policy</a></li>
-                    <li><a href="single-success-stories-public.html">Terms and Conditions</a></li>
-                    <li><a href="faq-public.html">FAQ</a></li>
-                    <li><a href="contacts-public.html">Contact Us</a></li>
+				<?php echo \humhub\modules\user\widgets\PublicTopMenu::widget(['page' => 'home']); ?>
                 </ul>
             </div>
             <div class="footer-form">
+				<? //TODO did send-form; ?>
                 <form>
-                    <div class="form-item"><label for="footer-email">E-mail*</label><input id="footer-email"
-                                                                                           type="email"></div>
-                    <label>Message*
-                        <div class="textarea-wrap"><textarea rows="1"></textarea></div>
-                    </label>
+                    <div class="form-item"><label for="footer-email">E-mail*</label><input id="footer-email" type="email"></div><label>Message*<div class="textarea-wrap"><textarea rows="1"></textarea></div></label>
                     <div class="base-sm-btn"><input type="submit" value="Send"></div>
                 </form>
             </div>
@@ -363,11 +352,7 @@ use yii\helpers\Url;
     <div class="bottom">
         <div class="base-wrap">
             <div class="copy">© All rights reserved.</div>
-            <div class="dev-logo"><a href="#">
-                    <svg class="icon icon-logo_footer">
-                        <use xlink:href="./svg/sprite/sprite.svg#logo_footer"></use>
-                    </svg>
-                </a></div>
+            <div class="dev-logo"><a href="#"><svg class="icon icon-logo_footer"><use xlink:href="<?= $this->theme->getBaseUrl(); ?>/svg/sprite/sprite.svg#logo_footer"></use></svg></a></div>
         </div>
     </div>
 </footer>
@@ -375,7 +360,6 @@ use yii\helpers\Url;
 
 <?php $this->endBody() ?>
 <script src="<?= $this->theme->getBaseUrl(); ?>/js/scripts.min.js"></script>
-<script src="<?= $this->theme->getBaseUrl(); ?>/js/main.js"></script>
 <script src="<?= $this->theme->getBaseUrl(); ?>/lib/emoji/emojionearea.min.js"></script>
 
 

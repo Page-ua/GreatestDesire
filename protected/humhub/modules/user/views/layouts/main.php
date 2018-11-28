@@ -38,7 +38,9 @@ AppAsset::register($this);
         <div class="fixed-wrap">
             <div class="base-wrap"><a data-pjax="0" class="logo" href="<?= Url::to(['auth/login']); ?>"><svg class="icon icon-logo"><use xlink:href="<?= $this->theme->getBaseUrl(); ?>/svg/sprite/sprite.svg#logo"></use></svg></a>
                 <div class="menu">
-	                <?php echo \humhub\modules\user\widgets\PublicTopMenu::widget(['page' => 'home']); ?>
+                    <ul id="navigation">
+	                    <?php echo \humhub\modules\user\widgets\PublicTopMenu::widget(['page' => 'home']); ?>
+                    </ul>
                 </div>
                 <div class="link-block">
                     <div class="base-btn"><a data-action-click="ui.modal.load"  href="#" data-action-url="/index.php/user/auth/login">Login</a></div>
@@ -54,7 +56,7 @@ AppAsset::register($this);
 
         <?php $this->beginBody() ?>
         <?= $content; ?>
-        <?php $this->endBody() ?>
+        <?php $this->endBody() ?>pp
 
 
 
@@ -63,7 +65,9 @@ AppAsset::register($this);
             <div class="base-wrap">
                 <a data-pjax="0" href="<?= Url::to(['auth/login']); ?>"><div class="logo"><svg class="icon icon-logo"><use xlink:href="<?= $this->theme->getBaseUrl(); ?>/svg/sprite/sprite.svg#logo"></use></svg></div></a>
                 <div class="footer-menu">
-	                <?php echo \humhub\modules\user\widgets\PublicTopMenu::widget(['page' => 'home']); ?>
+                    <ul>
+	                    <?php echo \humhub\modules\user\widgets\PublicTopMenu::widget(['page' => 'home']); ?>
+                    </ul>
                 </div>
                 <div class="footer-form">
                     <? //TODO did send-form; ?>

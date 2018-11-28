@@ -13,6 +13,7 @@ use humhub\modules\friendship\FriendshipEvent;
 use humhub\modules\friendship\notifications\RequestDeclined;
 use humhub\modules\friendship\notifications\Request;
 use humhub\modules\friendship\notifications\RequestApproved;
+use Yii;
 use yii\data\Pagination;
 use yii\db\Expression;
 
@@ -191,12 +192,23 @@ class Friendship extends \humhub\components\ActiveRecord
 
 	public static function getPartFriends($user, $offset, $pageSize = 10)
 	{
-		$query = self::getFriendsQuery($user);
-		$friends = $query->offset($offset)
-						 ->limit($pageSize)
-						 ->all();
+		$cacheId = "part_friends_".$user->id."_".$offset."_".$pageSize;
 
-		return $friends;
+		$cacheValue = Yii::$app->cache->get($cacheId);
+
+		if(!$cacheValue) {
+
+			$query = self::getFriendsQuery($user);
+			$cacheValue = $query->offset($offset)
+			                 ->limit($pageSize)
+			                 ->all();
+
+			Yii::$app->cache->set($cacheId, $cacheValue, 3600);
+		}
+
+
+
+		return $cacheValue;
 	}
 
 

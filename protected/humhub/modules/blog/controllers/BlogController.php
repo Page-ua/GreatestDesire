@@ -40,10 +40,16 @@ class BlogController extends GeneralController {
 		$category = new Category();
 		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
 
+		$filter = Yii::$app->request->get('Category')['filter'];
+		$isSuccessStories = ($filter && $filter[0] && count($filter) === 1 && $filter[0] == '100')?true:false;
+
+		$title = $isSuccessStories?'Success stories':'Blog';
+
 		return $this->render('list', [
 			'articles' => $data['blog'],
 			'count' => $data['count'],
 			'category' => $category,
+			'title' => $title,
 			'ajaxUrl' => '/blog/blog/ajax-list',
 		]);
 
@@ -77,6 +83,9 @@ class BlogController extends GeneralController {
 		$model->content->visibility = 1;
 		$model->content->container = $this->contentContainer;
 
+		$isSuccessStories = (Yii::$app->request->get('id') == 100);
+
+
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
 
 			$this->view->saved();
@@ -90,19 +99,11 @@ class BlogController extends GeneralController {
 			[
 				'model' => $model,
 				'category'  => $category,
+				'isSuccessStories' => $isSuccessStories,
 			]
 		);
 	}
 
-	public function actionView( $id ) {
-
-		$model = $this->findModel($id);
-
-
-		return $this->render( 'view', [
-			'model' => $model,
-		] );
-	}
 
 	public function actionUpdate( $id ) {
 
@@ -115,6 +116,9 @@ class BlogController extends GeneralController {
 		$category = new Category();
 		$category = $category->getAllCurrentLanguage(Yii::$app->language, 'blog');
 
+		$isSuccessStories = ($model->category == 100);
+
+
 //		$this->setContentSettings($model);
 
 		if ( $model->load( Yii::$app->request->post() ) && $model->validate() && $model->save() ) {
@@ -123,7 +127,7 @@ class BlogController extends GeneralController {
 			$model->saveFiles();
 			$model->saveTags();
 
-			return $this->redirect( [ 'view', 'id' => $model->id ] );
+			return $this->redirect( $model->user->createUrl('/user/profile/blog-one', ['id' => $model->id ]) );
 		}
 
 		return $this->render( 'create',
@@ -131,6 +135,7 @@ class BlogController extends GeneralController {
 				'model' => $model,
 				'submitUrl' => Url::toRoute('/blog/blog/update'),
 				'category' => $category,
+				'isSuccessStories' => $isSuccessStories,
 			]
 		);
 	}

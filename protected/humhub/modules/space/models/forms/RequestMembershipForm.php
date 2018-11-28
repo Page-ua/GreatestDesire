@@ -22,7 +22,7 @@ class RequestMembershipForm extends Model
     public function rules()
     {
         return array(
-            array('message', 'required'),
+            array('message', 'string'),
         );
     }
 

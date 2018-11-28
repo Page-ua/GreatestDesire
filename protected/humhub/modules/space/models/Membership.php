@@ -217,6 +217,22 @@ class Membership extends \yii\db\ActiveRecord
         return $query;
     }
 
+    public static function getUserSpaceLast($user, $pageSize)
+    {
+    	$cacheId = 'space_last_'.$user->id.'_'.$pageSize;
+
+    	$cacheValue = Yii::$app->cache->get($cacheId);
+
+    	if(!$cacheValue) {
+    		$cacheValue = self::getUserSpaceQuery($user)
+			    ->limit($pageSize)
+			    ->all();
+    		Yii::$app->cache->set($cacheId, $cacheValue, 3600);
+	    }
+
+    	return $cacheValue;
+    }
+
     /**
      * Returns an ActiveQuery selcting all memberships for the given $user.
      *  

@@ -96,7 +96,7 @@ use yii\helpers\Html;
                                                                 src="<?php echo $originator->getProfileImage()->getUrl("", true); ?>"
                                                                 width="69"
                                                                 alt=""
-                                                                style="max-width:69px; display:block !important; border-radius: 4px;"
+                                                                style="max-width:69px; display:block !important; border-radius: 50%;"
                                                                 border="0" hspace="0" vspace="0"/>
                                                         </a>
                                                         <!-- END: USER IMAGE -->

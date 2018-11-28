@@ -78,14 +78,21 @@ class ProfileMenu extends \humhub\widgets\BaseMenu
                 'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Blog'),
                 'url' => $this->user->createUrl('//user/profile/blog'),
                 'sortOrder' => 600,
-                'isActive' => (Yii::$app->controller->id == "profile" && ( Yii::$app->controller->action->id == "blog" || Yii::$app->controller->action->id == "blog-one")),
+                'isActive' => (Yii::$app->controller->id == "profile" && ( Yii::$app->controller->action->id == "blog")),
+            ]);
+
+            $this->addItem([
+                'label' => Yii::t('UserModule.widgets_ProfileMenuWidget', 'Success stories'),
+                'url' => $this->user->createUrl('//user/profile/success-stories'),
+                'sortOrder' => 600,
+                'isActive' => (Yii::$app->controller->id == "profile" && ( Yii::$app->controller->action->id == "success-stories" || Yii::$app->controller->action->id == "success-stories-one")),
             ]);
 
 	        $this->addItem([
 		        'label' => Yii::t('GalleryModule.base', 'Photos'),
-		        'url' => $this->user->createUrl('//user/profile/photo-albums'),
+		        'url' => $this->user->createUrl('//gallery/list'),
 		        'sortOrder' => 700,
-		        'isActive' => (Yii::$app->controller->id == "profile" && (Yii::$app->controller->action->id == "photo-albums" || Yii::$app->controller->action->id == "photos" || Yii::$app->controller->action->id == 'photo-one'))
+		        'isActive' => (Yii::$app->controller->id == "list" && (Yii::$app->controller->action->id == "index" || Yii::$app->controller->action->id == "photos" || Yii::$app->controller->action->id == 'photo-one'))
 	        ]);
 
             $this->addItem([

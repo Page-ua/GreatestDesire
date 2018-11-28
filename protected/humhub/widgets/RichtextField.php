@@ -108,8 +108,8 @@ class RichtextField extends InputWidget
     public function run()
     {
         $inputOptions = $this->getAttributes();
-        $inputOptions['id'] = $this->getId(true) . '_input';
-        $inputOptions['style'] = 'display:none;color';
+        $inputOptions['id'] = $this->getId(true);
+        $inputOptions['style'] = 'color';
         $inputOptions['title'] = $this->placeholder;
         unset($inputOptions['contenteditable']);
         $modelAttribute = $this->attribute;
@@ -128,7 +128,7 @@ class RichtextField extends InputWidget
             $richText = $this->getLabel() . $richText;
         }
 
-        return $input . $richText;
+        return $input ;
     }
 
     public function getLabel()
@@ -164,7 +164,6 @@ class RichtextField extends InputWidget
     public function getAttributes()
     {
         return [
-            'class' => "atwho-input form-control humhub-ui-richtext",
             'contenteditable' => "true",
         ];
     }

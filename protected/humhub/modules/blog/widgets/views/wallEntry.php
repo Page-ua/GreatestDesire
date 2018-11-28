@@ -13,7 +13,7 @@
             <?= $blog->title; ?>
             </a>
         </div>
-        <div class="subtitle"><?= $category[$blog->category]; ?></div>
+        <div class="subtitle"><?= isset($category[$blog->category])?$category[$blog->category]:''; ?></div>
         <div class="text">
             <div data-ui-widget="blog.Blog" data-state="collapsed" data-ui-init id="blog-content-<?= $blog->id; ?>" style="overflow: hidden; margin-bottom: 5px;">
                 <div data-ui-markdown data-ui-show-more style="overflow: hidden;">

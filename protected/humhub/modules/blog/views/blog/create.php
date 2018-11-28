@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 <div class="page-content">
     <div class="content-wrap">
         <div class="create-blog">
-            <h2>Create post</h2>
+            <h2>Create <?= $isSuccessStories?'Success stories':'blog post'; ?></h2>
 
 			<?php $form = ActiveForm::begin([
 				'fieldConfig' => [
@@ -30,7 +30,7 @@ use yii\widgets\ActiveForm;
 
 			<?= $form->field( $model, 'category', [
 			        'options' => [
-			                'class' => 'sm-item form-item',
+			                'class' => 'sm-item form-item '.($isSuccessStories?'hidden':''),
                     ]
             ] )->dropDownList( $category , ['class' => false]); ?>
 			<?=
@@ -48,13 +48,14 @@ use yii\widgets\ActiveForm;
 			\humhub\modules\file\widgets\FilePreview::widget( [
 				'id'      => 'comment_create_upload_preview_' . $model->id,
 				'options' => [ 'style' => 'margin-top:10px' ],
-				'edit'    => true
+				'edit'    => true,
+                'model'   => $model,
 			] );
 			?>
 
             <div class="form-group">
                 <div class="base-btn reverse">
-				<?= Html::submitButton( $model->isNewRecord ? 'Create' : 'Update', [ 'class' => $model->isNewRecord ? '' : 'btn btn-primary' ] ) ?>
+				<?= Html::submitButton( $model->isNewRecord ? 'Create' : 'Update', [ 'class' => 'btn btn-primary' ] ) ?>
             </div>
             </div>
 

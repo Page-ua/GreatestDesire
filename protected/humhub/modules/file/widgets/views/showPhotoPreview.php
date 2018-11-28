@@ -12,7 +12,7 @@ use yii\helpers\Html;
 
 ?>
 <?php $counter = 0; ?>
-<?php if ( count( $files ) > 0 ) : ?>
+<?php if ( count( $files ) > 0 ) { ?>
 	<?php if ( isset( $options['index'] ) && empty( $options['for'] ) ) {
 		if ( isset( $files[ $options['index'] ] ) ) {
 			if ( $previewImage->applyFile( $files[ $options['index'] ] ) ) {
@@ -86,58 +86,71 @@ use yii\helpers\Html;
 			<?php if ( $showPreview ) : ?>
                 <div class="post-files" id="post-files-<?= $object->getUniqueId(); ?>">
 
-					<?php foreach ( $files as $file ): ?>
-						<?php if ( $previewImage->applyFile( $file ) ): ?>
+                    <?php if(count($files) < 3) { ?>
+	                    <?php if ( $previewImage->applyFile( $files[0] ) ): ?>
+	                        <?php $arr             = array(
+		                        'height' => 181,
+		                        'width'  => 265,
+		                        'mode'   => 'force'
+	                        );
+	                        $previewImage->options = $arr;
+	                        ?>
 
-							<?php if ( $counter == 0 ) { ?>
-								<?php $arr             = array(
-									'height' => 181,
-									'width'  => 137,
-									'mode'   => 'force'
-								);
-								$previewImage->options = $arr;
-								?>
+                            <div><?= $previewImage->render(); ?></div>
+	                    <?php endif; ?>
+                    <?php } else { ?>
+					    <?php foreach ( $files as $file ): ?>
+					    	<?php if ( $previewImage->applyFile( $file ) ): ?>
 
-                                <div class="item"><?= $previewImage->render(); ?></div>
+					    		<?php if ( $counter == 0 ) { ?>
+					    			<?php $arr             = array(
+					    				'height' => 181,
+					    				'width'  => 137,
+					    				'mode'   => 'force'
+					    			);
+					    			$previewImage->options = $arr;
+					    			?>
 
-
-
-							<?php } ?>
-							<?php if ( $counter ===1 ) { ?>
-								<?php $arr             = array(
-									'height' => 91,
-									'width'  => 128,
-									'mode'   => 'force'
-								);
-								$previewImage->options = $arr;
-								?>
+                                    <div class="item"><?= $previewImage->render(); ?></div>
 
 
-                                <div class="item"><?= $previewImage->render(); ?></div>
 
-							<?php } ?>
-							<?php if ( $counter === 2 ) { ?>
-								<?php $arr             = array(
-									'height' => 91,
-									'width'  => 128,
-									'mode'   => 'force'
-								);
-								$previewImage->options = $arr;
-								?>
-                                <div class="item"><?= $previewImage->render(); ?>
-                                    <?php if(count($files) > 3) { ?>
-                                    <div class="show-more"><span>+<?php echo count( $files ) - 3; ?></span></div>
-                                    <?php } ?>
-                                </div>
-                                <?php
-									break;
-									?>
-							<?php } ?>
+					    		<?php } ?>
+					    		<?php if ( $counter ===1 ) { ?>
+					    			<?php $arr             = array(
+					    				'height' => 91,
+					    				'width'  => 128,
+					    				'mode'   => 'force'
+					    			);
+					    			$previewImage->options = $arr;
+					    			?>
 
-						<?php endif; ?>
-						<?php $counter ++; ?>
-					<?php endforeach; ?>
 
+                                    <div class="item"><?= $previewImage->render(); ?></div>
+
+					    		<?php } ?>
+					    		<?php if ( $counter === 2 ) { ?>
+					    			<?php $arr             = array(
+					    				'height' => 91,
+					    				'width'  => 128,
+					    				'mode'   => 'force'
+					    			);
+					    			$previewImage->options = $arr;
+					    			?>
+                                    <div class="item"><?= $previewImage->render(); ?>
+                                        <?php if(count($files) > 3) { ?>
+                                        <div class="show-more"><span>+<?php echo count( $files ) - 3; ?></span></div>
+                                        <?php } ?>
+                                    </div>
+                                    <?php
+					    				break;
+					    				?>
+					    		<?php } ?>
+
+					    	<?php endif; ?>
+					    	<?php $counter ++; ?>
+					    <?php endforeach; ?>
+                    <?php } ?>
 					<?php $playlist = [] ?>
 
 
@@ -148,5 +161,9 @@ use yii\helpers\Html;
         </div>
 
 	<?php } ?>
-<?php endif; ?>
+<?php } else { ?>
+ <div class="img-default">
+     <img src="<?= Yii::$app->getModule( 'content' )->getAssetsUrl() . '/default.png'; ?>" alt="">
 
+ </div>
+<?php  } ?>

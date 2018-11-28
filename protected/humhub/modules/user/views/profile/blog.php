@@ -16,7 +16,14 @@ use yii\helpers\Url;
 			<li class="<?= ($this->context->action->id === 'blog')? 'active': ''; ?>"><a href="<?= $contentContainer->createUrl('/user/profile/blog'); ?>">Blog posts</a></li>
 			<li class="<?= ($this->context->action->id === 'favorite-blog')? 'active': ''; ?>"><a href="<?= $contentContainer->createUrl('/user/profile/favorite-blog'); ?>">Favorite blog posts</a></li>
 		</ul>
-		<div class="page-filter"><select><option>Newest first</option><option>Newest first 2</option><option>Newest first 3</option></select></div>
+		<div class="page-filter">
+            <select onchange="location = this.value;">
+                <option value="<?= Url::current(); ?>?sort=descdate">Newest first</option>
+                <option value="<?= Url::current(); ?>?sort=ascdate">Old first</option>
+                <option value="<?= Url::current(); ?>?sort=like">Most Like</option>
+                <option value="<?= Url::current(); ?>?sort=favorite">Most Favorite</option>
+            </select>
+        </div>
 		<div class="blog-post-list">
             <?php foreach($blogList as $blog) { ?>
 			<div class="article-post">

@@ -78,14 +78,21 @@ class Favorite extends ContentAddonActiveRecord
 
 	public static function getFavoriteContent($objectName, $userId)
 	{
+
+		$object = self::getFavoriteContentQuery($objectName, $userId);
+
+		return $object->all();
+	}
+
+	public static function getFavoriteContentQuery($objectName, $userId)
+	{
 		$favorite = (new \yii\db\Query())->from('favorite');
 		$object = $objectName::find();
 		$object->leftJoin(['f' => $favorite], 'f.object_id = '.$objectName::tableName().'.id');
 		$object->andWhere(['f.object_model' => $objectName::className()]);
 		$object->andWhere(['f.created_by' => $userId]);
 
-
-		return $object->all();
+		return $object;
 	}
 
 	public static function getCountObjectsByUser(User $user, string $classname)
@@ -93,6 +100,15 @@ class Favorite extends ContentAddonActiveRecord
 		$query = self::find();
 		$query->where(['object_model' => $classname]);
 		$query->andWhere(['created_by' => $user->id]);
+
+		return $query->count();
+	}
+
+	public static function getCountObjects(string $clasname, $id)
+	{
+		$query = self::find();
+		$query->where(['object_model' => $clasname]);
+		$query->andWhere(['object_id' => $id]);
 
 		return $query->count();
 	}

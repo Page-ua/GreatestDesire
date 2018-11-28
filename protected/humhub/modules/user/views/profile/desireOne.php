@@ -26,7 +26,7 @@ use yii\widgets\DetailView;
             <div class="desire-img">
 				<?= ShowPhotoPreview::widget(['object' => $model, 'options' => ['index' => 0, 'width' => 800, 'height' => 550]]); ?>
             </div>
-			<?= $model->message; ?>
+	        <?= humhub\widgets\RichText::widget(['text' => $model->message, 'record' => $model, 'markdown' => true]) ?>
             <div class="albums-img-layout">
 				<?= ShowPhotoPreview::widget(['object' => $model, 'options' => ['for' => 'dessireGallery']]); ?>
             </div>

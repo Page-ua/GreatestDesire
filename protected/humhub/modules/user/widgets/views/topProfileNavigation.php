@@ -21,11 +21,10 @@
 
 <!-- start: list-group navi for large devices -->
 <?php foreach ($this->context->getItemGroups() as $group) : ?>
-<div class="top-menu">
-    <ul>
 	<?php $items = $this->context->getItems($group['id']); ?>
 	<?php if (count($items) == 0) continue; ?>
-
+<div class="top-menu">
+    <ul>
 	<?php foreach ($items as $item) : ?>
 		<?php $item['htmlOptions']['class'] .= " list-group-item"; ?>
         <li class="<?= $item['isActive']?'active':''; ?>"><?php echo \yii\helpers\Html::a($item['label'], $item['url']); ?></li>
